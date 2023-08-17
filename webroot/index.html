@@ -1,51 +1,52 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>My Blog</title>
-</head>
-<body>
+  </head>
+  <body>
+    <h1>My Blog</h1>
     <div id="content">
-        <!-- The Markdown blog post will be loaded here -->
+      <!-- The Markdown blog post will be loaded here -->
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js" integrity="sha512-LhccdVNGe2QMEfI3x4DVV3ckMRe36TfydKss6mJpdHjNFiV07dFpS2xzeZedptKZrwxfICJpez09iNioiSZ3hA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        // Get the current URL
-        let url = window.location.pathname;
-        // Ensure trailing slash is removed, if present
-        if (url.endsWith("/")) {
-            url = url.slice(0, -1);
-        }
-
-        // Add /content to the URL just after the blog directory
-        url = url.replace("/blog/", "/blog/content/");
-
-        // Append '.md' to the URL
-        const mdFileUrl = `${url}.md`;
-
-        fetch(mdFileUrl)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Not 2xx response');
-                }
-                return response.text();
-            })
-            .then(text => {
-                var converter = new showdown.Converter();
-                var html = converter.makeHtml(text);
-                document.getElementById('content').innerHTML = html;
-            })
-            .catch(error => {
-                // Handle the error
-                if (error.message === 'Not 2xx response') {
-                    document.title = "404 Article Not Found";
-                    document.getElementById('content').innerHTML = '<h1>404</h1><p>Article Not Found</p>';
-                } else {
-                    // Handle other errors (like network errors)
-                    document.title = "Error Loading Article";
-                    document.getElementById('content').innerHTML = '<h1>Error</h1><p>There was an issue loading the article. Please try again later.</p>';
-                }
-            });
+      // Get the current URL
+      let url = window.location.pathname
+      // Ensure trailing slash is removed, if present
+      if (url.endsWith('/')) {
+        url = url.slice(0, -1)
+      }
+      
+      // Add /content to the URL just after the blog directory
+      url = url.replace('/blog/', '/blog/content/')
+      
+      // Append '.md' to the URL
+      const mdFileUrl = `${url}.md`
+      
+      fetch(mdFileUrl)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Not 2xx response')
+          }
+          return response.text()
+        })
+        .then((text) => {
+          var converter = new showdown.Converter()
+          var html = converter.makeHtml(text)
+          document.getElementById('content').innerHTML = html
+        })
+        .catch((error) => {
+          // Handle the error
+          if (error.message === 'Not 2xx response') {
+            document.title = '404 Article Not Found'
+            document.getElementById('content').innerHTML = '<h1>404</h1><p>Article Not Found</p>'
+          } else {
+            // Handle other errors (like network errors)
+            document.title = 'Error Loading Article'
+            document.getElementById('content').innerHTML = '<h1>Error</h1><p>There was an issue loading the article. Please try again later.</p>'
+          }
+        })
     </script>
-</body>
+  </body>
 </html>
