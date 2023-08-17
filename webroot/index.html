@@ -3,47 +3,75 @@
   <head>
     <title>My Blog</title>
 
+    <!-- Showdown CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js" integrity="sha512-LhccdVNGe2QMEfI3x4DVV3ckMRe36TfydKss6mJpdHjNFiV07dFpS2xzeZedptKZrwxfICJpez09iNioiSZ3hA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- highlight.js CDN and Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/solarized-light.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+
     <script>
-      // Get the current URL
-      let url = window.location.pathname.replace('/blog/', '/blog/content/')
-      // Ensure trailing slash is removed, if present
-      if (url.endsWith('/')) {
-        url = url.slice(0, -1)
-      }
+      document.addEventListener('DOMContentLoaded', function () {
+        // Get the current URL
+        let url = window.location.pathname.replace('/blog/', '/blog/content/')
+        // Ensure trailing slash is removed, if present
+        if (url.endsWith('/')) {
+          url = url.slice(0, -1)
+        }
       
-      // Append '.md' to the URL
-      let base = 'https://raw.githubusercontent.com/BranndonWork/branndon.dev/master/webroot'
-      let mdFileUrl = `${base}${url}.md`
-      console.log('Checking url: ' + mdFileUrl)
+        // Append '.md' to the URL
+        let base = 'https://raw.githubusercontent.com/BranndonWork/branndon.dev/master/webroot'
+        let mdFileUrl = `${base}${url}.md`
       
-      fetch(mdFileUrl)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error('Not 2xx response')
-          }
-          return response.text()
-        })
-        .then((text) => {
-          var converter = new showdown.Converter()
-          var html = converter.makeHtml(text)
-          document.getElementById('content').innerHTML = html
-        })
-        .catch((error) => {
-          // Handle the error
-          if (error.message === 'Not 2xx response') {
-            document.title = '404 Article Not Found'
-            document.getElementById('content').innerHTML = '<h1>404</h1><p>Article Not Found</p>'
-          } else {
-            // Handle other errors (like network errors)
-            document.title = 'Error Loading Article'
-            document.getElementById('content').innerHTML = '<h1>Error</h1><p>There was an issue loading the article. Please try again later.</p>'
-          }
-        })
+        fetch(mdFileUrl)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error('Not 2xx response')
+            }
+            return response.text()
+          })
+          .then((text) => {
+            var converter = new showdown.Converter()
+            var html = converter.makeHtml(text)
+            document.getElementById('content').innerHTML = html
+      
+            // Highlight code blocks after inserting HTML content
+            document.querySelectorAll('pre code').forEach((block) => {
+              hljs.highlightBlock(block)
+            })
+          })
+          .catch((error) => {
+            // Handle the error
+            if (error.message === 'Not 2xx response') {
+              document.title = '404 Article Not Found'
+              document.getElementById('content').innerHTML = '<h1>404</h1><p>Article Not Found</p>'
+            } else {
+              // Handle other errors (like network errors)
+              document.title = 'Error Loading Article'
+              document.getElementById('content').innerHTML = '<h1>Error</h1><p>There was an issue loading the article. Please try again later.</p>'
+            }
+          })
+      })
     </script>
+
+    <!-- Basic CSS for aesthetics -->
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 0 10px;
+      }
+      h1 {
+        border-bottom: 2px solid #eee;
+        padding-bottom: 10px;
+      }
+      #content {
+        margin-top: 20px;
+      }
+    </style>
   </head>
   <body>
-    <h1>My Blog</h1>
     <div id="content">
       <!-- The Markdown blog post will be loaded here -->
     </div>
