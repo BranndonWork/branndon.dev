@@ -14,9 +14,8 @@
       
       // Append '.md' to the URL
       let base = 'https://raw.githubusercontent.com/BranndonWork/branndon.dev/master/webroot'
-      mdFileUrl2 = `${base}${url}.md`
-      
-      console.log('Checking url: ' + mdFileUrl2)
+      let mdFileUrl = `${base}${url}.md`
+      console.log('Checking url: ' + mdFileUrl)
       
       fetch(mdFileUrl)
         .then((response) => {
