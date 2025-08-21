@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "branndon-dev-scripts"
+version = "0.1.0"
+description = "Scripts for branndon.dev website management"
+authors = ["Branndon Coelho <resume@branndon.dev>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+playwright = "^1.54.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

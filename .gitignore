@@ -1,1 +1,9 @@
 *.code-workspace
+
+# Job Search (Private - Contains personal customized resumes)
+job-search/*
+!job-search/example-ACME-Corp-Senior-Django-Developer/
+
+# Python dependencies
+poetry.lock
+
