@@ -4,6 +4,8 @@
 
 When working on resume customization or job search tasks, reference these project-specific docs:
 
+- **ENGINEER_PROFILE.md** - CRITICAL: Complete inventory of all skills, technologies, and experiences. Use ONLY items from this file for resume customization
+
 - **RESUME_CUSTOMIZATION_WORKFLOW.md** - Step-by-step process for customizing resumes using human+LLM workflow, emphasizes never fabricating skills
 - **JOB_APPLICATION_CUSTOMIZATION.md** - Framework for organizing job applications with examples  
 - **ATS_BEST_PRACTICES.md** - Guidelines for ATS-friendly formatting and keyword optimization
@@ -20,9 +22,14 @@ When working on resume customization or job search tasks, reference these projec
 
 1. **NEVER fabricate skills, experience, or achievements** - Only reorganize and emphasize existing content
 2. **Always read original resume first** for full context before making changes
-3. **Use MultiEdit for efficiency** when making multiple changes to resume files
-4. **Copy original resume** to new location to preserve structure and save tokens
-5. **Job applications should look completely real** - no "this is an example" disclaimers in application files
+3. **Use EXACT language from original resume** - Don't paraphrase or create technical jargon
+4. **DON'T force job keywords** - If job requirement doesn't match experience, ignore it rather than fake it
+5. **Respect role scope** - Use "lead", "specialize", "develop" not "architect" unless they're actually a system architect
+6. **Use MultiEdit for efficiency** when making multiple changes to resume files
+7. **Copy original resume** to new location to preserve structure and save tokens
+8. **Job applications should look completely real** - no "this is an example" disclaimers in application files
+
+**CRITICAL**: Read `./docs/LLM_RESUME_RULES.md` before any resume customization work
 
 ## Directory Structure
 

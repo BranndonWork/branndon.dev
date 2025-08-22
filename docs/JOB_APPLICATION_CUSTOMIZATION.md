@@ -9,7 +9,7 @@ When applying to a specific position, create this structure:
 ├── CompanyName-JobTitle/          # Individual application folder
 │   ├── job-posting.md             # Original job description
 │   ├── resume-branndon-coelho-[company].json  # Customized resume data
-│   ├── cover-letter.md            # Cover letter source
+│   ├── cover-letter.txt           # Cover letter source
 │   ├── customization-analysis.md  # Job analysis, customizations made, cover letter strategy, ATS optimization
 │   ├── application-tracking.md    # Submission details, follow-up schedule, communication log
 │   └── interview-prep.md          # Technical prep, company research, questions to prepare
@@ -121,9 +121,13 @@ See `/job-search/example-ACME-Corp-Senior-Django-Developer/` for a complete exam
 Use Claude Code to efficiently set up new applications:
 
 1. Create directory: `mkdir "./job-search/CompanyName-JobTitle"`
-2. Copy original resume: `cp webroot/branndon-coelho-resume.json ./job-search/CompanyName-JobTitle/resume-branndon-coelho-company.json`
-3. Use Claude to read original resume, analyze job posting, and customize using MultiEdit
-4. Generate the three tracking files automatically
+2. Copy ATS template: `cp docs/resume-ats-template.json ./job-search/CompanyName-JobTitle/resume-branndon-coelho-company.json`
+3. **Copy template files from example directory instead of regenerating**:
+   - `cp job-search/example-ACME-Corp-Senior-Django-Developer/application-tracking.md ./job-search/CompanyName-JobTitle/`
+   - `cp job-search/example-ACME-Corp-Senior-Django-Developer/interview-prep.md ./job-search/CompanyName-JobTitle/`
+   - Then update the copied templates with job-specific details
+4. Use Claude to read original resume, analyze job posting, and customize using MultiEdit
+5. Generate customization analysis and cover letter from scratch (these should be unique per application)
 
 ## Important Notes
 

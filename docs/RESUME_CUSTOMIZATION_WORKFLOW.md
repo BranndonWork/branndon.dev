@@ -60,6 +60,8 @@ Use MultiEdit tool for efficiency. Make all changes in one operation:
 - Use their terminology when it matches your actual experience
 - Lead with most relevant achievement
 - Never add skills not in original resume
+- **CRITICAL**: Maintain accurate role scope - use "specialize in", "lead", "guide", "develop" not "architect" unless you're actually the system architect
+- Your senior-level contributions are impressive without inflating scope
 
 #### Experience Reordering
 - Move most relevant positions to top
@@ -79,7 +81,7 @@ Use MultiEdit tool for efficiency. Make all changes in one operation:
 - Match their exact terminology when possible
 
 ### 6. Create Cover Letter
-Use template in `cover-letter.md`:
+Use template in `cover-letter.txt`:
 - Hook with most relevant achievement
 - Address their specific pain points
 - Show knowledge of company/role
@@ -123,6 +125,14 @@ Create separate tracking files:
 ### ❌ BAD - Fabricating Experience  
 **Original:** No mention of "e-commerce"
 **Customized:** Adding "e-commerce platform development" to summary
+
+### ✅ GOOD - Accurate Role Language
+**Original:** "specializing in Django-based application development"
+**Customized:** "specialize in Django backend development serving millions of users"
+
+### ❌ BAD - Inflating Role Scope
+**Original:** "guiding software architecture decisions"
+**Customized:** "architect Django backend systems" (implies you're THE architect)
 
 ### ✅ GOOD - Reordering for Relevance
 **Original:** Multiple projects listed

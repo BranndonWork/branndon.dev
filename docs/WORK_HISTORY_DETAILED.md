@@ -65,6 +65,7 @@
 - Cross-functional team collaboration
 - Emphasis on DRY principles, RESTful API design, and Django-specific performance tuning
 - Staying current with Django framework enhancements
+- Integrating AI development tools into daily workflows and team processes
 
 #### Technologies Used
 - Python
@@ -79,6 +80,7 @@
 - ORM
 - RESTful APIs
 - Agile methodologies
+- AI development tools (Claude Code, Cursor, ChatGPT, Google Gemini)
 - Jira, Confluence, Atlassian suite
 - Asana
 - Lucid Charts

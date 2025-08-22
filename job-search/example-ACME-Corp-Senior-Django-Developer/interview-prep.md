@@ -1,32 +1,20 @@
-# Interview Preparation: ACME Corporation
+# Interview Preparation - ACME Corp Senior Django Developer
 
-## Technical Preparation
-- Prepare STAR stories for Server-Driven UI project implementation
-- Be ready to discuss specific performance optimization techniques used (2.7s to 0.89s)
-- Prepare examples of GDPR compliance challenges and solutions
-- Review Django best practices and recent framework updates
+## Position Overview
+**What they want**: 5+ years Django, PostgreSQL, RESTful APIs, team collaboration, data platform experience
+**Perfect engineer**: Senior developer who can work independently, mentor others, and build scalable web applications
 
-## Company Research
-- Research ACME's recent technology initiatives and mention in conversation
-- Review their current tech stack and product offerings
-- Understand their company culture and values
-- Prepare questions about their engineering challenges
+## Your Matching Skills/Stories
+- **Django expertise**: 15+ years Python/Django, current Headspace platform work
+- **Data systems**: ML recommendation system at The Penny Hoarder processing large datasets
+- **Mentoring**: Led onboarding team at Headspace, mentor junior engineers
 
-## Common Interview Questions
-- How do you approach legacy system migrations?
-- Describe your experience with server-driven UI architecture
-- How do you ensure GDPR compliance in data handling?
-- Walk me through your performance optimization process
-- How do you mentor junior developers?
+## Company Research Notes
+- ACME Corp: Growing SaaS platform company, 200+ employees
+- Django/PostgreSQL stack matches their job requirements exactly  
+- Focus on data-driven decisions and platform scalability
 
-## Questions to Ask Them
-- What are the biggest technical challenges facing the team?
-- How does the engineering team collaborate across different time zones?
-- What's the code review and deployment process like?
-- How do you measure and track application performance?
-- What opportunities are there for professional development?
-
-## Salary Discussion
-- Research market rates for Senior Django Developers
-- Prepare to discuss compensation expectations
-- Consider total compensation package (benefits, equity, etc.)
+## Likely Questions for This Role
+- How do you approach Django performance optimization?
+- Describe your experience with large-scale data processing
+- How do you mentor junior developers on complex projects?

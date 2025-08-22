@@ -103,6 +103,17 @@ span.page-indicator {
 }
 @media print {
     /* Base print styles */
+    .resume-social {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 0.5rem !important;
+    }
+    
+    .resume-social li {
+        margin-bottom: 0 !important;
+        margin-right: 1rem !important;
+    }
+    
     .resume-social .mb-3 {
         margin-bottom: 0.25rem !important;
     }
@@ -296,5 +307,10 @@ span.page-indicator {
     .col-lg-3.pagebreak {
         page-break-before: auto !important;
         margin-top: 0 !important;
+    }
+
+    /* Force page break before recommendations section */
+    .recommendations-section {
+        page-break-before: always !important;
     }
 }

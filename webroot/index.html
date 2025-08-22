@@ -59,7 +59,7 @@
                             <article className="resume-timeline-item position-relative pb-4">
                                 <div className="resume-timeline-item-desc">
                                     {sectionData.descriptions.map((desc, idx) => <p><div key={idx} dangerouslySetInnerHTML={{ __html: desc }} /></p>)}
-                                    <p>[1] My top 5 professional strengths in order are:</p>
+                                    <p>Branndon's top 5 professional strengths in order are:</p>
                                     <ul>
                                         {sectionData.strengths.map((strength, idx) => (
                                             <li key={idx}>
@@ -165,7 +165,7 @@
 
         function RecommendationsSection({ sectionData }) {
             return (
-                <section className="resume-section experience-section">
+                <section className="resume-section experience-section recommendations-section">
                     <h2 className="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">
                         {sectionData.title}
                         <span className="ml-auto find-more">
@@ -199,7 +199,8 @@
             );
         }
 
-        function SkillsSection({ sectionData }) {
+        function SkillsSection({ sectionData = {} }) {
+            if (!sectionData.title) return null;
             return (
                 <section className="resume-section skills-section mb-5">
                     <h2 className="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">{sectionData.title}</h2>
@@ -227,7 +228,8 @@
             );
         }
 
-        function FunFactsSection({ sectionData }) {
+        function FunFactsSection({ sectionData = {} }) {
+            if (!sectionData.title) return null;
             return (
                 <section className="resume-section interests-section mb-5">
                     <h2 className="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">{sectionData.title}</h2>
@@ -276,9 +278,10 @@
 
                             <AboutSection sectionData={resumeData.aboutSection} />
                             <ExperienceSection sectionData={resumeData.experienceSection} />
+                            {resumeData.recommendationsSection && <p style={{textAlign: 'center', fontStyle: 'italic', marginTop: '2rem', marginBottom: '1rem', color: '#6c757d'}}>Professional recommendations continue on the following page</p>}
                             {resumeData.recommendationsSection && <RecommendationsSection sectionData={resumeData.recommendationsSection} />}
-                            <SkillsSection sectionData={resumeData.skillsSection} />
-                            <FunFactsSection sectionData={resumeData.funFactsSection} />
+                            {resumeData.skillsSection && <SkillsSection sectionData={resumeData.skillsSection} />}
+                            {resumeData.funFactsSection && <FunFactsSection sectionData={resumeData.funFactsSection} />}
                         </div>
                     </div>
                 </article>
