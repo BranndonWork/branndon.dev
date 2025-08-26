@@ -1,0 +1,108 @@
+:root {
+    /* Dark, low‑glare theme for screens */
+    --bg: #0b0f14;
+    --text: #e6edf3;
+    --muted: #98a6b3;
+    --surface: #0f141b;
+    --card: #121922;
+    --border: #1f2a36;
+    --brand: #4f9cf9;
+    --brand-600: #3b82f6;
+    --brand-700: #2563eb;
+    --ok: #22c55e;
+    --radius: 16px;
+    --shadow: 0 10px 30px rgba(2, 6, 23, 0.35), 0 2px 8px rgba(2, 6, 23, 0.25);
+    --maxw: 1120px;
+    --pad: 24px;
+    --header-h: 64px;
+}
+
+/* Print-friendly colors - light theme for printing */
+@media print {
+    :root {
+        --bg: #ffffff;
+        --text: #000000;
+        --muted: #6c757d;
+        --surface: #f8f9fa;
+        --card: #ffffff;
+        --border: #dee2e6;
+        --brand: #0066cc;
+        --brand-600: #0052a3;
+        --brand-700: #003d7a;
+        --ok: #28a745;
+    }
+}
+
+/* Reset and base styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+a {
+    color: var(--brand);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Common utilities */
+.container {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 var(--pad);
+}
+
+.muted {
+    color: var(--muted);
+}
+
+/* Focus styles */
+:focus-visible {
+    outline: 3px solid color-mix(in oklab, var(--brand) 60%, white);
+    outline-offset: 2px;
+    border-radius: 10px;
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .no-print {
+        display: none !important;
+    }
+    
+    a {
+        color: var(--brand);
+        text-decoration: none;
+    }
+    
+    /* Ensure good contrast in print */
+    .shadow-lg {
+        box-shadow: none !important;
+    }
+}

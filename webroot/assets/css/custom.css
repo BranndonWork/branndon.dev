@@ -1,0 +1,316 @@
+.print-only,
+.print-only * {
+    display: none !important;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.highlight {
+    background: yellow;
+}
+
+.resume-header .title {
+    font-size: 1.25rem;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+
+.resume-header .name {
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+
+/* Feedback */
+.feedback-icon {
+    width: 20px;
+    opacity: 0.3;
+    margin-left: -25px;
+}
+
+.hide-feedback,
+.feedback-text {
+    display: none;
+}
+
+.secondary-info.ml-md-auto.mt-2 {
+    min-width: 220px;
+    text-align: left;
+}
+
+.resume-social {
+    text-align: left;
+}
+
+
+/* company links on resume */
+.resume-company-name a {
+    text-decoration: underline;
+}
+
+.find-more {
+    text-transform: none;
+    float: right;
+    font-weight: normal;
+    font-size: initial;
+}
+
+
+.resume-header.resume-header-page-2 {
+    display: none;
+}
+
+.footer-message a {
+    text-decoration: underline;
+}
+
+@media (max-width: 1000px) {
+    .resume-header .name {
+        font-size: 2.0rem;
+    }
+
+    .resume-header .title {
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 950px) {
+    .resume-header .name {
+        font-size: 1.8rem;
+    }
+
+    .resume-header .title {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .secondary-info.ml-md-auto.mt-2 {
+        margin-left: 20px !important;
+    }
+
+    .resume-header-page-2 {
+        display: none;
+    }
+}
+span.page-indicator {
+    display: none;
+}
+@media print {
+    /* Base print styles */
+    .resume-social {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 0.5rem !important;
+    }
+    
+    .resume-social li {
+        margin-bottom: 0 !important;
+        margin-right: 1rem !important;
+    }
+    
+    .resume-social .mb-3 {
+        margin-bottom: 0.25rem !important;
+    }
+
+    .resume-skills-cat {
+        margin-bottom: -0.5rem;
+        padding-top: 0.5rem;
+    }
+
+    span.page-indicator {
+        display: block;
+        margin: 0 auto;
+        width: fit-content;
+    }
+    
+    .resume-wrapper {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .shadow-lg {
+        box-shadow: none !important;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .print-only {
+        display: initial !important;
+    }
+
+    .resume-wrapper-inner {
+        max-width: initial;
+    }
+
+    .resume-header {
+        background: #FFF;
+        color: #000;
+        height: initial;
+        display: flex;
+    }
+
+    .resume-header .name,
+    .resume-header a {
+        color: #000 !important;
+    }
+
+    .primary-info {
+        margin-left: 1.5rem !important;
+    }
+
+    .title {
+        display: inline-block;
+        font-size: 1rem;
+    }
+
+    .resume-body.p-5 {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    /* ATS-friendly styles */
+    body {
+        font-size: 14pt !important;
+        line-height: 1.4 !important;
+    }
+    
+    .resume-header .name {
+        font-size: 22pt !important;
+        margin-bottom: 8pt !important;
+    }
+    
+    .resume-header .title {
+        font-size: 14pt !important;
+        margin-bottom: 4pt !important;
+        display: block !important;
+    }
+    
+    .resume-section-title {
+        font-size: 16pt !important;
+        margin-bottom: 6pt !important;
+        margin-top: 10pt !important;
+    }
+    
+    .resume-timeline-item-header h3 {
+        font-size: 14pt !important;
+        margin-bottom: 3pt !important;
+    }
+    
+    .resume-timeline-item-desc p {
+        font-size: 14pt !important;
+        margin-bottom: 6pt !important;
+    }
+    
+    .resume-timeline-item-desc ul li {
+        font-size: 14pt !important;
+        margin-bottom: 3pt !important;
+    }
+
+    /* Simplified layout for ATS */
+    .resume-section.skills-section {
+        float: none !important;
+        margin-left: 0 !important;
+        clear: both !important;
+    }
+
+    .resume-skill-item {
+        margin-bottom: 20px !important;
+        display: block !important;
+        clear: both !important;
+    }
+
+    .resume-skill-name {
+        display: inline-block;
+        float: left;
+        margin-right: 20px;
+        font-size: 11pt !important;
+    }
+
+    /* Technology badges - convert to simple text for ATS */
+    .badge {
+        border: none;
+        color: #000;
+        background-color: transparent;
+        padding: 0.25em 0.6em;
+        font-size: 12pt !important;
+        font-weight: 500;
+        line-height: 1.4;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: 0;
+        margin-right: 8pt !important;
+        margin-bottom: 4pt !important;
+    }
+    
+    .badge-primary {
+        color: #000;
+        background-color: transparent;
+    }
+    
+    .badge-pill {
+        padding-right: 0.6em;
+        padding-left: 0.6em;
+    }
+    
+    .list-inline-item {
+        display: inline-block !important;
+        margin-right: 8pt !important;
+        margin-bottom: 4pt !important;
+    }
+    
+    .list-inline-item:not(:last-child) {
+        margin-right: 8pt !important;
+    }
+
+    /* Clean up links for ATS */
+    .resume-company-name a {
+        text-decoration: none;
+    }
+
+    /* Remove timeline visual elements for cleaner ATS parsing */
+    .resume-timeline {
+        padding-left: 0;
+    }
+
+    .resume-timeline:before {
+        content: "";
+        display: none;
+    }
+
+    .resume-timeline-item:before {
+        content: "";
+        display: none;
+    }
+    
+    /* Remove forced page breaks for ATS - let content flow naturally */
+    .pagebreak {
+        page-break-before: auto !important;
+    }
+
+    .resume-header.resume-header-page-2 {
+        display: none !important;
+    }
+
+    .secondary-info.ml-md-auto.mt-2 {
+        margin-left: 0 !important;
+    }
+
+    .col-lg-3.pagebreak {
+        page-break-before: auto !important;
+        margin-top: 0 !important;
+    }
+
+    /* Force page break before recommendations section */
+    .recommendations-section {
+        page-break-before: always !important;
+    }
+}

@@ -1,0 +1,162 @@
+{
+    "overviewData": {
+        "name": "Branndon Coelho",
+        "positions": [
+            "[Primary Target Role]",
+            "[Secondary Role Variation]",
+            "[Third Role Option]"
+        ],
+        "imageSrc": "assets/images/branndon-coelho.jpg",
+        "socialLinks": [
+            {
+                "url": "https://branndon.dev/linkedin",
+                "icon": "fab fa-linkedin-in"
+            },
+            {
+                "url": "https://github.com/BranndonWork",
+                "icon": "fab fa-github"
+            },
+            {
+                "url": "https://branndon.dev/",
+                "icon": "fas fa-globe"
+            },
+            {
+                "url": "mailto:resume@branndon.dev",
+                "icon": "fas fa-envelope"
+            }
+        ]
+    },
+    "summarySection": {
+        "title": "Professional Summary",
+        "summary": "[2-3 sentence summary emphasizing relevant experience and key technologies for this role]"
+    },
+    "aboutSection": {
+        "title": "About Branndon",
+        "descriptions": [
+            "[First paragraph - highlight most relevant experience and achievements]",
+            "[Second paragraph - current role and key technologies matching job requirements]",
+            "[Third paragraph - business impact and team scaling]"
+        ],
+        "strengths": [
+            {
+                "title": "Strategic - naturally spots patterns and alternative pathways to solutions",
+                "link": "https://www.gallup.com/cliftonstrengths/en/252350/strategic-theme.aspx"
+            },
+            {
+                "title": "Activator - naturally takes initiative and makes things happen quickly",
+                "link": "https://www.gallup.com/cliftonstrengths/en/252140/activator-theme.aspx"
+            },
+            {
+                "title": "Individualization - notices unique qualities and tailors approach accordingly",
+                "link": "https://www.gallup.com/cliftonstrengths/en/252272/individualization-theme.aspx"
+            },
+            {
+                "title": "Achiever - driven by constant accomplishment and works with stamina",
+                "link": "https://www.gallup.com/cliftonstrengths/en/252134/achiever-theme.aspx"
+            },
+            {
+                "title": "Adaptability - able to switch gears quickly when priorities change",
+                "link": "https://www.gallup.com/cliftonstrengths/en/252146/adaptability-theme.aspx"
+            }
+        ],
+        "source": "https://www.gallup.com/cliftonstrengths/en/252137/home.aspx"
+    },
+    "experienceSection": {
+        "title": "Professional Experience",
+        "linkText": "Complete work history:",
+        "linkHref": "https://branndon.dev/linkedin",
+        "experiences": [
+            {
+                "position": "[Current Position Title - preserve exact title from original resume]",
+                "companyLink": "https://www.linkedin.com/company/headspace-meditation-limited/",
+                "companyName": "Headspace",
+                "time": "2022 - Present",
+                "description": [
+                    "[Description 1 - most relevant to job requirements]",
+                    "[Description 2 - additional relevant experience]",
+                    "[Description 3 - technical leadership and mentoring]"
+                ],
+                "achievements": [
+                    "[Achievement 1 - most impressive quantified result]",
+                    "[Achievement 2 - relevant technical accomplishment]",
+                    "[Achievement 3 - team/mentorship achievement]"
+                ],
+                "technologies": [
+                    "[Tech 1 - primary job requirement]",
+                    "[Tech 2 - secondary requirement]",
+                    "[Tech 3-10 - other relevant technologies, max 10 total]"
+                ]
+            },
+            {
+                "position": "[Previous Position - preserve full title including Lead/Architect levels]",
+                "companyLink": "https://www.linkedin.com/company/thepennyhoarder/",
+                "companyName": "The Penny Hoarder",
+                "time": "2015 - 2022",
+                "description": [
+                    "[Description 1 - most relevant accomplishment]",
+                    "[Description 2 - business impact/scaling]"
+                ],
+                "achievements": [
+                    "[Achievement 1 - performance optimization with metrics]",
+                    "[Achievement 2 - major system/feature built]",
+                    "[Achievement 3 - leadership/scaling achievement]"
+                ],
+                "technologies": [
+                    "[Tech 1-8 - technologies matching job requirements, max 8]"
+                ]
+            },
+            {
+                "position": "[Third Position - preserve original title]",
+                "companyLink": "https://www.linkedin.com/company/webley-systems",
+                "companyName": "Webley Systems",
+                "time": "2020 - 2021",
+                "description": [
+                    "[Description 1 - backend focus and relevant technologies]"
+                ],
+                "achievements": [
+                    "[Achievement 1 - technical accomplishment matching job requirements]",
+                    "[Achievement 2 - system design or automation]"
+                ],
+                "technologies": [
+                    "[Tech 1-6 - technologies matching job requirements, max 6]"
+                ]
+            }
+        ]
+    },
+    "recommendationsSection": {
+        "title": "Recommendations",
+        "moreRecommendationsLink": "https://branndon.dev/linkedin",
+        "recommendations": [
+            {
+                "name": "Kyle Taylor",
+                "position": "CEO",
+                "company": "The Penny Hoarder",
+                "linkedin": "https://www.linkedin.com/in/kylebradleytaylor",
+                "description": [
+                    "I've been lucky enough to work alongside Branndon for nearly two years now and while he's always been a pleasure to work with, I feel like this year in particular has brought about a huge transformation. He has a growing confidence in his skills and abilities and it's been such a pleasure to watch him realize his own talent."
+                ]
+            },
+            {
+                "name": "Stephen McDermott",
+                "position": "IT Director",
+                "company": "The Penny Hoarder",
+                "linkedin": "https://linkedin.com/in/stephencmcdermott",
+                "description": [
+                    "The code looks to be easily maintainable and modular. I have noticed that when creating deliverables, regression testing is relatively isolated. A poorly coded site would include multiple cross dependencies, whereas one change would result in changes across the whole system. Branndon has coded a good portion of this site and it is built well."
+                ]
+            },
+            {
+                "name": "Jennifer Franko",
+                "position": "Scrum Master II",
+                "company": "The Penny Hoarder",
+                "linkedin": "https://www.linkedin.com/in/jenniferfranko",
+                "description": [
+                    "Branndon is one of the most well rounded, patient and talented developers I have had the pleasure to work with. Branndon is always thinking of the user experience as he works on his outstanding coding. Branndon never shows signs of stress and was always able to successfully complete any tasks with favorable results despite deadline pressure. His technical skill is outstanding but he also has the ability to communicate clearly and to collaborate effectively.",
+                    "Branndon is a rare find within the development world as he is constantly furthering his knowledge and skills. He repetitively amazed me with his industry insight and original approaches to solving problems.",
+                    "Branndon always takes the time to provide technical guidance and mentorship to his fellow developers. Branndon leads by example and people find his enthusiasm and dedication both inspiring and motivating.",
+                    "Branndon is dedicated, self-motivated, methodical, and very capable. I thoroughly enjoyed working with him at The Penny Hoarder and hope that one day I will have the privilege to work with him again. He is a true Rock Star!!!"
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Branndon Coelho — Backend & Automation Consulting</title>
+    <meta name="description" content="Backend & automation consulting. Reliable systems, fewer meetings, faster results." />
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <!-- load style sheet from assets/css/consulting.css -->
+    <link rel="stylesheet" href="./assets/css/consulting.css" />
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="container header-inner">
+            <div class="brand">Branndon Coelho <small>• Backend & Automation Consulting</small></div>
+            <nav class="nav" aria-label="Primary">
+                <a href="#wins">Results</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <span class="badge availability" id="availability">Accepting 1 new client</span>
+            <button class="hamburger" id="menu" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">≡</button>
+        </div>
+    </header>
+
+    <!-- Mobile nav -->
+    <nav id="mobile-nav" hidden
+        style="position:fixed;top:var(--header-h);left:0;right:0;border-bottom:1px solid var(--border);background:var(--surface);z-index:900">
+        <div class="container" style="display:grid;gap:6px;padding:10px 0">
+            <a href="#wins">Results</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <div class="pre">Backend & Automation Consulting</div>
+                <h1 class="title">Premium Backend & Automation Consulting</h1>
+                <p class="lede">Reliable systems. Fewer meetings. Faster results.</p>
+                <ul class="list">
+                    <li><span class="check">✓</span>
+                        <div class="li-text">Backend builds &amp; refactors — APIs, background jobs, and data pipelines.</div>
+                    </li>
+                    <li><span class="check">✓</span>
+                        <div class="li-text">Automation that turns hours of manual work into minutes.</div>
+                    </li>
+                    <li><span class="check">✓</span>
+                        <div class="li-text">Applied AI—tailored to your workflows; from assistive tools to automation and
+                            insights.</div>
+                    </li>
+                </ul>
+                <div class="cta">
+                    <a class="btn" href="#contact">Request a consult</a>
+                    <a class="btn btn-outline" href="#wins">See results</a>
+
+                </div>
+                <p class="muted" style="margin-top:6px">Previously supported teams at <b>Headspace</b> and <b>The Penny
+                        Hoarder</b>.</p>
+            </div>
+            <div>
+                <div class="metrics">
+                    <div class="metric"><b>99.95% uptime</b><span>after critical refactors</span></div>
+                    <div class="metric"><b>5× faster</b><span>onboarding flow with SDUI</span></div>
+                    <div class="metric"><b>82% faster ETL</b><span>after data‑pipeline tuning</span></div>
+                    <div class="metric"><b>3h → 5m</b><span>manual task automation</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Services</h2>
+            <div class="cards grid-3" style="margin-top:12px">
+                <div class="card">
+                    <h3>Server‑Side Builds</h3>
+                    <p>APIs, background jobs, and data pipelines with reliability first.</p>
+                </div>
+                <div class="card">
+                    <h3>Automation</h3>
+                    <p>Replace manual processes with resilient scripts and schedulers.</p>
+                </div>
+                <div class="card">
+                    <h3>Applied AI</h3>
+                    <p>AI, applied to your business: tailored assistive tools, intelligent automation, and data‑aware features.
+                        Built for measurable outcomes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results / Wins -->
+    <section id="wins" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+        <div class="container">
+            <h2 class="section-title">Example outcomes</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Manual process automation</h3>
+                    <p>Turned a recurring 3‑hour task into a 5‑minute run with resilient scripting and scheduling.</p>
+                </div>
+                <div class="card">
+                    <h3>ETL runtime improvement</h3>
+                    <p>Optimized data pipeline execution for an <b>82% faster</b> end‑to‑end run time.</p>
+                </div>
+                <div class="card">
+                    <h3>Site performance</h3>
+                    <p>Reduced page load from <b>2.7s → 0.89s</b> with CDN strategy and refactors.</p>
+                </div>
+                <div class="card">
+                    <h3>Reliability</h3>
+                    <p>Stabilized core systems to <b>99.95% uptime</b> after targeted refactors and monitoring.</p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="card" style="margin-top:16px">
+            <p class="quote">“Branndon is one of the most well‑rounded, patient and talented developers I’ve worked with… He leads
+                by example and people find his enthusiasm and dedication both inspiring and motivating.”</p>
+            <div class="byline">— Jennifer Franko, Scrum Master II</div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Process + Pricing -->
+    <section id="process">
+        <div class="container grid-2">
+            <div class="card">
+                <h3>How I work</h3>
+                <ol>
+                    <li><strong>Scope:</strong> one kickoff, then async updates.</li>
+                    <li><strong>Build:</strong> focused sprints; minimal meetings.</li>
+                    <li><strong>Handover:</strong> docs + walkthrough; clean exit.</li>
+                </ol>
+            </div>
+            <div class="card" id="pricing">
+                <h3>Pricing</h3>
+                <p class="muted">Clear, simple options.</p>
+                <p><strong>From $10k</strong> project minimum</p>
+                <p><strong>$5k</strong> monthly retainer</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about"
+        style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+        <div class="container about">
+            <img class="avatar" src="assets/images/branndon-coelho.jpg" alt="Branndon Coelho" />
+            <div>
+                <h2 class="section-title" style="margin-top:0">About</h2>
+                <p>Senior software engineer with 15+ years in backend development and system architecture. Currently at Headspace;
+                    previously The Penny Hoarder and Webley Systems. I value clear scope, dependable delivery, and thorough
+                    handover.</p>
+                <div class="muted" style="margin-top:10px">
+                    <a href="https://branndon.dev/linkedin">LinkedIn</a> · <a href="https://github.com/BranndonWork">GitHub</a> ·
+                    <a href="mailto:resume@branndon.dev">Email</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Tell me about your project</h2>
+            <form class="form" id="contact-form">
+                <div class="grid-2">
+                    <label for="name">Your name</label>
+                    <label for="email">Email</label>
+                </div>
+                <div class="grid-2" style="margin-top:-4px">
+                    <input class="input" id="name" name="name" placeholder="Jane Doe" required />
+                    <input class="input" id="email" type="email" name="email" placeholder="jane@example.com" required />
+                </div>
+                <label for="details" style="margin-top:12px">Project details</label>
+                <textarea class="input" id="details" name="message" placeholder="A few lines about what you need…"
+                    required></textarea>
+                <div style="display:flex;gap:12px;align-items:center;margin-top:14px;flex-wrap:wrap">
+                    <button class="btn" type="submit">Request a consult</button>
+                    <span id="form-status" class="muted" aria-live="polite"></span>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">© <span id="year"></span> Branndon Coelho. All rights reserved.</div>
+    </footer>
+
+    <script>
+        // Fixed header: set CSS variable for height so content isn't hidden
+        (function () {
+            const root = document.documentElement;
+            function setHeaderH() {
+                const h = (document.querySelector('.header')?.offsetHeight) || 64;
+                root.style.setProperty('--header-h', h + 'px');
+            }
+            setHeaderH();
+            window.addEventListener('resize', setHeaderH);
+        })();
+
+        // Mobile nav toggle
+        (function () {
+            const btn = document.getElementById('menu');
+            const nav = document.getElementById('mobile-nav');
+            btn && btn.addEventListener('click', () => {
+                const show = nav.hasAttribute('hidden');
+                nav.toggleAttribute('hidden');
+                btn.setAttribute('aria-expanded', show ? 'true' : 'false');
+            });
+        })();
+
+        // Form handler (no backend)
+        (function () {
+            const form = document.getElementById('contact-form');
+            const status = document.getElementById('form-status');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                status.textContent = 'Thanks! I\'ll reply shortly.';
+                form.reset();
+            });
+            document.getElementById('year').textContent = new Date().getFullYear();
+        })();
+    </script>
+</body>
+
+</html>

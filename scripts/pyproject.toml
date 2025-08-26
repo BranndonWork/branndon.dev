@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "resume-pdf-generator"
+version = "0.1.0"
+description = ""
+authors = ["Branndon Coelho <dev@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+playwright = "^1.54.0"
+beautifulsoup4 = "^4.13.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

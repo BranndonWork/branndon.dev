@@ -1,0 +1,13 @@
+*.code-workspace
+
+# Job Search (Private - Contains personal customized resumes)
+job-search/*
+!job-search/example-ACME-Corp-Senior-Django-Developer/
+
+# Temporary ATS resume files (safety in case we forget to delete)
+webroot/branndon-coelho-resume-ats.json
+webroot/*-ats.json
+
+# Python dependencies
+poetry.lock
+

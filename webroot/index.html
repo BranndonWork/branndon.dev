@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Branndon Coelho | Full Stack Architecture and Development</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Application Architect, Full Stack Developer, and Techinical Lead">
+    <meta name="author" content="Branndon Coelho">
+    <link rel="shortcut icon" href="assets/favicons/favicon.ico">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+
+    <!-- Frameworks -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js"
+        integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/pillar-1.css">
+    <link id="custom-style" rel="stylesheet" href="assets/css/custom.css">
+    <link id="main-style" rel="stylesheet" href="assets/css/main.css">
+    <!-- React CDN -->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- Babel for JSX processing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script type="text/babel">
+
+
+        function SummarySection({ sectionData }) {
+            return (
+                <section style={{ display: 'none' }} className="resume-section summary-section mb-5">
+                    <h2 className="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">{sectionData.title}</h2>
+                    <div className="resume-section-content">
+                        <p className="mb-0 highlight">{sectionData.summary}</p>
+                    </div>
+                </section>
+            );
+        }
+
+        function AboutSection({ sectionData }) {
+            return (
+                <section className="resume-section experience-section mb-5">
+                    <h2 className="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">{sectionData.title}</h2>
+                    <div className="resume-section-content">
+                        <div className="resume-timeline position-relative">
+                            <article className="resume-timeline-item position-relative pb-4">
+                                <div className="resume-timeline-item-desc">
+                                    {sectionData.descriptions.map((desc, idx) => <p><div key={idx} dangerouslySetInnerHTML={{ __html: desc }} /></p>)}
+                                    <p>Branndon's top 5 professional strengths in order are:</p>
+                                    <ul>
+                                        {sectionData.strengths.map((strength, idx) => (
+                                            <li key={idx}>
+                                                <a
+                                                    rel="noreferrer nofollow noopener"
+                                                    target="_blank"
+                                                    className="underline"
+                                                    href={strength.link}
+                                                >
+                                                    {strength.title}
+                                                </a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <p>Source: Gallup/Clifton Strengths Finder <a className="underline" href={sectionData.source} rel="noreferrer nofollow noopener" target="_blank">{sectionData.source}</a></p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+            );
+        }
+
+        function ExperienceSection({ sectionData }) {
+            return (
+                <section className="resume-section experience-section mb-5">
+                    <h2 className="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">
+                        {sectionData.title} <span className="ml-auto find-more">{sectionData.linkText} <a href={sectionData.linkHref}>{sectionData.linkHref}</a></span>
+                    </h2>
+                    <div className="resume-section-content">
+                        <div className="resume-timeline position-relative">
+                            {sectionData.experiences.map((exp, index) => (
+                                <article key={index} className="resume-timeline-item position-relative pb-4">
+                                    <div className="resume-timeline-item-header mb-2">
+                                        <div className="d-flex flex-column flex-md-row">
+                                            <h3 className="resume-position-title font-weight-bold mb-1">{exp.position}</h3>
+                                            <div className="resume-company-name ml-auto"><a href={exp.companyLink}>{exp.companyName}</a></div>
+                                        </div>
+                                        <div className="resume-position-time">{exp.time}</div>
+                                    </div>
+                                    <div className="resume-timeline-item-desc">
+                                        {exp.description.map((desc, descIndex) => (
+                                            <p key={descIndex}>{desc}</p>
+                                        ))}{exp.achievements && <h4 className="resume-timeline-item-desc-heading font-weight-bold">Achievements:</h4>}
+                                        {exp.achievements && (() => {
+                                            // Process achievements into a structured format.
+                                            const structuredAchievements = exp.achievements.reduce((acc, achievement) => {
+                                                const [_, title = "", content = achievement] = achievement.match(/^\[([^\]]+)\]\s*(.+)/) || [];
+                                                if (title) {
+                                                    if (!acc[title]) {
+                                                        acc[title] = [];
+                                                    }
+                                                    acc[title].push(content);
+                                                } else {
+                                                    if (!acc["NoTitle"]) {
+                                                        acc["NoTitle"] = [];
+                                                    }
+                                                    acc["NoTitle"].push(content);
+                                                }
+                                                return acc;
+                                            }, {});
+
+                                            // Render the structured achievements.
+                                            return Object.entries(structuredAchievements).map(([title, items], index) => (
+                                                <React.Fragment key={index}>
+                                                    <ul key={index}>
+                                                        {title !== "NoTitle" && <li>
+                                                            <strong>{title}</strong>
+                                                            <ul>
+                                                                {items.map((item, itemIndex) => (
+                                                                    <li key={itemIndex}>{item}</li>
+                                                                ))}
+                                                            </ul>
+                                                        </li>}
+                                                        {title === "NoTitle" && items.map((item, itemIndex) => (
+                                                            <li key={itemIndex}>{item}</li>
+                                                        ))}
+                                                    </ul>
+
+                                                </React.Fragment>
+                                            ));
+                                        })()}
+
+
+
+
+                                        <h4 className="resume-timeline-item-desc-heading font-weight-bold">Technologies Touched (in order of usage):</h4>
+                                        <ul className="list-inline">
+                                            {exp.technologies.map((tech, techIndex) => (
+                                                <li key={techIndex} className="list-inline-item">
+                                                    <span className="badge badge-primary badge-pill">{tech}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </article>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            );
+        }
+
+        function RecommendationsSection({ sectionData }) {
+            return (
+                <section className="resume-section experience-section recommendations-section">
+                    <h2 className="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">
+                        {sectionData.title}
+                        <span className="ml-auto find-more">
+                            Additional recommendations:
+                            <a href={sectionData.moreRecommendationsLink}>{sectionData.moreRecommendationsLink}</a>
+                        </span>
+                    </h2>
+                    <div className="resume-section-content">
+                        <div className="resume-timeline position-relative">
+                            {sectionData.recommendations.map((recommendation, idx) => (
+                                <article key={idx} className="resume-timeline-item position-relative pb-5">
+                                    <div className="resume-timeline-item-header mb-2">
+                                        <div className="d-flex flex-column flex-md-row">
+                                            <h3 className="resume-position-title font-weight-bold mb-1">{recommendation.name}</h3>
+                                            <div className="resume-company-name ml-auto">{recommendation.position} | {recommendation.company}</div>
+                                        </div>
+                                        <div className="resume-position-time">
+                                            <a href={recommendation.linkedin}>{recommendation.linkedin}</a>
+                                        </div>
+                                    </div>
+                                    <div className="resume-timeline-item-desc">
+                                        {recommendation.description.map((desc, descIndex) => (
+                                            <p key={descIndex}>{desc}</p>
+                                        ))}
+                                    </div>
+                                </article>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            );
+        }
+
+        function SkillsSection({ sectionData = {} }) {
+            if (!sectionData.title) return null;
+            return (
+                <section className="resume-section skills-section mb-5">
+                    <h2 className="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">{sectionData.title}</h2>
+                    <div className="resume-section-content">
+                        {sectionData.categories.map(category => (
+                            <div key={category.name} className="resume-skill-item">
+                                <h4 className="resume-skills-cat font-weight-bold">{category.name}</h4>
+                                <ul className="list-unstyled mb-4">
+                                    {category.skills.map(skill => (
+                                        <li key={skill.name} className="mb-2">
+                                            <div className="resume-skill-name">
+                                                {skill.name} <span className="print-only">({skill.level})</span>
+                                            </div>
+                                            <div className="progress resume-progress no-print">
+                                                <div className="progress-bar theme-progress-bar-dark" role="progressbar"
+                                                    style={{ width: skill.width }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            );
+        }
+
+        function FunFactsSection({ sectionData = {} }) {
+            if (!sectionData.title) return null;
+            return (
+                <section className="resume-section interests-section mb-5">
+                    <h2 className="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">{sectionData.title}</h2>
+                    <div className="resume-section-content">
+                        <ul className="list-unstyled">
+                            {sectionData.facts.map((fact, index) => (
+                                <li key={index} className="mb-1">
+                                    <div className="resume-degree font-weight-bold">{fact.title}</div>
+                                    <div className="resume-degree-time">{fact.time}</div>
+                                    <div className="resume-degree-org">{fact.description}</div>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </section>
+            );
+        }
+
+        function App({ resumeData }) {
+            return (
+                <article className="resume-wrapper text-center position-relative">
+                    <div className="resume-wrapper-inner mx-auto text-left bg-white shadow-lg">
+                        <header className="resume-header pt-4 pt-md-0">
+                            <div className="media flex-column flex-md-row w-100">
+                                <div className="media-body p-4 pb-5 d-flex flex-column flex-md-row justify-content-between w-100">
+                                    <div className="primary-info">
+                                        <h1 className="name mt-0 mb-1 text-white text-uppercase text-uppercase">{resumeData.overviewData.name}</h1>
+                                        {resumeData.overviewData.positions.map((position, index) => (
+                                            <div className="title" key={index}>{position}</div>
+                                        ))}
+                                    </div>
+                                    <div className="secondary-info ml-md-auto mt-2">
+                                        <ul className="resume-social list-unstyled">
+                                            {resumeData.overviewData.socialLinks.map((link, index) => (
+                                                <li key={index} className="mb-3">
+                                                    <a href={link.url}><span className="fa-container text-center mr-2"><i className={link.icon}></i></span>{link.url}</a>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </header>
+                        <div className="resume-body p-5">
+                            <SummarySection sectionData={resumeData.summarySection} />
+
+                            <AboutSection sectionData={resumeData.aboutSection} />
+                            <ExperienceSection sectionData={resumeData.experienceSection} />
+                            {resumeData.recommendationsSection && <p style={{textAlign: 'center', fontStyle: 'italic', marginTop: '2rem', marginBottom: '1rem', color: '#6c757d'}}>Professional recommendations continue on the following page</p>}
+                            {resumeData.recommendationsSection && <RecommendationsSection sectionData={resumeData.recommendationsSection} />}
+                            <div className="skills-facts-container">
+                                {resumeData.skillsSection && <SkillsSection sectionData={resumeData.skillsSection} />}
+                                {resumeData.funFactsSection && <FunFactsSection sectionData={resumeData.funFactsSection} />}
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            );
+        }
+
+
+        jQuery(document).ready(function ($) {
+            $('a').not('[href="https://branndon.dev/"]').attr('target', '_blank');
+            $('#print-this-page').click(function (event) {
+                event.preventDefault();
+                print();
+            });
+        })
+        $(document).ready(function () {
+            // Check URL parameters for content mode
+            const urlParams = new URLSearchParams(window.location.search);
+            const mode = urlParams.get('mode');
+            const isAtsMode = mode === 'ats';
+            
+            // Choose JSON file based on mode
+            const jsonFile = isAtsMode ? './branndon-coelho-resume-ats.json' : './branndon-coelho-resume.json';
+            
+            // Fetch the JSON data
+            $.ajax({
+                url: jsonFile,
+                dataType: 'json',
+                success: function (data) {
+                    // Data is fetched, so update the variable and render the React component
+                    const resumeDataSource = data;
+
+                    // Render the main React component
+                    ReactDOM.render(<App resumeData={resumeDataSource} />, document.getElementById('app'));
+                },
+                error: function (err) {
+                    console.error('Failed to fetch the resume data:', err);
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

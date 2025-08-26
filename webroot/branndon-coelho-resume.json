@@ -1,0 +1,332 @@
+{
+    "overviewData": {
+        "name": "Branndon Coelho",
+        "positions": [
+            "Application Architect",
+            "Techinical Lead",
+            "Senior Software Engineer"
+        ],
+        "imageSrc": "assets/images/branndon-coelho.jpg",
+        "socialLinks": [
+            {
+                "url": "https://branndon.dev/linkedin",
+                "icon": "fab fa-linkedin-in"
+            },
+            {
+                "url": "https://github.com/BranndonWork",
+                "icon": "fab fa-github"
+            },
+            {
+                "url": "https://branndon.dev/",
+                "icon": "fas fa-globe"
+            },
+            {
+                "url": "mailto:resume@branndon.dev",
+                "icon": "fas fa-envelope"
+            }
+        ]
+    },
+    "summarySection": {
+        "title": "Career Summary",
+        "summary": "Summary would go here if I had the wordsmithing abilities to write one. If you're seeing this, rock on and congratulation on being curious."
+    },
+    "aboutSection": {
+        "title": "About Branndon",
+        "descriptions": [
+            "Seasoned <strong>software engineer</strong> with over 15 years of professional experience in full-stack development and team leadership. Led technical initiatives at <strong>The Penny Hoarder</strong> from startup to recognized media platform, orchestrating <strong>critical business applications</strong>, optimizing site performance from <strong>2.7 seconds to 0.89</strong>, and designing a <strong>machine learning-based email content recommendation system</strong>.",
+            "Currently at <strong>Headspace</strong>, specializing in <strong>Django-based application development</strong> with focus on <strong>scalable</strong> and <strong>security-focused software architecture</strong>. Responsibilities include <strong>mentoring junior engineers</strong>, guiding software architecture decisions, and ensuring adherence to industry best practices while staying current with <strong>Django framework enhancements</strong>.",
+            "Contributed to transforming a startup from <strong>$4 million to $40 million</strong> in annual revenue while scaling technical teams from 10 to over <strong>100</strong> employees. Committed to <strong>continuous learning</strong> and <strong>adaptability</strong>, leveraging strategic and activator strengths to deliver results in fast-paced environments."
+        ],
+        "strengths": [
+            {
+                "title": "Strategic - naturally spots patterns and alternative pathways to solutions",
+                "link": "https://www.gallup.com/cliftonstrengths/en/252350/strategic-theme.aspx"
+            },
+            {
+                "title": "Activator - naturally takes initiative and makes things happen quickly",
+                "link": "https://www.gallup.com/cliftonstrengths/en/252140/activator-theme.aspx"
+            },
+            {
+                "title": "Individualization - notices unique qualities and tailors approach accordingly",
+                "link": "https://www.gallup.com/cliftonstrengths/en/252272/individualization-theme.aspx"
+            },
+            {
+                "title": "Achiever - driven by constant accomplishment and works with stamina",
+                "link": "https://www.gallup.com/cliftonstrengths/en/252134/achiever-theme.aspx"
+            },
+            {
+                "title": "Adaptability - able to switch gears quickly when priorities change",
+                "link": "https://www.gallup.com/cliftonstrengths/en/252146/adaptability-theme.aspx"
+            }
+        ],
+        "source": "https://www.gallup.com/cliftonstrengths/en/252137/home.aspx"
+    },
+    "experienceSection": {
+        "title": "Work Experience",
+        "linkText": "Work experience dating back to 2007:",
+        "linkHref": "https://branndon.dev/linkedin",
+        "experiences": [
+            {
+                "position": "Senior Software Engineer",
+                "companyLink": "https://www.linkedin.com/company/headspace-meditation-limited/",
+                "companyName": "Headspace",
+                "time": "2022 - Present",
+                "description": [
+                    "Lead development of Django-based applications and major platform initiatives including Server-Driven UI project, where I transitioned from Python to TypeScript to help convert all mobile app display logic to server-side control. Led the onboarding flow team while ensuring GDPR compliance throughout the project lifecycle.",
+                    "Architected complex backend integrations including Headspace-Ginger platform merger, designed sophisticated data modeling for DSAR compliance and data anonymization systems. Built guardian consent workflows processing large datasets and led SMS architecture migration eliminating dual-source synchronization issues.",
+                    "Lead technical decisions while mentoring engineers in Django best practices and system architecture. Design RESTful APIs for complex environments while promoting code quality and performance optimization across cross-functional teams."
+                ],
+                "achievements": [
+                    "Led team for onboarding flow conversion in company-wide Server-Driven UI initiative, learning TypeScript while ensuring GDPR compliance",
+                    "Architected backend systems integration merging coaching and clinical therapy services into Headspace platform post-acquisition",
+                    "Architected data migration from dual-source to single-source architecture, eliminating synchronization issues and improving system reliability",
+                    "Implemented proper data anonymization workflows for DSAR account deletion compliance",
+                    "Developed guardian consent mechanisms and age-appropriate access controls for teen coaching services",
+                    "Championed CI/CD pipelines and TDD practices while mentoring junior engineers on Django best practices"
+                ],
+                "technologies": [
+                    "Python",
+                    "Django",
+                    "Backend Development",
+                    "AI Development Tools",
+                    "JWT",
+                    "Auth0",
+                    "Docker",
+                    "Braze",
+                    "Jira",
+                    "Confluence",
+                    "Atlassian",
+                    "Asana",
+                    "Lucid Charts",
+                    "Figma",
+                    "Software Architecture",
+                    "APIs",
+                    "CI/CD",
+                    "TDD",
+                    "ORM",
+                    "RESTful API",
+                    "Agile"
+                ]
+            },
+            {
+                "position": "Senior Software Engineer - Backend Focus",
+                "companyLink": "https://www.linkedin.com/company/webley-systems",
+                "companyName": "Webley Systems",
+                "time": "2020 - 2021",
+                "description": [
+                    "Spearheaded the development of a scalable backend infrastructure at Webley Systems, utilizing Python's advanced features like decorators and context managers. Employing Flask for our RESTful API, I architected an AWS-integrated backend to handle streaming video compilation. Collaborating within a high-caliber team, I honed my skills in Test Driven Development, Python Unittest, and seamlessly interfaced a Single Page Application (SPA) frontend using React with our Python backend."
+                ],
+                "achievements": [
+                    "Achieved proficiency in Flask and embraced TDD principles through dedicated training sessions.",
+                    "Engineered a custom automation system reminiscent of GIT, revolutionizing a two-decade-old manual ticketing process. This innovative tool bridged updates between the legacy CMS and Slack channels via headless Selenium, demonstrating a blend of autonomy and technical acumen.",
+                    "Ensured robust software delivery by authoring comprehensive tests for both legacy systems and new implementations.",
+                    "Autonomously designed a standalone API infrastructure leveraging AWS services like Lambda, API Gateway, and ALB. This system adeptly managed fragmented video segments, amalgamating them to deliver cohesive streaming content to end-users."
+                ],
+                "technologies": [
+                    "API",
+                    "Python",
+                    "Flask",
+                    "TDD",
+                    "Slack",
+                    "Selenium",
+                    "Git via Github",
+                    "AWS EC2",
+                    "AWS S3",
+                    "AWS Lambda",
+                    "AWS API Gateway",
+                    "AWS Route53",
+                    "JavaScript",
+                    "CSS",
+                    "Decorators",
+                    "Context Managers"
+                ]
+            },
+            {
+                "position": "Application Architect / Lead Developer / Senior Developer",
+                "companyLink": "https://www.linkedin.com/company/thepennyhoarder/",
+                "companyName": "The Penny Hoarder",
+                "time": "2014 - 2020",
+                "description": [
+                    "Began at The Penny Hoarder in 2014 through a consulting agency, transitioning to a full-time role in Florida by 2015, reflecting adaptability during the company's early stages.",
+                    "Played a key role in the evolution of the IT department, starting as its sole member and subsequently contributing to the hiring of roles including IT Director, Lead Developer, DevOps Engineer, QA Lead, and Scrum Master.",
+                    "Drove the design and deployment of critical business applications, such as administrative dashboards and automated reporting. Steered the direction and execution of the entire software ecosystem.",
+                    "Contributed to team growth by leading weekly code reviews, mentoring developers, and collaborating with both executive staff and project management to align technical and business goals."
+                ],
+                "achievements": [
+                    "[Application Architect] Optimized site load time from 2.7 seconds to 0.89 seconds, resulting in significant cost savings and revenue increase.",
+                    "[Application Architect] Designed a machine learning-based email content recommendation system.",
+                    "[Application Architect] Assumed a lead role during emergency scenarios, deploying hotfixes and addressing production issues.",
+                    "[Application Architect] Ensured company growth in 2017/2018 by upholding coding standards and optimizing software architecture.",
+                    "[Lead Developer] Contributed to the recognition of The Penny Hoarder by Inc. 500 in 2016 and 2017 as a rapidly growing private media company.",
+                    "[Lead Developer] Oversaw a significant site performance initiative, transitioning from AWS Cloudfront to Cloudflare, enhancing the site's scalability under heavy loads.",
+                    "[Senior Developer] Implemented a robust and scalable WordPress setup with a focus on performance and maintainability.",
+                    "[Senior Developer] Collaborated closely with the CEO during a comprehensive site migration to Amazon Web Services.",
+                    "[Senior Developer] Took active part in technology roadmapping and strategic discussions."
+                ],
+                "technologies": [
+                    "Python",
+                    "API",
+                    "WordPress",
+                    "JavaScript",
+                    "PHP",
+                    "Git via Github",
+                    "Docker",
+                    "AWS EC2",
+                    "MySQL",
+                    "Flask",
+                    "Node.js",
+                    "Redis",
+                    "Nginx",
+                    "CSS",
+                    "PostgresSQL",
+                    "AWS Lambda",
+                    "AWS S3",
+                    "AWS RDS",
+                    "AWS API Gateway",
+                    "AWS Route53",
+                    "AWS Aurora",
+                    "Cloudflare",
+                    "AWS CloudFront",
+                    "AWS Code Pipeline",
+                    "Vue.js"
+                ]
+            }
+        ]
+    },
+    "recommendationsSection": {
+        "title": "Recommendations",
+        "moreRecommendationsLink": "https://branndon.dev/linkedin",
+        "recommendations": [
+            {
+                "name": "Kyle Taylor",
+                "position": "CEO",
+                "company": "The Penny Hoarder",
+                "linkedin": "https://www.linkedin.com/in/kylebradleytaylor",
+                "description": [
+                    "I've been lucky enough to work alongside Branndon for nearly two years now and while he's always been a pleasure to work with, I feel like this year in particular has brought about a huge transformation. He has a growing confidence in his skills and abilities and it's been such a pleasure to watch him realize his own talent."
+                ]
+            },
+            {
+                "name": "Stephen McDermott",
+                "position": "IT Director",
+                "company": "The Penny Hoarder",
+                "linkedin": "https://linkedin.com/in/stephencmcdermott",
+                "description": [
+                    "The code looks to be easily maintainable and modular. I have noticed that when creating deliverables, regression testing is relatively isolated. A poorly coded site would include multiple cross dependencies, whereas one change would result in changes across the whole system. Branndon has coded a good portion of this site and it is built well."
+                ]
+            },
+            {
+                "name": "Jennifer Franko",
+                "position": "Scrum Master II",
+                "company": "The Penny Hoarder",
+                "linkedin": "https://www.linkedin.com/in/jenniferfranko",
+                "description": [
+                    "Branndon is one of the most well rounded, patient and talented developers I have had the pleasure to work with. Branndon is always thinking of the user experience as he works on his outstanding coding. Branndon never shows signs of stress and was always able to successfully complete any tasks with favorable results despite deadline pressure. His technical skill is outstanding but he also has the ability to communicate clearly and to collaborate effectively.",
+                    "Branndon is a rare find within the development world as he is constantly furthering his knowledge and skills. He repetitively amazed me with his industry insight and original approaches to solving problems.",
+                    "Branndon always takes the time to provide technical guidance and mentorship to his fellow developers. Branndon leads by example and people find his enthusiasm and dedication both inspiring and motivating.",
+                    "Branndon is dedicated, self-motivated, methodical, and very capable. I thoroughly enjoyed working with him at The Penny Hoarder and hope that one day I will have the privilege to work with him again. He is a true Rock Star!!!"
+                ]
+            }
+        ]
+    },
+    "skillsSection": {
+        "title": "Skills & Tools",
+        "categories": [
+            {
+                "name": "Frontend",
+                "skills": [
+                    {
+                        "name": "HTML/CSS",
+                        "level": "Very Strong",
+                        "width": "99%"
+                    },
+                    {
+                        "name": "JavaScript",
+                        "level": "Very Strong",
+                        "width": "96%"
+                    },
+                    {
+                        "name": "React.js",
+                        "level": "Some Experience",
+                        "width": "85%"
+                    }
+                ]
+            },
+            {
+                "name": "Backend",
+                "skills": [
+                    {
+                        "name": "Python",
+                        "level": "Strong",
+                        "width": "95%"
+                    },
+                    {
+                        "name": "Django",
+                        "level": "Very Strong",
+                        "width": "90%"
+                    },
+                    {
+                        "name": "Node.js",
+                        "level": "Very Strong",
+                        "width": "90%"
+                    },
+                    {
+                        "name": "Docker",
+                        "level": "Strong",
+                        "width": "85%"
+                    },
+                    {
+                        "name": "Linux",
+                        "level": "Good",
+                        "width": "85%"
+                    }
+                ]
+            },
+            {
+                "name": "Other",
+                "skills": [
+                    {
+                        "name": "Automation",
+                        "level": "Strong",
+                        "width": "95%"
+                    },
+                    {
+                        "name": "DevOps",
+                        "level": "Strong",
+                        "width": "90%"
+                    },
+                    {
+                        "name": "Git",
+                        "level": "Very Strong",
+                        "width": "95%"
+                    },
+                    {
+                        "name": "WordPress",
+                        "level": "Very Strong",
+                        "width": "80%"
+                    }
+                ]
+            }
+        ]
+    },
+    "funFactsSection": {
+        "title": "Fun Facts",
+        "facts": [
+            {
+                "title": "Built a Custom 4x4",
+                "time": "2005 - 2006",
+                "description": "Being a self-learner, I rebuilt an entire 4x4 truck. This project involved a complete teardown and rebuild of the engine, transmission, transfer cases, paint stripping, repainting and axles. I accomplished this without formal training, using only the early internet as my guide."
+            },
+            {
+                "title": "Lived in an RV for 3 years",
+                "time": "2012 - 2015",
+                "description": "My family and I lived in an RV for three years, traveling across the country while I worked in web development to pay the bills. This phase ended in 2015 when Kyle Taylor of The Penny Hoarder offered to relocate my family to St. Petersburg, FL, where I took on the role of Sr. Developer in-house."
+            },
+            {
+                "title": "Created my own Job",
+                "time": "2012 - 2015",
+                "description": "During meetings with a recent web client, I heard them mention the lack of on-site IT support; instead, they relied on a local vendor. As I was looking for an in-house position, I drafted a proposal highlighting the need for a web developer and the benefits of hiring me. Shortly after, they appointed me as the IT Manager. My responsibilities included onboarding new clients, creating EDI and FTP systems to exchange data with clients, and integrating legacy systems with newer PHP-based systems."
+            }
+        ]
+    }
+}

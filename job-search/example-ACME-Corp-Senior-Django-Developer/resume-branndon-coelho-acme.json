@@ -1,0 +1,187 @@
+{
+    "overviewData": {
+        "name": "Branndon Coelho",
+        "positions": [
+            "Senior Django Developer",
+            "Application Architect",
+            "Technical Lead"
+        ],
+        "imageSrc": "assets/images/branndon-coelho.jpg",
+        "socialLinks": [
+            {
+                "url": "https://branndon.dev/linkedin",
+                "icon": "fab fa-linkedin-in"
+            },
+            {
+                "url": "https://github.com/BranndonWork",
+                "icon": "fab fa-github"
+            },
+            {
+                "url": "https://branndon.dev/",
+                "icon": "fas fa-globe"
+            },
+            {
+                "url": "mailto:resume@branndon.dev",
+                "icon": "fas fa-envelope"
+            }
+        ]
+    },
+    "summarySection": {
+        "title": "Professional Summary",
+        "summary": "Senior Django Developer with 15+ years architecting scalable web applications and high-transaction systems. Expert in server-driven UI implementation, GDPR compliance, and application performance optimization. Proven track record optimizing performance to sub-1 second load times while mentoring development teams."
+    },
+    "aboutSection": {
+        "title": "Core Qualifications",
+        "descriptions": [
+            "Senior <strong>Django Developer</strong> with over 15 years of professional experience in full-stack development and team leadership. Led technical initiatives optimizing site performance from <strong>2.7 seconds to 0.89</strong> and designing <strong>machine learning-based email content recommendation system</strong>.",
+            "Currently at <strong>Headspace</strong>, specializing in <strong>Django-based application development</strong> with focus on <strong>scalable</strong> and <strong>security-focused software architecture</strong>. Expert in <strong>server-driven UI patterns</strong>, <strong>GDPR/CCPA compliance</strong>, and <strong>RESTful API design</strong>."
+        ],
+        "strengths": []
+    },
+    "experienceSection": {
+        "title": "Professional Experience",
+        "linkText": "",
+        "linkHref": "",
+        "experiences": [
+            {
+                "position": "Senior Django Developer",
+                "companyLink": "https://www.linkedin.com/company/headspace-meditation-limited/",
+                "companyName": "Headspace",
+                "time": "2022 - Present",
+                "description": [
+                    "Lead development of Django-based applications and major platform initiatives including Server-Driven UI project, where I transitioned from Python to TypeScript to help convert all mobile app display logic to server-side control. Led the onboarding flow team while ensuring GDPR compliance throughout the project lifecycle.",
+                    "Spearheaded critical projects including Headspace-Ginger platform integration, DSAR compliance for data anonymization, teen access features with guardian consent workflows, and led SMS consent migration from dual-source to single-source architecture using Braze."
+                ],
+                "achievements": [
+                    "Led team for onboarding flow conversion in company-wide Server-Driven UI initiative, learning TypeScript while ensuring GDPR compliance",
+                    "Integrated Ginger's coaching and clinical therapy services into Headspace platform post-acquisition",
+                    "Led migration from dual source of truth Django and Braze to single source system, eliminating data synchronization issues",
+                    "Implemented proper data anonymization workflows for DSAR account deletion compliance",
+                    "Developed guardian consent mechanisms and age-appropriate access controls for teen coaching services",
+                    "Championed CI/CD pipelines and TDD practices while mentoring junior engineers on Django best practices"
+                ],
+                "technologies": [
+                    "Django",
+                    "Python",
+                    "TypeScript",
+                    "JWT",
+                    "Auth0",
+                    "Docker",
+                    "Braze",
+                    "Software Architecture",
+                    "APIs",
+                    "CI/CD",
+                    "TDD",
+                    "ORM",
+                    "RESTful API",
+                    "Agile"
+                ]
+            },
+            {
+                "position": "Application Architect / Lead Developer / Senior Developer",
+                "companyLink": "https://www.thepennyhoarder.com/",
+                "companyName": "The Penny Hoarder",
+                "time": "2014 - 2020",
+                "description": [
+                    "Began at The Penny Hoarder in 2014 through a consulting agency, transitioning to a full-time role in Florida by 2015, reflecting adaptability during the company's early stages.",
+                    "Played a key role in the evolution of the IT department, starting as its sole member and subsequently contributing to the hiring of roles including IT Director, Lead Developer, DevOps Engineer, QA Lead, and Scrum Master.",
+                    "Drove the design and deployment of critical business applications, such as administrative dashboards and automated reporting. Steered the direction and execution of the entire software ecosystem."
+                ],
+                "achievements": [
+                    "Optimized site load time from 2.7 seconds to 0.89 seconds, resulting in significant cost savings and revenue increase",
+                    "Designed a machine learning-based email content recommendation system",
+                    "Assumed a lead role during emergency scenarios, deploying hotfixes and addressing production issues",
+                    "Ensured company growth in 2017/2018 by upholding coding standards and optimizing software architecture",
+                    "Contributed to the recognition of The Penny Hoarder by Inc. 500 in 2016 and 2017 as a rapidly growing private media company"
+                ],
+                "technologies": [
+                    "Python",
+                    "Django",
+                    "API",
+                    "WordPress",
+                    "JavaScript",
+                    "PHP",
+                    "Docker",
+                    "AWS EC2",
+                    "MySQL",
+                    "Flask",
+                    "Node.js",
+                    "Redis",
+                    "PostgresSQL",
+                    "AWS S3",
+                    "Cloudflare"
+                ]
+            }
+        ]
+    },
+    "skillsSection": {
+        "title": "Technical Skills",
+        "categories": [
+            {
+                "name": "Core Technologies",
+                "skills": [
+                    {
+                        "name": "Python",
+                        "level": "Strong",
+                        "width": "95%"
+                    },
+                    {
+                        "name": "Django",
+                        "level": "Very Strong",
+                        "width": "90%"
+                    },
+                    {
+                        "name": "JavaScript",
+                        "level": "Very Strong",
+                        "width": "96%"
+                    },
+                    {
+                        "name": "HTML/CSS",
+                        "level": "Very Strong",
+                        "width": "99%"
+                    }
+                ]
+            },
+            {
+                "name": "Other",
+                "skills": [
+                    {
+                        "name": "Docker",
+                        "level": "Strong",
+                        "width": "85%"
+                    },
+                    {
+                        "name": "DevOps",
+                        "level": "Strong",
+                        "width": "90%"
+                    },
+                    {
+                        "name": "Git",
+                        "level": "Very Strong",
+                        "width": "95%"
+                    },
+                    {
+                        "name": "Automation",
+                        "level": "Strong",
+                        "width": "95%"
+                    }
+                ]
+            }
+        ]
+    },
+    "funFactsSection": {
+        "title": "Notable Achievements",
+        "facts": [
+            {
+                "title": "Performance Optimization",
+                "time": "2018",
+                "description": "Reduced site load times by 68% through architectural improvements and optimization strategies"
+            },
+            {
+                "title": "Team Leadership",
+                "time": "2015-2022",
+                "description": "Led technical teams during company growth from 10 to 100+ employees"
+            }
+        ]
+    }
+}

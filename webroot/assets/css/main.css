@@ -1,0 +1,318 @@
+/* Import base styles and color theme */
+@import url('base.css');
+
+/* Override some pillar-1.css styles to use our dark theme */
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+.resume-wrapper {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background: transparent;
+}
+
+.resume-wrapper-inner {
+    background: var(--card) !important;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow) !important;
+}
+
+/* Ensure text is visible */
+.resume-body {
+    background: var(--card);
+    color: var(--text);
+}
+
+.resume-body p,
+.resume-body li,
+.resume-body div {
+    color: var(--text);
+}
+
+/* Header section */
+.resume-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.name {
+    color: var(--text) !important;
+}
+
+.title {
+    color: var(--muted);
+}
+
+/* Social links */
+.resume-social a {
+    color: var(--brand);
+}
+
+.resume-social a:hover {
+    color: var(--brand-600);
+    text-decoration: none;
+}
+
+.fa-container {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Section titles */
+.resume-section-title {
+    color: var(--text);
+    border-bottom: 2px solid var(--border);
+}
+
+/* Timeline items */
+.resume-timeline-item {
+    border-left: 2px solid var(--border);
+}
+
+.resume-timeline-item:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--card) !important;
+    border: 4px solid var(--brand) !important;
+    left: -34px;
+    top: 3px;
+}
+
+.resume-position-title {
+    color: var(--text);
+}
+
+.resume-company-name {
+    color: var(--muted);
+}
+
+.resume-company-name a {
+    color: var(--brand);
+}
+
+.resume-position-time {
+    color: var(--muted);
+}
+
+.resume-timeline-item-desc-heading {
+    color: var(--text);
+}
+
+/* Badges */
+.badge-primary {
+    background-color: var(--brand) !important;
+    color: var(--bg);
+    border: 1px solid var(--brand-600);
+}
+
+/* Progress bars */
+.progress {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+}
+
+.theme-progress-bar-dark {
+    background-color: var(--brand) !important;
+}
+
+/* Links */
+a.underline {
+    text-decoration: underline;
+    color: var(--brand);
+}
+
+.find-more {
+    color: var(--muted);
+    font-size: 0.875rem;
+    font-weight: normal;
+}
+
+/* Degree/education items */
+.resume-degree {
+    color: var(--text);
+}
+
+.resume-degree-time {
+    color: var(--muted);
+}
+
+.resume-degree-org {
+    color: var(--muted);
+}
+
+/* Additional text visibility fixes */
+.resume-skill-name {
+    color: var(--text);
+}
+
+.resume-skills-cat {
+    color: var(--text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text);
+}
+
+p {
+    color: var(--text);
+}
+
+ul li {
+    color: var(--text);
+}
+
+/* Fix recommendations section spacing */
+.recommendations-section {
+    margin-bottom: 3rem !important;
+}
+
+/* Side by side layout for Skills and Fun Facts */
+.skills-facts-container {
+    display: block;
+    clear: both;
+    margin-top: 2rem;
+}
+
+@media (min-width: 992px) {
+    .skills-facts-container {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        gap: 3rem;
+        align-items: start;
+    }
+
+    .skills-facts-container .skills-section,
+    .skills-facts-container .interests-section {
+        margin-bottom: 0 !important;
+    }
+}
+
+/* Print specific styles */
+@media print {
+    body {
+        background: white !important;
+        color: black !important;
+        font-size: 11pt;
+    }
+
+    .resume-wrapper {
+        padding: 0;
+    }
+
+    .resume-wrapper-inner {
+        background: white !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    .resume-header {
+        background: white !important;
+        border-bottom: 1px solid #dee2e6 !important;
+    }
+
+    .name {
+        color: black !important;
+    }
+
+    .title {
+        color: #6c757d !important;
+    }
+
+    .resume-social a {
+        color: #0066cc !important;
+    }
+
+    .fa-container {
+        background: transparent !important;
+        border: 1px solid #dee2e6 !important;
+    }
+
+    .resume-section-title {
+        color: black !important;
+        border-bottom: 2px solid #dee2e6 !important;
+    }
+
+    .resume-timeline-item {
+        border-left: 2px solid #dee2e6 !important;
+    }
+
+    .resume-timeline-item::before {
+        background: white !important;
+        border: 3px solid #0066cc !important;
+    }
+
+    .resume-position-title {
+        color: black !important;
+    }
+
+    .resume-company-name,
+    .resume-position-time,
+    .resume-degree-time,
+    .resume-degree-org {
+        color: #6c757d !important;
+    }
+
+    .resume-company-name a {
+        color: #0066cc !important;
+    }
+
+    .resume-timeline-item-desc-heading {
+        color: black !important;
+    }
+
+    .badge-primary {
+        background-color: #0066cc !important;
+        color: white !important;
+        border: 1px solid #0052a3 !important;
+    }
+
+    .progress {
+        display: none !important;
+    }
+
+    .print-only {
+        display: inline !important;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    a {
+        color: #0066cc !important;
+    }
+
+    .find-more {
+        color: #6c757d !important;
+    }
+
+    .resume-degree {
+        color: black !important;
+    }
+
+    /* Ensure good page breaks */
+    .resume-timeline-item {
+        page-break-inside: avoid;
+    }
+
+    .recommendations-section {
+        page-break-before: always;
+    }
+}
