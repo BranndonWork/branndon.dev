@@ -67,7 +67,7 @@
         "linkHref": "https://branndon.dev/linkedin",
         "experiences": [
             {
-                "position": "[Current Position Title - preserve exact title from original resume]",
+                "position": "[Current Position Title - preserve exact titles and role progression from original resume]",
                 "companyLink": "https://www.linkedin.com/company/headspace-meditation-limited/",
                 "companyName": "Headspace",
                 "time": "2022 - Present",
@@ -88,7 +88,7 @@
                 ]
             },
             {
-                "position": "[Previous Position - preserve full title including Lead/Architect levels]",
+                "position": "[Previous Position - preserve full title including preserving all role progression]",
                 "companyLink": "https://www.linkedin.com/company/thepennyhoarder/",
                 "companyName": "The Penny Hoarder",
                 "time": "2015 - 2022",

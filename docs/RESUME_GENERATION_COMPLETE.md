@@ -5,7 +5,7 @@
 ## Pre-Flight Checklist
 Before proceeding, confirm you understand:
 - [ ] Template location: `docs/resume-ats-template.json`
-- [ ] Skills source: Only from Engineer Profile section below
+- [ ] Skills source: Only from webroot/branndon-coelho-resume.json
 - [ ] #1 Rule: NEVER fabricate skills or experience
 - [ ] Workflow: Read ALL sections before starting
 
@@ -14,111 +14,36 @@ Before proceeding, confirm you understand:
 ### The Golden Rule
 **NEVER FABRICATE SKILLS, EXPERIENCE, OR ACHIEVEMENTS**
 - Only reorganize and emphasize existing content
-- If a job requirement doesn't match the Engineer Profile below, ignore it
+- If a job requirement doesn't match the resume JSON, ignore it
 - When in doubt, leave it out
 
 ### LLM-Specific Rules
-1. **Use ONLY language from Engineer Profile below** - Don't paraphrase or create new terms
+1. **Use ONLY language from webroot/branndon-coelho-resume.json** - Don't paraphrase or create new terms
 2. **Don't force job keywords** - Only use them if they naturally match existing experience
 3. **Respect role scope** - Use "lead", "specialize", "develop" not "architect" unless actually an architect
 4. **No buzzword inflation** - Keep technical descriptions clear and accurate
-5. **Verify everything** - For every skill added, it must exist in Engineer Profile section below
+5. **Verify everything** - For every skill added, it must exist in webroot/branndon-coelho-resume.json
 
-## Complete Engineer Profile (Source of Truth)
+## Source of Truth: Resume JSON
 
-### Overview
-- **Years of Experience**: 15+ years (2007 - Present)
-- **Current Role**: Senior Software Engineer at Headspace
-- **Specialization**: Backend Development, Python, Django, Scalable Systems
+**ALL skills, experience, and achievements must come from `webroot/branndon-coelho-resume.json`**
 
-### Technical Skills Inventory (ONLY use these)
+### How to Use the Resume JSON:
+1. **Technologies**: Extract from `technologies` arrays in each job experience
+2. **Skills**: All capabilities must be evidenced in job descriptions and achievements  
+3. **Experience**: Use `description` and `achievements` arrays for content
+4. **Time periods**: Use exact dates from `time` fields
+5. **Company details**: Use exact `companyName` and `position` titles
 
-#### Programming Languages
-- **Python** (Strong - 95%) - Primary language, 10+ years
-- **JavaScript** (Very Strong - 96%) - Full-stack development
-- **TypeScript** (Learning) - Used in SDUI project at Headspace
-- **PHP** (Experienced) - WordPress, legacy systems
-- **HTML/CSS** (Very Strong - 99%) - Frontend development
-- **SQL** (Experienced) - PostgreSQL, MySQL
+### Key Information Available:
+- **15+ years experience** (evidenced in "About" section)
+- **Current Role**: Senior Software Engineer at Headspace (2022-Present)
+- **Previous Roles**: Application Architect/Lead/Senior Developer at The Penny Hoarder, Senior Software Engineer at Webley Systems
+- **Specializations**: Backend Development, Python, Django, Scalable Systems
+- **Major Achievements**: Performance optimization (2.7s → 0.89s), ML email system, GDPR compliance, platform scaling
 
-#### Backend Technologies
-- **Django** (Very Strong - 90%) - Primary framework at Headspace
-- **Flask** (Proficient) - RESTful APIs at Webley Systems
-- **Node.js** (Very Strong - 90%) - Backend services
-- **Backend Development** - General backend architecture and design
-- **RESTful APIs** - Design and implementation
-- **ORM** - Django ORM, SQLAlchemy
-- **Software Architecture** - System design, scalability
-
-#### Databases
-- **PostgreSQL** - Production use at The Penny Hoarder
-- **MySQL** - WordPress, various projects
-- **Redis** - Caching, session management
-- **AWS RDS** - Managed database services
-- **AWS Aurora** - Scalable database solutions
-- **Database Management** - Queries, optimization (not schema design focus)
-
-#### Cloud & Infrastructure
-- **AWS EC2**, **Lambda**, **S3**, **API Gateway**, **Route53**, **CloudFront**, **Code Pipeline**
-- **Cloudflare** - CDN, security
-- **Docker** (Strong - 85%) - Containerization
-- **Linux** (Good - 85%) - Server management
-- **Nginx** - Web server configuration
-
-#### AI/ML & Data
-- **Machine Learning Implementation** - Built ML-based email recommendation system
-- **AI Development Tools** - Claude Code, Cursor, ChatGPT, Google Gemini
-- **Data Processing** - Large dataset handling, ETL pipelines
-- **Computational Systems** - Complex algorithmic solutions
-
-#### Development Practices
-- **TDD**, **CI/CD**, **Git** (Very Strong - 95%)
-- **Agile Methodologies** - Scrum, Kanban
-- **Code Review** - Led weekly reviews at TPH
-- **Mentoring** - Junior developer guidance
-- **Remote Collaboration** - Async communication, distributed teams
-
-#### Authentication & Security
-- **JWT**, **Auth0**, **GDPR Compliance**, **Data Anonymization**
-
-#### Tools & Platforms
-- **WordPress** (Very Strong - 80%), **Braze**, **Jira**, **Confluence**
-- **Selenium** - Automation, testing
-
-#### Specialized Knowledge
-- **Performance Optimization** - 2.7s to 0.89s at TPH
-- **Scaling Systems** - $4M to $40M revenue growth support
-- **DevOps** (Strong - 90%), **Automation** (Strong - 95%)
-
-### Key Projects & Achievements
-
-1. **Machine Learning Email Recommendation System** (The Penny Hoarder)
-   - Designed and built entire system using Python
-   - Personalized content delivery at scale
-
-2. **Server-Driven UI Initiative** (Headspace)
-   - TypeScript, Django, React Native
-   - Led onboarding flow team, ensured GDPR compliance
-
-3. **Platform Performance Optimization** (The Penny Hoarder)
-   - 2.7 seconds → 0.89 seconds load time
-   - Cloudflare, AWS, caching strategies
-
-4. **SMS Consent Architecture Migration** (Headspace)
-   - Braze API integration, data migration
-   - Project lead role
-
-### Work History
-
-1. **Headspace** (2022-Present) - Senior Software Engineer
-2. **The Penny Hoarder** (2015-2022) - Application Architect / Lead Developer / Senior Developer
-3. **Webley Systems** (2020-2021) - Senior Software Engineer - Backend Focus
-
-### Work Contexts
-- **Startup Experience**: The Penny Hoarder ($4M→$40M scaling, 10→100+ employees)
-- **Enterprise Experience**: Headspace (millions of users globally)
-- **Remote Work**: Fully remote at Headspace and Webley Systems
-- **Leadership**: Led onboarding flow team, SMS consent migration, weekly code reviews
+### Critical Instruction:
+Before starting any resume customization, **READ the entire webroot/branndon-coelho-resume.json file** to understand available content. Only use technologies, skills, and achievements that exist in that file.
 
 ## Step-by-Step Workflow
 
@@ -148,7 +73,7 @@ Create new based on job:
 
 ### Step 4: Analyze Job Requirements
 Read job-posting.md and identify:
-- Required skills that match Engineer Profile above
+- Required skills that match webroot/branndon-coelho-resume.json
 - Years of experience needed
 - Technology stack mentioned
 - Keywords to emphasize
@@ -226,11 +151,11 @@ rm webroot/branndon-coelho-resume-ats.json
 - [ ] Read this ENTIRE document first
 - [ ] Located template at `docs/resume-ats-template.json`
 - [ ] Identified job requirements from job-posting.md
-- [ ] Mapped requirements to Engineer Profile skills above
+- [ ] Mapped requirements to skills in webroot/branndon-coelho-resume.json
 
 ### During Customization
-- [ ] Every skill exists in Engineer Profile above
-- [ ] Using exact language from Engineer Profile
+- [ ] Every skill exists in webroot/branndon-coelho-resume.json
+- [ ] Using exact language from resume JSON
 - [ ] Not forcing unmatched job keywords
 - [ ] Preserving career progression titles
 - [ ] Keeping descriptions truthful
@@ -244,7 +169,7 @@ rm webroot/branndon-coelho-resume-ats.json
 ## Common Mistakes to Avoid
 
 1. **Copying another job's resume instead of template**
-2. **Adding skills not in Engineer Profile**
+2. **Adding skills not in resume JSON**
 3. **Inflating role scope** (architect vs developer)
 4. **Creating technical nonsense** phrases
 5. **Forgetting to delete ATS file from webroot**

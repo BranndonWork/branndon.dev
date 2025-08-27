@@ -2,14 +2,14 @@
 
 ## FOR AI ASSISTANTS: Critical Rules to Prevent Resume Lies
 
-**⚠️ CONTEXT WARNING: Every fabricated skill reduces your token efficiency and degrades your reasoning ability. Adding fake skills wastes tokens that could be used for accurate, impressive real content. VERIFY EVERYTHING AGAINST ENGINEER_PROFILE.md.**
+**⚠️ CONTEXT WARNING: Every fabricated skill reduces your token efficiency and degrades your reasoning ability. Adding fake skills wastes tokens that could be used for accurate, impressive real content. VERIFY EVERYTHING AGAINST webroot/branndon-coelho-resume.json.**
 
 ## MANDATORY PRE-WORK STEP
 **BEFORE MAKING ANY CHANGES:**
-1. **READ THE ENGINEER_PROFILE.md FILE FIRST** (docs/ENGINEER_PROFILE.md)
-2. **CREATE A SKILL INVENTORY**: List every technology, skill, and experience level from Engineer Profile
-3. **JOB KEYWORD MATCHING**: Only use job keywords that match items in the Engineer Profile
-4. **WHEN IN DOUBT, LEAVE IT OUT**: If you can't find exact match in Engineer Profile, don't add it
+1. **READ THE RESUME JSON FILE FIRST** (webroot/branndon-coelho-resume.json)
+2. **CREATE A SKILL INVENTORY**: List every technology, skill, and experience level from resume JSON
+3. **JOB KEYWORD MATCHING**: Only use job keywords that match items in the resume JSON
+4. **WHEN IN DOUBT, LEAVE IT OUT**: If you can't find exact match in resume JSON, don't add it
 
 ### RULE 1: Use ONLY Original Resume Language
 - **DO**: Copy exact phrases from original resume
@@ -23,11 +23,11 @@
 - **Example**: Job mentions "computational expression generation" but resume has no similar work → DON'T add it
 - **Instead**: Emphasize what actually matches (Python, Django, backend systems)
 
-### RULE 2.5: NEVER ADD SKILLS NOT EXPLICITLY IN ENGINEER PROFILE
-- **CRITICAL**: Before adding ANY skill/technology, find it in ENGINEER_PROFILE.md first
-- **Example of VIOLATION**: Job wants "data modeling" → Engineer Profile has PostgreSQL but NO "data modeling" → DON'T ADD IT
-- **Example of GOOD**: Job wants "machine learning" → Engineer Profile has "Machine Learning Implementation" → CAN add it
-- **VERIFICATION REQUIRED**: For every skill added, cite exact section from Engineer Profile
+### RULE 2.5: NEVER ADD SKILLS NOT EXPLICITLY IN RESUME JSON
+- **CRITICAL**: Before adding ANY skill/technology, find it in webroot/branndon-coelho-resume.json first
+- **Example of VIOLATION**: Job wants "data modeling" → Resume has PostgreSQL but NO "data modeling" → DON'T ADD IT
+- **Example of GOOD**: Job wants "machine learning" → Resume has "Machine Learning" in technologies → CAN add it
+- **VERIFICATION REQUIRED**: For every skill added, cite exact location from resume JSON
 
 ### RULE 3: Respect Role Scope Accurately
 - **Original**: "specializing in Django-based application development"
@@ -57,18 +57,18 @@
 - **Scope creep**: Don't make individual contributors sound like they managed everything
 
 ### RULE 7: Safe Customization Approach
-1. Read ENGINEER_PROFILE.md completely first
-2. Identify EXACT phrases that match job requirements from the Profile
+1. Read webroot/branndon-coelho-resume.json completely first
+2. Identify EXACT phrases that match job requirements from the resume JSON
 3. Reorder/emphasize those existing phrases
 4. Move relevant technologies to top of lists
 5. NEVER add new claims or inflate existing ones
-6. If job requirement doesn't match Engineer Profile, ignore it rather than fake it
+6. If job requirement doesn't match resume JSON, ignore it rather than fake it
 
 ### RULE 8: MANDATORY VERIFICATION BEFORE FINALIZING
 **FOR EVERY SINGLE SKILL/TECHNOLOGY ADDED, COMPLETE THIS CHECKLIST:**
-- [ ] **FIND IN ENGINEER PROFILE**: Can I find this EXACT word/phrase in ENGINEER_PROFILE.md? (Section: ____)
-- [ ] **NO FABRICATION**: Am I adding any skills not explicitly mentioned in Engineer Profile?
-- [ ] **NO INFLATION**: Does this skill level match what's in the Engineer Profile? (Profile level: ____)
+- [ ] **FIND IN RESUME JSON**: Can I find this EXACT word/phrase in webroot/branndon-coelho-resume.json? (Section: ____)
+- [ ] **NO FABRICATION**: Am I adding any skills not explicitly mentioned in resume JSON?
+- [ ] **NO INFLATION**: Does this skill level match what's evidenced in the resume JSON?
 - [ ] **ROLE SCOPE CHECK**: Am I claiming they "architect" systems when they "work on" or "specialize in" them?
 - [ ] **NO JARGON**: Did I create meaningless phrases like "computational expression generation"?
 - [ ] **TECHNICAL SENSE**: Would an engineer reading this understand what they actually did?

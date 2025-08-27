@@ -12,7 +12,7 @@
 
 ### For Resume Generation
 **USE THIS**: `./docs/RESUME_GENERATION_COMPLETE.md`
-- Contains EVERYTHING: engineer profile, rules, workflow, templates
+- Contains EVERYTHING: comprehensive workflow, rules, templates
 - Do NOT reference other docs when using this
 
 ### For Other Documentation (Reference Only)

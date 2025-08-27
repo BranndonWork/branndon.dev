@@ -28,7 +28,7 @@
     },
     "summarySection": {
         "title": "Career Summary",
-        "summary": "Summary would go here if I had the wordsmithing abilities to write one. If you're seeing this, rock on and congratulation on being curious."
+        "summary": "Seasoned software engineer with 15+ years of experience specializing in backend development, Python, and Django frameworks. Currently leading technical initiatives at Headspace with expertise in scalable systems, team mentorship, and GDPR-compliant application architecture. Proven track record of optimizing performance, implementing machine learning systems, and scaling teams from startup to enterprise environments."
     },
     "aboutSection": {
         "title": "About Branndon",
@@ -73,22 +73,25 @@
                 "time": "2022 - Present",
                 "description": [
                     "Lead development of Django-based applications and major platform initiatives including Server-Driven UI project, where I transitioned from Python to TypeScript to help convert all mobile app display logic to server-side control. Led the onboarding flow team while ensuring GDPR compliance throughout the project lifecycle.",
-                    "Architected complex backend integrations including Headspace-Ginger platform merger, designed sophisticated data modeling for DSAR compliance and data anonymization systems. Built guardian consent workflows processing large datasets and led SMS architecture migration eliminating dual-source synchronization issues.",
-                    "Lead technical decisions while mentoring engineers in Django best practices and system architecture. Design RESTful APIs for complex environments while promoting code quality and performance optimization across cross-functional teams."
+                    "Supported Headspace-Ginger platform merger project integration combining Headspace meditation app with Ginger's coaching and clinical therapy services. Extended platform to allow teenagers access to coaching services with guardian consent mechanisms. Built guardian consent workflows and led SMS architecture migration using Braze API integration, eliminating dual-source synchronization issues.",
+                    "Lead technical decisions while mentoring engineers in Django best practices and system architecture. Design RESTful APIs for complex environments while promoting code quality and performance optimization across cross-functional teams. Implemented GDPR compliance workflows and data anonymization for DSAR requests while integrating AI development tools (Claude Code, ChatGPT, Cursor) into team workflows and development processes."
                 ],
                 "achievements": [
                     "Led team for onboarding flow conversion in company-wide Server-Driven UI initiative, learning TypeScript while ensuring GDPR compliance",
-                    "Architected backend systems integration merging coaching and clinical therapy services into Headspace platform post-acquisition",
-                    "Architected data migration from dual-source to single-source architecture, eliminating synchronization issues and improving system reliability",
+                    "Collaborated with cross-functional teams to integrate coaching and clinical therapy services into Headspace platform post-acquisition",
+                    "Project lead for SMS consent architecture migration from dual-source to single-source using Braze API integration, eliminating synchronization issues and improving system reliability",
                     "Implemented proper data anonymization workflows for DSAR account deletion compliance",
-                    "Developed guardian consent mechanisms and age-appropriate access controls for teen coaching services",
-                    "Championed CI/CD pipelines and TDD practices while mentoring junior engineers on Django best practices"
+                    "Extended platform capabilities for Ginger For Teens project, developing guardian consent mechanisms and age-appropriate access controls for teen coaching services"
                 ],
                 "technologies": [
                     "Python",
                     "Django",
                     "Backend Development",
                     "AI Development Tools",
+                    "Claude Code",
+                    "Cursor",
+                    "ChatGPT",
+                    "Google Gemini",
                     "JWT",
                     "Auth0",
                     "Docker",
@@ -102,10 +105,15 @@
                     "Software Architecture",
                     "APIs",
                     "CI/CD",
-                    "TDD",
                     "ORM",
                     "RESTful API",
-                    "Agile"
+                    "Agile",
+                    "TypeScript",
+                    "Node.js",
+                    "GDPR Compliance",
+                    "Data Anonymization",
+                    "PostgreSQL",
+                    "Colima"
                 ]
             },
             {
@@ -114,7 +122,7 @@
                 "companyName": "Webley Systems",
                 "time": "2020 - 2021",
                 "description": [
-                    "Spearheaded the development of a scalable backend infrastructure at Webley Systems, utilizing Python's advanced features like decorators and context managers. Employing Flask for our RESTful API, I architected an AWS-integrated backend to handle streaming video compilation. Collaborating within a high-caliber team, I honed my skills in Test Driven Development, Python Unittest, and seamlessly interfaced a Single Page Application (SPA) frontend using React with our Python backend."
+                    "Spearheaded the development of a scalable backend infrastructure at Webley Systems, utilizing Python's advanced features like decorators and context managers. Employing Flask for RESTful API development, I architected an AWS-integrated backend to handle streaming video compilation. Collaborating within a high-caliber team, I embraced Test Driven Development principles and Python unittest framework while seamlessly interfacing a Single Page Application (SPA) frontend using React with our Python backend."
                 ],
                 "achievements": [
                     "Achieved proficiency in Flask and embraced TDD principles through dedicated training sessions.",
@@ -123,11 +131,10 @@
                     "Autonomously designed a standalone API infrastructure leveraging AWS services like Lambda, API Gateway, and ALB. This system adeptly managed fragmented video segments, amalgamating them to deliver cohesive streaming content to end-users."
                 ],
                 "technologies": [
-                    "API",
                     "Python",
                     "Flask",
                     "TDD",
-                    "Slack",
+                    "RESTful API",
                     "Selenium",
                     "Git via Github",
                     "AWS EC2",
@@ -137,8 +144,10 @@
                     "AWS Route53",
                     "JavaScript",
                     "CSS",
-                    "Decorators",
-                    "Context Managers"
+                    "Python Decorators",
+                    "Context Managers",
+                    "Python Unittest",
+                    "React"
                 ]
             },
             {
@@ -153,19 +162,18 @@
                     "Contributed to team growth by leading weekly code reviews, mentoring developers, and collaborating with both executive staff and project management to align technical and business goals."
                 ],
                 "achievements": [
-                    "[Application Architect] Optimized site load time from 2.7 seconds to 0.89 seconds, resulting in significant cost savings and revenue increase.",
-                    "[Application Architect] Designed a machine learning-based email content recommendation system.",
-                    "[Application Architect] Assumed a lead role during emergency scenarios, deploying hotfixes and addressing production issues.",
-                    "[Application Architect] Ensured company growth in 2017/2018 by upholding coding standards and optimizing software architecture.",
-                    "[Lead Developer] Contributed to the recognition of The Penny Hoarder by Inc. 500 in 2016 and 2017 as a rapidly growing private media company.",
-                    "[Lead Developer] Oversaw a significant site performance initiative, transitioning from AWS Cloudfront to Cloudflare, enhancing the site's scalability under heavy loads.",
-                    "[Senior Developer] Implemented a robust and scalable WordPress setup with a focus on performance and maintainability.",
-                    "[Senior Developer] Collaborated closely with the CEO during a comprehensive site migration to Amazon Web Services.",
-                    "[Senior Developer] Took active part in technology roadmapping and strategic discussions."
+                    "[Application Architect] Optimized site load time from 2.7 seconds to 0.89 seconds, resulting in significant cost savings and revenue increase",
+                    "[Application Architect] Designed and built machine learning-based email content recommendation system for personalized content delivery at scale",
+                    "[Application Architect] Contributed to company growth from $4M to $40M annual revenue while scaling technical team from 10 to 100+ employees",
+                    "[Application Architect] Assumed a lead role during emergency scenarios, deploying hotfixes and addressing production issues",
+                    "[Lead Developer] Contributed to the recognition of The Penny Hoarder by Inc. 500 in 2016 and 2017 as a rapidly growing private media company",
+                    "[Lead Developer] Oversaw a significant site performance initiative, transitioning from AWS Cloudfront to Cloudflare, enhancing the site's scalability under heavy loads",
+                    "[Senior Developer] Implemented a robust and scalable WordPress setup with a focus on performance and maintainability",
+                    "[Senior Developer] Collaborated closely with the CEO during a comprehensive site migration to Amazon Web Services"
                 ],
                 "technologies": [
                     "Python",
-                    "API",
+                    "Machine Learning",
                     "WordPress",
                     "JavaScript",
                     "PHP",
@@ -178,7 +186,7 @@
                     "Redis",
                     "Nginx",
                     "CSS",
-                    "PostgresSQL",
+                    "PostgreSQL",
                     "AWS Lambda",
                     "AWS S3",
                     "AWS RDS",
@@ -188,7 +196,8 @@
                     "Cloudflare",
                     "AWS CloudFront",
                     "AWS Code Pipeline",
-                    "Vue.js"
+                    "Vue.js",
+                    "Performance Optimization"
                 ]
             }
         ]
@@ -225,86 +234,6 @@
                     "Branndon is a rare find within the development world as he is constantly furthering his knowledge and skills. He repetitively amazed me with his industry insight and original approaches to solving problems.",
                     "Branndon always takes the time to provide technical guidance and mentorship to his fellow developers. Branndon leads by example and people find his enthusiasm and dedication both inspiring and motivating.",
                     "Branndon is dedicated, self-motivated, methodical, and very capable. I thoroughly enjoyed working with him at The Penny Hoarder and hope that one day I will have the privilege to work with him again. He is a true Rock Star!!!"
-                ]
-            }
-        ]
-    },
-    "skillsSection": {
-        "title": "Skills & Tools",
-        "categories": [
-            {
-                "name": "Frontend",
-                "skills": [
-                    {
-                        "name": "HTML/CSS",
-                        "level": "Very Strong",
-                        "width": "99%"
-                    },
-                    {
-                        "name": "JavaScript",
-                        "level": "Very Strong",
-                        "width": "96%"
-                    },
-                    {
-                        "name": "React.js",
-                        "level": "Some Experience",
-                        "width": "85%"
-                    }
-                ]
-            },
-            {
-                "name": "Backend",
-                "skills": [
-                    {
-                        "name": "Python",
-                        "level": "Strong",
-                        "width": "95%"
-                    },
-                    {
-                        "name": "Django",
-                        "level": "Very Strong",
-                        "width": "90%"
-                    },
-                    {
-                        "name": "Node.js",
-                        "level": "Very Strong",
-                        "width": "90%"
-                    },
-                    {
-                        "name": "Docker",
-                        "level": "Strong",
-                        "width": "85%"
-                    },
-                    {
-                        "name": "Linux",
-                        "level": "Good",
-                        "width": "85%"
-                    }
-                ]
-            },
-            {
-                "name": "Other",
-                "skills": [
-                    {
-                        "name": "Automation",
-                        "level": "Strong",
-                        "width": "95%"
-                    },
-                    {
-                        "name": "DevOps",
-                        "level": "Strong",
-                        "width": "90%"
-                    },
-                    {
-                        "name": "Git",
-                        "level": "Very Strong",
-                        "width": "95%"
-                    },
-                    {
-                        "name": "WordPress",
-                        "level": "Very Strong",
-                        "width": "80%"
-                    }
                 ]
             }
         ]

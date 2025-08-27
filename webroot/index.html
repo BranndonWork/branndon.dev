@@ -27,6 +27,7 @@
     <link id="theme-style" rel="stylesheet" href="assets/css/pillar-1.css">
     <link id="custom-style" rel="stylesheet" href="assets/css/custom.css">
     <link id="main-style" rel="stylesheet" href="assets/css/main.css">
+    <link id="print-style" rel="stylesheet" href="assets/css/print.css">
     <!-- React CDN -->
     <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
@@ -103,7 +104,7 @@
                                     </div>
                                     <div className="resume-timeline-item-desc">
                                         {exp.description.map((desc, descIndex) => (
-                                            <p key={descIndex}>{desc}</p>
+                                            <p key={descIndex} dangerouslySetInnerHTML={{ __html: desc }}></p>
                                         ))}{exp.achievements && <h4 className="resume-timeline-item-desc-heading font-weight-bold">Achievements:</h4>}
                                         {exp.achievements && (() => {
                                             // Process achievements into a structured format.
@@ -131,12 +132,12 @@
                                                             <strong>{title}</strong>
                                                             <ul>
                                                                 {items.map((item, itemIndex) => (
-                                                                    <li key={itemIndex}>{item}</li>
+                                                                    <li key={itemIndex} dangerouslySetInnerHTML={{ __html: item }}></li>
                                                                 ))}
                                                             </ul>
                                                         </li>}
                                                         {title === "NoTitle" && items.map((item, itemIndex) => (
-                                                            <li key={itemIndex}>{item}</li>
+                                                            <li key={itemIndex} dangerouslySetInnerHTML={{ __html: item }}></li>
                                                         ))}
                                                     </ul>
 
@@ -189,7 +190,7 @@
                                     </div>
                                     <div className="resume-timeline-item-desc">
                                         {recommendation.description.map((desc, descIndex) => (
-                                            <p key={descIndex}>{desc}</p>
+                                            <p key={descIndex} dangerouslySetInnerHTML={{ __html: desc }}></p>
                                         ))}
                                     </div>
                                 </article>

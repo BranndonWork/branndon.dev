@@ -56,7 +56,6 @@
 #### Core Responsibilities (Ongoing)
 - End-to-end development of Django-based applications
 - Optimized ORM querying and database performance
-- Scalable middleware integration
 - Robust migration management
 - Software architecture guidance focusing on modular design, scalability, and security
 - Leading exploratory projects with CI/CD, TDD, and agile methodologies
@@ -65,7 +64,7 @@
 - Cross-functional team collaboration
 - Emphasis on DRY principles, RESTful API design, and Django-specific performance tuning
 - Staying current with Django framework enhancements
-- Integrating AI development tools into daily workflows and team processes
+- Integrating AI development tools (Claude Code, Cursor, ChatGPT, Google Gemini) into daily workflows and team processes
 
 #### Technologies Used
 - Python
@@ -81,6 +80,8 @@
 - RESTful APIs
 - Agile methodologies
 - AI development tools (Claude Code, Cursor, ChatGPT, Google Gemini)
+- Lucid Charts
+- Figma
 - Jira, Confluence, Atlassian suite
 - Asana
 - Lucid Charts

@@ -24,12 +24,12 @@ Generate a complete job application package for the specified job directory, fol
 3. **Analyze Job Requirements**:
    - Read `job-posting.md` to extract key requirements
    - Identify technologies, skills, and experience needed
-   - Map to items in ENGINEER_PROFILE.md (never fabricate)
+   - Map to items in webroot/branndon-coelho-resume.json (never fabricate)
 
 4. **Customize ATS Resume**:
    - Use MultiEdit to customize the ATS template
    - Follow LLM_RESUME_RULES.md strictly
-   - Emphasize relevant experience from ENGINEER_PROFILE.md
+   - Emphasize relevant experience from webroot/branndon-coelho-resume.json
    - Reorder technologies to match job requirements
    - Update position titles, summary, and descriptions
 
@@ -47,7 +47,7 @@ Generate a complete job application package for the specified job directory, fol
 ## Safety Rules
 
 - NEVER fabricate skills or experience
-- ONLY use content from ENGINEER_PROFILE.md
+- ONLY use content from webroot/branndon-coelho-resume.json
 - NEVER overwrite existing customized files
 - Follow exact language from original resume
 - Maintain truthful representation throughout
