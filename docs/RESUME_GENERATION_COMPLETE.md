@@ -53,6 +53,18 @@ Before proceeding, confirm you understand:
 
 Before starting any resume customization, **READ the entire webroot/branndon-coelho-resume.json file** to understand available content. Only use technologies, skills, and achievements that exist in that file.
 
+### Gap Identification and Master Resume Update
+
+**CRITICAL**: When job requirements include technologies NOT found in webroot/branndon-coelho-resume.json:
+
+1. **Stop customization process**
+2. **Ask user**: "I found these required technologies missing from your master resume: [list]. Do you have experience with these? If yes, I need to update your master resume first."
+3. **If user confirms experience**: Update webroot/branndon-coelho-resume.json with the new technologies in appropriate experience sections
+4. **If user denies experience**: Note gaps in cover letter strategy, do NOT add to resume
+5. **Resume customization only after master resume is updated**
+
+This prevents fabrication and ensures the source of truth (master resume) is complete before generating job-specific versions.
+
 ## Step-by-Step Workflow
 
 ### Step 1: Validate Prerequisites
@@ -187,6 +199,39 @@ cd scripts && poetry run python text_to_pdf.py "../job-search/[Company-JobTitle]
 -   **Descriptions**: Maximum 3 bullet points per position
 -   **Achievements**: Maximum 3 bullet points per position
 -   **Technologies**: 10 for current, 8 for previous roles
+
+### Cover Letter Limits (CRITICAL)
+
+-   **Total Length**: Maximum 3 paragraphs + greeting/closing
+-   **Paragraph 1**: Around 60 words - Personal connection to company (human, not AI corporate speak)
+-   **Paragraph 2**: Around 60 words - Most relevant technical experience match (accurate timeline/company)
+-   **Paragraph 3**: Around 60 words - Value proposition + professional call to action
+-   **Sentence Length**: Maximum 25 words per sentence
+-   **Writing Style**: Follow Buffer cover letter example - professional but conversational, no fluff or jargon
+-   **Validation**: Check for duplicate contact info, fabricated timelines, corporate buzzwords
+-   **Read complete files**: ALWAYS read entire documents - context is critical, don't use line limits unless file exceeds tool capacity
+
+### Cover Letter Writing Style Guide
+
+**Reference Example**: `job-search/Buffer-Senior-Product-Engineer-Backend/cover-letter.txt`
+
+**Language Characteristics:**
+-   **Direct and clear**: "I've been following what you folks are building" - straightforward, no unnecessary words
+-   **Specific details**: "67% performance improvement" not "significant improvements"  
+-   **Professional but human**: "I'm genuinely curious" not "I am excited to leverage synergies"
+-   **Technical without jargon**: "enhanced our Hapi API system with server-driven UI capabilities" - precise but accessible
+-   **Natural transitions**: "This experience building scalable content systems seems like a natural fit"
+-   **No buzzwords**: Avoid "passionate," "innovative," "cutting-edge," "synergistic," etc.
+-   **No casual slang**: Professional tone without being overly informal
+-   **Action-oriented**: "I'd love to discuss" not "I would be honored to have the opportunity to potentially explore"
+
+**What to Avoid:**
+-   Corporate buzzword salad ("leverage core competencies to drive innovative solutions")
+-   Overly casual language ("Hey there!" or "Sounds like fun!" or "Let's chat!")  
+-   AI "thing" pattern ("That transparency thing, refreshing" - dismissive and robotic)
+-   Redundant phrases ("in order to," "at this point in time")
+-   Vague achievements ("improved performance significantly")
+-   Generic enthusiasm ("thrilled about this amazing opportunity")
 
 ### Sections to Remove
 
