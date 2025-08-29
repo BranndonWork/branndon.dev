@@ -4,7 +4,8 @@
       "Bash(mkdir:*)",
       "Bash(poetry run python:*)",
       "Bash(cp:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(./scripts/server.sh:*)"
     ],
     "deny": [],
     "ask": []

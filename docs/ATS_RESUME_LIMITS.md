@@ -66,11 +66,11 @@ To ensure job application resumes stay within 2-3 pages, follow these strict lim
   - "10 to 100+ employees" (scaling)
 
 ## Template Structure
-Use `docs/resume-ats-template.json` as starting point:
+Use `docs/templates/resume-ats-template.json` as starting point:
 
 ```bash
 # Copy template
-cp docs/resume-ats-template.json job-search/[Company-Role]/resume-branndon-coelho-[company]-ats.json
+cp docs/templates/resume-ats-template.json job-search/[Company-Role]/resume-branndon-coelho-[company]-ats.json
 
 # Customize using MultiEdit
 

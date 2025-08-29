@@ -11,3 +11,8 @@ webroot/*-ats.json
 # Python dependencies
 poetry.lock
 
+# Development server logs and PIDs
+dev.log
+*.pid
+*.log
+
