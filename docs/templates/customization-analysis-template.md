@@ -1,47 +1,43 @@
 # Customization Analysis: [Company Name] - [Position Title]
 
-**PURPOSE: Complete this FIRST before any resume/cover letter work. This analysis drives all customization decisions.**
+**PURPOSE: Quick resume customization strategy. Detailed job analysis is in job-application.yaml**
 
-## Step 1: Job Posting Analysis
+## Resume Customization Strategy
 
-### Core Requirements (from job posting)
-- [ ] [Requirement 1 - exact language from posting]
-- [ ] [Requirement 2 - exact language from posting]  
-- [ ] [Requirement 3 - exact language from posting]
-- [ ] [Additional requirements as found]
+### Keywords to Emphasize (from job-application.yaml tech_stack)
 
-### My Matching Experience (from webroot/branndon-coelho-resume.json)
-- [Requirement 1]: [Specific experience/achievement that matches]
-- [Requirement 2]: [Specific experience/achievement that matches]
-- [Requirement 3]: [Specific experience/achievement that matches]
+**Technologies to bold with `<strong>` tags:**
 
-### Keywords to Incorporate
-**Extract exact terms from job posting:**
-- Technologies: [Python, Django, etc.]
-- Methodologies: [Agile, TDD, CI/CD, etc.]
-- Business terms: [scalable, enterprise, SaaS, etc.]
-- Soft skills: [mentoring, leadership, collaboration, etc.]
+- [Primary tech from YAML]
+- [Secondary tech from YAML]
+- [Key methodologies from YAML]
 
-### Gap Analysis
-**Requirements I DON'T have (be honest):**
-- [Requirement I cannot claim]
-- [Technology I haven't used]
+### Match Rate Assessment
+
+- **Strong matches** (emphasize these): [List from YAML my_match.strengths]
+- **Learning opportunities** (acknowledge honestly): [From YAML learning_opportunities]
+- **Overall match confidence**: [High/Medium/Low - explain why]
 
 ## Step 2: Customization Strategy
 
 ### Resume Position Titles Strategy
+
 **Which titles to emphasize based on job requirements:**
+
 - Position 1: [e.g., "Senior Software Engineer" or "Python Developer"]
 - Position 2: [Secondary title if relevant]
 - Position 3: [Third title if needed]
 
 ### Professional Summary Plan (2-3 sentences)
+
 **Key elements to include:**
+
 - Opening: [Years experience + primary skill match]
 - Middle: [Most relevant achievement/metric]
 - Closing: [Current expertise that matches their needs]
 
 ### Experience Section Focus
+
 **What to emphasize for each role:**
 
 1. **Headspace (Current)**
@@ -49,7 +45,7 @@
    - Achievements to highlight: [Which ones match their needs]
    - Technologies to list first: [Most relevant to job]
 
-2. **The Penny Hoarder**  
+2. **The Penny Hoarder**
    - Emphasize: [What aspects match this job]
    - Achievements to highlight: [Most relevant metrics]
    - Technologies to list first: [Job-relevant ones]
@@ -59,11 +55,13 @@
 ## Step 3: Cover Letter Strategy
 
 ### Opening Hook Plan
+
 - **Their biggest need**: [What problem are they trying to solve?]
 - **My matching solution**: [Specific experience that solves it]
 - **Opening line idea**: [Draft your hook]
 
 ### Body Paragraph Planning
+
 1. **Paragraph 1 - Direct Match**
    - Their need: [Primary requirement]
    - My proof: [Specific achievement/experience]
@@ -80,24 +78,28 @@
    - Growth/leadership angle: [If relevant]
 
 ### Closing Strategy
+
 - Call to action: [How you'll end]
 - Enthusiasm element: [Why this company specifically]
 
 ## Step 4: Pre-Implementation Checklist
 
 ### Verification Against Source
+
 - [ ] Read webroot/branndon-coelho-resume.json completely
 - [ ] Every skill I'm claiming exists in the source
 - [ ] Every achievement I'm using is real
 - [ ] No fabrications or exaggerations
 
 ### ATS Optimization Check
+
 - [ ] Keywords naturally integrated (not forced)
 - [ ] Match rate estimate: [%]
 - [ ] HTML formatting plan (<strong> tags): [Where to use]
 - [ ] Length will be 2-3 pages maximum
 
 ### Final Review
+
 - [ ] Strategy aligns with actual experience
 - [ ] Customizations are truthful reorganizations
 - [ ] Plan addresses their core needs

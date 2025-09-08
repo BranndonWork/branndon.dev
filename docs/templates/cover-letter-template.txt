@@ -1,4 +1,4 @@
-Dear Hiring Manager,
+Dear [Company] Hiring Team,
 
 [Opening hook - immediately address their main need with your matching experience]
 
@@ -6,9 +6,10 @@ Dear Hiring Manager,
 
 [Body paragraph 2 - NEVER FABRICATE EXPERIENCE - Discuss current role and how it prepares you for this position. Mention specific technologies and methodologies they're looking for that you currently use.]
 
-[Body paragraph 3 - NEVER FABRICATE EXPERIENCE - Highlight leadership, mentoring, or scaling experience if relevant to the role. Connect your past achievements to their current challenges.]
+[Body paragraph 3 - NEVER FABRICATE EXPERIENCE - Highlight leadership, mentoring, or scaling experience if relevant to the role. Connect your past achievements to their current challenges. END WITH NATURAL CALL TO ACTION:
 
-[Closing paragraph - NEVER FABRICATE EXPERIENCE - Express genuine interest in the company/role and why you're excited about this opportunity. Include a call to action.]
+❌ AVOID CRINGY AI LANGUAGE: "I'd welcome the opportunity to discuss", "proven track record", "contribute to your continued success", "Can we chat"
+✅ USE CONFIDENT, ENTHUSIASTIC LANGUAGE: "I'm excited about...", "I'd love to chat about how my experience with [specific tech/challenge] fits your needs", "This role is exactly what I'm looking for because..."]
 
 Sincerely,
 Branndon Coelho

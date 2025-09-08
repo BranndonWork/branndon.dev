@@ -5,7 +5,12 @@
       "Bash(poetry run python:*)",
       "Bash(cp:*)",
       "WebSearch",
-      "Bash(./scripts/server.sh:*)"
+      "Bash(./scripts/server.sh:*)",
+      "WebFetch(domain:www.glassdoor.com)",
+      "Read(//Volumes/Home/Documents/job-search-2025/data/jobs/**)",
+      "Read(//Volumes/Storage/Dropbox/web-development/tph/machine-learning/suggested-for-you/**)",
+      "Read(//Volumes/Storage/Dropbox/web-development/tph/**)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []

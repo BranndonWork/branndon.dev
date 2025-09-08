@@ -16,3 +16,11 @@ dev.log
 *.pid
 *.log
 
+# Temporary research reports
+data/research/
+
+# Python cache and bytecode
+__pycache__/
+*.pyc
+*.pyo
+

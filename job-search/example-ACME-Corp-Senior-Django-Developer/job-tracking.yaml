@@ -1,0 +1,116 @@
+# Job Tracking - ACME Corp Senior Django Developer (Example/Practice Job)
+# This tracks job application data for AI/system use
+# Human-readable content (company research, interview prep) stays in separate .md files
+
+job_id: "ACM-2024-SR-DJANGO-001"
+status: "practice" # Example/practice job for resume system testing
+company: "ACME Corporation (Fictional)"
+title: "Senior Django Developer"
+location: "Remote (US)"
+level: "Senior level"
+resume_score: 0 # No scoring for practice job
+linkedin_url: "[LinkedIn job URL if available]"
+
+application_timeline:
+  scraped: "2024-11-15"
+  imported: "2024-11-15"
+  applied: "2024-11-20" # Practice application
+  response_deadline: "[YYYY-MM-DD or TBD]"
+
+job_details:
+  tech_stack:
+    - "Django"
+    - "Python"
+    - "E-commerce"
+    - "PHP Migration"
+    - "PostgreSQL"
+    - "Redis"
+    - "REST APIs"
+    - "Server-Driven UI"
+    - "Docker"
+    - "AWS"
+
+  key_requirements: |
+    Design and develop scalable Django applications for e-commerce platform.
+    Lead migration from legacy PHP systems to modern Python/Django architecture.
+    Implement server-driven UI patterns for mobile applications.
+    Ensure sub-1 second page load times through performance optimization.
+    Build robust REST APIs for third-party integrations (payments, shipping).
+    Implement GDPR and CCPA compliance across data handling systems.
+    Senior-level Django expertise with e-commerce platform experience.
+    Experience with legacy system migrations and performance optimization.
+
+  compensation:
+    salary_range: "$160,000 - $200,000" # From job posting
+    benefits: |
+      Remote work flexibility (US-based)
+      Comprehensive health, dental, and vision insurance
+      401(k) with 6% company match
+      Unlimited PTO policy
+      $3,000 annual learning and development budget
+      Top-tier equipment and home office setup
+      Stock options in established company (since 1946)
+      Mission-critical e-commerce platform work"
+
+my_match:
+  strengths:
+    - "15+ years Django architecture experience with scalable applications"
+    - "Direct PHP-to-Django migration experience at The Penny Hoarder"
+    - "Performance optimization expertise (2.7s to 0.89s) exceeding sub-1s goal"
+    - "Server-Driven UI implementation at Headspace matches mobile requirements"
+    - "GDPR and CCPA compliance experience with data handling systems"
+    - "E-commerce platform development supporting $4M to $40M revenue growth"
+    - "Third-party payment and API integration experience"
+    - "Current Django work at Headspace demonstrates ongoing expertise"
+
+  learning_opportunities:
+    - "ACME's specific e-commerce domain and product catalog"
+    - "Legacy PHP system architecture understanding"
+    - "Modern e-commerce payment and shipping integrations"
+    - "High-transaction-volume system optimization"
+    - "Fictional company operations (practice scenario only)"
+
+company_research:
+  file: "./company-research-report.md"
+  summary: "[Brief summary - detailed research in external file]"
+
+application_materials:
+  resume_pdf: "Not generated (practice job)"
+  cover_letter_pdf: "Not generated (cover-letter.md exists)"
+  ats_resume_json: "./resume-branndon-coelho-acme.json"
+
+cover_letter_approach: |
+  Emphasize Django expertise and PHP-to-Django migration experience.
+  Highlight performance optimization achievements (2.7s to 0.89s).
+  Connect server-driven UI work at Headspace to mobile app requirements.
+  Show GDPR/CCPA compliance experience for data handling systems.
+  Reference e-commerce scaling experience supporting revenue growth.
+
+cover_letter_file: "./cover-letter.txt"
+
+notes: |
+  PRACTICE/EXAMPLE JOB - ACME Corporation is fictional company used for resume system testing.
+  Contains realistic technical requirements and detailed job posting content.
+  Generated cover letter (markdown format) and ATS resume JSON for practice.
+  Demonstrates Django expertise and technical writing capabilities.
+  Not a real job application - used for system development and testing.
+
+follow_up:
+  next_action: "N/A - Practice job only"
+  check_date: "N/A"
+  backup_plan: "N/A - Fictional company"
+
+interview_prep:
+  file: "./interview-prep.md"
+  summary: "Practice Django role for resume system testing, fictional ACME Corp"
+
+decision_factors:
+  pros:
+    - "[Positive aspect 1]"
+    - "[Positive aspect 2]"
+
+  cons:
+    - "[Concern 1]"
+    - "[Concern 2]"
+
+  verdict: "N/A - Practice job for resume generation system development and testing"

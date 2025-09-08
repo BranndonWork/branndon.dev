@@ -1,263 +1,361 @@
 {
-    "overviewData": {
-        "name": "Branndon Coelho",
-        "positions": [
-            "Application Architect",
-            "Techinical Lead",
-            "Senior Software Engineer"
+  "overviewData": {
+    "name": "Branndon Coelho",
+    "positions": ["Chief Digital Officer", "Application Architect", "Senior Software Engineer"],
+    "imageSrc": "assets/images/branndon-coelho.jpg",
+    "socialLinks": [
+      {
+        "url": "https://branndon.dev/linkedin",
+        "icon": "fab fa-linkedin-in"
+      },
+      {
+        "url": "https://github.com/BranndonWork",
+        "icon": "fab fa-github"
+      },
+      {
+        "url": "https://branndon.dev/",
+        "icon": "fas fa-globe"
+      },
+      {
+        "url": "mailto:resume@branndon.dev",
+        "icon": "fas fa-envelope"
+      }
+    ]
+  },
+  "summarySection": {
+    "title": "Career Summary",
+    "summary": "Seasoned software engineer with 15+ years of experience specializing in backend development, Python, Django frameworks, and LLM applications. Currently serving as Chief Digital Officer at SpecialNeeds.com, architecting production LLM systems with Langchain, while leading technical initiatives at Headspace. Proven track record of building AI-powered applications, implementing machine learning systems, Single Page Applications with WebSocket backends, optimizing performance, and scaling teams from startup to enterprise environments."
+  },
+  "aboutSection": {
+    "title": "About Branndon",
+    "descriptions": [
+      "Seasoned software engineer with over 15 years of professional experience in full-stack development and team leadership. Led technical initiatives at The Penny Hoarder from startup to recognized media platform, orchestrating critical business applications, optimizing site performance from 2.7 seconds to 0.89, designing a machine learning-based email content recommendation system, and building a production Single Page Application job portal with Node.js WebSocket backend and automated testing.",
+      "Currently at Headspace, specializing in Django-based application development with focus on scalable and security-focused software architecture. Responsibilities include mentoring junior engineers, guiding software architecture decisions, and ensuring adherence to industry best practices while staying current with Django framework enhancements.",
+      "Contributed to transforming a startup from $4 million to $40 million in annual revenue while scaling technical teams from 10 to over 100 employees. Committed to continuous learning and adaptability, leveraging strategic and activator strengths to deliver results in fast-paced environments."
+    ],
+    "strengths": [
+      {
+        "title": "Strategic - naturally spots patterns and alternative pathways to solutions",
+        "link": "https://www.gallup.com/cliftonstrengths/en/252350/strategic-theme.aspx"
+      },
+      {
+        "title": "Activator - naturally takes initiative and makes things happen quickly",
+        "link": "https://www.gallup.com/cliftonstrengths/en/252140/activator-theme.aspx"
+      },
+      {
+        "title": "Individualization - notices unique qualities and tailors approach accordingly",
+        "link": "https://www.gallup.com/cliftonstrengths/en/252272/individualization-theme.aspx"
+      },
+      {
+        "title": "Achiever - driven by constant accomplishment and works with stamina",
+        "link": "https://www.gallup.com/cliftonstrengths/en/252134/achiever-theme.aspx"
+      },
+      {
+        "title": "Adaptability - able to switch gears quickly when priorities change",
+        "link": "https://www.gallup.com/cliftonstrengths/en/252146/adaptability-theme.aspx"
+      }
+    ],
+    "source": "https://www.gallup.com/cliftonstrengths/en/252137/home.aspx"
+  },
+  "experienceSection": {
+    "title": "Work Experience",
+    "linkText": "Work experience dating back to 2007:",
+    "linkHref": "https://branndon.dev/linkedin",
+    "experiences": [
+      {
+        "position": "Chief Digital Officer",
+        "companyLink": "https://www.specialneeds.com/about/",
+        "companyName": "SpecialNeeds.com",
+        "time": "2023 - Present",
+        "description": [
+          "Architected and built comprehensive special needs resource platform. Developed Django backend with Next.js frontend utilizing Cloudflare Workers for caching and R2 for asset management. Created LLM-powered content generation system using Langchain connectors for automated content research, summarization, and standardization.",
+          "Designed and implemented virtual author system leveraging multiple LLM providers for content creation, data ETL processes for resource standardization, and custom API endpoints for summary generation and content research. Built scalable infrastructure supporting directory listings, messaging features, and community engagement tools.",
+          "Architected production LLM applications including content generation workflows, automated data processing pipelines, and image generation systems. Integrated AI capabilities throughout the platform to automate content management processes."
         ],
-        "imageSrc": "assets/images/branndon-coelho.jpg",
-        "socialLinks": [
-            {
-                "url": "https://branndon.dev/linkedin",
-                "icon": "fab fa-linkedin-in"
-            },
-            {
-                "url": "https://github.com/BranndonWork",
-                "icon": "fab fa-github"
-            },
-            {
-                "url": "https://branndon.dev/",
-                "icon": "fas fa-globe"
-            },
-            {
-                "url": "mailto:resume@branndon.dev",
-                "icon": "fas fa-envelope"
-            }
-        ]
-    },
-    "summarySection": {
-        "title": "Career Summary",
-        "summary": "Seasoned software engineer with 15+ years of experience specializing in backend development, Python, and Django frameworks. Currently leading technical initiatives at Headspace with expertise in scalable systems, team mentorship, and GDPR-compliant application architecture. Proven track record of optimizing performance, implementing machine learning systems, and scaling teams from startup to enterprise environments."
-    },
-    "aboutSection": {
-        "title": "About Branndon",
-        "descriptions": [
-            "Seasoned <strong>software engineer</strong> with over 15 years of professional experience in full-stack development and team leadership. Led technical initiatives at <strong>The Penny Hoarder</strong> from startup to recognized media platform, orchestrating <strong>critical business applications</strong>, optimizing site performance from <strong>2.7 seconds to 0.89</strong>, and designing a <strong>machine learning-based email content recommendation system</strong>.",
-            "Currently at <strong>Headspace</strong>, specializing in <strong>Django-based application development</strong> with focus on <strong>scalable</strong> and <strong>security-focused software architecture</strong>. Responsibilities include <strong>mentoring junior engineers</strong>, guiding software architecture decisions, and ensuring adherence to industry best practices while staying current with <strong>Django framework enhancements</strong>.",
-            "Contributed to transforming a startup from <strong>$4 million to $40 million</strong> in annual revenue while scaling technical teams from 10 to over <strong>100</strong> employees. Committed to <strong>continuous learning</strong> and <strong>adaptability</strong>, leveraging strategic and activator strengths to deliver results in fast-paced environments."
+        "achievements": [
+          "Built production LLM application serving special needs community with Django backend, Next.js frontend, and Cloudflare Workers infrastructure",
+          "Developed virtual author system using Langchain connectors for automated content generation and research",
+          "Implemented data ETL pipelines with LLM-powered standardization for resource directory management",
+          "Created custom API endpoints for summary generation, content research, and image generation using multiple LLM providers"
         ],
-        "strengths": [
-            {
-                "title": "Strategic - naturally spots patterns and alternative pathways to solutions",
-                "link": "https://www.gallup.com/cliftonstrengths/en/252350/strategic-theme.aspx"
-            },
-            {
-                "title": "Activator - naturally takes initiative and makes things happen quickly",
-                "link": "https://www.gallup.com/cliftonstrengths/en/252140/activator-theme.aspx"
-            },
-            {
-                "title": "Individualization - notices unique qualities and tailors approach accordingly",
-                "link": "https://www.gallup.com/cliftonstrengths/en/252272/individualization-theme.aspx"
-            },
-            {
-                "title": "Achiever - driven by constant accomplishment and works with stamina",
-                "link": "https://www.gallup.com/cliftonstrengths/en/252134/achiever-theme.aspx"
-            },
-            {
-                "title": "Adaptability - able to switch gears quickly when priorities change",
-                "link": "https://www.gallup.com/cliftonstrengths/en/252146/adaptability-theme.aspx"
-            }
+        "technologies": [
+          "Python",
+          "Django",
+          "Next.js",
+          "LLMs",
+          "Large Language Models",
+          "Langchain",
+          "OpenAI API",
+          "Claude API",
+          "Content Generation",
+          "Data ETL",
+          "Cloudflare Workers",
+          "Cloudflare R2",
+          "RESTful API",
+          "Backend Development",
+          "Frontend Development",
+          "AI Content Systems",
+          "Automated Content Research",
+          "Image Generation",
+          "Virtual Authors"
+        ]
+      },
+      {
+        "position": "Senior Software Engineer",
+        "companyLink": "https://www.linkedin.com/company/headspace-meditation-limited/",
+        "companyName": "Headspace",
+        "time": "2022 - Present",
+        "description": [
+          "Lead development of Django-based applications and major platform initiatives including Server-Driven UI project, where I transitioned from Python to TypeScript to enhance existing Node.js Hapi API system with server-driven UI capabilities, converting all mobile app display logic to server-side control. Led the onboarding flow team while ensuring GDPR compliance throughout the project lifecycle.",
+          "Supported Headspace-Ginger platform merger project integration combining Headspace meditation app with Ginger's coaching and clinical therapy services. Extended platform to allow teenagers access to coaching services with guardian consent mechanisms. Built guardian consent workflows and led SMS architecture migration using Braze API integration, eliminating dual-source synchronization issues.",
+          "Contributed to therapy intake form redesign project, breaking apart large therapy and psychiatry intake forms into streamlined onboarding and comprehensive therapy intake components. Worked on Gatsby-based YAML forms with card-driven screen architecture guided by Figma designs, and developed Django backend systems for form processing, SMS consent subscriptions, policy agreements, and user profile database updates.",
+          "Lead technical decisions while mentoring engineers in Django best practices and system architecture. Design RESTful APIs for complex environments while promoting code quality and performance optimization across cross-functional teams. Implemented GDPR compliance workflows and data anonymization for DSAR requests while integrating AI development tools (Claude Code, ChatGPT, Cursor) into team workflows and development processes."
         ],
-        "source": "https://www.gallup.com/cliftonstrengths/en/252137/home.aspx"
-    },
-    "experienceSection": {
-        "title": "Work Experience",
-        "linkText": "Work experience dating back to 2007:",
-        "linkHref": "https://branndon.dev/linkedin",
-        "experiences": [
-            {
-                "position": "Senior Software Engineer",
-                "companyLink": "https://www.linkedin.com/company/headspace-meditation-limited/",
-                "companyName": "Headspace",
-                "time": "2022 - Present",
-                "description": [
-                    "Lead development of Django-based applications and major platform initiatives including Server-Driven UI project, where I transitioned from Python to TypeScript to enhance existing Node.js Hapi API system with server-driven UI capabilities, converting all mobile app display logic to server-side control. Led the onboarding flow team while ensuring GDPR compliance throughout the project lifecycle.",
-                    "Supported Headspace-Ginger platform merger project integration combining Headspace meditation app with Ginger's coaching and clinical therapy services. Extended platform to allow teenagers access to coaching services with guardian consent mechanisms. Built guardian consent workflows and led SMS architecture migration using Braze API integration, eliminating dual-source synchronization issues.",
-                    "Lead technical decisions while mentoring engineers in Django best practices and system architecture. Design RESTful APIs for complex environments while promoting code quality and performance optimization across cross-functional teams. Implemented GDPR compliance workflows and data anonymization for DSAR requests while integrating AI development tools (Claude Code, ChatGPT, Cursor) into team workflows and development processes."
-                ],
-                "achievements": [
-                    "Led team for onboarding flow conversion in company-wide Server-Driven UI initiative, enhancing Node.js Hapi API system with TypeScript SDUI capabilities while ensuring GDPR compliance",
-                    "Collaborated with cross-functional teams to integrate coaching and clinical therapy services into Headspace platform post-acquisition",
-                    "Project lead for SMS consent architecture migration from dual-source to single-source using Braze API integration, eliminating synchronization issues and improving system reliability",
-                    "Implemented proper data anonymization workflows for DSAR account deletion compliance",
-                    "Extended platform capabilities for Ginger For Teens project, developing guardian consent mechanisms and age-appropriate access controls for teen coaching services"
-                ],
-                "technologies": [
-                    "Python",
-                    "Django",
-                    "Backend Development",
-                    "AI Development Tools",
-                    "Claude Code",
-                    "Cursor",
-                    "ChatGPT",
-                    "Google Gemini",
-                    "JWT",
-                    "Auth0",
-                    "Docker",
-                    "Braze",
-                    "Jira",
-                    "Confluence",
-                    "Atlassian",
-                    "Asana",
-                    "Lucid Charts",
-                    "Figma",
-                    "Software Architecture",
-                    "APIs",
-                    "CI/CD",
-                    "ORM",
-                    "RESTful API",
-                    "Agile",
-                    "TypeScript",
-                    "Node.js",
-                    "GDPR Compliance",
-                    "Data Anonymization",
-                    "PostgreSQL",
-                    "Colima"
-                ]
-            },
-            {
-                "position": "Senior Software Engineer - Backend Focus",
-                "companyLink": "https://www.linkedin.com/company/webley-systems",
-                "companyName": "Webley Systems",
-                "time": "2020 - 2021",
-                "description": [
-                    "Spearheaded the development of a scalable backend infrastructure at Webley Systems, utilizing Python's advanced features like decorators and context managers. Employing Flask for RESTful API development, I architected an AWS-integrated backend to handle streaming video compilation. Collaborating within a high-caliber team, I embraced Test Driven Development principles and Python unittest framework while seamlessly interfacing a Single Page Application (SPA) frontend using React with our Python backend."
-                ],
-                "achievements": [
-                    "Achieved proficiency in Flask and embraced TDD principles through dedicated training sessions.",
-                    "Engineered a custom automation system reminiscent of GIT, revolutionizing a two-decade-old manual ticketing process. This innovative tool bridged updates between the legacy CMS and Slack channels via headless Selenium, demonstrating a blend of autonomy and technical acumen.",
-                    "Ensured robust software delivery by authoring comprehensive tests for both legacy systems and new implementations.",
-                    "Autonomously designed a standalone API infrastructure leveraging AWS services like Lambda, API Gateway, and ALB. This system adeptly managed fragmented video segments, amalgamating them to deliver cohesive streaming content to end-users."
-                ],
-                "technologies": [
-                    "Python",
-                    "Flask",
-                    "TDD",
-                    "RESTful API",
-                    "Selenium",
-                    "Git via Github",
-                    "AWS EC2",
-                    "AWS S3",
-                    "AWS Lambda",
-                    "AWS API Gateway",
-                    "AWS Route53",
-                    "JavaScript",
-                    "CSS",
-                    "Python Decorators",
-                    "Context Managers",
-                    "Python Unittest",
-                    "React"
-                ]
-            },
-            {
-                "position": "Application Architect / Lead Developer / Senior Developer",
-                "companyLink": "https://www.linkedin.com/company/thepennyhoarder/",
-                "companyName": "The Penny Hoarder",
-                "time": "2014 - 2020",
-                "description": [
-                    "Joined The Penny Hoarder as founding engineer in 2014 through a consulting agency, transitioning to a full-time role in Florida by 2015, reflecting adaptability during the company's early stages.",
-                    "Played a key role in the evolution of the IT department, starting as its sole member and subsequently contributing to the hiring of roles including IT Director, Lead Developer, DevOps Engineer, QA Lead, and Scrum Master.",
-                    "Drove the design and deployment of critical business applications, such as administrative dashboards and automated reporting. Steered the direction and execution of the entire software ecosystem.",
-                    "Contributed to team growth by leading weekly code reviews, mentoring developers, and collaborating with both executive staff and project management to align technical and business goals."
-                ],
-                "achievements": [
-                    "[Application Architect] Optimized site load time from 2.7 seconds to 0.89 seconds, resulting in significant cost savings and revenue increase",
-                    "[Application Architect] Designed and built machine learning-based email content recommendation system for personalized content delivery at scale",
-                    "[Application Architect] Contributed to company growth from $4M to $40M annual revenue while scaling technical team from 10 to 100+ employees",
-                    "[Application Architect] Assumed a lead role during emergency scenarios, deploying hotfixes and addressing production issues",
-                    "[Lead Developer] Contributed to the recognition of The Penny Hoarder by Inc. 500 in 2016 and 2017 as a rapidly growing private media company",
-                    "[Lead Developer] Oversaw a significant site performance initiative, transitioning from AWS Cloudfront to Cloudflare, enhancing the site's scalability under heavy loads",
-                    "[Senior Developer] Implemented a robust and scalable WordPress setup with a focus on performance and maintainability",
-                    "[Senior Developer] Collaborated closely with the CEO during a comprehensive site migration to Amazon Web Services"
-                ],
-                "technologies": [
-                    "Python",
-                    "Machine Learning",
-                    "WordPress",
-                    "JavaScript",
-                    "PHP",
-                    "Git via Github",
-                    "Docker",
-                    "AWS EC2",
-                    "MySQL",
-                    "Flask",
-                    "Node.js",
-                    "Redis",
-                    "Nginx",
-                    "CSS",
-                    "PostgreSQL",
-                    "GraphQL",
-                    "MongoDB",
-                    "AWS Lambda",
-                    "AWS S3",
-                    "AWS RDS",
-                    "AWS API Gateway",
-                    "AWS Route53",
-                    "AWS Aurora",
-                    "Cloudflare",
-                    "AWS CloudFront",
-                    "AWS Code Pipeline",
-                    "Vue.js",
-                    "Performance Optimization"
-                ]
-            }
+        "achievements": [
+          "Led team for onboarding flow conversion in company-wide Server-Driven UI initiative, enhancing Node.js Hapi API system with TypeScript SDUI capabilities while ensuring GDPR compliance",
+          "Collaborated with cross-functional teams to integrate coaching and clinical therapy services into Headspace platform post-acquisition",
+          "Project lead for SMS consent architecture migration from dual-source to single-source using Braze API integration, eliminating synchronization issues and improving system reliability",
+          "Implemented proper data anonymization workflows for DSAR account deletion compliance",
+          "Extended platform capabilities for Ginger For Teens project, developing guardian consent mechanisms and age-appropriate access controls for teen coaching services"
+        ],
+        "technologies": [
+          "Python",
+          "Django",
+          "Backend Development",
+          "AI Development Tools",
+          "Claude Code",
+          "Cursor",
+          "ChatGPT",
+          "Google Gemini",
+          "JWT",
+          "Auth0",
+          "Docker",
+          "Braze",
+          "Jira",
+          "Confluence",
+          "Atlassian",
+          "Asana",
+          "Lucid Charts",
+          "Figma",
+          "Software Architecture",
+          "APIs",
+          "CI/CD",
+          "ORM",
+          "RESTful API",
+          "Agile",
+          "TypeScript",
+          "Node.js",
+          "GDPR Compliance",
+          "Data Anonymization",
+          "PostgreSQL",
+          "Colima"
         ]
-    },
-    "recommendationsSection": {
-        "title": "Recommendations",
-        "moreRecommendationsLink": "https://branndon.dev/linkedin",
-        "recommendations": [
-            {
-                "name": "Kyle Taylor",
-                "position": "CEO",
-                "company": "The Penny Hoarder",
-                "linkedin": "https://www.linkedin.com/in/kylebradleytaylor",
-                "description": [
-                    "I've been lucky enough to work alongside Branndon for nearly two years now and while he's always been a pleasure to work with, I feel like this year in particular has brought about a huge transformation. He has a growing confidence in his skills and abilities and it's been such a pleasure to watch him realize his own talent."
-                ]
-            },
-            {
-                "name": "Stephen McDermott",
-                "position": "IT Director",
-                "company": "The Penny Hoarder",
-                "linkedin": "https://linkedin.com/in/stephencmcdermott",
-                "description": [
-                    "The code looks to be easily maintainable and modular. I have noticed that when creating deliverables, regression testing is relatively isolated. A poorly coded site would include multiple cross dependencies, whereas one change would result in changes across the whole system. Branndon has coded a good portion of this site and it is built well."
-                ]
-            },
-            {
-                "name": "Jennifer Franko",
-                "position": "Scrum Master II",
-                "company": "The Penny Hoarder",
-                "linkedin": "https://www.linkedin.com/in/jenniferfranko",
-                "description": [
-                    "Branndon is one of the most well rounded, patient and talented developers I have had the pleasure to work with. Branndon is always thinking of the user experience as he works on his outstanding coding. Branndon never shows signs of stress and was always able to successfully complete any tasks with favorable results despite deadline pressure. His technical skill is outstanding but he also has the ability to communicate clearly and to collaborate effectively.",
-                    "Branndon is a rare find within the development world as he is constantly furthering his knowledge and skills. He repetitively amazed me with his industry insight and original approaches to solving problems.",
-                    "Branndon always takes the time to provide technical guidance and mentorship to his fellow developers. Branndon leads by example and people find his enthusiasm and dedication both inspiring and motivating.",
-                    "Branndon is dedicated, self-motivated, methodical, and very capable. I thoroughly enjoyed working with him at The Penny Hoarder and hope that one day I will have the privilege to work with him again. He is a true Rock Star!!!"
-                ]
-            }
+      },
+      {
+        "position": "Senior Software Engineer",
+        "companyLink": "https://www.linkedin.com/company/webley-systems",
+        "companyName": "Webley Systems",
+        "time": "2020 - 2021",
+        "description": [
+          "Spearheaded the development of a real-time screen capture system similar to Loom, architecting backend infrastructure to receive video chunks every 10 seconds, store them in AWS S3, and combine them for seamless playback. Built scalable video processing pipeline generating HLS playlists (m3u8) for real-time video delivery. Employed Flask for RESTful API development and utilized Python's advanced features like decorators and context managers while interfacing with React frontend."
+        ],
+        "achievements": [
+          "Achieved proficiency in Flask and embraced TDD principles through dedicated training sessions.",
+          "Engineered a custom automation system reminiscent of GIT, revolutionizing a two-decade-old manual ticketing process. This innovative tool bridged updates between the legacy CMS and Slack channels via headless Selenium, demonstrating a blend of autonomy and technical acumen.",
+          "Ensured robust software delivery by authoring comprehensive tests for both legacy systems and new implementations.",
+          "Engineered real-time video processing system handling fragmented video segments, automatically generating HLS streaming playlists for immediate playback. Autonomously designed distributed API infrastructure leveraging AWS Lambda, API Gateway, and ALB to manage concurrent video uploads and real-time segment processing."
+        ],
+        "technologies": [
+          "Python",
+          "Flask",
+          "TDD",
+          "RESTful API",
+          "Selenium",
+          "Git via Github",
+          "AWS EC2",
+          "AWS S3",
+          "AWS Lambda",
+          "AWS API Gateway",
+          "AWS Route53",
+          "JavaScript",
+          "CSS",
+          "Python Decorators",
+          "Context Managers",
+          "Python Unittest",
+          "React",
+          "Real-time Systems",
+          "HLS Streaming",
+          "Video Processing",
+          "Distributed Systems"
         ]
-    },
-    "funFactsSection": {
-        "title": "Fun Facts",
-        "facts": [
-            {
-                "title": "Built a Custom 4x4",
-                "time": "2005 - 2006",
-                "description": "Being a self-learner, I rebuilt an entire 4x4 truck. This project involved a complete teardown and rebuild of the engine, transmission, transfer cases, paint stripping, repainting and axles. I accomplished this without formal training, using only the early internet as my guide."
-            },
-            {
-                "title": "Lived in an RV for 3 years",
-                "time": "2012 - 2015",
-                "description": "My family and I lived in an RV for three years, traveling across the country while I worked in web development to pay the bills. This phase ended in 2015 when Kyle Taylor of The Penny Hoarder offered to relocate my family to St. Petersburg, FL, where I took on the role of Sr. Developer in-house."
-            },
-            {
-                "title": "Created my own Job",
-                "time": "2012 - 2015",
-                "description": "During meetings with a recent web client, I heard them mention the lack of on-site IT support; instead, they relied on a local vendor. As I was looking for an in-house position, I drafted a proposal highlighting the need for a web developer and the benefits of hiring me. Shortly after, they appointed me as the IT Manager. My responsibilities included onboarding new clients, creating EDI and FTP systems to exchange data with clients, and integrating legacy systems with newer PHP-based systems."
-            }
+      },
+      {
+        "position": "Application Architect / Lead Developer / Senior Developer",
+        "companyLink": "https://www.linkedin.com/company/thepennyhoarder/",
+        "companyName": "The Penny Hoarder",
+        "time": "2014 - 2020",
+        "description": [
+          "Joined The Penny Hoarder as founding engineer in 2014 through a consulting agency, transitioning to a full-time role in Florida by 2015, reflecting adaptability during the company's early stages.",
+          "Played a key role in the evolution of the IT department, starting as its sole member and subsequently contributing to the hiring of roles including IT Director, Lead Developer, DevOps Engineer, QA Lead, and Scrum Master.",
+          "Built comprehensive WFH Jobs Portal SPA using Node.js WebSocket backend for real-time updates, custom WordPress API integration, and Protractor/Selenium automated testing suite. Implemented advanced search filtering, dynamic routing with HTML5 History API, and multi-dimensional job categorization.",
+          "Drove the design and deployment of critical business applications including real-time dashboards showing live site metrics, administrative interfaces, and automated reporting systems. Implemented Redis pub/sub architecture for real-time data updates, intelligent caching strategies with configurable TTL, and Amazon SQS queues for background job processing. Architected multi-system integration connecting Redshift data warehouse to AWS Lambda-based ML processing pipeline.",
+          "Contributed to team growth by leading weekly code reviews, mentoring developers, and collaborating with both executive staff and project management to align technical and business goals."
+        ],
+        "achievements": [
+          "[Application Architect] Architected and built production Single Page Application job search portal with Node.js WebSocket backend, real-time search filtering, and comprehensive automated testing suite using Protractor/Selenium",
+          "[Application Architect] Optimized site load time from 2.7 seconds to 0.89 seconds, resulting in significant cost savings and revenue increase",
+          "[Application Architect] Designed and built machine learning-based email content recommendation system integrating Redshift analytics, AWS Lambda processing, and Iterable email platform for personalized content delivery at scale using Redis caching and pub/sub architecture",
+          "[Application Architect] Built visual homepage layout management system with drag-and-drop interface, AJAX backend processing, and real-time status indicators for content management team efficiency",
+          "[Application Architect] Developed comprehensive real-time analytics dashboard with live Facebook metrics, traffic monitoring, email subscriber tracking, and automated celebration system triggering music and visual effects for viral content milestones",
+          "[Application Architect] Contributed to company growth from $4M to $40M annual revenue while scaling technical team from 10 to 100+ employees",
+          "[Application Architect] Assumed a lead role during emergency scenarios, deploying hotfixes and addressing production issues",
+          "[Lead Developer] Contributed to the recognition of The Penny Hoarder by Inc. 500 in 2016 and 2017 as a rapidly growing private media company",
+          "[Lead Developer] Oversaw a significant site performance initiative, transitioning from AWS Cloudfront to Cloudflare, enhancing the site's scalability under heavy loads",
+          "[Senior Developer] Implemented a robust and scalable WordPress setup with a focus on performance and maintainability",
+          "[Senior Developer] Collaborated closely with the CEO during a comprehensive site migration to Amazon Web Services"
+        ],
+        "technologies": [
+          "Python",
+          "Machine Learning",
+          "WordPress",
+          "JavaScript",
+          "PHP",
+          "Git via Github",
+          "Docker",
+          "AWS EC2",
+          "MySQL",
+          "Flask",
+          "Node.js",
+          "Redis",
+          "Nginx",
+          "CSS",
+          "PostgreSQL",
+          "GraphQL",
+          "MongoDB",
+          "AWS Lambda",
+          "AWS S3",
+          "AWS RDS",
+          "AWS API Gateway",
+          "AWS Route53",
+          "AWS Aurora",
+          "Cloudflare",
+          "AWS CloudFront",
+          "AWS Code Pipeline",
+          "Vue.js",
+          "Performance Optimization",
+          "Single Page Applications",
+          "WebSocket Development",
+          "Socket.io",
+          "jQuery UI",
+          "Automated Testing",
+          "Protractor",
+          "Selenium",
+          "Serverless Architecture",
+          "Amazon Redshift",
+          "Redis Caching",
+          "Intelligent Caching",
+          "Multi-system Integration",
+          "Data Pipeline Architecture",
+          "Amazon SQS",
+          "Redis Pub/Sub",
+          "Microservices",
+          "Real-time Dashboards",
+          "Visual Editors",
+          "Drag-and-Drop Interfaces",
+          "Analytics Visualization",
+          "AJAX Processing",
+          "Content Management Systems",
+          "Homepage Layout Management",
+          "Message Queues",
+          "Real-time Systems"
         ]
-    }
+      },
+      {
+        "position": "Personal Projects",
+        "companyLink": "",
+        "companyName": "Independent Development",
+        "time": "",
+        "description": [
+          "Built personal RAG (Retrieval Augmented Generation) systems for document processing and information retrieval. Developed agentic AI workflows using CrewAI and Microsoft agent frameworks for automated task orchestration and multi-agent collaboration.",
+          "Experimented with cutting-edge AI technologies and frameworks, integrating multiple LLM providers for various automation and content processing tasks. Explored advanced AI development patterns and methodologies for personal learning and skill development."
+        ],
+        "achievements": [
+          "Developed comprehensive RAG systems for document processing and intelligent information retrieval",
+          "Built multi-agent workflows using CrewAI framework for automated task orchestration",
+          "Integrated multiple LLM providers including OpenAI and Claude APIs for various AI applications",
+          "Explored advanced agentic AI patterns and Microsoft agent frameworks"
+        ],
+        "technologies": [
+          "RAG",
+          "Retrieval Augmented Generation",
+          "CrewAI",
+          "Agentic AI",
+          "LLMs",
+          "Large Language Models",
+          "OpenAI API",
+          "Claude API",
+          "Microsoft Agent Frameworks",
+          "Multi-agent Systems",
+          "Document Processing",
+          "AI Automation"
+        ]
+      }
+    ]
+  },
+  "recommendationsSection": {
+    "title": "Recommendations",
+    "moreRecommendationsLink": "https://branndon.dev/linkedin",
+    "recommendations": [
+      {
+        "name": "Kyle Taylor",
+        "position": "CEO",
+        "company": "The Penny Hoarder",
+        "linkedin": "https://www.linkedin.com/in/kylebradleytaylor",
+        "description": [
+          "I've been lucky enough to work alongside Branndon for nearly two years now and while he's always been a pleasure to work with, I feel like this year in particular has brought about a huge transformation. He has a growing confidence in his skills and abilities and it's been such a pleasure to watch him realize his own talent."
+        ]
+      },
+      {
+        "name": "Stephen McDermott",
+        "position": "IT Director",
+        "company": "The Penny Hoarder",
+        "linkedin": "https://linkedin.com/in/stephencmcdermott",
+        "description": [
+          "The code looks to be easily maintainable and modular. I have noticed that when creating deliverables, regression testing is relatively isolated. A poorly coded site would include multiple cross dependencies, whereas one change would result in changes across the whole system. Branndon has coded a good portion of this site and it is built well."
+        ]
+      },
+      {
+        "name": "Jennifer Franko",
+        "position": "Scrum Master II",
+        "company": "The Penny Hoarder",
+        "linkedin": "https://www.linkedin.com/in/jenniferfranko",
+        "description": [
+          "Branndon is one of the most well rounded, patient and talented developers I have had the pleasure to work with. Branndon is always thinking of the user experience as he works on his outstanding coding. Branndon never shows signs of stress and was always able to successfully complete any tasks with favorable results despite deadline pressure. His technical skill is outstanding but he also has the ability to communicate clearly and to collaborate effectively.",
+          "Branndon is a rare find within the development world as he is constantly furthering his knowledge and skills. He repetitively amazed me with his industry insight and original approaches to solving problems.",
+          "Branndon always takes the time to provide technical guidance and mentorship to his fellow developers. Branndon leads by example and people find his enthusiasm and dedication both inspiring and motivating.",
+          "Branndon is dedicated, self-motivated, methodical, and very capable. I thoroughly enjoyed working with him at The Penny Hoarder and hope that one day I will have the privilege to work with him again. He is a true Rock Star!!!"
+        ]
+      }
+    ]
+  },
+  "funFactsSection": {
+    "title": "Fun Facts",
+    "facts": [
+      {
+        "title": "Built a Custom 4x4",
+        "time": "2005 - 2006",
+        "description": "Being a self-learner, I rebuilt an entire 4x4 truck. This project involved a complete teardown and rebuild of the engine, transmission, transfer cases, paint stripping, repainting and axles. I accomplished this without formal training, using only the early internet as my guide."
+      },
+      {
+        "title": "Lived in an RV for 3 years",
+        "time": "2012 - 2015",
+        "description": "My family and I lived in an RV for three years, traveling across the country while I worked in web development to pay the bills. This phase ended in 2015 when Kyle Taylor of The Penny Hoarder offered to relocate my family to St. Petersburg, FL, where I took on the role of Sr. Developer in-house."
+      },
+      {
+        "title": "Created my own Job",
+        "time": "2012 - 2015",
+        "description": "During meetings with a recent web client, I heard them mention the lack of on-site IT support; instead, they relied on a local vendor. As I was looking for an in-house position, I drafted a proposal highlighting the need for a web developer and the benefits of hiring me. Shortly after, they appointed me as the IT Manager. My responsibilities included onboarding new clients, creating EDI and FTP systems to exchange data with clients, and integrating legacy systems with newer PHP-based systems."
+      }
+    ]
+  }
 }

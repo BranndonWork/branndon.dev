@@ -6,10 +6,10 @@
 
 Before proceeding, confirm you understand:
 
--   [ ] Template location: `docs/templates/resume-ats-template.json`
--   [ ] Skills source: Only from webroot/branndon-coelho-resume.json
--   [ ] #1 Rule: NEVER fabricate skills or experience
--   [ ] Workflow: Read ALL sections before starting
+- [ ] Template locations: `docs/templates/resume-ats-template.json` and `docs/templates/job-tracking-template.yaml`
+- [ ] Skills source: Only from webroot/branndon-coelho-resume.json
+- [ ] #1 Rule: NEVER fabricate skills or experience
+- [ ] Workflow: Read ALL sections before starting
 
 ## Critical Rules (Memorize These First)
 
@@ -17,9 +17,9 @@ Before proceeding, confirm you understand:
 
 **NEVER FABRICATE SKILLS, EXPERIENCE, OR ACHIEVEMENTS**
 
--   Only reorganize and emphasize existing content
--   If a job requirement doesn't match the resume JSON, ignore it
--   When in doubt, leave it out
+- Only reorganize and emphasize existing content
+- If a job requirement doesn't match the resume JSON, ignore it
+- When in doubt, leave it out
 
 ### LLM-Specific Rules
 
@@ -43,11 +43,11 @@ Before proceeding, confirm you understand:
 
 ### Key Information Available:
 
--   **15+ years experience** (evidenced in "About" section)
--   **Current Role**: Senior Software Engineer at Headspace (2022-Present)
--   **Previous Roles**: Application Architect/Lead/Senior Developer at The Penny Hoarder, Senior Software Engineer at Webley Systems
--   **Specializations**: Backend Development, Python, Django, Scalable Systems
--   **Major Achievements**: Performance optimization (2.7s → 0.89s), ML email system, GDPR compliance, platform scaling
+- **15+ years experience** (evidenced in "About" section)
+- **Current Role**: Senior Software Engineer at Headspace (2022-Present)
+- **Previous Roles**: Application Architect/Lead/Senior Developer at The Penny Hoarder, Senior Software Engineer at Webley Systems
+- **Specializations**: Backend Development, Python, Django, Scalable Systems
+- **Major Achievements**: Performance optimization (2.7s → 0.89s), ML email system, GDPR compliance, platform scaling
 
 ### Critical Instruction:
 
@@ -67,7 +67,7 @@ This prevents fabrication and ensures the source of truth (master resume) is com
 
 ## Step-by-Step Workflow
 
-### Step 1: Validate Prerequisites
+### Step 1: Validate Prerequisites & Company Review
 
 ```bash
 # Check job directory exists
@@ -77,62 +77,138 @@ ls ./job-search/[Company-JobTitle]/
 cat ./job-search/[Company-JobTitle]/job-posting.md
 ```
 
-### Step 2: Create Missing Files
+**🚨 MANDATORY COMPANY REVIEW STEP:**
+
+Before proceeding with resume generation, research company employee reviews:
+
+1. **Web Search for Review Sites:**
+
+   ```bash
+   # Search for employee reviews (avoid Glassdoor - blocked by Cloudflare)
+   WebSearch: "[Company Name] employee reviews indeed glassdoor"
+   ```
+
+2. **Scrape Available Review Sites:**
+
+   ```bash
+   # Use playwright scraper on Indeed or other accessible review sites from search results
+   poetry run python scripts/playwright_scraper.py "[review-site-url]" --no-links --output company-reviews.txt
+   ```
+
+3. **Analyze and Present Summary:**
+   Present comprehensive review summary including:
+   - Overall rating and detailed ratings (work-life balance, pay/benefits, job security, management, culture)
+   - Major red flags and concerns for the specific role level
+   - Positive aspects
+   - Bottom line assessment
+
+4. **Decision Point:**
+   **Always ask user**: "Based on these reviews, do you want to continue with resume generation or should I delete this job directory?"
+
+**RED FLAGS TO HIGHLIGHT:**
+
+- Job security rating < 3.0/5 ⚠️
+- Management rating < 3.0/5 ⚠️
+- Multiple mentions of: layoffs, micromanagement, high turnover, toxic culture, favoritism
+- Recent reviews (last 6 months) showing declining conditions
+- Ethical concerns or unethical business practices
+
+### Step 2: Create Missing Files (Only if user chooses to continue)
 
 Copy ALL templates from templates directory:
 
 ```bash
+# Primary job tracking and resume files
+cp docs/templates/job-tracking-template.yaml ./job-search/[Company-JobTitle]/job-tracking.yaml
 cp docs/templates/resume-ats-template.json ./job-search/[Company-JobTitle]/resume-branndon-coelho-[company]-ats.json
+cp docs/templates/cover-letter-template.txt ./job-search/[Company-JobTitle]/cover-letter.txt
+
+# Simplified supporting files (most data now in job-application.yaml)
 cp docs/templates/customization-analysis-template.md ./job-search/[Company-JobTitle]/customization-analysis.md
 cp docs/templates/application-tracking-template.md ./job-search/[Company-JobTitle]/application-tracking.md
 cp docs/templates/interview-prep-template.md ./job-search/[Company-JobTitle]/interview-prep.md
-cp docs/templates/cover-letter-template.txt ./job-search/[Company-JobTitle]/cover-letter.txt
 ```
 
-### Step 4: Complete Customization Analysis FIRST
+### Step 4: Complete Job Tracking YAML FIRST
 
-**🚨 CRITICAL: Fill out customization-analysis.md BEFORE touching resume or cover letter**
+**🚨 CRITICAL: Fill out job-tracking.yaml BEFORE touching resume or cover letter**
 
-This pre-research document will:
-
--   Analyze job requirements vs your actual experience
--   Plan your customization strategy
--   Identify gaps honestly
--   Create cover letter outline
--   Prevent fabrication by planning ahead
+**Primary workflow - comprehensive job analysis:**
 
 ```bash
-# Edit the customization analysis first
+# Edit the main job tracking file first - contains ALL job details
+nano ./job-search/[Company-JobTitle]/job-tracking.yaml
+```
+
+This comprehensive YAML file will:
+
+- Store complete job details, tech stack, company research
+- Track application timeline and follow-up schedule
+- Document your match analysis and learning opportunities
+- Plan interview prep and decision factors
+
+**Secondary workflow - quick resume customization strategy:**
+
+```bash
+# Edit the simplified customization analysis (references job-tracking.yaml)
 nano ./job-search/[Company-JobTitle]/customization-analysis.md
 ```
+
+This simplified file focuses only on resume keyword strategy since detailed analysis is in the YAML.
 
 ### Step 5: Customize Resume Using MultiEdit
 
 #### What to Customize:
 
-1. **Positions array**: Fill in relevant role titles
+1. **Positions array**:
+   - **CRITICAL PROCESS**: First identify which 3 positions will be included in experience section
+   - Extract the EXACT position titles from those 3 chosen positions
+   - Update header "positions" array to match those exact titles (no fabrication, no modification)
+   - Order them from most relevant to job at top, working down
+   - Remove any duplicates (e.g., multiple "Senior Software Engineer" titles)
 2. **Summary**: 2-3 sentences with bolded keywords from job
 3. **About descriptions**: 3 paragraphs emphasizing relevant experience
 4. **Experience sections**:
-    - Keep original position titles (preserve career progression)
-    - Customize descriptions to emphasize relevant work
-    - Reorder technologies to match job requirements
-    - Maximum 3 positions total
+   - Keep original position titles (preserve career progression)
+   - Customize descriptions to emphasize relevant work
+   - Reorder technologies to match job requirements
+   - Maximum 3 positions total
 
 #### ATS Keyword Optimization:
 
--   Bold key job keywords using `<strong>` tags
--   Target: job title, primary technologies, key requirements
--   Natural integration only - no keyword stuffing
--   Maximum 8-10 bolded phrases per section
+- Bold key job keywords using `<strong>` tags
+- Target: job title, primary technologies, key requirements
+- Natural integration only - no keyword stuffing
+- Maximum 8-10 bolded phrases per section
 
 ### Step 6: MANDATORY VERIFICATION GATEKEEPER
 
 **🚨 CRITICAL: PDF generation is BLOCKED until verification passes**
 
+**Use the resume-audit-validator agent for automated verification:**
+
+```bash
+# Use Task tool with resume-audit-validator agent
+Task(subagent_type="resume-audit-validator", description="Verify resume claims",
+     prompt="Please audit and validate the [Company] resume generation to ensure all claims are truthful and accurate.
+
+Key files to audit:
+- Generated resume: job-search/[Company-JobTitle]/resume-branndon-coelho-[company]-ats.json
+- Source resume: webroot/branndon-coelho-resume.json
+- Job analysis: job-search/[Company-JobTitle]/job-tracking.yaml
+- Customization strategy: job-search/[Company-JobTitle]/customization-analysis.md
+
+Please verify all requirements and return detailed audit report.")
+```
+
+**MANUAL VERIFICATION BACKUP (if agent unavailable):**
+
 ```bash
 # Read source of truth for fresh context
 cat webroot/branndon-coelho-resume.json
+
+# Read job tracking YAML
+cat job-search/[Company-JobTitle]/job-tracking.yaml
 
 # Read customized resume JSON
 cat job-search/[Company-JobTitle]/resume-branndon-coelho-[company]-ats.json
@@ -143,12 +219,12 @@ cat job-search/[Company-JobTitle]/cover-letter.txt
 
 **VERIFICATION CHECKLIST - ALL must pass:**
 
--   [ ] Every skill/technology in custom resume exists in source JSON
--   [ ] Every achievement in custom resume exists in source JSON
--   [ ] Every job description phrase exists in source JSON or is simple reorganization
--   [ ] No fabricated capabilities (AI/ML, LLM, agentic systems unless explicitly in source)
--   [ ] No fabricated experience or inflated role scope
--   [ ] Cover letter contains no fabricated claims
+- [ ] Every skill/technology in custom resume exists in source JSON
+- [ ] Every achievement in custom resume exists in source JSON
+- [ ] Every job description phrase exists in source JSON or is simple reorganization
+- [ ] No fabricated capabilities (AI/ML, LLM, agentic systems unless explicitly in source)
+- [ ] No fabricated experience or inflated role scope
+- [ ] Cover letter contains no fabricated claims
 
 **IF ANY FABRICATIONS FOUND:** Fix them first, do NOT proceed to PDF generation
 
@@ -160,10 +236,10 @@ cp job-search/[Company-JobTitle]/resume-branndon-coelho-[company]-ats.json webro
 
 # Ensure server is running using management script
 ./scripts/server.sh ensure
-SERVER_URL="http://localhost:8000"
 
 # Generate PDF with job directory name in filename
-poetry run python scripts/generate_resume_pdf.py --mode ats --output job-search/[Company-JobTitle]/[Company-JobTitle]-Resume.pdf --job-dir [Company-JobTitle] --url $SERVER_URL
+# Note: --url parameter defaults to http://localhost:8000, only include if using different server
+poetry run python scripts/generate_resume_pdf.py --mode ats --output job-search/[Company-JobTitle]/[Company-JobTitle]-Resume.pdf --job-dir [Company-JobTitle]
 
 # CRITICAL: Delete ATS file immediately
 rm webroot/branndon-coelho-resume-ats.json
@@ -172,95 +248,130 @@ rm webroot/branndon-coelho-resume-ats.json
 cd scripts && poetry run python text_to_pdf.py "../job-search/[Company-JobTitle]/cover-letter.txt" "../job-search/[Company-JobTitle]/[Company-JobTitle]-CoverLetter.pdf"
 ```
 
-### Step 8: Verify Output
+### Step 8: Verify Output & Generate LinkedIn URL
 
--   Confirm resume PDF was generated
--   Confirm cover letter PDF was generated with matching filename format
--   Provide file:// links to [Company-JobTitle]-Resume.pdf and [Company-JobTitle]-CoverLetter.pdf
--   List final directory contents
+**First, extract Job ID from job-posting.md if available:**
+
+```bash
+# Look for Job ID in the job posting file
+grep -i "job id" job-search/[Company-JobTitle]/job-posting.md
+```
+
+**If Job ID exists, generate LinkedIn application URL:**
+
+- LinkedIn URL format: `https://www.linkedin.com/jobs/view/{JOB_ID}`
+- Example: If Job ID is `4293623911`, URL is `https://www.linkedin.com/jobs/view/4293623911`
+
+**Final Output Summary:**
+
+- Confirm resume PDF was generated
+- Confirm cover letter PDF was generated with matching filename format
+- **ALWAYS provide this complete summary:**
+
+```
+✅ RESUME GENERATION COMPLETE FOR [COMPANY]
+
+Generated Files:
+- Resume PDF: file:///[full-path]/[Company-JobTitle]-Resume.pdf
+- Cover Letter PDF: file:///[full-path]/[Company-JobTitle]-CoverLetter.pdf
+
+LinkedIn Application URL: https://www.linkedin.com/jobs/view/{JOB_ID}
+(Or "No LinkedIn Job ID available" if manually created job)
+
+Next Steps:
+1. Review PDFs for final quality check
+2. Apply using LinkedIn URL above
+3. [Any specific application notes for this company]
+```
+
+- List final directory contents
 
 ## Section Limits (2-3 Page Target)
 
 ### Professional Summary
 
--   **Limit**: 2-3 sentences maximum
--   **Focus**: Most relevant experience + key technologies
+- **Limit**: 2-3 sentences maximum
+- **Focus**: Most relevant experience + key technologies
 
 ### About Section
 
--   **Descriptions**: Maximum 3 paragraphs, 2-3 sentences each
--   **Paragraph 1**: Most relevant experience
--   **Paragraph 2**: Current role and matching technologies
--   **Paragraph 3**: Business impact and scaling
+- **Descriptions**: Maximum 3 paragraphs, 2-3 sentences each
+- **Paragraph 1**: Most relevant experience
+- **Paragraph 2**: Current role and matching technologies
+- **Paragraph 3**: Business impact and scaling
 
 ### Experience Section
 
--   **Positions**: Maximum 3 (current + 2 most relevant)
--   **Descriptions**: Maximum 3 bullet points per position
--   **Achievements**: Maximum 3 bullet points per position
--   **Technologies**: 10 for current, 8 for previous roles
+- **Positions**: Maximum 3 (current + 2 most relevant)
+- **Descriptions**: Maximum 3 bullet points per position
+- **Achievements**: Maximum 3 bullet points per position
+- **Technologies**: 10 for current, 8 for previous roles
 
 ### Cover Letter Limits (CRITICAL)
 
--   **Total Length**: Maximum 3 paragraphs + greeting/closing
--   **Paragraph 1**: Around 60 words - Personal connection to company (human, not AI corporate speak)
--   **Paragraph 2**: Around 60 words - Most relevant technical experience match (accurate timeline/company)
--   **Paragraph 3**: Around 60 words - Value proposition + professional call to action
--   **Sentence Length**: Maximum 25 words per sentence
--   **Writing Style**: Follow Buffer cover letter example - professional but conversational, no fluff or jargon
--   **Validation**: Check for duplicate contact info, fabricated timelines, corporate buzzwords
--   **Read complete files**: ALWAYS read entire documents - context is critical, don't use line limits unless file exceeds tool capacity
+- **Total Length**: Maximum 3 paragraphs + greeting/closing
+- **Paragraph 1**: Around 60 words - Personal connection to company (human, not AI corporate speak)
+- **Paragraph 2**: Around 60 words - Most relevant technical experience match (accurate timeline/company)
+- **Paragraph 3**: Around 60 words - Value proposition + professional call to action
+- **Sentence Length**: Maximum 25 words per sentence
+- **Writing Style**: Follow Buffer cover letter example - professional but conversational, no fluff or jargon
+- **Validation**: Check for duplicate contact info, fabricated timelines, corporate buzzwords
+- **Read complete files**: ALWAYS read entire documents - context is critical, don't use line limits unless file exceeds tool capacity
 
 ### Cover Letter Writing Style Guide
 
 **Reference Example**: `job-search/Buffer-Senior-Product-Engineer-Backend/cover-letter.txt`
 
 **Language Characteristics:**
--   **Direct and clear**: "I've been following what you folks are building" - straightforward, no unnecessary words
--   **Specific details**: "67% performance improvement" not "significant improvements"  
--   **Professional but human**: "I'm genuinely curious" not "I am excited to leverage synergies"
--   **Technical without jargon**: "enhanced our Hapi API system with server-driven UI capabilities" - precise but accessible
--   **Natural transitions**: "This experience building scalable content systems seems like a natural fit"
--   **No buzzwords**: Avoid "passionate," "innovative," "cutting-edge," "synergistic," etc.
--   **No casual slang**: Professional tone without being overly informal
--   **Action-oriented**: "I'd love to discuss" not "I would be honored to have the opportunity to potentially explore"
+
+- **Direct and clear**: "I'm interested in what you folks are building" - straightforward, no unnecessary words
+- **Specific details**: "67% performance improvement" not "significant improvements"
+- **Professional but human**: "I'm genuinely curious" not "I am excited to leverage synergies"
+- **Technical without jargon**: "enhanced our Hapi API system with server-driven UI capabilities" - precise but accessible
+- **Natural transitions**: "This experience building scalable content systems seems like a natural fit"
+- **No buzzwords**: Avoid "passionate," "innovative," "cutting-edge," "synergistic," etc.
+- **No casual slang**: Professional tone without being overly informal
+- **Action-oriented**: "I'd love to discuss" not "I would be honored to have the opportunity to potentially explore"
 
 **What to Avoid:**
--   Corporate buzzword salad ("leverage core competencies to drive innovative solutions")
--   Overly casual language ("Hey there!" or "Sounds like fun!" or "Let's chat!")  
--   AI "thing" pattern ("That transparency thing, refreshing" - dismissive and robotic)
--   Redundant phrases ("in order to," "at this point in time")
--   Vague achievements ("improved performance significantly")
--   Generic enthusiasm ("thrilled about this amazing opportunity")
+
+- Corporate buzzword salad ("leverage core competencies to drive innovative solutions")
+- Overly casual language ("Hey there!" or "Sounds like fun!" or "Let's chat!")
+- AI "thing" pattern ("That transparency thing, refreshing" - dismissive and robotic)
+- Redundant phrases ("in order to," "at this point in time")
+- Vague achievements ("improved performance significantly")
+- Generic enthusiasm ("thrilled about this amazing opportunity")
+- **NEVER use "I've been following [Company/Product]"** - dishonest pattern that sounds fake and researched
 
 ### Sections to Remove
 
--   **Fun Facts Section**: Remove entirely for ATS
--   **Recommendations Section**: Keep (shows credibility)
+- **Fun Facts Section**: Remove entirely for ATS
+- **Recommendations Section**: Keep (shows credibility)
 
 ## Quality Assurance Checklist
 
 ### Before Starting
 
--   [ ] Read this ENTIRE document first
--   [ ] Located template at `docs/templates/resume-ats-template.json`
--   [ ] Identified job requirements from job-posting.md
--   [ ] Mapped requirements to skills in webroot/branndon-coelho-resume.json
+- [ ] Read this ENTIRE document first
+- [ ] Located templates at `docs/templates/resume-ats-template.json` and `docs/templates/job-tracking-template.yaml`
+- [ ] Identified job requirements from job-posting.md
+- [ ] Filled out comprehensive job-tracking.yaml file
+- [ ] Mapped requirements to skills in webroot/branndon-coelho-resume.json
 
 ### During Customization
 
--   [ ] Every skill exists in webroot/branndon-coelho-resume.json
--   [ ] Using exact language from resume JSON
--   [ ] Not forcing unmatched job keywords
--   [ ] Preserving career progression titles
--   [ ] Keeping descriptions truthful
+- [ ] Every skill exists in webroot/branndon-coelho-resume.json
+- [ ] Using exact language from resume JSON
+- [ ] Not forcing unmatched job keywords
+- [ ] Preserving career progression titles
+- [ ] Keeping descriptions truthful
 
 ### After Generation
 
--   [ ] PDF generated successfully
--   [ ] Total length 2-3 pages
--   [ ] All content truthful to original experience
--   [ ] Provided file:// verification links
+- [ ] PDF generated successfully
+- [ ] Total length 2-3 pages
+- [ ] All content truthful to original experience
+- [ ] Provided file:// verification links
 
 ## Common Mistakes to Avoid
 

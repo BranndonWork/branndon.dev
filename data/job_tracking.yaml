@@ -1,0 +1,2961 @@
+schema_version: '1.0'
+created: '2025-09-06'
+description: YAML-based job tracking system
+jobs:
+  '4295351812':
+    status: reviewed
+    last_updated: '2025-09-06 15:34:40'
+    job_id: '4295351812'
+    title: Head of Engineering
+    company: Storm2
+    notes: '[2025-09-06] Test - Head of Engineering role doesn''t match preference'
+  '4285274694':
+    status: reviewed
+    last_updated: '2025-09-06 15:34:58'
+    job_id: '4285274694'
+    title: Senior Engineer Full Stack
+    company: GEICO
+    notes: '[2025-09-06] User skipped - Cultural issues and layoff history despite
+      strong financials'
+  '4296467807':
+    status: imported
+    last_updated: '2025-09-06 05:49:27'
+    job_id: '4296467807'
+    title: Staff Python Engineer
+    company: PatientPoint®
+    location: United States
+    resume_score: 90
+    notes: Imported to PatientPoint-StaffPythonEngineer
+    created: '2025-09-06 05:49:27'
+  '4255314920':
+    status: applied
+    last_updated: '2025-09-05 17:45:00'
+    job_id: '4255314920'
+    title: Software Engineer
+    company: Close
+    location: Remote (USA)
+    resume_score: 85
+    notes: 'Successfully applied with customized resume and cover letter. Completed
+      coding challenge (Verification ID: 1757109671.vHkBpbqTrjw). Strong match - Python/Flask
+      stack, 4-day work option, excellent work-life balance.'
+    created: '2025-09-05 17:30:00'
+  '4295441962':
+    status: rejected
+    last_updated: '2025-09-05 06:17:18'
+    job_id: '4295441962'
+    title: Senior Software Engineer
+    company: Edacious
+    location: Marlborough, MA
+    resume_score: 92
+    notes: 'Research revealed startup failure patterns: management dysfunction, founder
+      departures, random layoffs, 1.0/5 job security rating. Company added to ignore
+      list.'
+    created: '2025-09-05 05:51:34'
+  '4295903371':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295903371'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294640594':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294640594'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295433018':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295433018'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294507011':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294507011'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294610445':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294610445'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295051568':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295051568'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4216457561':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4216457561'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294698336':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294698336'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4293634270':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4293634270'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294570886':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294570886'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295373099':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295373099'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295096573':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295096573'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295942026':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295942026'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294983404':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294983404'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294688627':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294688627'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4281542500':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4281542500'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294503346':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294503346'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294867825':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294867825'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295124636':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295124636'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4253488147':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4253488147'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4285270847':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4285270847'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295612139':
+    status: reviewed
+    last_updated: '2025-09-08 06:26:15'
+    job_id: '4295612139'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: 'Auto-imported from scraped data\n\n[2025-09-08] User skipped: Staff-level
+      AI role requires deeper ML/AI experience than current level'
+    created: '2025-09-05 05:51:34'
+  '4283456434':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4283456434'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295149803':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295149803'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294516215':
+    status: rejected
+    last_updated: '2025-09-05 06:32:10'
+    job_id: '4294516215'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Research data unreliable and unverifiable. Unable to confirm employee feedback
+      claims. Company added to ignore list.
+    created: '2025-09-05 05:51:34'
+  '4293620624':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4293620624'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4293641903':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4293641903'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4293616888':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4293616888'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4026295970':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4026295970'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294094953':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294094953'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294251926':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294251926'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295368506':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295368506'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294661978':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294661978'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294095788':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294095788'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294654325':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294654325'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294623916':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294623916'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4269231166':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4269231166'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295415960':
+    status: reviewed
+    last_updated: '2025-09-05 06:36:14'
+    job_id: '4295415960'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Wrong tech focus (C#/Go vs Python/JS) and mandatory on-call DRI rotation.
+      Not a good fit for preferences.
+    created: '2025-09-05 05:51:34'
+  '4294236595':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294236595'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294677925':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294677925'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4256629761':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4256629761'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4284932846':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4284932846'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294355546':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294355546'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294600011':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294600011'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295159117':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295159117'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294657850':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294657850'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4292779409':
+    status: reviewed
+    last_updated: '2025-09-06 16:15:59'
+    job_id: '4292779409'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data\n\n[2025-09-06] User skipped - too generic,
+      recruiting firm with unknown actual employer
+    created: '2025-09-05 05:51:34'
+  '4295043637':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295043637'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4293665590':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4293665590'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294094952':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294094952'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294668541':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294668541'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4293669049':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4293669049'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294611132':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294611132'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4283966094':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4283966094'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4283749719':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4283749719'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294394193':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294394193'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4271016390':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4271016390'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295423448':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295423448'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295496511':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295496511'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295498980':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295498980'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294661054':
+    status: reviewed
+    last_updated: '2025-09-06 16:55:34'
+    job_id: '4294661054'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data\n\n[2025-09-06] User skipped - tech stack
+      mismatch (Node.js/TypeScript vs Python preference), lower compensation
+    created: '2025-09-05 05:51:34'
+  '4294503306':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294503306'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4288069922':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4288069922'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4280444430':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4280444430'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295911457':
+    status: reviewed
+    last_updated: '2025-09-08 06:34:39'
+    job_id: '4295911457'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: 'Auto-imported from scraped data\n\n[2025-09-08] User skipped: Recent layoffs
+      (2024), impulsive CEO leadership concerns, requires P&C insurance domain experience,
+      customer-facing role'
+    created: '2025-09-05 05:51:34'
+  '4268937930':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4268937930'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4283487567':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4283487567'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4280195695':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4280195695'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4245475375':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4245475375'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295603625':
+    status: reviewed
+    last_updated: '2025-09-08 06:35:07'
+    job_id: '4295603625'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data\n\n[2025-09-08] Duplicate Qumis listing
+      - same company already skipped for Staff AI level
+    created: '2025-09-05 05:51:34'
+  '4293144583':
+    status: imported
+    last_updated: '2025-09-05 06:46:10'
+    job_id: '4293144583'
+    title: Python Developer
+    company: Talent Groups
+    location: Louisville, KY
+    resume_score: 92
+    notes: Imported to TalentGroups-PythonDeveloper
+    created: '2025-09-05 05:51:34'
+  '4284526908':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4284526908'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295085940':
+    status: reviewed
+    last_updated: '2025-09-07 05:24:34'
+    job_id: '4295085940'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data\n\n[2025-09-07] User skipped - role too
+      senior (Director level vs IC), recent layoffs, corrupted job description
+    created: '2025-09-05 05:51:34'
+  '4294682740':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294682740'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294512147':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294512147'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4288278633':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4288278633'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295916259':
+    status: reviewed
+    last_updated: '2025-09-08 06:35:13'
+    job_id: '4295916259'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data\n\n[2025-09-08] Another BriteCore listing
+      - same company already skipped for layoffs/leadership concerns
+    created: '2025-09-05 05:51:34'
+  '4295098608':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295098608'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4284528835':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4284528835'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294217543':
+    status: reviewed
+    last_updated: '2025-09-07 05:30:38'
+    job_id: '4294217543'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data\n\n[2025-09-07] User skipped - active layoffs
+      at Capgemini/Sogeti, location constraints (Baltimore MD), lower compensation
+    created: '2025-09-05 05:51:34'
+  '4295087085':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295087085'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4216460213':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4216460213'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4293744701':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4293744701'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294585799':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294585799'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295902106':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295902106'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294266177':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294266177'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295439257':
+    status: applied
+    last_updated: '2025-09-07 06:11:24'
+    job_id: '4295439257'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data\n\n[2025-09-07] Imported to PlanHub-Senior-AI-Engineer
+      directory, ready for resume generation\n\n[2025-09-07] Resume and cover letter
+      completed, ready for application submission\n\n[2025-09-07] Application materials
+      completed and submitted - Resume PDF and Cover Letter PDF generated, LinkedIn
+      application ready
+    created: '2025-09-05 05:51:34'
+  '4287306833':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4287306833'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294653769':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294653769'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294230141':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294230141'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4287153636':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4287153636'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295944029':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295944029'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294635410':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294635410'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4293116303':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4293116303'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4288275828':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4288275828'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4285275413':
+    status: reviewed
+    last_updated: '2025-09-07 06:14:18'
+    job_id: '4285275413'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data\n\n[2025-09-07] Company excluded due to
+      excessive layoffs - previously researched
+    created: '2025-09-05 05:51:34'
+  '4287524126':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4287524126'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295152518':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295152518'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4282160646':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4282160646'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295356359':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295356359'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294526101':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294526101'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294399127':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294399127'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295499412':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295499412'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295350731':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295350731'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295497398':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295497398'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295925747':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295925747'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294637791':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294637791'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294910506':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294910506'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294918009':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294918009'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4283769804':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4283769804'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4258777392':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4258777392'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295407837':
+    status: applied
+    last_updated: '2025-09-05 14:26:44'
+    job_id: '4295407837'
+    title: Software Engineer III (Fullstack)
+    company: Cedar
+    location: New York, NY
+    resume_score: 92
+    notes: Application submitted successfully to Cedar for Software Engineer III Full-Stack
+      role. Resume emphasized healthcare + fintech experience, React/TypeScript transition,
+      and patient financial platform expertise with Stripe integration.
+    created: '2025-09-05 05:51:34'
+  '4293739909':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4293739909'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294262609':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294262609'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295463232':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295463232'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4180631598':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4180631598'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294879805':
+    status: reviewed
+    last_updated: '2025-09-07 06:19:09'
+    job_id: '4294879805'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data\n\n[2025-09-07] Skipped - Generic job description,
+      insufficient company/role details, appears to be recruiting company posting
+    created: '2025-09-05 05:51:34'
+  '4294393272':
+    status: reviewed
+    last_updated: '2025-09-07 06:22:03'
+    job_id: '4294393272'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data\n\n[2025-09-07] Skipped - Salary too low
+      (k-150k), too many unknowns (anonymous client company), recruiting company barrier
+    created: '2025-09-05 05:51:34'
+  '4294661980':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294661980'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295079677':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295079677'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294889253':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294889253'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294683527':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294683527'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294238296':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294238296'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295345119':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295345119'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4279709359':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4279709359'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4269606398':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4269606398'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4269241654':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4269241654'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4289651132':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4289651132'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4246037078':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4246037078'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294392644':
+    status: reviewed
+    last_updated: '2025-09-07 06:26:32'
+    job_id: '4294392644'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data\n\n[2025-09-07] Skipped - NFT/tokenization/art
+      marketplace role, user preference against crypto/NFT industry\n\n[2025-09-07]
+      Skipped - NFT/art tokenization role specifically, user preference against NFT
+      industry (not crypto broadly)
+    created: '2025-09-05 05:51:34'
+  '4084528251':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4084528251'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294263986':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294263986'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4289015263':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4289015263'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294093957':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294093957'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4291809019':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4291809019'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294398982':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294398982'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4293637026':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4293637026'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295350516':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295350516'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294664297':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294664297'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4275245168':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4275245168'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4215699978':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4215699978'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295402998':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295402998'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294097777':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294097777'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294954231':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294954231'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294667874':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294667874'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4284915564':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4284915564'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295421632':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295421632'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295131033':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295131033'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4283783904':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4283783904'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294373244':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294373244'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4293623911':
+    status: imported
+    last_updated: '2025-09-05 14:39:19'
+    job_id: '4293623911'
+    title: Sr. Python Developer (Remote - US)
+    company: Jobgether
+    location: United States
+    resume_score: 92
+    notes: Imported to Jobgether-SrPythonDeveloperRemote-US
+    created: '2025-09-05 05:51:34'
+  '4295614064':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295614064'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294937769':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294937769'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295927553':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295927553'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294684315':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294684315'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294669368':
+    status: rejected
+    last_updated: '2025-09-05 06:02:42'
+    job_id: '4294669368'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: 'Research revealed major red flags: monthly layoffs, poor job security,
+      discrimination issues. Company added to ignore list.'
+    created: '2025-09-05 05:51:34'
+  '4283791316':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4283791316'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295355136':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295355136'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295340948':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295340948'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295426264':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295426264'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4283562910':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4283562910'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295317158':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295317158'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4262199911':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4262199911'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294257589':
+    status: reviewed
+    last_updated: '2025-09-06 06:28:30'
+    job_id: '4294257589'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: User decided to skip after discussing meeting culture and React focus
+    created: '2025-09-05 05:51:34'
+  '4293101130':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4293101130'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4288643008':
+    status: applied
+    last_updated: '2025-09-06 08:15:36'
+    job_id: '4288643008'
+    title: Back End Engineer (Remote)
+    company: Files.com
+    location: United States
+    resume_score: 92
+    notes: Application submitted - resume generated and cover letter customized for
+      Ruby backend role
+    created: '2025-09-05 05:51:34'
+  '4295412710':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295412710'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295040933':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295040933'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294858558':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294858558'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4290258288':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4290258288'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294686116':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294686116'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4293922946':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4293922946'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4283523784':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4283523784'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294393235':
+    status: reviewed
+    last_updated: '2025-09-08 06:35:19'
+    job_id: '4294393235'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data\n\n[2025-09-08] Staff AI Engineer role
+      - too senior AI-focused, similar to skipped Qumis position
+    created: '2025-09-05 05:51:34'
+  '4294698492':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294698492'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294257749':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294257749'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4256656583':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4256656583'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4271607488':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4271607488'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294584864':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294584864'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295909451':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295909451'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295612124':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295612124'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295939175':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295939175'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294890325':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294890325'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294266333':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294266333'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4294828073':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4294828073'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4293145542':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4293145542'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4295462954':
+    status: new
+    last_updated: '2025-09-05 05:51:34'
+    job_id: '4295462954'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:34'
+  '4289644729':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4289644729'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4294670516':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4294670516'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4285318857':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4285318857'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4293312470':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4293312470'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4293132066':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4293132066'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4295929934':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4295929934'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4285318793':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4285318793'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4295364363':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4295364363'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4294061688':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4294061688'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4287548883':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4287548883'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4295932596':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4295932596'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4295685524':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4295685524'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4295499411':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4295499411'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4006441965':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4006441965'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4295687514':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4295687514'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4294380559':
+    status: applied
+    last_updated: '2025-09-07 08:05:51'
+    job_id: '4294380559'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data\n\n[2025-09-07] Job imported manually for
+      resume generation - Estuary Backend Developer position\n\n[2025-09-07] Application
+      submitted with updated resume including real-time systems experience (Redis
+      pub/sub, Amazon SQS, HLS video processing)
+    created: '2025-09-05 05:51:35'
+  '4294298976':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4294298976'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4294831245':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4294831245'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4294692760':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4294692760'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4294247929':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4294247929'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4294682159':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4294682159'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4295411872':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4295411872'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4295929608':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4295929608'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4283709610':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4283709610'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4293191636':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4293191636'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4295924827':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4295924827'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4294500841':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4294500841'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4294676050':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4294676050'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4081275522':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4081275522'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4284118098':
+    status: reviewed
+    last_updated: '2025-09-07 08:14:38'
+    job_id: '4284118098'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: 'Auto-imported from scraped data\n\n[2025-09-07] User skipped after company
+      research: High turnover, leadership issues, company in transition - too much
+      risk'
+    created: '2025-09-05 05:51:35'
+  '4295079070':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4295079070'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4295618515':
+    status: reviewed
+    last_updated: '2025-09-06 15:18:45'
+    job_id: '4295618515'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: 'User skipped after company research: Frequent layoffs, no growth opportunities,
+      poor culture - high risk/low reward'
+    created: '2025-09-05 05:51:35'
+  '4295686540':
+    status: applied
+    last_updated: '2025-09-08 09:14:27'
+    job_id: '4295686540'
+    title: Python Developer, Sr.
+    company: Armis
+    location: United States
+    resume_score: 0
+    notes: 'Auto-imported from scraped data\n\n[2025-09-08] Imported to Armis-PythonDeveloperSr\n\n[2025-09-08]
+      Applied via Greenhouse: https://job-boards.greenhouse.io/armissecurity/jobs/5450133004'
+    created: '2025-09-05 05:51:35'
+  '4293681974':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4293681974'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4280442542':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4280442542'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4294607794':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4294607794'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4259672110':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4259672110'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4197994052':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4197994052'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4294602176':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4294602176'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4294955231':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4294955231'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4271123242':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4271123242'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4294617569':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4294617569'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4294944569':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4294944569'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4285238266':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4285238266'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4184291381':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4184291381'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4294228091':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4294228091'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4281543384':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4281543384'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4295612715':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4295612715'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4295046242':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4295046242'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4295318710':
+    status: reviewed
+    last_updated: '2025-09-07 08:34:06'
+    job_id: '4295318710'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: 'Auto-imported from scraped data\n\n[2025-09-07] User skipped after analysis:
+      People management responsibilities (Engineering Manager role) - conflicts with
+      preference for individual contributor roles'
+    created: '2025-09-05 05:51:35'
+  '4294690001':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4294690001'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4295095225':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4295095225'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4294959071':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4294959071'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4294643728':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4294643728'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4293750359':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4293750359'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4295602112':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4295602112'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4295607925':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4295607925'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4294591135':
+    status: imported
+    last_updated: '2025-09-07 08:41:09'
+    job_id: '4294591135'
+    title: Back End Engineer (SQL, AI)
+    company: Wiraa
+    location: United States
+    resume_score: 0
+    notes: Auto-imported from scraped data\n\n[2025-09-07] Imported to Wiraa-BackEndEngineerSQLAI
+    created: '2025-09-05 05:51:35'
+  '4293613863':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4293613863'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4295072626':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4295072626'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4293135123':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4293135123'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4105572015':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4105572015'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4293653478':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4293653478'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4294937804':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4294937804'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4295428912':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4295428912'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4285744778':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4285744778'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4294392330':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4294392330'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4295606354':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4295606354'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4294938819':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4294938819'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4281711921':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4281711921'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4181924868':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4181924868'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4294690111':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4294690111'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4295120088':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4295120088'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4295049747':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4295049747'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4270542488':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4270542488'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4295417827':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4295417827'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4291602227':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4291602227'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4294585736':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4294585736'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4284453442':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4284453442'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4295637175':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4295637175'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4288998696':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4288998696'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4291654122':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4291654122'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4294251824':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4294251824'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4293131205':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4293131205'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4291911923':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4291911923'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4294886252':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4294886252'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4293634020':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4293634020'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4275264871':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4275264871'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4275272044':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4275272044'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4294517546':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4294517546'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4295417943':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4295417943'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4259158611':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4259158611'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4295922476':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4295922476'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4295138958':
+    status: new
+    last_updated: '2025-09-05 05:51:35'
+    job_id: '4295138958'
+    title: Unknown Title
+    company: Unknown
+    location: Unknown
+    resume_score: 0
+    notes: Auto-imported from scraped data
+    created: '2025-09-05 05:51:35'
+  '4293950844':
+    status: applied
+    last_updated: '2025-09-05 13:17:02'
+    job_id: '4293950844'
+    title: Staff Software Engineer, Full-Stack
+    company: NerdWallet
+    location: United States
+    resume_score: 82
+    notes: Application submitted successfully to NerdWallet for Staff Software Engineer
+      Full-Stack role in Mortgage vertical. Resume emphasized TypeScript/JavaScript
+      transition and fintech experience.
+    created: '2025-09-05 09:24:18'
+  '4296429901':
+    status: reviewed
+    last_updated: '2025-09-06 06:16:50'
+    job_id: '4296429901'
+    notes: Skipped - micro1 appears to be data harvesting scam based on multiple independent
+      warnings
+    created: '2025-09-06 06:16:50'
+  '4292568694':
+    status: reviewed
+    last_updated: '2025-09-06 06:17:03'
+    job_id: '4292568694'
+    notes: Previously ignored by user
+    created: '2025-09-06 06:17:03'
+  '4296622016':
+    status: reviewed
+    last_updated: '2025-09-06 06:22:34'
+    job_id: '4296622016'
+    notes: 'User skipped after company research: Job cuts concern - 11% workforce
+      reduction in 2023, additional layoffs in 2024, high layoff risk for 2025'
+    created: '2025-09-06 06:22:34'
+  '4296640234':
+    status: rejected
+    last_updated: '2025-09-06 08:22:22'
+    job_id: '4296640234'
+    title: Sr. Software Engineer, Infrastructure
+    company: Pilot.com
+    location: United States
+    resume_score: 92
+    notes: Location restriction - Florida not eligible (remote only in CA, GA, NY,
+      NC, TN, TX, WA)
+    created: '2025-09-06 06:41:43'
+  youcom-ai-engineer-2025:
+    status: applied
+    last_updated: '2025-09-07 11:07:18'
+    job_id: youcom-ai-engineer-2025
+    notes: '[2025-09-07] Application submitted 2025-09-07 with production LLM experience
+      from SpecialNeeds.com CDO role'
+  '4164579028':
+    status: imported
+    last_updated: '2025-09-07 14:18:52'
+    job_id: '4164579028'
+    title: Senior Backend Engineer
+    company: Uniswap Labs
+    location: United States
+    notes: '[2025-09-07] Imported to UniswapLabs-SeniorBackendEngineer'
+  '4269537355':
+    status: reviewed
+    last_updated: '2025-09-07 20:16:23'
+    job_id: '4269537355'
+    notes: '[2025-09-07] Company ignore-listed: Toxic culture, high turnover, poor
+      management, financial instability per employee reviews'

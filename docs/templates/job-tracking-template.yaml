@@ -1,0 +1,86 @@
+# Job Tracking Template - Copy to job-search/[Company-JobTitle]/job-tracking.yaml
+# This tracks job application data for AI/system use
+# Human-readable content (company research, interview prep) stays in separate .md files
+
+job_id: "[LinkedIn Job ID or unique identifier]"
+status: "new" # new, reviewed, researching, imported, applying, applied, rejected, interview
+company: "[Company Name]"
+title: "[Job Title]"
+location: "[Location]"
+level: "[Seniority Level]"
+resume_score: 0 # 0-100 score from job matching
+linkedin_url: "[LinkedIn job URL if available]"
+
+application_timeline:
+  scraped: "[YYYY-MM-DD]"
+  imported: "[YYYY-MM-DD]"
+  applied: "[YYYY-MM-DD or TBD]"
+  response_deadline: "[YYYY-MM-DD or TBD]"
+
+job_details:
+  tech_stack:
+    - "[Primary technology]"
+    - "[Secondary technology]"
+    # Add more as needed
+
+  key_requirements: |
+    [Paste key requirements from job posting]
+    [Use multi-line YAML for readability]
+
+  compensation:
+    salary_range: "[Range or 'Not specified']"
+    benefits: |
+      [List key benefits]
+      [Multi-line format for readability]
+
+my_match:
+  strengths:
+    - "[Matching experience 1]"
+    - "[Matching experience 2]"
+    # List specific matches from your background
+
+  learning_opportunities:
+    - "[Technology/skill you'd learn]"
+    # List gaps that are learning opportunities
+
+company_research:
+  file: "./company-research-report.md"
+  summary: "[Brief summary - detailed research in external file]"
+
+application_materials:
+  resume_pdf: "./[Company-JobTitle]-Resume.pdf"
+  cover_letter_pdf: "./[Company-JobTitle]-CoverLetter.pdf"
+  ats_resume_json: "./resume-branndon-coelho-[company]-ats.json"
+
+cover_letter_approach: |
+  [Document your cover letter strategy]
+  [Key points emphasized]
+  [Specific examples used]
+  [Closing approach]
+
+cover_letter_file: "./cover-letter.txt"
+
+notes: |
+  [General notes about this opportunity]
+  [Why it's interesting or concerning]
+  [Strategic considerations]
+
+follow_up:
+  next_action: "[What to do next]"
+  check_date: "[YYYY-MM-DD when to follow up]"
+  backup_plan: "[Alternative approaches if no response]"
+
+interview_prep:
+  file: "./interview-prep.md"
+  summary: "[Brief summary - detailed prep in external file]"
+
+decision_factors:
+  pros:
+    - "[Positive aspect 1]"
+    - "[Positive aspect 2]"
+
+  cons:
+    - "[Concern 1]"
+    - "[Concern 2]"
+
+  verdict: "[Overall assessment: strong proceed, conditional, or skip]"

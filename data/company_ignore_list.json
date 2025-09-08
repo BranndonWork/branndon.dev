@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "created": "2025-09-05",
+  "description": "Companies to ignore in future job searches based on research",
+  "ignored_companies": {
+    "NTT DATA North America": {
+      "date_added": "2025-09-05",
+      "reasons": [
+        "Monthly layoffs and constant restructuring",
+        "Poor job security (3.1/5 rating)",
+        "Contract instability - losing clients",
+        "Poor leadership and management issues",
+        "Discrimination concerns against non-Spanish employees",
+        "Contractors treated as expendable",
+        "Stagnant pay and limited advancement"
+      ],
+      "research_source": "Indeed reviews 2024-2025",
+      "job_ids_rejected": ["4294669368"]
+    },
+    "Edacious PBC": {
+      "date_added": "2025-09-05",
+      "reasons": [
+        "Management dysfunction - founders departing (only 1 of 3 left)",
+        "Random layoffs with no job security (1.0/5 rating)",
+        "High turnover - many people only last months",
+        "Head of software and instrumentation left",
+        "Unlimited PTO is meaningless",
+        "Poor management rating (1.5/5)",
+        "Overall rating declining (2.0 → 1.0 stars)"
+      ],
+      "research_source": "Indeed reviews 2024-2025",
+      "job_ids_rejected": ["4295441962"]
+    },
+    "Patrick J McGovern Foundation": {
+      "date_added": "2025-09-05",
+      "reasons": [
+        "Inconsistent review information - unable to verify employee feedback",
+        "Research data unreliable",
+        "Potential workplace culture concerns but unverifiable"
+      ],
+      "research_source": "Unverified web search results",
+      "job_ids_rejected": ["4294516215"]
+    }
+  }
+}
