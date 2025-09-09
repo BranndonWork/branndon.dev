@@ -343,17 +343,14 @@
     "facts": [
       {
         "title": "Built a Custom 4x4",
-        "time": "2005 - 2006",
         "description": "Being a self-learner, I rebuilt an entire 4x4 truck. This project involved a complete teardown and rebuild of the engine, transmission, transfer cases, paint stripping, repainting and axles. I accomplished this without formal training, using only the early internet as my guide."
       },
       {
         "title": "Lived in an RV for 3 years",
-        "time": "2012 - 2015",
         "description": "My family and I lived in an RV for three years, traveling across the country while I worked in web development to pay the bills. This phase ended in 2015 when Kyle Taylor of The Penny Hoarder offered to relocate my family to St. Petersburg, FL, where I took on the role of Sr. Developer in-house."
       },
       {
         "title": "Created my own Job",
-        "time": "2012 - 2015",
         "description": "During meetings with a recent web client, I heard them mention the lack of on-site IT support; instead, they relied on a local vendor. As I was looking for an in-house position, I drafted a proposal highlighting the need for a web developer and the benefits of hiring me. Shortly after, they appointed me as the IT Manager. My responsibilities included onboarding new clients, creating EDI and FTP systems to exchange data with clients, and integrating legacy systems with newer PHP-based systems."
       }
     ]
