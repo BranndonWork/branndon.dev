@@ -310,7 +310,7 @@
                               <span className="fa-container text-center mr-2">
                                 <i className={link.icon}></i>
                               </span>
-                              {link.url}
+                              {link.url.replace('mailto:', '')}
                             </a>
                           </li>
                         ))}
