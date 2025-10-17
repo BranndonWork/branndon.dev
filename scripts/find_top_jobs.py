@@ -5,10 +5,16 @@ Script to find the highest scoring jobs from scraped job data.
 
 import os
 import re
-import yaml
+import sys
 from pathlib import Path
 from typing import List, Tuple, Optional, Set
 import argparse
+
+# Add job-search-2025 path to import the database modules
+job_search_path = Path("/Volumes/Storage/Dropbox/documents/job-search-2025")
+sys.path.append(str(job_search_path))
+
+from job_scraper.sqlite_wrapper import SQLiteProvider
 
 
 def extract_job_score(file_path: Path) -> Optional[Tuple[str, int, str]]:
@@ -38,12 +44,27 @@ def extract_job_score(file_path: Path) -> Optional[Tuple[str, int, str]]:
         return None
 
 
-def load_tracking_data(tracking_file: str) -> dict:
-    """Load job tracking data from YAML file."""
+def load_tracking_data_from_db() -> dict:
+    """Load job tracking data from database."""
     try:
-        with open(tracking_file, 'r') as f:
-            return yaml.safe_load(f) or {"jobs": {}}
-    except (FileNotFoundError, yaml.YAMLError):
+        # Set the correct database path
+        os.environ['SQLITE_DB_PATH'] = str(job_search_path / "jobs_database.db")
+        db = SQLiteProvider()
+
+        conn = db._get_connection()
+        cursor = conn.cursor()
+        cursor.execute('SELECT job_id, status FROM job_tracking')
+        results = cursor.fetchall()
+        conn.close()
+
+        # Convert to the expected format
+        jobs = {}
+        for job_id, status in results:
+            jobs[job_id] = {"status": status}
+
+        return {"jobs": jobs}
+    except Exception as e:
+        print(f"Error loading tracking data from database: {e}")
         return {"jobs": {}}
 
 
@@ -60,29 +81,26 @@ def get_processed_jobs(tracking_data: dict, exclude_status: List[str] = None) ->
     return processed
 
 
-def find_top_jobs(jobs_dir: str, top_n: int = 10, exclude_processed: bool = False, 
+def find_top_jobs(jobs_dir: str, top_n: int = 10, exclude_processed: bool = True,
                   tracking_file: str = None, status_filter: str = None) -> List[Tuple[str, int, str]]:
     """Find the top N jobs by resume score.
-    
+
     Args:
         jobs_dir: Directory containing job markdown files
         top_n: Number of top jobs to return
         exclude_processed: Whether to exclude already processed jobs
-        tracking_file: Path to job tracking YAML file
+        tracking_file: Ignored - kept for compatibility, uses database
         status_filter: Only include jobs with this status
     """
     jobs_path = Path(jobs_dir)
     if not jobs_path.exists():
         raise FileNotFoundError(f"Jobs directory not found: {jobs_dir}")
-    
-    # Load tracking data if filtering is requested
+
+    # Load tracking data from database if filtering is requested
     processed_jobs = set()
     tracking_data = {}
     if exclude_processed or status_filter:
-        if not tracking_file:
-            # Default tracking file location
-            tracking_file = Path(__file__).parent.parent / "data" / "job_tracking.yaml"
-        tracking_data = load_tracking_data(str(tracking_file))
+        tracking_data = load_tracking_data_from_db()
         if exclude_processed:
             processed_jobs = get_processed_jobs(tracking_data)
     
@@ -150,7 +168,7 @@ def main():
     parser = argparse.ArgumentParser(description="Find top jobs by resume score")
     parser.add_argument(
         "--jobs-dir", 
-        default="/Volumes/Home/Documents/job-search-2025/data/jobs",
+        default="/Volumes/Storage/Dropbox/documents/job-search-2025/data/jobs",
         help="Directory containing job markdown files"
     )
     parser.add_argument(
@@ -160,13 +178,13 @@ def main():
         help="Number of top jobs to display (default: 10)"
     )
     parser.add_argument(
-        "--exclude-processed", 
+        "--include-processed",
         action="store_true",
-        help="Exclude jobs that have already been processed"
+        help="Include jobs that have already been processed (default: exclude processed)"
     )
     parser.add_argument(
-        "--tracking-file", 
-        help="Path to job tracking JSON file"
+        "--tracking-file",
+        help="Ignored - kept for compatibility (now uses database)"
     )
     parser.add_argument(
         "--status", 
@@ -182,9 +200,9 @@ def main():
     
     try:
         top_jobs = find_top_jobs(
-            args.jobs_dir, 
-            args.top, 
-            exclude_processed=args.exclude_processed,
+            args.jobs_dir,
+            args.top,
+            exclude_processed=not args.include_processed,  # Flip the logic
             tracking_file=args.tracking_file,
             status_filter=args.status
         )
@@ -203,18 +221,15 @@ def main():
         print(f"Jobs with scores: {len(jobs_with_scores)}")
         
         # Show filtering stats if applicable
-        if args.exclude_processed or args.status:
-            if not args.tracking_file:
-                tracking_file = Path(__file__).parent.parent / "data" / "job_tracking.yaml"
-            else:
-                tracking_file = Path(args.tracking_file)
-            
-            if tracking_file.exists():
-                tracking_data = load_tracking_data(str(tracking_file))
+        if not args.include_processed or args.status:
+            try:
+                tracking_data = load_tracking_data_from_db()
                 processed_count = len(get_processed_jobs(tracking_data))
                 print(f"Processed jobs: {processed_count}")
-                if args.exclude_processed:
+                if not args.include_processed:
                     print(f"Unprocessed jobs: {len(jobs_with_scores) - processed_count}")
+            except Exception as e:
+                print(f"Warning: Could not load tracking data: {e}")
         
     except Exception as e:
         print(f"Error: {e}")

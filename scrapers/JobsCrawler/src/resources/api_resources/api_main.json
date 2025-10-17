@@ -1,0 +1,108 @@
+[
+    {
+        "enabled": false,
+        "name": "echojobs.io",
+        "url": "https://api.echojobs.io/v1/search?locations=Remote&page=1&limit=300&sort_by=newest",
+        "class_json": "dict",
+        "follow_link": "yes",
+        "inner_link_tag": "job-detail mb-4",
+        "elements_path": {
+                "dict_tag": "result",
+                "title_tag": "title",
+                "link_tag": "url",
+                "description_tag": "skills",
+                "pubdate_tag": "created_at",
+                "location_tag": "locations",
+                "location_default": "NaN"
+            }
+    },
+    {
+        "enabled": false,
+        "name": "www.workingnomads.com",
+        "url": "https://www.workingnomads.com/api/exposed_jobs/",
+        "class_json": "list",
+        "follow_link": "no",
+        "inner_link_tag": "",
+        "elements_path": {
+                "dict_tag": "",
+                "title_tag": "title",
+                "link_tag": "url",
+                "description_tag": "description",
+                "pubdate_tag": "pub_date",
+                "location_tag": "location",
+                "location_default": "NaN"
+            }
+    },
+    {
+        "enabled": false,
+        "name": "remoteok.api",
+        "url": "https://remoteok.com/api?api=1",
+        "class_json": "list",
+        "follow_link": "no",
+        "inner_link_tag": "",
+        "elements_path": {
+                "dict_tag": "",
+                "title_tag": "position",
+                "link_tag": "url",
+                "description_tag": "description",
+                "pubdate_tag": "date",
+                "location_tag": "location",
+                "location_default": "NaN"
+            }
+    },
+    {
+        "enabled": false,
+        "name": "remotive.com",
+        "url": "https://remotive.com/api/remote-jobs?limit=50",
+        "class_json": "dict",
+        "follow_link": "no",
+        "inner_link_tag": "",
+        "elements_path": {
+                "dict_tag": "jobs",
+                "title_tag": "title",
+                "link_tag": "url",
+                "description_tag": "description",
+                "pubdate_tag": "publication_date",
+                "location_tag": "candidate_required_location",
+                "location_default": "NaN"
+            }
+    },
+    {
+        "enabled": false,
+        "name": "HimalayasApp",
+        "url": "https://himalayas.app/jobs/api",
+        "class_json": "dict",
+        "follow_link": "no",
+        "inner_link_tag": "",
+        "elements_path": {
+                "dict_tag": "jobs",
+                "title_tag": "title",
+                "link_tag": "applicationLink",
+                "description_tag": "description",
+                "pubdate_tag": "pubDate",
+                "location_tag": "locationRestrictions",
+                "location_default": "Worldwide"
+        }
+    },
+    {
+        "enabled": true,
+        "name": "4dayweek.io",
+        "url": "https://4dayweek.io/api",
+        "class_json": "dict",
+        "follow_link": "no",
+        "inner_link_tag": "",
+        "filters": {
+            "is_remote": true,
+            "description_contains": "python"
+        },
+        "elements_path": {
+                "dict_tag": "jobs",
+                "title_tag": "title",
+                "link_tag": "url",
+                "description_tag": "description",
+                "pubdate_tag": "posted",
+                "location_tag": "location_country",
+                "location_default": "Remote"
+        }
+    }
+]

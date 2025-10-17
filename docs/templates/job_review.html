@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Complete Job Analysis - Vianai Systems</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --card: #11182a;
+      --card-2: #0e1526;
+      --text: #e6e9f2;
+      --muted: #9aa3b2;
+      --ring: #2b3b6b;
+      --accent: #7c5cff;
+      --accent-2: #37b7ff;
+      --positive: #23c55e;
+      --warning: #fbbf24;
+      --danger: #ef4444;
+      --chip: rgba(255,255,255,0.06);
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      --radius: 16px;
+      --radius-sm: 12px;
+      --grid-gap: 22px;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f6f8fb;
+        --card: #ffffff;
+        --card-2: #ffffff;
+        --text: #0b1220;
+        --muted: #4b5563;
+        --ring: #e5e7eb;
+        --accent: #6d28d9;
+        --accent-2: #0ea5e9;
+        --chip: rgba(0,0,0,0.06);
+        --shadow: 0 10px 24px rgba(2,6,23,0.08);
+      }
+    }
+
+    [data-theme="dark"] {
+      color-scheme: dark;
+    }
+
+    html, body { height: 100%; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(124,92,255,0.06), transparent 60%),
+                  radial-gradient(1200px 600px at 90% 110%, rgba(55,183,255,0.06), transparent 60%),
+                  var(--bg);
+      margin: 0;
+      padding: 36px;
+      color: var(--text);
+    }
+
+    .app {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: var(--grid-gap);
+    }
+
+    @media (max-width: 1100px) {
+      .app { grid-template-columns: 1fr; }
+    }
+
+    .header {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 4px;
+    }
+
+    .title {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 10px 14px;
+    }
+
+    h1 {
+      font-size: clamp(22px, 3vw, 36px);
+      line-height: 1.1;
+      margin: 0;
+      letter-spacing: -0.02em;
+      font-weight: 800;
+    }
+
+    .subtitle { color: var(--muted); font-weight: 500; }
+
+    .controls { display: flex; gap: 10px; align-items: center; }
+
+    .btn {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      border: 0;
+      color: white;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+
+    .theme-toggle {
+      border: 1px solid var(--ring);
+      background: var(--card);
+      color: var(--text);
+      padding: 9px 12px;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--grid-gap);
+    }
+    @media (max-width: 800px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: linear-gradient(180deg, var(--card), var(--card-2));
+      border: 1px solid var(--ring);
+      border-radius: var(--radius);
+      padding: 20px 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h2 { font-size: 18px; margin: 0 0 12px; letter-spacing: -0.01em; }
+    .section-head {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+    }
+    .bar { width: 10px; height: 22px; border-radius: 6px; background: linear-gradient(180deg, var(--accent-2), var(--accent)); box-shadow: var(--shadow); }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip {
+      background: var(--chip);
+      border: 1px solid var(--ring);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .kpis { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
+    .kpi { background: var(--chip); border: 1px solid var(--ring); padding: 10px 12px; border-radius: 12px; }
+    .kpi .val { font-weight: 800; letter-spacing: -0.02em; }
+    .kpi .lbl { color: var(--muted); font-size: 12px; }
+
+    ul { padding-left: 18px; margin: 8px 0 0; }
+    li { margin: 6px 0; }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 700px) { .two-col { grid-template-columns: 1fr; } }
+
+    .badge { font-weight: 700; }
+    .ok { color: var(--positive); }
+    .warn { color: var(--warning); }
+    .bad { color: var(--danger); }
+
+    .chart-card { padding: 16px 16px 22px; }
+    canvas { margin-top: 10px; }
+
+    footer { grid-column: 1 / -1; color: var(--muted); margin-top: 16px; font-size: 12px; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header class="header card">
+      <div class="title">
+        <h1>Complete Job Analysis: Vianai Systems</h1>
+        <span class="subtitle">Full Stack Developer</span>
+        <div class="chips">
+          <span class="chip">Overall: <span class="warn">🟡 Mixed Indicators</span></span>
+          <span class="chip">Mgmt: <span class="ok">🟢 Well‑Managed</span></span>
+          <span class="chip">Culture: <span class="ok">Positive</span></span>
+        </div>
+        <div class="kpis">
+          <div class="kpi"><div class="val" id="kpi-satisfaction">4.0/5</div><div class="lbl">Employee Satisfaction</div></div>
+          <div class="kpi"><div class="val">85%</div><div class="lbl">Tech Stack Match</div></div>
+          <div class="kpi"><div class="val warn">$ Salary?</div><div class="lbl">Critical Gap</div></div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+        <button class="btn" id="cta">Download JSON</button>
+      </div>
+    </header>
+
+    <section class="grid">
+      <div class="card">
+        <div class="section-head"><span class="bar"></span><h2>🏢 Company Assessment</h2></div>
+        <div class="two-col">
+          <div>
+            <div class="badge">Overall:</div>
+            <p>🟡 Small AI Startup with Mixed Indicators</p>
+            <div class="badge">Employee Satisfaction:</div>
+            <p id="employee-satisfaction"></p>
+            <div class="badge">Management Health:</div>
+            <p class="ok">🟢 Well-Managed</p>
+            <ul id="management-points"></ul>
+          </div>
+          <div>
+            <div class="badge">Financial Stability <span class="warn">(Moderate Concerns)</span></div>
+            <ul id="financial-points"></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-head"><span class="bar"></span><h2>🎯 Role Analysis vs Criteria</h2></div>
+        <div class="two-col">
+          <div>
+            <div class="badge bad">Salary — Missing Info</div>
+            <ul id="salary-points"></ul>
+          </div>
+          <div>
+            <div class="badge ok">Tech Stack Match (85%)</div>
+            <ul id="tech-stack"></ul>
+            <div class="badge ok" style="margin-top:10px;">Work Environment</div>
+            <ul id="work-environment"></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-head"><span class="bar"></span><h2>🚨 Key Concerns</h2></div>
+        <ul id="concern-list"></ul>
+      </div>
+
+      <div class="card">
+        <div class="section-head"><span class="bar"></span><h2>📋 Strategic Assessment</h2></div>
+        <div class="two-col">
+          <div>
+            <div class="badge">Startup Risk vs Opportunity</div>
+            <ul id="proscons"></ul>
+          </div>
+          <div>
+            <div class="badge">Salary Risk Analysis</div>
+            <ul id="salary-analysis"></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-head"><span class="bar"></span><h2>🎯 Recommendation</h2></div>
+        <p>🟡 <strong>CONDITIONAL</strong> — High Salary Risk, Needs Clarification</p>
+        <ol id="recommendation-points"></ol>
+      </div>
+
+      <div class="card chart-card">
+        <div class="section-head"><span class="bar"></span><h2>📊 Visual Summary</h2></div>
+        <canvas id="ratingChart" height="260"></canvas>
+      </div>
+    </section>
+
+    <footer>Generated view • Toggle theme for light/dark • Chart adapts to theme</footer>
+  </div>
+
+  <script>
+    const data = {
+      companyAssessment: {
+        employeeSatisfaction: "4.0/5 (Glassdoor, 10 reviews)",
+        management: [
+          "Founded by Dr. Vishal Sikka (former CEO of Infosys, SAP executive)",
+          "Experienced leadership team with enterprise background",
+          "No evidence of dysfunction or chaos found",
+          "Great combination of business and technical talent"
+        ],
+        financial: [
+          "Small company: Only 92 employees, $2.0M annual revenue",
+          "Last funding: $140M Series B in June 2021 (3+ years ago)",
+          "No layoffs found, but revenue seems low for funding amount",
+          "Growing employee count (+5% last year)"
+        ]
+      },
+      roleAnalysis: {
+        salary: [
+          "No salary disclosed in job posting",
+          "Your requirement: Minimum $175,000+",
+          "Market context: Palo Alto full stack avg ~$205k, but company size is concerning",
+          "Risk: Could be significantly below your threshold given small company size/revenue"
+        ],
+        techStack: [
+          "✅ Python (backend requirement met)",
+          "✅ MySQL, SQL Server (database experience)",
+          "🟡 Full stack vs your backend preference",
+          "✅ React, JavaScript (you have some experience)"
+        ],
+        workEnv: [
+          "Very friendly working environment",
+          "Smart people, friendly culture",
+          "Technology led service with emphasis on values and culture",
+          "Unlimited PTO with expectation to use it"
+        ]
+      },
+      concerns: [
+        "🔴 Company Size Risk - Only 92 employees with $2.0M revenue, funding 3+ years ago",
+        "🔴 Salary Unknown - Suggests potentially lower compensation",
+        "🟡 Role Mismatch - Full stack role could involve significant frontend work"
+      ],
+      assessment: {
+        proscons: [
+          "Pros: AI/ML focus aligns with your development tools experience",
+          "Cons: Small size, old funding, unclear financial health",
+          "Your criteria: Prefer established companies with proven business models"
+        ],
+        salaryAnalysis: [
+          "Missing salary information is concerning",
+          "Small company size often correlates with lower compensation",
+          "Market rate suggests $175k+ possible, but company specifics unknown"
+        ]
+      },
+      recommendation: [
+        "No salary information - Could waste time if below $175k threshold",
+        "Small company with questionable financials - Revenue vs employee count suggests challenges",
+        "Full stack role vs your backend preference"
+      ]
+    };
+
+    // Populate DOM
+    document.getElementById("employee-satisfaction").innerText = data.companyAssessment.employeeSatisfaction;
+    document.getElementById("kpi-satisfaction").innerText = data.companyAssessment.employeeSatisfaction.split(" ")[0];
+
+    data.companyAssessment.management.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      document.getElementById("management-points").appendChild(li);
+    });
+
+    data.companyAssessment.financial.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      document.getElementById("financial-points").appendChild(li);
+    });
+
+    data.roleAnalysis.salary.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      document.getElementById("salary-points").appendChild(li);
+    });
+
+    data.roleAnalysis.techStack.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      document.getElementById("tech-stack").appendChild(li);
+    });
+
+    data.roleAnalysis.workEnv.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      document.getElementById("work-environment").appendChild(li);
+    });
+
+    data.concerns.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      document.getElementById("concern-list").appendChild(li);
+    });
+
+    data.assessment.proscons.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      document.getElementById("proscons").appendChild(li);
+    });
+
+    data.assessment.salaryAnalysis.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      document.getElementById("salary-analysis").appendChild(li);
+    });
+
+    data.recommendation.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      document.getElementById("recommendation-points").appendChild(li);
+    });
+
+    // Theme toggle
+    const toggleBtn = document.getElementById('themeToggle');
+    toggleBtn.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      toggleBtn.textContent = isDark ? '☀️' : '🌙';
+      // Repaint chart to adapt grid/label colors
+      buildChart(true);
+    });
+
+    // Download JSON
+    document.getElementById('cta').addEventListener('click', () => {
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'job-analysis.json'; a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    // Chart using CSS variables
+    let chart;
+    function buildChart(forceRebuild = false) {
+      const ctx = document.getElementById('ratingChart').getContext('2d');
+      const styles = getComputedStyle(document.documentElement);
+      const grid = styles.getPropertyValue('--ring').trim();
+      const label = styles.getPropertyValue('--muted').trim();
+      const bars = [styles.getPropertyValue('--warning').trim(), styles.getPropertyValue('--accent-2').trim(), styles.getPropertyValue('--positive').trim()];
+
+      const config = {
+        type: 'bar',
+        data: {
+          labels: ['Employee Satisfaction', 'Tech Stack Match', 'Work Environment'],
+          datasets: [{
+            label: 'Score',
+            data: [4.0, 4.25, 4.5],
+            backgroundColor: bars,
+            borderRadius: 8,
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false },
+            tooltip: { backgroundColor: styles.getPropertyValue('--card') }
+          },
+          scales: {
+            y: {
+              beginAtZero: true, max: 5,
+              grid: { color: grid },
+              ticks: { color: label }
+            },
+            x: {
+              grid: { display: false },
+              ticks: { color: label }
+            }
+          }
+        }
+      };
+
+      if (chart && forceRebuild) { chart.destroy(); }
+      if (!chart || forceRebuild) { chart = new Chart(ctx, config); }
+    }
+
+    // initial chart
+    buildChart();
+  </script>
+</body>
+</html>

@@ -70,9 +70,36 @@ follow_up:
   check_date: "[YYYY-MM-DD when to follow up]"
   backup_plan: "[Alternative approaches if no response]"
 
-interview_prep:
-  file: "./interview-prep.md"
-  summary: "[Brief summary - detailed prep in external file]"
+interview_process:
+  status: "pending" # pending, scheduled, in_progress, completed, rejected
+  rounds_expected: 0 # Update as you learn more about their process
+
+  correspondence:
+    emails: "./correspondence/emails.md"
+    scheduling: "./correspondence/scheduling.md"
+
+  interviews:
+    preparation_files:
+      - "./interviews/preparation-round-1.md"
+      # Add more rounds as needed:
+      # - "./interviews/preparation-round-2.md"
+
+    coding_tests:
+      - "./interviews/coding-test-1-[description].py"
+      # Add more tests as needed:
+      # - "./interviews/coding-test-2-[description].py"
+
+    technical_interviews:
+      - "./interviews/technical-interview-round-1-notes.md"
+      # Add more rounds as needed:
+      # - "./interviews/technical-interview-round-2-notes.md"
+
+    post_interview:
+      follow_up: "./interviews/post-interview-follow-up.md"
+      thank_you: "./interviews/post-interview-thank-you-notes.md"
+      feedback: "./interviews/post-interview-feedback-received.md"
+
+  summary: "[Brief overview of interview process and outcomes]"
 
 decision_factors:
   pros:

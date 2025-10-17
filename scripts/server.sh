@@ -3,7 +3,7 @@
 # Development server management script for branndon.dev
 # Manages Python HTTP server for resume PDF generation
 
-PROJECT_DIR="/Volumes/Storage/Dropbox/web-development/mine/repos/branndon.dev/webroot"
+PROJECT_DIR="/Volumes/Storage/Dropbox/workspace/projects/branndon.dev/webroot"
 PID_FILE="$PROJECT_DIR/../.dev.pid"
 SERVER_PORT=8000
 SERVER_URL="http://localhost:$SERVER_PORT"

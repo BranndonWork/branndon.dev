@@ -7,12 +7,29 @@
       "WebSearch",
       "Bash(./scripts/server.sh:*)",
       "WebFetch(domain:www.glassdoor.com)",
-      "Read(//Volumes/Home/Documents/job-search-2025/data/jobs/**)",
+      "Read(//Volumes/Storage/Dropbox/documents/job-search-2025/data/jobs/**)",
       "Read(//Volumes/Storage/Dropbox/web-development/tph/machine-learning/suggested-for-you/**)",
       "Read(//Volumes/Storage/Dropbox/web-development/tph/**)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Read(//Volumes/Storage/Dropbox/documents/job-search-2025/**)",
+      "Read(//Volumes/Scratch/tph/content-recommendation-system/**)",
+      "Read(//Volumes/Scratch/tph/repos/pennyhoarder_server/scripts/**)",
+      "Read(//Volumes/Scratch/tph/repos/pennyhoarder_server/**)",
+      "Read(//Volumes/Scratch/tph/repos/**)",
+      "Bash(source:*)",
+      "Bash(python manage.py:*)",
+      "Bash(docker-compose up:*)",
+      "Bash(docker-compose:*)",
+      "Bash(docker-compose logs:*)",
+      "Bash(chmod:*)",
+      "Read(//Volumes/Storage/Dropbox/workspace/lib/calendar/services/apple_calendar/**)",
+      "Read(//Users/branndon/.claude/commands/**)",
+      "SlashCommand(/generate-resume:*)",
+      "WebFetch(domain:www.indeed.com)"
     ],
     "deny": [],
     "ask": []
-  }
+  },
+  "outputStyle": "Explanatory",
+  "spinnerTipsEnabled": false
 }

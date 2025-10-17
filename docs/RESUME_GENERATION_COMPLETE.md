@@ -79,6 +79,8 @@ cat ./job-search/[Company-JobTitle]/job-posting.md
 
 **🚨 MANDATORY COMPANY REVIEW STEP:**
 
+**If you already conducted comprehensive company research earlier in the current conversation, save the complete analysis to `./job-search/[Company-JobTitle]/company-research-analysis.md` and proceed to Step 4: Complete Job Tracking YAML.**
+
 Before proceeding with resume generation, research company employee reviews:
 
 1. **Web Search for Review Sites:**
@@ -113,21 +115,24 @@ Before proceeding with resume generation, research company employee reviews:
 - Recent reviews (last 6 months) showing declining conditions
 - Ethical concerns or unethical business practices
 
-### Step 2: Create Missing Files (Only if user chooses to continue)
+### Step 2: Create Job Directory Structure (Only if user chooses to continue)
 
-Copy ALL templates from templates directory:
+Use the setup script to create standardized directory structure with all templates:
 
 ```bash
-# Primary job tracking and resume files
-cp docs/templates/job-tracking-template.yaml ./job-search/[Company-JobTitle]/job-tracking.yaml
-cp docs/templates/resume-ats-template.json ./job-search/[Company-JobTitle]/resume-branndon-coelho-[company]-ats.json
-cp docs/templates/cover-letter-template.txt ./job-search/[Company-JobTitle]/cover-letter.txt
+# Create complete job directory with all templates and structure
+poetry run python scripts/setup_job_directory.py "[Company Name]" "[Job Title]"
 
-# Simplified supporting files (most data now in job-application.yaml)
-cp docs/templates/customization-analysis-template.md ./job-search/[Company-JobTitle]/customization-analysis.md
-cp docs/templates/application-tracking-template.md ./job-search/[Company-JobTitle]/application-tracking.md
-cp docs/templates/interview-prep-template.md ./job-search/[Company-JobTitle]/interview-prep.md
+# Example:
+# poetry run python scripts/setup_job_directory.py "PatientPoint" "Staff Python Engineer"
 ```
+
+This creates:
+
+- Complete directory structure with `interviews/` and `correspondence/` subdirectories
+- All template files (job-tracking.yaml, resume templates, prep files)
+- Proper naming conventions and structure
+- Skips existing files to avoid overwriting customizations
 
 ### Step 4: Complete Job Tracking YAML FIRST
 
@@ -284,7 +289,38 @@ Next Steps:
 3. [Any specific application notes for this company]
 ```
 
-- List final directory contents
+## Final Job Directory Structure
+
+After completing resume generation, your job directory should contain:
+
+```
+job-search/[Company-JobTitle]/
+├── job-tracking.yaml                    # Primary tracking file with YAML structure
+├── job-posting.md                       # Original job posting content
+├── company-research-report.md           # Company analysis and red flags
+├── customization-analysis.md            # Job requirements analysis
+├── cover-letter.txt                     # Text version for editing
+├── [Company-JobTitle]-Resume.pdf        # Final resume PDF
+├── [Company-JobTitle]-CoverLetter.pdf   # Final cover letter PDF
+├── resume-branndon-coelho-[company]-ats.json  # ATS-optimized resume JSON
+├── application-tracking.md              # Application status and next steps
+├── interview-prep.md                    # General interview preparation template
+├── correspondence/                      # All non-interview communications
+│   ├── emails.md                       # Email correspondence with recruiters/hiring managers
+│   └── scheduling.md                   # Interview scheduling communications (optional)
+└── interviews/                         # All interview-related materials
+    ├── preparation-round-1.md          # Round 1 interview preparation
+    ├── preparation-round-2.md          # Round 2+ preparations (as needed)
+    ├── coding-test-1-[description].py  # Coding challenges and solutions
+    ├── coding-test-2-[description].py  # Additional tests (as needed)
+    ├── technical-interview-round-1-notes.md  # Interview notes and questions
+    ├── technical-interview-round-2-notes.md  # Additional rounds (as needed)
+    ├── post-interview-follow-up.md     # Follow-up strategy and actions
+    ├── post-interview-thank-you-notes.md    # Thank you messages sent
+    └── post-interview-feedback-received.md  # Feedback from interviews
+```
+
+**Note**: The `interviews/` and `correspondence/` directories are created automatically when interview processes begin. The job-tracking.yaml file includes references to these structured paths for comprehensive tracking.
 
 ## Section Limits (2-3 Page Target)
 
@@ -332,11 +368,18 @@ Next Steps:
 - **No buzzwords**: Avoid "passionate," "innovative," "cutting-edge," "synergistic," etc.
 - **No casual slang**: Professional tone without being overly informal
 - **Action-oriented**: "I'd love to discuss" not "I would be honored to have the opportunity to potentially explore"
+- **Specific technical focus**: "applying machine learning to insurance workflows" not "transforming the insurance industry"
+- **Authentic interest**: "I'm genuinely curious about [specific technical challenge]" not "I'm excited about your amazing mission"
 
 **What to Avoid:**
 
 - Corporate buzzword salad ("leverage core competencies to drive innovative solutions")
 - Overly casual language ("Hey there!" or "Sounds like fun!" or "Let's chat!")
+- **Folksy language** ("you folks" - use "you're" or "your team" instead)
+- **Regurgitating company marketing speak** ("transforming the industry", "revolutionizing", "disrupting")
+- **Generic praise** ("your talented team", "amazing company", "incredible mission")
+- **Buzzword combinations** ("cutting-edge technology", "innovative solutions", "next-generation platform")
+- **Grand transformation language** ("changing the world", "transforming industries") - focus on specific work instead
 - AI "thing" pattern ("That transparency thing, refreshing" - dismissive and robotic)
 - Redundant phrases ("in order to," "at this point in time")
 - Vague achievements ("improved performance significantly")

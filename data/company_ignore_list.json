@@ -40,6 +40,59 @@
       ],
       "research_source": "Unverified web search results",
       "job_ids_rejected": ["4294516215"]
+    },
+    "GEICO": {
+      "date_added": "2025-09-10",
+      "reasons": [
+        "Massive layoffs: 2,000 employees cut in October 2023 (6% workforce)",
+        "Overall reduction: Nearly 50% workforce cut (48,700 → 27,000 employees)",
+        "Poor employee satisfaction: 2.6/5 Glassdoor rating (28% below industry average)",
+        "Terrible work-life balance: 2.4/5 rating",
+        "Toxic culture: 2.2/5 culture rating, 90% turnover rate",
+        "Job insecurity: Only 21% would recommend to a friend",
+        "Ongoing layoffs: '10% from each department every 6 months'",
+        "Poor management and psychological safety concerns"
+      ],
+      "research_source": "Glassdoor, Indeed, Insurance Business America 2024-2025",
+      "job_ids_rejected": ["4285270847", "4294503306"]
+    },
+    "Stripe": {
+      "date_added": "2025-09-10",
+      "reasons": [
+        "Recent layoffs: 300 employees Jan 2025 (3.5% workforce), 1,120 in Nov 2022 (14%)",
+        "Poor work-life balance: 3.4/5 rating, 'very poor work life balance' employee reports",
+        "Toxic culture reports: Multiple 'toxic culture', 'cut-throat', 'culture of overworking'",
+        "Understaffing by design: 'Very lean company, too lean', tight deadlines",
+        "Performance pressure: 'Constantly threatened with PIP', forced stack-ranking",
+        "Compensation cuts: 7% reduction in salary bands in 2024"
+      ],
+      "research_source": "Glassdoor, Indeed, Levels.fyi, TechCrunch 2024-2025",
+      "job_ids_rejected": ["4295159117"]
+    },
+    "Microsoft": {
+      "date_added": "2025-09-10",
+      "reasons": [
+        "Massive layoffs 2024-2025: Over 15,000 employees cut (7% of headcount) in first 7 months of 2025",
+        "Engineering roles specifically targeted: Software engineers, PMs, TPMs most affected",
+        "Job security breakdown: Traditional stability 'pact' eliminated for AI investment",
+        "IC4 mid-level individual contributors most at risk",
+        "AI automation threat: 30% of Microsoft's code now AI-generated, reducing need for human engineers",
+        "Ongoing margin pressure requiring continued annual cuts (10,000+ jobs annually projected)"
+      ],
+      "research_source": "TechCrunch, GeekWire, CNBC, The Register 2024-2025",
+      "job_ids_rejected": ["4294668541"]
+    },
+    "Medallion": {
+      "date_added": "2025-09-18",
+      "reasons": [
+        "High turnover and leadership dysfunction: 'Complete lack of leadership. Turnover is through the roof'",
+        "Toxic culture reports: 'Culture is fear-centric. If you're not a yes person you will be bullied out'",
+        "Work-life balance issues: 'No work/life balance — worst years of my career'",
+        "Rapid growth causing operational stress: 'Growing way too fast, employees struggling every single day'",
+        "Mixed employee feedback despite awards: Concerning reports contradict workplace recognition"
+      ],
+      "research_source": "Glassdoor reviews, Indeed reviews, company research 2024-2025",
+      "job_ids_rejected": ["3950262936"]
     }
   }
 }

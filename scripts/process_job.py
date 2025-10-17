@@ -296,7 +296,7 @@ def main():
     parser = argparse.ArgumentParser(description="Interactive job processing workflow")
     parser.add_argument(
         "--source-dir", 
-        default="/Volumes/Home/Documents/job-search-2025/data/jobs",
+        default="/Volumes/Storage/Dropbox/documents/job-search-2025/data/jobs",
         help="Source directory with scraped jobs"
     )
     parser.add_argument(

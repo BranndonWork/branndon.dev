@@ -29,9 +29,9 @@
   "aboutSection": {
     "title": "About Branndon",
     "descriptions": [
-      "Seasoned software engineer with over 15 years of professional experience in full-stack development and team leadership. Led technical initiatives at The Penny Hoarder from startup to recognized media platform, orchestrating critical business applications, optimizing site performance from 2.7 seconds to 0.89, designing a machine learning-based email content recommendation system, and building a production Single Page Application job portal with Node.js WebSocket backend and automated testing.",
+      "Seasoned software engineer with over 15 years of professional experience in full-stack development and team leadership. Led technical initiatives at The Penny Hoarder from startup to recognized media platform, orchestrating critical business applications, optimizing site performance from 2.7 seconds to 0.89, designing a machine learning-based email content recommendation system, and building a production Single Page Application job portal with Node.js WebSocket backend and automated testing. Contributed to transforming the company from $4 million to $40 million in annual revenue while scaling technical teams from 10 to over 100 employees.",
       "Currently at Headspace, specializing in Django-based application development with focus on scalable and security-focused software architecture. Responsibilities include mentoring junior engineers, guiding software architecture decisions, and ensuring adherence to industry best practices while staying current with Django framework enhancements.",
-      "Contributed to transforming a startup from $4 million to $40 million in annual revenue while scaling technical teams from 10 to over 100 employees. Committed to continuous learning and adaptability, leveraging strategic and activator strengths to deliver results in fast-paced environments."
+      "As Chief Digital Officer at SpecialNeeds.com, architect production LLM systems with Langchain connectors for automated content research, summarization, and standardization. Built scalable infrastructure supporting Django backend with Next.js frontend, utilizing Cloudflare Workers for caching and custom API endpoints for content generation."
     ],
     "strengths": [
       {
@@ -217,6 +217,7 @@
         "technologies": [
           "Python",
           "Machine Learning",
+          "Elasticsearch",
           "WordPress",
           "JavaScript",
           "PHP",
@@ -286,6 +287,10 @@
           "Explored advanced agentic AI patterns and Microsoft agent frameworks"
         ],
         "technologies": [
+          "Python",
+          "FastAPI",
+          "SQLAlchemy",
+          "PostgreSQL",
           "RAG",
           "Retrieval Augmented Generation",
           "CrewAI",
@@ -297,7 +302,8 @@
           "Microsoft Agent Frameworks",
           "Multi-agent Systems",
           "Document Processing",
-          "AI Automation"
+          "AI Automation",
+          "RESTful API"
         ]
       }
     ]

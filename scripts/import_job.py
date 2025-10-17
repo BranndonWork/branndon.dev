@@ -8,23 +8,26 @@ import os
 import shutil
 import argparse
 import re
+import sys
 from pathlib import Path
 from datetime import datetime
 import json
 
-from job_tracker_storage import JobStorage
-from job_tracker_operations import JobOperations
+job_search_path = Path("/Volumes/Storage/Dropbox/documents/job-search-2025")
+sys.path.append(str(job_search_path))
+
+from job_scraper.sqlite_wrapper import SQLiteProvider
+from job_tracker_db import JobTrackerDB, JobOperationsDB, JobStorageDB
+from setup_job_directory import JobDirectorySetup
 
 class JobTracker:
     """Compatibility wrapper for the new job tracker architecture"""
     def __init__(self, tracking_file=None):
-        self.storage = JobStorage(job_search_dir=None, central_tracking_file=tracking_file)
-        self.operations = JobOperations(self.storage)
+        self.storage = JobStorageDB(job_search_dir=None, central_tracking_file=tracking_file)
+        self.operations = JobOperationsDB(self.storage)
     
     def get_job_status(self, job_id: str) -> str:
-        central_data = self.storage.load_central_tracking()
-        job_data = central_data.get("jobs", {}).get(job_id, {})
-        return job_data.get("status", "new")
+        return self.storage.tracker.get_job_status(job_id)
     
     def update_job_status(self, job_id: str, status: str, notes: str = "", job_details: dict = None):
         title = job_details.get("title") if job_details else None
@@ -34,52 +37,48 @@ class JobTracker:
 
 
 class JobImporter:
-    def __init__(self, source_dir: str, target_dir: str = None, tracking_file: str = None):
+    def __init__(self, source_dir: str = None, target_dir: str = None, tracking_file: str = None):
         """Initialize job importer."""
-        self.source_dir = Path(source_dir)
         self.target_dir = Path(target_dir) if target_dir else Path.cwd() / "job-search"
         self.tracker = JobTracker(tracking_file)
-        
-        if not self.source_dir.exists():
-            raise FileNotFoundError(f"Source directory not found: {source_dir}")
+        self.setup = JobDirectorySetup(str(self.target_dir))
+
+        os.environ["SQLITE_DB_PATH"] = str(job_search_path / "jobs_database.db")
+        self.db = SQLiteProvider()
     
-    def extract_job_details(self, job_file: Path) -> dict:
-        """Extract job details from markdown file."""
+    def get_job_from_db(self, job_id: str) -> dict:
+        """Get job details from database."""
         try:
-            with open(job_file, 'r', encoding='utf-8') as f:
-                content = f.read()
-            
-            # Extract key information
-            job_id_match = re.search(r'\*\*Job ID\*\*:\s*`([^`]+)`', content)
-            job_id = job_id_match.group(1) if job_id_match else job_file.stem
-            
-            title_match = re.search(r'---\n\n# (.+?)\n', content)
-            title = title_match.group(1) if title_match else "Unknown Title"
-            
-            company_match = re.search(r'\*\*Company\*\*:\s*(.+)', content)
-            company = company_match.group(1) if company_match else "Unknown"
-            
-            location_match = re.search(r'\*\*Location\*\*:\s*(.+)', content)
-            location = location_match.group(1) if location_match else "Unknown"
-            
-            level_match = re.search(r'\*\*Level\*\*:\s*(.+)', content)
-            level = level_match.group(1) if level_match else ""
-            
-            score_match = re.search(r'\*\*Resume Score\*\*:\s*(\d+)', content)
-            score = int(score_match.group(1)) if score_match else 0
-            
+            conn = self.db._get_connection()
+            cursor = conn.cursor()
+
+            cursor.execute("""
+                SELECT job_id, company, job_title, resume_score,
+                       description, location, level
+                FROM jobs
+                WHERE job_id = ?
+            """, (job_id,))
+
+            result = cursor.fetchone()
+            conn.close()
+
+            if not result:
+                return {}
+
+            job_id, company, title, score, description, location, level = result
+
             return {
-                "job_id": job_id,
-                "title": title,
-                "company": company,
-                "location": location,
-                "level": level,
-                "score": score,
-                "content": content
+                "job_id": str(job_id),
+                "title": title or "Unknown Title",
+                "company": company or "Unknown",
+                "location": location or "Unknown",
+                "level": level or "",
+                "score": score or 0,
+                "content": description or ""
             }
-        
+
         except Exception as e:
-            print(f"Error extracting job details from {job_file}: {e}")
+            print(f"Error getting job {job_id} from database: {e}")
             return {}
     
     def create_directory_name(self, company: str, title: str) -> str:
@@ -99,44 +98,11 @@ class JobImporter:
         
         return dir_name
     
-    def copy_template_files(self, job_dir: Path):
-        """Copy template files to job directory."""
-        templates_dir = Path(__file__).parent.parent / "docs" / "templates"
-        
-        template_files = {
-            "resume-ats-template.json": "resume-branndon-coelho-{company}-ats.json",
-            "customization-analysis-template.md": "customization-analysis.md",
-            "application-tracking-template.md": "application-tracking.md",
-            "interview-prep-template.md": "interview-prep.md",
-            "cover-letter-template.txt": "cover-letter.txt"
-        }
-        
-        company_slug = job_dir.name.split('-')[0].lower()
-        
-        for template_file, target_name in template_files.items():
-            template_path = templates_dir / template_file
-            if template_path.exists():
-                target_file = target_name.format(company=company_slug)
-                target_path = job_dir / target_file
-                try:
-                    shutil.copy2(template_path, target_path)
-                    print(f"  ✓ Copied {template_file} → {target_file}")
-                except Exception as e:
-                    print(f"  ⚠️ Failed to copy {template_file}: {e}")
-            else:
-                print(f"  ⚠️ Template not found: {template_file}")
-    
     def import_job(self, job_id: str, force: bool = False) -> str:
         """Import a specific job to local directory."""
-        # Find the job file
-        job_file = self.source_dir / f"{job_id}.md"
-        if not job_file.exists():
-            raise FileNotFoundError(f"Job file not found: {job_file}")
-        
-        # Extract job details
-        job_details = self.extract_job_details(job_file)
+        job_details = self.get_job_from_db(job_id)
         if not job_details:
-            raise ValueError(f"Could not extract job details from {job_file}")
+            raise ValueError(f"Could not find job {job_id} in database")
         
         # Check if already imported
         current_status = self.tracker.get_job_status(job_id)
@@ -146,24 +112,15 @@ class JobImporter:
                 print(f"Job {job_id} already imported to: {existing_dir}")
                 return str(existing_dir)
         
-        # Create directory name
-        dir_name = self.create_directory_name(job_details["company"], job_details["title"])
-        job_dir = self.target_dir / dir_name
-        
-        # Handle existing directory
-        if job_dir.exists():
-            if not force:
-                counter = 1
-                while (self.target_dir / f"{dir_name}-{counter}").exists():
-                    counter += 1
-                job_dir = self.target_dir / f"{dir_name}-{counter}"
-                print(f"Directory exists, using: {job_dir.name}")
-            else:
-                print(f"Overwriting existing directory: {job_dir.name}")
-        
-        # Create job directory
-        job_dir.mkdir(parents=True, exist_ok=True)
-        print(f"\\n📁 Creating job directory: {job_dir.name}")
+        # Set up job directory using standardized setup
+        job_dir_str = self.setup.setup_job_directory(
+            job_details["company"],
+            job_details["title"],
+            force
+        )
+        job_dir = Path(job_dir_str)
+
+        # (Directory already created by setup_job_directory)
         
         # Save job posting
         job_posting_file = job_dir / "job-posting.md"
@@ -177,10 +134,6 @@ class JobImporter:
         with open(linkedin_url_file, 'w', encoding='utf-8') as f:
             f.write(linkedin_url)
         print(f"  ✓ Saved LinkedIn URL: linkedin-url.txt")
-        
-        # Copy template files
-        print(f"  📋 Copying template files...")
-        self.copy_template_files(job_dir)
         
         # Update tracking
         self.tracker.update_job_status(
@@ -215,67 +168,71 @@ class JobImporter:
     
     def list_importable_jobs(self, limit: int = 20) -> list:
         """List jobs that can be imported (high scores, not yet imported)."""
-        from find_top_jobs import find_top_jobs
-        
-        # Get top unprocessed jobs
-        jobs = find_top_jobs(
-            str(self.source_dir),
-            top_n=limit * 2,  # Get more to filter
-            exclude_processed=False,  # We'll filter manually
-            status_filter=None
-        )
-        
-        importable = []
-        for job_id, score, title in jobs:
-            status = self.tracker.get_job_status(job_id)
-            if status in ["new", "reviewed", "researching"]:
-                importable.append((job_id, score, title, status))
-        
-        return importable[:limit]
+        try:
+            conn = self.db._get_connection()
+            cursor = conn.cursor()
+
+            cursor.execute("""
+                SELECT jobs.job_id, jobs.resume_score, jobs.job_title,
+                       COALESCE(job_tracking.status, 'new') as status
+                FROM jobs
+                LEFT JOIN job_tracking ON jobs.job_id = job_tracking.job_id
+                LEFT JOIN company_ignore ON jobs.company = company_ignore.company
+                WHERE jobs.created_at > date('now', '-7 days')
+                  AND jobs.resume_score IS NOT NULL
+                  AND (job_tracking.status IS NULL OR job_tracking.status IN ('new', 'reviewed', 'researching'))
+                  AND company_ignore.company IS NULL
+                ORDER BY jobs.resume_score DESC, jobs.created_at DESC
+                LIMIT ?
+            """, (limit,))
+
+            results = cursor.fetchall()
+            conn.close()
+
+            return [(str(job_id), score, title, status) for job_id, score, title, status in results]
+
+        except Exception as e:
+            print(f"Error listing importable jobs: {e}")
+            return []
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Import jobs from scraped data to local directory")
+    parser = argparse.ArgumentParser(description="Import jobs from database to local directory")
     parser.add_argument(
-        "job_id", 
+        "job_id",
         nargs="?",
         help="Job ID to import (or use --list to see available jobs)"
     )
     parser.add_argument(
-        "--source-dir", 
-        default="/Volumes/Home/Documents/job-search-2025/data/jobs",
-        help="Source directory with scraped jobs"
-    )
-    parser.add_argument(
-        "--target-dir", 
+        "--target-dir",
         default="./job-search",
         help="Target directory for imported jobs"
     )
     parser.add_argument(
-        "--tracking-file", 
+        "--tracking-file",
         help="Path to job tracking file"
     )
     parser.add_argument(
-        "--list", 
+        "--list",
         action="store_true",
         help="List importable jobs"
     )
     parser.add_argument(
-        "--limit", 
-        type=int, 
+        "--limit",
+        type=int,
         default=20,
         help="Limit number of jobs to show when listing"
     )
     parser.add_argument(
-        "--force", 
+        "--force",
         action="store_true",
         help="Force import even if already imported"
     )
-    
+
     args = parser.parse_args()
-    
+
     try:
-        importer = JobImporter(args.source_dir, args.target_dir, args.tracking_file)
+        importer = JobImporter(target_dir=args.target_dir, tracking_file=args.tracking_file)
         
         if args.list or not args.job_id:
             print(f"\\n📋 Top importable jobs:")
