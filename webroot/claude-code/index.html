@@ -34,21 +34,18 @@
                 <span class="dot dot-green"></span>
                 <span class="terminal-title">branndon.dev / claude code</span>
             </div>
-            <pre class="terminal-body"><span class="prompt">$</span> <span class="cmd">/linkedin-apply</span> https://linkedin.com/jobs/view/...
-  Company:  Acme Engineering
-  Title:    Senior Backend Engineer
-  <span class="ok">Keywords: 9 matched</span>
-    APIs, CI/CD, Docker, Node.js, PostgreSQL, Python, React, TypeScript
+            <pre class="terminal-body"><span class="user-input">&#8250; /fa https://linkedin.com/jobs/view/4392126589</span>
 
-  PDF: job-search/Acme-Engineering-Senior-Backend-Engineer/resume-branndon-coelho-acme-ats.pdf
-  <span class="dim">Elapsed: 5.5s</span>
+<span class="tool-dot">&#9679;</span> <span class="tool-name">Bash</span><span class="dim">(poetry run python scripts/linkedin_scraper.py --job-id 4392126589)</span>
+  <span class="tool-result">&#9492; Acme Engineering &#8212; Senior Backend Engineer</span>
 
-<span class="prompt">$</span> <span class="cmd">/expert:hunter</span> "evaluate this role"
-  <span class="dim">[Hunter] strong stack overlap, IC scope confirmed</span>
-  <span class="dim">Next action: /interview-prep</span>
+<span class="tool-dot">&#9679;</span> <span class="tool-name">Bash</span><span class="dim">(poetry run python scripts/resume/generate.py job-search/Acme-Senior-Backend-Engineer/ --pdf)</span>
+  <span class="tool-result">&#9492; <span class="ok">94/100 keywords matched</span>  &#183;  PDF ready  &#183;  <span class="dim">5.5s</span></span>
 
-<span class="prompt">$</span> <span class="cmd">/applied</span> job-search/Acme-Engineering-Senior-Backend-Engineer/
-  <span class="ok">status: applied, job-application.yaml written</span></pre>
+<span class="user-input">&#8250; /applied job-search/Acme-Senior-Backend-Engineer/</span>
+
+<span class="tool-dot">&#9679;</span> <span class="tool-name">Write</span><span class="dim">(job-search/Acme-Senior-Backend-Engineer/job-application.yaml)</span>
+  <span class="tool-result">&#9492; <span class="ok">status: applied ✓</span></span></pre>
         </div>
     </div>
 </section>

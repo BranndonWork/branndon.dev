@@ -173,10 +173,12 @@ code {
     overflow-x: auto;
 }
 
-.terminal-body .prompt { color: var(--brand); font-weight: 700; }
-.terminal-body .ok     { color: #22c55e; }
-.terminal-body .dim    { color: #4a5568; }
-.terminal-body .cmd    { color: #e2b96f; }
+.terminal-body .user-input  { color: #c9d1d9; background: rgba(255,255,255,0.04); display: block; padding: 2px 4px; border-radius: 3px; }
+.terminal-body .tool-dot    { color: var(--brand); font-size: 10px; }
+.terminal-body .tool-name   { color: var(--brand); font-weight: 700; }
+.terminal-body .tool-result { color: #8b949e; display: block; padding-left: 4px; }
+.terminal-body .ok          { color: #22c55e; }
+.terminal-body .dim         { color: #4a5568; }
 
 /* ─── Microservice section ──────────────────────── */
 .section-alt {
