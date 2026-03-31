@@ -174,16 +174,20 @@
                           ));
                         })()}
 
-                      <h4 className="resume-timeline-item-desc-heading font-weight-bold">
-                        Technologies Touched (in order of usage):
-                      </h4>
-                      <ul className="list-inline">
-                        {exp.technologies.map((tech, techIndex) => (
-                          <li key={techIndex} className="list-inline-item">
-                            <span className="badge badge-primary badge-pill">{tech}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      {exp.technologies && exp.technologies.length > 0 && (
+                        <React.Fragment>
+                          <h4 className="resume-timeline-item-desc-heading font-weight-bold">
+                            Technologies Touched (in order of usage):
+                          </h4>
+                          <ul className="list-inline">
+                            {exp.technologies.map((tech, techIndex) => (
+                              <li key={techIndex} className="list-inline-item">
+                                <span className="badge badge-primary badge-pill">{tech}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </React.Fragment>
+                      )}
                     </div>
                   </article>
                 ))}
@@ -266,44 +270,6 @@
         );
       }
 
-      function ClaudeCodeSection({ sectionData = {} }) {
-        if (!sectionData.title) return null;
-        return (
-          <section className="resume-section experience-section mb-5">
-            <h2 className="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">{sectionData.title}</h2>
-            <div className="resume-section-content">
-              {sectionData.intro && <p className="mb-4">{sectionData.intro}</p>}
-              <div className="resume-timeline position-relative">
-                {sectionData.systems && sectionData.systems.map((system, idx) => (
-                  <article key={idx} className="resume-timeline-item position-relative pb-4">
-                    <div className="resume-timeline-item-header mb-2">
-                      <h3 className="resume-position-title font-weight-bold mb-1">{system.name}</h3>
-                    </div>
-                    <div className="resume-timeline-item-desc">
-                      <ul>
-                        {system.highlights.map((h, hIdx) => (
-                          <li key={hIdx} dangerouslySetInnerHTML={{ __html: h }} />
-                        ))}
-                      </ul>
-                    </div>
-                  </article>
-                ))}
-              </div>
-              {sectionData.tooling && (
-                <div className="mt-3">
-                  <h4 className="resume-timeline-item-desc-heading font-weight-bold">{sectionData.tooling.title}:</h4>
-                  <ul>
-                    {sectionData.tooling.items.map((item, idx) => (
-                      <li key={idx} dangerouslySetInnerHTML={{ __html: item }} />
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          </section>
-        );
-      }
-
       function FunFactsSection({ sectionData = {} }) {
         if (!sectionData.title) return null;
         return (
@@ -348,7 +314,7 @@
                               <span className="fa-container text-center mr-2">
                                 <i className={link.icon}></i>
                               </span>
-                              {(link.url.startsWith('mailto:') ? link.url.replace('mailto:', '') : link.url) + '\u00a0'}
+                              {link.url.replace('mailto:', '')}
                             </a>
                           </li>
                         ))}
@@ -362,7 +328,6 @@
 
                 <AboutSection sectionData={resumeData.aboutSection} />
                 <ExperienceSection sectionData={resumeData.experienceSection} />
-                {resumeData.claudeCodeSection && <ClaudeCodeSection sectionData={resumeData.claudeCodeSection} />}
                 {resumeData.recommendationsSection && (
                   <p
                     style={{

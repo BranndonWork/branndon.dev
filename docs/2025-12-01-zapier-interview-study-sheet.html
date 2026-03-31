@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Study Sheet - Perfect Answers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            .no-print { display: none; }
+            body {
+                padding: 0 !important;
+                margin: 0 !important;
+                font-size: 9pt;
+                background: white !important;
+            }
+            main {
+                padding: 0 !important;
+                margin: 0 !important;
+                max-width: 100% !important;
+            }
+            article {
+                padding: 0 !important;
+                margin: 0 !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                background: white !important;
+            }
+            * {
+                box-shadow: none !important;
+            }
+            .question-box { page-break-inside: avoid; margin-bottom: 8px; }
+            h2 { font-size: 10pt; margin-bottom: 3px; }
+            p { font-size: 8.5pt; line-height: 1.2; margin-bottom: 2px; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <main class="max-w-7xl mx-auto px-4 py-6">
+        <article class="bg-white shadow-lg rounded-lg p-6">
+            <h1 class="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-blue-600 pb-2">Interview Study Sheet - Perfect Answers</h1>
+
+            <div class="space-y-4">
+                <!-- Question 1 -->
+                <div class="question-box">
+                    <h2 class="text-base font-bold text-blue-700 mb-1">1. Tell me about yourself (2 min)</h2>
+                    <p class="text-gray-700 text-sm leading-snug">"I'm Brandon Coelho, a senior backend engineer with 15 years of experience, currently at Headspace while serving as Chief Digital Officer at SpecialNeeds.com. I specialize in Python, Django, and building scalable API systems. My work spans architecting production LLM applications with Langchain to leading Headspace's server-driven UI migration that cut feature release cycles from weeks to hours. I'm passionate about automation, performance, and building resilient systems. What drew me to Zapier is the intersection of APIs, automation, and AI. I'm an IC by choice - I value being hands-on with code and architecture over people management."</p>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="question-box">
+                    <h2 class="text-base font-bold text-blue-700 mb-1">2. Complex project - what made it challenging and how did you solve it? (STAR, 2-3 min)</h2>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Situation:</strong> At Headspace, we had 2-3 week app store review cycles. Every screen change for 70M users required separate iOS and Android releases. We were constantly out of sync, hotfixes took weeks.</p>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Task:</strong> I was one of the first two engineers selected to lead our server-driven UI migration - a year-long initiative to move all mobile app display logic to server-side control. I led the onboarding flow team.</p>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Action:</strong> We researched Netflix and Airbnb's approaches and adopted Airbnb's sections-and-screens architecture. I transitioned from Python to TypeScript to enhance our Node.js Hapi API. I collaborated daily with cross-functional teams through async standups.</p>
+                    <p class="text-gray-700 text-sm leading-snug"><strong>Result:</strong> We released on time in June. Feature velocity increased dramatically - what took 2-3 weeks now takes hours. We can hotfix bugs immediately, iterate on onboarding without app releases, and maintain iOS/Android consistency from a single source.</p>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="question-box">
+                    <h2 class="text-base font-bold text-blue-700 mb-1">3. Teammate proposed feature/implementation you disagreed with (STAR, 2 min)</h2>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Situation:</strong> At The Penny Hoarder, our DevOps engineer wanted to migrate our WordPress site from Docker to Kubernetes with orchestration.</p>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Task:</strong> I needed to evaluate whether the added complexity was justified.</p>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Action:</strong> I pushed back respectfully. I asked about our actual needs - we were a content site, not a high-transaction app. Our database was serverless on RDS, caching was solid. I explained my concerns about operational overhead. My manager gave him space for a POC. I offered to help review and test, but the deployment complexity became a blocker.</p>
+                    <p class="text-gray-700 text-sm leading-snug"><strong>Result:</strong> In the end, we stayed with Docker - the right call for our scale. I learned to ask 'what problem does this solve?' before adopting new infrastructure. I'd now suggest writing down scaling concerns first, then evaluating if the solution addresses them.</p>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="question-box">
+                    <h2 class="text-base font-bold text-blue-700 mb-1">4. Learning from a mistake (STAR, 2 min)</h2>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Situation:</strong> At The Penny Hoarder, we were converting our WordPress site to HTTPS when browsers were starting to require it. During one of the releases, there was an intermittent problem where pages would load without any CSS - they'd render, but look completely broken.</p>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Task:</strong> I was the driver on this conversion, and I needed to figure out why some pages rendered correctly for everyone while other pages were broken for everyone.</p>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Action:</strong> I traced it to a CloudFront caching issue with how stylesheets were being referenced. When a page didn't have a cache yet, CloudFront would generate one based on whichever device hit it first. Certain iOS versions would generate the cache with http:// stylesheet links, while others generated it with https://. Whichever device hit first determined the cache for everyone. So if a broken iOS version cached a page first, that page would have http:// stylesheet links for everyone - meaning the CSS wouldn't load on any device. I was apologizing profusely in Slack. Most people were supportive, but my boss called me that night and said "I'm here to tell you that it's not okay. That was a big deal."</p>
+                    <p class="text-gray-700 text-sm leading-snug"><strong>Result:</strong> I appreciated his candor and directness. Since then, I double-check everything I do more than ever because I never want to be in that position again. I learned how to handle problems better, how to respond when things go wrong, and the importance of taking feedback seriously and learning from it.</p>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="question-box">
+                    <h2 class="text-base font-bold text-blue-700 mb-1">5. Project that wasn't clearly defined - how did you make progress? (STAR, 2-3 min)</h2>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Situation:</strong> At The Penny Hoarder, I was approached about building a work-from-home jobs portal using ZipRecruiter's API. Zero planning - just 'we want this, you're the lead.'</p>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Task:</strong> I needed to define requirements, choose the tech stack, and build something performant and maintainable. Our WordPress admin was struggling with 30-45 second save times.</p>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Action:</strong> I documented all the unknowns: search requirements, performance targets, integration approach. I made initial technical decisions - I wanted something modular we could remove easily, not deeply integrated into the struggling WordPress system. I chose an SPA with React frontend and Node.js WebSocket backend for real-time search. I brought my proposal to the team's teaching Tuesday session for feedback before building.</p>
+                    <p class="text-gray-700 text-sm leading-snug"><strong>Result:</strong> We launched a fast, responsive portal with sub-50ms search responses. Users got real-time results as they typed, no page reloads. It ran unchanged for 6+ years because the architecture was solid. In hindsight, WebSockets were overkill - a fast REST API would have worked. But the collaborative approach to defining ambiguous requirements worked well.</p>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="question-box">
+                    <h2 class="text-base font-bold text-blue-700 mb-1">6. Received technical feedback you disagreed with - how did you respond? (STAR, 2 min)</h2>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Situation:</strong> During PR reviews at Headspace, I'd regularly get feedback from other engineers who'd point out areas where I was working in unfamiliar parts of the codebase.</p>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Task:</strong> I needed to evaluate their feedback and decide how to respond - whether to push back or incorporate their suggestions.</p>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Action:</strong> My approach was to assume they had context I didn't have. When they'd ask "why are you doing it this way? Did you know about this feature over here?" I'd treat it as knowledge sharing, not criticism. With a 500-engineer, 10-year-old codebase, nobody knows everything. I'd look at what they were pointing to, understand why their approach was better, and incorporate it. If their reasoning wasn't immediately clear, I'd ask questions to understand their perspective rather than defending my initial approach.</p>
+                    <p class="text-gray-700 text-sm leading-snug"><strong>Result:</strong> This helped me learn the codebase faster and build stronger relationships with my peers. I'd take their suggestions and incorporate them into my workflows going forward. I learned that the best engineers don't defend their code - they're open to learning better ways, especially when working in a large system where everyone has different expertise.</p>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="question-box">
+                    <h2 class="text-base font-bold text-blue-700 mb-1">7. Responding to an incident (STAR, 2 min)</h2>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Situation:</strong> At The Penny Hoarder, our WordPress site would hang randomly after 5-6 hours of any deployment. We couldn't isolate a pattern.</p>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Task:</strong> As the senior engineer on the platform, I owned finding and fixing this before we had an extended outage.</p>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Action:</strong> I checked filesystem activity during the hangs. I found PHP-FPM core files being touched right before the freeze. I searched GitHub issues for PHP memory leaks and found a known bug where after 10,000 files were added to memory, PHP wouldn't clear them, causing a cascading freeze. I tested the proposed solutions in staging.</p>
+                    <p class="text-gray-700 text-sm leading-snug"><strong>Result:</strong> Site stability returned immediately. I set up alerts to catch similar resource exhaustion earlier. I learned to look at core dependencies when application-level debugging doesn't reveal patterns.</p>
+                </div>
+
+                <!-- Question 8 -->
+                <div class="question-box">
+                    <h2 class="text-base font-bold text-blue-700 mb-1">8. Solving technical problem with brand new tool/technology (STAR, 2 min)</h2>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Situation:</strong> I had a technical interview testing AI-assisted development. The requirement: build a native iOS feature request system with upvoting in 2.5 hours using only Claude Code. I'd never written native iOS code before.</p>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Task:</strong> I needed to build a working iOS app with Django backend integration from zero iOS knowledge.</p>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Action:</strong> While Xcode was downloading, I planned with Claude Code - outlined the architecture and core features. Once ready, I worked iteratively: generated iOS boilerplate, had it explain each piece, debugged the integration with my Django API, and handled the upvoting logic. I focused on functionality over styling.</p>
+                    <p class="text-gray-700 text-sm leading-snug"><strong>Result:</strong> I delivered a functional iOS app with working backend in 2.5 hours - 30 minutes over target. Starting with zero iOS knowledge, this demonstrated effective AI use for unfamiliar territory. It validated my approach: I'm not dependent on knowing every language. I architect and direct, AI fills the knowledge gaps.</p>
+                </div>
+
+                <!-- Question 9 -->
+                <div class="question-box">
+                    <h2 class="text-base font-bold text-blue-700 mb-1">9. Django/API work examples (2 min)</h2>
+                    <p class="text-gray-700 text-sm leading-snug">"I've built Django REST APIs for 3+ years at Headspace and SpecialNeeds.com. At Headspace, I work with DRF daily on backend APIs serving mobile apps - extending authentication with JWT/Auth0, building onboarding APIs with GDPR consent, therapy intake endpoints with multi-step validation. At SpecialNeeds.com, built entire Django backend from scratch - data models for directory platform, RESTful endpoints for search/filtering/messaging, JWT auth with role-based permissions, custom API endpoints for LLM-powered content generation. I focus on developer experience - clear error messages, consistent response formats, proper HTTP status codes, API versioning, and documentation. For partner-facing APIs, reliability and clarity are critical."</p>
+                </div>
+
+                <!-- Question 10 -->
+                <div class="question-box">
+                    <h2 class="text-base font-bold text-blue-700 mb-1">10. When to build prototype vs long-lasting product? (2 min)</h2>
+                    <p class="text-gray-700 text-sm leading-snug">"I use a three-factor framework: source, scope, and surface area. <strong>Source:</strong> Developer-driven ideas get Friday afternoon prototypes to validate. Business-driven with customer complaints or revenue impact gets built properly from day one. <strong>Scope:</strong> How many systems does this touch? Internal admin features can prototype fast, refactor later. Customer-facing API endpoints need proper design because changing them breaks external integrations. <strong>Surface area:</strong> Internal tools can be messy prototypes. External-facing features need production quality immediately. <strong>Risk:</strong> Prototypes become permanent tech debt. So I document prototype shortcuts as tickets immediately. If we ship the prototype, we have clear list of what needs hardening."</p>
+                </div>
+
+                <!-- Question 11 -->
+                <div class="question-box">
+                    <h2 class="text-base font-bold text-blue-700 mb-1">11. How do you see AI evolving engineering in 3-5 years? How are you preparing? (2 min)</h2>
+                    <p class="text-gray-700 text-sm leading-snug">"AI is shifting engineering from writing every line to architecting systems and directing AI assistants. In 3-5 years, engineers who thrive will treat AI as a force multiplier. I'm preparing by using AI daily in production. At SpecialNeeds.com, I've architected LLM applications with Langchain for content generation - I'm thinking about prompt engineering, safety rails, and when to trust AI versus human review. I use Claude Code daily as a thought partner for debugging Django queries, mapping unfamiliar codebases, and prototyping. The role is evolving from 'code writer' to 'system architect who leverages AI,' and I'm already operating in that space."</p>
+                </div>
+
+                <!-- Question 12 -->
+                <div class="question-box">
+                    <h2 class="text-base font-bold text-blue-700 mb-1">12. Time you used AI to solve a problem (STAR, 2 min)</h2>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Situation:</strong> At SpecialNeeds.com, we needed to generate consistent, high-quality content across diverse special needs topics while maintaining voice and structure.</p>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Task:</strong> I needed to build a content generation system that could produce human-quality articles at scale without manual oversight.</p>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Action:</strong> I used Langchain to create a multi-step pipeline with 70 virtual authors, each with distinct expertise. I built structured validation - content had to follow HTML guidelines and hit quality thresholds. I set up cost-optimization: try the cheapest LLM first, quality-check the output, only escalate to expensive providers if the quality score was below 80%.</p>
+                    <p class="text-gray-700 text-sm leading-snug"><strong>Result:</strong> The system now generates publication-ready content automatically. We went from zero to hundreds of articles. The multi-provider strategy keeps costs near-zero (free tiers handle most content), only paying premium models when necessary. The site now ranks for thousands of keywords.</p>
+                </div>
+
+                <!-- Questions to Ask -->
+                <div class="question-box bg-blue-50 p-3 rounded border-l-4 border-blue-600">
+                    <h2 class="text-base font-bold text-blue-900 mb-2">Questions to Ask Interviewer (Pick 2-3):</h2>
+                    <ol class="space-y-1 ml-5 list-decimal text-gray-800 text-sm">
+                        <li>"What's the most interesting technical challenge your team is tackling right now?"</li>
+                        <li>"You've been at [Company] X years - what's kept you here? What do you love most about the team?"</li>
+                        <li>"How does [Company] approach technical mentorship and growth for senior engineers?"</li>
+                        <li>"For the [specific role] work, what does the balance look like between building new features versus maintaining existing systems?"</li>
+                        <li>"How are engineering teams incorporating AI into their development workflows day-to-day?"</li>
+                    </ol>
+                </div>
+
+                <!-- Key Reminders -->
+                <div class="question-box bg-yellow-50 p-3 rounded border-l-4 border-yellow-400">
+                    <h2 class="text-base font-bold text-yellow-900 mb-2">Key Reminders:</h2>
+                    <ul class="space-y-1 ml-5 list-disc text-yellow-900 text-sm">
+                        <li>Use STAR format (Situation → Task → Action → Result)</li>
+                        <li>Add stakes and urgency to stories (user impact, timeline pressure, business consequences)</li>
+                        <li>Always include quantified business impact in Results</li>
+                        <li>Keep answers 2-3 minutes max</li>
+                        <li>Pause 2 seconds before answering</li>
+                        <li>Cut filler words: "you know," "kind of," "I think"</li>
+                        <li>Ask confident questions about THEM, not about passing their interviews</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+    </main>
+</body>
+</html>

@@ -24,11 +24,16 @@
       "Bash(chmod:*)",
       "Read(//Volumes/Storage/Dropbox/workspace/lib/calendar/services/apple_calendar/**)",
       "Read(//Users/branndon/.claude/commands/**)",
-      "Skill(claude:agent-teams)"
+      "SlashCommand(/generate-resume:*)",
+      "WebFetch(domain:www.indeed.com)",
+      "WebFetch(domain:www.levels.fyi)",
+      "WebFetch(domain:www.linkedin.com)",
+      "WebFetch(domain:about.you.com)",
+      "WebFetch(domain:wellfound.com)"
     ],
     "deny": [],
     "ask": []
   },
-  "outputStyle": "Explanatory",
+  "outputStyle": "default",
   "spinnerTipsEnabled": false
 }

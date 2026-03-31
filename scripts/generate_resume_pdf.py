@@ -48,9 +48,21 @@ async def generate_resume_pdf(url="http://localhost:8000", output="branndon-coel
         print(f"{mode_text} PDF generated: {output}")
 
 
+PORT_FILE = "/tmp/branndon-dev-server.port"
+
+
+def get_server_url():
+    """Read server URL from port file written by server.sh."""
+    try:
+        port = Path(PORT_FILE).read_text().strip()
+        return f"http://127.0.0.1:{port}"
+    except FileNotFoundError:
+        return "http://localhost:8000"
+
+
 def main():
     parser = argparse.ArgumentParser(description="Generate PDF from resume website")
-    parser.add_argument("--url", default="http://localhost:8000", help="Resume website URL")
+    parser.add_argument("--url", default=None, help="Resume website URL (auto-detected from server.sh port file if omitted)")
     parser.add_argument("--output", default="branndon-coelho-resume.pdf", help="Output PDF filename")
     parser.add_argument("--mode", choices=["full", "ats"], default="full", help="Resume mode: full or ats")
     parser.add_argument("--job-dir", help="Job directory name to include in filename")
@@ -77,8 +89,9 @@ def main():
     elif args.output == "branndon-coelho-resume.pdf" and args.mode == "ats":
         args.output = "branndon-coelho-resume-ats.pdf"
 
+    url = args.url if args.url else get_server_url()
     ats_mode = args.mode == "ats"
-    asyncio.run(generate_resume_pdf(args.url, args.output, ats_mode))
+    asyncio.run(generate_resume_pdf(url, args.output, ats_mode))
 
 
 if __name__ == "__main__":

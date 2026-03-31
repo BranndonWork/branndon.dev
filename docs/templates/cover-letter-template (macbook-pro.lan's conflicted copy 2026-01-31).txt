@@ -1,0 +1,14 @@
+Dear [Company] Hiring Team,
+
+⚠️ CRITICAL: Follow ALL guidelines specified in the "Cover Letter Limits (CRITICAL)" and "Cover Letter Writing Style Guide" sections of docs/RESUME_GENERATION_COMPLETE.md
+
+[Paragraph 1 - Around 60 words]
+
+[Paragraph 2 - Around 60 words]
+
+[Paragraph 3 - Around 60 words]
+
+Sincerely,
+Branndon Coelho
+https://branndon.dev
+resume@branndon.dev

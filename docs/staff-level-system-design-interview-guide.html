@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff-Level System Design Interview Guide</title>
+    <style>
+        /* Markdown Live Preview - Preview Section CSS Styles */
+
+/* Container Styles */
+#preview.column {
+  overflow-y: scroll;
+  white-space: normal;
+}
+
+.column {
+  width: 50%;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+.preview-pane {
+  height: 100%;
+}
+
+/* Preview Wrapper */
+#preview-wrapper {
+  padding: 8px 16px 16px 16px;
+}
+
+/* Markdown Content Styles */
+.markdown-body {
+  color-scheme: light;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  margin: 0;
+  color: #1f2328;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Noto Sans, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+/* Headings */
+.markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.markdown-body h1 {
+  margin: .67em 0;
+  font-weight: 600;
+  padding-bottom: .3em;
+  font-size: 2em;
+  border-bottom: 1px solid #d1d9e0b3;
+}
+
+.markdown-body h2 {
+  font-weight: 600;
+  padding-bottom: .3em;
+  font-size: 1.5em;
+  border-bottom: 1px solid #d1d9e0b3;
+}
+
+.markdown-body h3 {
+  font-weight: 600;
+  font-size: 1.25em;
+}
+
+.markdown-body h4 {
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.markdown-body h5 {
+  font-weight: 600;
+  font-size: .875em;
+}
+
+.markdown-body h6 {
+  font-weight: 600;
+  font-size: .85em;
+  color: #59636e;
+}
+
+/* Paragraphs */
+.markdown-body p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+/* Links */
+.markdown-body a {
+  background-color: transparent;
+  color: #0969da;
+  text-decoration: none;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+/* Text Formatting */
+.markdown-body b, .markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body dfn {
+  font-style: italic;
+}
+
+.markdown-body mark {
+  background-color: #fff8c5;
+  color: #1f2328;
+}
+
+.markdown-body small {
+  font-size: 90%;
+}
+
+.markdown-body sub, .markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.markdown-body sub {
+  bottom: -.25em;
+}
+
+.markdown-body sup {
+  top: -.5em;
+}
+
+/* Code */
+.markdown-body code, .markdown-body tt {
+  padding: .2em .4em;
+  margin: 0;
+  font-size: 85%;
+  white-space: break-spaces;
+  background-color: #818b981f;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: .25rem;
+  font: 11px ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  line-height: 10px;
+  color: #1f2328;
+  vertical-align: middle;
+  background-color: #f6f8fa;
+  border: solid 1px #d1d9e0b3;
+  border-bottom-color: #d1d9e0b3;
+  border-radius: 6px;
+  box-shadow: inset 0 -1px #d1d9e0b3;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-size: 12px;
+  word-wrap: normal;
+}
+
+.markdown-body .highlight pre, .markdown-body pre {
+  padding: 1rem;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  color: #1f2328;
+  background-color: #f6f8fa;
+  border-radius: 6px;
+}
+
+.markdown-body pre code, .markdown-body pre tt {
+  display: inline;
+  max-width: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+/* Lists */
+.markdown-body ul, .markdown-body ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 2em;
+}
+
+.markdown-body ol ol, .markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol, .markdown-body ul ol ol, .markdown-body ol ul ol, .markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body li > p {
+  margin-top: 1rem;
+}
+
+.markdown-body li + li {
+  margin-top: .25em;
+}
+
+/* Blockquotes */
+.markdown-body blockquote {
+  margin: 0;
+  padding: 0 1em;
+  color: #59636e;
+  border-left: .25em solid #d1d9e0;
+}
+
+.markdown-body blockquote > :first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+/* Tables */
+.markdown-body table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow: auto;
+  font-variant: tabular-nums;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+}
+
+.markdown-body table th, .markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #d1d9e0;
+}
+
+.markdown-body table td > :last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #d1d9e0b3;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.markdown-body table img {
+  background-color: transparent;
+}
+
+/* Images */
+.markdown-body img {
+  border-style: none;
+  max-width: 100%;
+  box-sizing: content-box;
+}
+
+.markdown-body img[align=right] {
+  padding-left: 20px;
+}
+
+.markdown-body img[align=left] {
+  padding-right: 20px;
+}
+
+/* Horizontal Rules */
+.markdown-body hr {
+  box-sizing: content-box;
+  overflow: hidden;
+  background: transparent;
+  border-bottom: 1px solid #d1d9e0b3;
+  height: .25em;
+  padding: 0;
+  margin: 1.5rem 0;
+  background-color: #d1d9e0;
+  border: 0;
+}
+
+/* Checkboxes */
+.markdown-body input[type="checkbox"] {
+  margin: 0;
+  width: 18px;
+  height: 18px;
+}
+
+/* Remove bullets from list items containing checkboxes */
+.markdown-body li.checkbox-item {
+  list-style: none;
+}
+
+/* Remove left padding from lists containing checkboxes */
+.markdown-body ul.checkbox-list {
+  padding-left: 0;
+}
+
+/* Definition Lists */
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 1rem;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.markdown-body dl dd {
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Focus Styles */
+.markdown-body a:focus, .markdown-body [role=button]:focus, .markdown-body input[type=radio]:focus, .markdown-body input[type=checkbox]:focus {
+  outline: 2px solid #0969da;
+  outline-offset: -2px;
+  box-shadow: none;
+}
+
+/* General Layout */
+.markdown-body > *:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body p, .markdown-body blockquote, .markdown-body ul, .markdown-body ol, .markdown-body dl, .markdown-body table, .markdown-body pre, .markdown-body details {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* Print-specific styles */
+@media print {
+  body {
+    margin: 0;
+    padding: 20px;
+    font-size: 12pt;
+  }
+  .markdown-body {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Base styles for screen viewing */
+body {
+  margin: 0;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+    </style>
+</head>
+<body>
+    <div class="markdown-body">
+        <h1 id="staff-level-system-design-interview-guide">Staff-Level System Design Interview Guide</h1>
+<p><strong>The Complete Playbook for Architecture &amp; Design Interviews</strong></p>
+<hr />
+<h2 id="what-this-guide-covers">What This Guide Covers</h2>
+<p>This guide teaches you HOW to answer system design questions at the staff engineer level, not just WHAT to answer. It's based on real interview patterns and what senior interviewers actually look for.</p>
+<p><strong>You'll learn:</strong><br />
+- The exact framework to structure your answers (REAADS)<br />
+- What signals interviewers are looking for at staff level<br />
+- How to think about trade-offs (the #1 skill they test)<br />
+- Common mistakes that fail otherwise strong candidates<br />
+- Real example: Medical document processing system walkthrough</p>
+<hr />
+<h2 id="the-core-problem-why-smart-engineers-fail-these-interviews">The Core Problem: Why Smart Engineers Fail These Interviews</h2>
+<p><strong>You know the technology.</strong> You've built production systems. You can debug complex issues.</p>
+<p><strong>But you're failing interviews because:</strong><br />
+1. You jump to solutions without understanding requirements<br />
+2. You miss the "what they're really asking" layer<br />
+3. You don't demonstrate trade-off thinking<br />
+4. You answer like a senior engineer, not a staff engineer</p>
+<p><strong>Staff level is different.</strong> It's not about knowing AWS services. It's about demonstrating:<br />
+- Strategic thinking<br />
+- Production mindset<br />
+- Cross-team impact awareness<br />
+- Cost consciousness<br />
+- Operational maturity</p>
+<hr />
+<h2 id="the-reaads-framework">The REAADS Framework</h2>
+<p>Use this structure for EVERY system design question. Interviewers expect this flow.</p>
+<h3 id="r-requirements-5-10-minutes"><strong>R - Requirements</strong> (5-10 minutes)</h3>
+<p><strong>What they're testing:</strong> Can you drive the conversation? Do you ask smart questions?</p>
+<p><strong>Two types of requirements:</strong></p>
+<p><strong>Functional Requirements</strong> (What does it do?)<br />
+- Core features and capabilities<br />
+- User workflows<br />
+- Key use cases</p>
+<p><strong>Non-Functional Requirements</strong> (How well does it do it?)<br />
+- <strong>Scale</strong>: Users, requests/second, data volume<br />
+- <strong>Performance</strong>: Latency requirements (p50, p95, p99)<br />
+- <strong>Availability</strong>: Uptime requirements (99.9%, 99.99%?)<br />
+- <strong>Consistency</strong>: Strong vs eventual consistency<br />
+- <strong>Durability</strong>: Data loss tolerance</p>
+<p><strong>Smart questions to ask:</strong><br />
+- "What's the expected scale? Current users? Growth projection?"<br />
+- "What are the latency requirements? Are we optimizing for reads or writes?"<br />
+- "What's our availability SLA? Can we have downtime?"<br />
+- "Are there compliance requirements? (HIPAA, SOC2, GDPR?)"<br />
+- "What's the budget constraint? Are we cost-optimizing or performance-optimizing?"<br />
+- "What's already built? Are we designing from scratch or integrating?"</p>
+<p><strong>Staff-level signal:</strong> You proactively ask about constraints and trade-offs, not just features.</p>
+<hr />
+<h3 id="e-estimation-2-3-minutes"><strong>E - Estimation</strong> (2-3 minutes)</h3>
+<p><strong>What they're testing:</strong> Can you do back-of-napkin math? Do you understand scale?</p>
+<p><strong>Calculate:</strong><br />
+- <strong>Storage needed</strong>: Documents × size × retention period<br />
+- <strong>Bandwidth</strong>: Requests/sec × payload size<br />
+- <strong>QPS (Queries Per Second)</strong>: Daily users ÷ 86400 × peak multiplier<br />
+- <strong>Database size</strong>: Rows × row size × growth rate</p>
+<p><strong>Example:</strong></p>
+<pre><code>Medical document system:
+- 1M documents/month
+- Average document: 2MB
+- Storage: 1M × 2MB = 2TB/month = 24TB/year
+- Peak processing: 1M docs/month ÷ 30 days ÷ 24 hours = ~1,400 docs/hour = ~25/min
+</code></pre>
+<p><strong>Staff-level signal:</strong> You justify your architecture with numbers, not just "it scales."</p>
+<hr />
+<h3 id="a-api-design-optional-5-minutes"><strong>A - API Design</strong> (Optional, 5 minutes)</h3>
+<p><strong>What they're testing:</strong> Can you design clean interfaces?</p>
+<p><strong>Skip this if time is tight.</strong> Focus on architecture instead.</p>
+<p><strong>If you do it:</strong></p>
+<pre><code>POST /api/v1/documents
+  - Upload document for processing
+  - Returns: document_id, status
+
+GET /api/v1/documents/{id}/status
+  - Check processing status
+  - Returns: status, extracted_data, confidence_scores
+
+GET /api/v1/documents/{id}/results
+  - Retrieve extraction results
+  - Returns: structured_data, metadata
+</code></pre>
+<p><strong>Staff-level signal:</strong> You think about versioning, idempotency, error responses.</p>
+<hr />
+<h3 id="a-architecture-15-20-minutes"><strong>A - Architecture</strong> (15-20 minutes)</h3>
+<p><strong>What they're testing:</strong> Can you design scalable systems? Do you explain your reasoning?</p>
+<p><strong>High-Level Components:</strong><br />
+1. Start with major building blocks<br />
+2. Show data flow with arrows<br />
+3. Explain why each component exists<br />
+4. Identify communication patterns (sync/async)</p>
+<p><strong>Example Architecture (Medical Documents):</strong></p>
+<pre><code>┌─────────────────┐
+│  Upload API     │ ← REST/GraphQL
+│  (API Gateway)  │
+└────────┬────────┘
+         │
+         ├─────────────────────────┐
+         ↓                         ↓
+┌─────────────────┐      ┌─────────────────┐
+│  Document Queue │      │  Batch Ingest   │
+│  (SQS)          │      │  (S3 + Lambda)  │
+└────────┬────────┘      └────────┬────────┘
+         │                        │
+         └────────┬───────────────┘
+                  ↓
+         ┌─────────────────┐
+         │  Worker Pool    │
+         │  (ECS Fargate)  │
+         └────────┬────────┘
+                  │
+         ┌────────┴────────┐
+         ↓                 ↓
+┌─────────────────┐  ┌─────────────────┐
+│  OCR Service    │  │  LLM Service    │
+│  (Textract)     │  │  (SageMaker)    │
+└─────────────────┘  └─────────────────┘
+         │                 │
+         └────────┬────────┘
+                  ↓
+         ┌─────────────────┐
+         │  Results Store  │
+         │  (PostgreSQL)   │
+         └─────────────────┘
+</code></pre>
+<p><strong>As you draw, say out loud:</strong><br />
+- "I'm putting a queue here because we need to decouple upload from processing"<br />
+- "Workers pull from SQS to process documents asynchronously"<br />
+- "For OCR, I'm using Textract because medical documents have complex layouts"<br />
+- "Results go to PostgreSQL for structured querying"</p>
+<p><strong>Staff-level signal:</strong> You explain WHY, not just WHAT. "I chose X because Y."</p>
+<hr />
+<h3 id="d-data-model-5-10-minutes"><strong>D - Data Model</strong> (5-10 minutes)</h3>
+<p><strong>What they're testing:</strong> How do you structure data for this system?</p>
+<p><strong>Think about:</strong><br />
+- Database choice (SQL vs NoSQL)<br />
+- Schema design<br />
+- Indexing strategy<br />
+- Partitioning/sharding</p>
+<p><strong>Example (Medical Documents):</strong></p>
+<pre><code class="language-sql">-- Documents table
+CREATE TABLE documents (
+  id UUID PRIMARY KEY,
+  source VARCHAR(255),
+  status VARCHAR(50), -- pending, processing, completed, failed
+  uploaded_at TIMESTAMP,
+  processed_at TIMESTAMP,
+  s3_location TEXT,
+  INDEX idx_status_created (status, uploaded_at)
+);
+
+-- Extraction results
+CREATE TABLE extraction_results (
+  id UUID PRIMARY KEY,
+  document_id UUID REFERENCES documents(id),
+  field_name VARCHAR(255),
+  field_value TEXT,
+  confidence FLOAT,
+  extracted_at TIMESTAMP,
+  INDEX idx_document (document_id)
+);
+</code></pre>
+<p><strong>Staff-level signal:</strong> You consider query patterns and explain your indexing choices.</p>
+<hr />
+<h3 id="s-scale-deep-dive-15-20-minutes"><strong>S - Scale &amp; Deep Dive</strong> (15-20 minutes)</h3>
+<p><strong>What they're testing:</strong> THIS IS THE STAFF-LEVEL DIFFERENTIATOR.</p>
+<p><strong>They will pick 1-2 components and drill:</strong></p>
+<h4 id="bottleneck-analysis"><strong>Bottleneck Analysis</strong></h4>
+<ul>
+<li>"What's the slowest part of this system?"</li>
+<li>"Where would this break at 10x scale?"</li>
+<li>"How do you handle traffic spikes?"</li>
+</ul>
+<h4 id="failure-scenarios"><strong>Failure Scenarios</strong></h4>
+<ul>
+<li>"What happens if the worker crashes mid-processing?"</li>
+<li>"How do you handle duplicate uploads?"</li>
+<li>"What if the database goes down?"</li>
+</ul>
+<h4 id="monitoring-operations"><strong>Monitoring &amp; Operations</strong></h4>
+<ul>
+<li>"How do you monitor this in production?"</li>
+<li>"What metrics matter?"</li>
+<li>"How do you debug processing failures?"</li>
+</ul>
+<h4 id="cost-optimization"><strong>Cost Optimization</strong></h4>
+<ul>
+<li>"What's the most expensive part?"</li>
+<li>"How would you reduce costs by 50%?"</li>
+</ul>
+<hr />
+<h2 id="trade-off-thinking-the-1-staff-level-skill">Trade-Off Thinking: The #1 Staff-Level Skill</h2>
+<p><strong>This is what separates staff from senior.</strong></p>
+<p>Every decision has trade-offs. You must articulate them.</p>
+<h3 id="example-1-llm-choice-medical-documents"><strong>Example 1: LLM Choice (Medical Documents)</strong></h3>
+<p><strong>Scenario:</strong> Need to extract data from medical documents with an LLM.</p>
+<p><strong>Bad Answer (Senior Level):</strong></p>
+<blockquote>
+<p>"I'll use OpenAI's API because it's good at text extraction."</p>
+</blockquote>
+<p><strong>Good Answer (Staff Level):</strong></p>
+<blockquote>
+<p>"For the LLM, we have three options:</p>
+<p><strong>Option 1: OpenAI API</strong><br />
+- ✅ Fast to implement, no infrastructure<br />
+- ✅ Latest models, best quality<br />
+- ❌ HIPAA compliance nightmare - can't send PHI to third parties<br />
+- ❌ Cost scales linearly with volume ($$$)<br />
+- <strong>Verdict: Non-starter due to compliance</strong></p>
+<p><strong>Option 2: Self-hosted open model (Llama 3)</strong><br />
+- ✅ Full control, HIPAA compliant<br />
+- ✅ Fixed infrastructure cost<br />
+- ❌ Lower quality than GPT-4<br />
+- ❌ Need GPU infrastructure (expensive upfront)<br />
+- <strong>Verdict: Good for cost at scale, if quality acceptable</strong></p>
+<p><strong>Option 3: AWS SageMaker with private model</strong><br />
+- ✅ HIPAA compliant (BAA with AWS)<br />
+- ✅ Managed infrastructure<br />
+- ✅ Can use fine-tuned models<br />
+- ❌ More expensive than self-hosted<br />
+- ❌ Vendor lock-in<br />
+- <strong>Verdict: Best balance for production launch</strong></p>
+<p><strong>My recommendation:</strong> Start with SageMaker for compliance and speed. Once we hit 10K docs/day, evaluate cost savings of self-hosted."</p>
+</blockquote>
+<p><strong>See the difference?</strong><br />
+- Senior: Picks a solution<br />
+- Staff: Evaluates options, explains trade-offs, recommends with reasoning</p>
+<hr />
+<h3 id="example-2-queue-choice"><strong>Example 2: Queue Choice</strong></h3>
+<p><strong>Scenario:</strong> Need a message queue for task distribution.</p>
+<p><strong>Bad Answer:</strong></p>
+<blockquote>
+<p>"I'll use SQS because it's managed and scales well."</p>
+</blockquote>
+<p><strong>Good Answer:</strong></p>
+<blockquote>
+<p>"For the queue, I'm choosing between SQS and Redis:</p>
+<p><strong>SQS:</strong><br />
+- ✅ Fully managed, zero infrastructure<br />
+- ✅ Infinite scale<br />
+- ✅ Durable (multi-AZ persistence)<br />
+- ❌ Higher latency (~30-100ms)<br />
+- ❌ At-least-once delivery (need idempotent workers)<br />
+- ❌ No priority queues</p>
+<p><strong>Redis (ElastiCache):</strong><br />
+- ✅ Lower latency (~1-5ms)<br />
+- ✅ Priority queues, more features<br />
+- ❌ In-memory = data loss on crash<br />
+- ❌ Need to manage failover<br />
+- ❌ Capacity planning required</p>
+<p><strong>Decision:</strong> SQS, because task loss is unacceptable and we can handle the latency. We'll make workers idempotent to handle at-least-once delivery."</p>
+</blockquote>
+<hr />
+<h3 id="example-3-database-choice"><strong>Example 3: Database Choice</strong></h3>
+<p><strong>Bad Answer:</strong></p>
+<blockquote>
+<p>"I'll use PostgreSQL because I know it well."</p>
+</blockquote>
+<p><strong>Good Answer:</strong></p>
+<blockquote>
+<p>"For storage, I'm evaluating:</p>
+<p><strong>PostgreSQL (RDS):</strong><br />
+- ✅ ACID guarantees, strong consistency<br />
+- ✅ Complex queries, joins<br />
+- ✅ Familiar SQL<br />
+- ❌ Vertical scaling limits<br />
+- ❌ More expensive at massive scale</p>
+<p><strong>DynamoDB:</strong><br />
+- ✅ Infinite horizontal scale<br />
+- ✅ Lower latency for key-value access<br />
+- ✅ Pay per request model<br />
+- ❌ Eventual consistency by default<br />
+- ❌ Limited query flexibility</p>
+<p><strong>Decision:</strong> PostgreSQL initially because:<br />
+1. We need complex queries for reporting<br />
+2. Scale (25 docs/min) fits single instance<br />
+3. Can migrate to DynamoDB later if needed</p>
+<p>I'll monitor query patterns and shard by customer_id if we hit limits."</p>
+</blockquote>
+<hr />
+<h2 id="common-failure-patterns-and-how-to-avoid-them">Common Failure Patterns (And How to Avoid Them)</h2>
+<h3 id="mistake-1-jumping-to-solutions"><strong>❌ Mistake 1: Jumping to Solutions</strong></h3>
+<p><strong>What you do:</strong></p>
+<blockquote>
+<p>Interviewer: "Design a system to process medical documents."<br />
+You: "I'll use Lambda, SQS, and DynamoDB..."</p>
+</blockquote>
+<p><strong>What you should do:</strong></p>
+<blockquote>
+<p>"Let me start by understanding the requirements. What's the volume of documents we're processing? What's the latency requirement? Are there compliance constraints?"</p>
+</blockquote>
+<p><strong>Fix:</strong> Force yourself to spend 5-10 minutes on requirements BEFORE designing.</p>
+<hr />
+<h3 id="mistake-2-over-engineering"><strong>❌ Mistake 2: Over-Engineering</strong></h3>
+<p><strong>What you do:</strong></p>
+<blockquote>
+<p>"I'll set up Kubernetes with 5 microservices, Kafka for event streaming, separate read/write databases, Redis caching layer, Elasticsearch for search..."</p>
+</blockquote>
+<p><strong>What you should do:</strong></p>
+<blockquote>
+<p>"For the initial design, I'll keep it simple: API Gateway → SQS → ECS workers → PostgreSQL. We can add complexity when we see bottlenecks."</p>
+</blockquote>
+<p><strong>Fix:</strong> Start simple, explain what you'd add later when needed.</p>
+<hr />
+<h3 id="mistake-3-not-asking-clarifying-questions"><strong>❌ Mistake 3: Not Asking Clarifying Questions</strong></h3>
+<p><strong>What you do:</strong></p>
+<blockquote>
+<p>Make assumptions and design based on them</p>
+</blockquote>
+<p><strong>What you should do:</strong></p>
+<blockquote>
+<p>"Before I proceed, can you clarify: Are these documents arriving in real-time or batch? What's our error budget for extraction accuracy?"</p>
+</blockquote>
+<p><strong>Fix:</strong> Ask questions throughout, not just at the start.</p>
+<hr />
+<h3 id="mistake-4-ignoring-operational-concerns"><strong>❌ Mistake 4: Ignoring Operational Concerns</strong></h3>
+<p><strong>What you do:</strong></p>
+<blockquote>
+<p>Design the happy path, don't mention monitoring or failures</p>
+</blockquote>
+<p><strong>What you should do:</strong></p>
+<blockquote>
+<p>"For monitoring, I'd track: queue depth, processing latency, error rates, and cost per document. We'd alert on queue depth &gt; 1000 or error rate &gt; 5%."</p>
+</blockquote>
+<p><strong>Fix:</strong> Proactively mention monitoring, alerting, disaster recovery.</p>
+<hr />
+<h3 id="mistake-5-being-vague"><strong>❌ Mistake 5: Being Vague</strong></h3>
+<p><strong>What you do:</strong></p>
+<blockquote>
+<p>"I'll use a database to store results."</p>
+</blockquote>
+<p><strong>What you should do:</strong></p>
+<blockquote>
+<p>"I'll use PostgreSQL with a documents table partitioned by upload_month, with an index on (status, uploaded_at) for efficient polling of pending documents."</p>
+</blockquote>
+<p><strong>Fix:</strong> Be specific. Say WHY you chose it.</p>
+<hr />
+<h2 id="staff-vs-senior-key-differences">Staff vs Senior: Key Differences</h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Senior Engineer</th>
+<th>Staff Engineer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Focus</strong></td>
+<td>Technical depth</td>
+<td>Technical depth + strategic thinking</td>
+</tr>
+<tr>
+<td><strong>Scope</strong></td>
+<td>"How do I build this?"</td>
+<td>"Should we build this? What's the ROI?"</td>
+</tr>
+<tr>
+<td><strong>Scale</strong></td>
+<td>"This works for our use case"</td>
+<td>"This works now and at 10x scale"</td>
+</tr>
+<tr>
+<td><strong>Trade-offs</strong></td>
+<td>Picks a solution</td>
+<td>Evaluates 3 options, explains trade-offs</td>
+</tr>
+<tr>
+<td><strong>Cost</strong></td>
+<td>Rarely mentioned</td>
+<td>"This costs $X/month, alternatives cost..."</td>
+</tr>
+<tr>
+<td><strong>Ops</strong></td>
+<td>"We'll monitor it"</td>
+<td>"CloudWatch dashboard tracking X, Y, Z with alerts on..."</td>
+</tr>
+<tr>
+<td><strong>Failures</strong></td>
+<td>Handles when asked</td>
+<td>Proactively discusses failure modes</td>
+</tr>
+<tr>
+<td><strong>Impact</strong></td>
+<td>"This solves the problem"</td>
+<td>"This solves the problem AND unblocks the data team"</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="real-interview-example-medical-document-processing">Real Interview Example: Medical Document Processing</h2>
+<p>Let's walk through a complete interview using everything we've learned.</p>
+<h3 id="the-question"><strong>The Question</strong></h3>
+<blockquote>
+<p>"Design a system to process medical documents at scale. Documents come from various sources and need analysis to extract relevant information."</p>
+</blockquote>
+<hr />
+<h3 id="phase-1-requirements-gathering-you-drive-this"><strong>Phase 1: Requirements Gathering (You drive this)</strong></h3>
+<p><strong>You ask:</strong></p>
+<blockquote>
+<p>"Let me clarify the requirements. Can you elaborate on 'various sources' - are we receiving via API pushes, or pulling from external systems?"</p>
+</blockquote>
+<p><strong>Interviewer:</strong></p>
+<blockquote>
+<p>"Mix of both - some partners push via API, and we pull batches from S3."</p>
+</blockquote>
+<p><strong>You ask:</strong></p>
+<blockquote>
+<p>"What's the expected volume? Current and projected?"</p>
+</blockquote>
+<p><strong>Interviewer:</strong></p>
+<blockquote>
+<p>"Currently 100K docs/month, expecting 1M/month in a year."</p>
+</blockquote>
+<p><strong>You ask:</strong></p>
+<blockquote>
+<p>"What's the quality of these documents? Clean PDFs or varied formats?"</p>
+</blockquote>
+<p><strong>Interviewer:</strong></p>
+<blockquote>
+<p>"Mix - some clean PDFs, some scanned images, faxes, even handwritten notes."</p>
+</blockquote>
+<p><strong>You ask:</strong></p>
+<blockquote>
+<p>"For the extraction - are we using an external LLM or building in-house?"</p>
+</blockquote>
+<p><strong>Interviewer:</strong></p>
+<blockquote>
+<p>"We'd like your thoughts on that as part of the design."</p>
+</blockquote>
+<p><strong>You ask:</strong></p>
+<blockquote>
+<p>"Any compliance requirements? These are medical documents..."</p>
+</blockquote>
+<p><strong>Interviewer:</strong></p>
+<blockquote>
+<p>"Yes, HIPAA compliant. Good catch."</p>
+</blockquote>
+<p><strong>You ask:</strong></p>
+<blockquote>
+<p>"What's our latency requirement? Real-time or batch is fine?"</p>
+</blockquote>
+<p><strong>Interviewer:</strong></p>
+<blockquote>
+<p>"Batch is fine - results within 1 hour is acceptable."</p>
+</blockquote>
+<hr />
+<h3 id="phase-2-quick-estimation"><strong>Phase 2: Quick Estimation</strong></h3>
+<p><strong>You say:</strong></p>
+<blockquote>
+<p>"Let me do some quick math:<br />
+- 1M docs/month = ~33K/day = ~1,400/hour at peak<br />
+- At 2MB average: 1M × 2MB = 2TB/month storage<br />
+- Processing: If each doc takes 30 seconds (OCR + LLM), we need ~12 workers running in parallel at peak<br />
+- This shapes my architecture - we need async processing with auto-scaling workers."</p>
+</blockquote>
+<hr />
+<h3 id="phase-3-architecture-design"><strong>Phase 3: Architecture Design</strong></h3>
+<p><strong>You draw and explain:</strong></p>
+<blockquote>
+<p>"Here's my high-level design:</p>
+<p><strong>Ingestion Layer:</strong><br />
+- API Gateway for partner uploads<br />
+- S3 + EventBridge for batch ingestion<br />
+- Both write to SQS queue (standard, not FIFO - we don't need ordering)</p>
+<p><strong>Processing Layer:</strong><br />
+- ECS Fargate workers pulling from SQS<br />
+- Auto-scaling based on queue depth (target: queue age &lt; 5 min)<br />
+- Workers are idempotent (handle duplicate processing)</p>
+<p><strong>Extraction Pipeline:</strong><br />
+- Step 1: Document classification (is it a lab report? prescription?)<br />
+- Step 2: OCR using AWS Textract (handles handwriting better than open-source)<br />
+- Step 3: LLM extraction using SageMaker with a HIPAA-compliant model</p>
+<p><strong>Storage:</strong><br />
+- Raw documents: S3 with versioning<br />
+- Processing metadata: PostgreSQL (RDS)<br />
+- Extracted data: PostgreSQL (same instance initially)</p>
+<p><strong>Monitoring:</strong><br />
+- CloudWatch for queue depth, processing latency, error rates<br />
+- Dead letter queue for failed documents<br />
+- SNS alerts when error rate &gt; 5%"</p>
+</blockquote>
+<hr />
+<h3 id="phase-4-deep-dive-llm-choice-they-probe"><strong>Phase 4: Deep Dive - LLM Choice (They probe)</strong></h3>
+<p><strong>Interviewer asks:</strong></p>
+<blockquote>
+<p>"Walk me through your decision on the LLM component. Why not use OpenAI?"</p>
+</blockquote>
+<p><strong>You answer:</strong></p>
+<blockquote>
+<p>"Great question. This is actually the most critical trade-off in the system.</p>
+<p><strong>OpenAI API:</strong><br />
+- Would be fastest to implement<br />
+- Best quality (GPT-4)<br />
+- But: HIPAA compliance is a dealbreaker. We can't send PHI to a third party without a BAA, and OpenAI's terms don't allow medical data<br />
+- Cost: At 1M docs/month, assuming 2K tokens per doc, that's ~$4K-8K/month ongoing</p>
+<p><strong>Self-hosted open model (Llama 3.1 70B):</strong><br />
+- HIPAA compliant - everything on our infrastructure<br />
+- Fixed cost - ~$2K/month for GPU instances<br />
+- But: Quality is ~80% of GPT-4, need to benchmark on our data<br />
+- Also: We own the ops burden - model updates, scaling, monitoring</p>
+<p><strong>AWS SageMaker with Bedrock or private endpoint:</strong><br />
+- HIPAA compliant (AWS has BAA)<br />
+- Managed infrastructure<br />
+- Can fine-tune on our medical data<br />
+- Cost: ~$3K-5K/month, scales with usage<br />
+- Faster to production than self-hosted</p>
+<p><strong>My recommendation:</strong><br />
+Start with SageMaker for speed to market and compliance. Once we validate the business value and hit 10M docs/month, we can justify the engineering investment in self-hosted to cut costs by 60%."</p>
+</blockquote>
+<p><strong>Interviewer:</strong></p>
+<blockquote>
+<p>"What about the at-least-once delivery with SQS? How do you handle that?"</p>
+</blockquote>
+<p><strong>You answer:</strong></p>
+<blockquote>
+<p>"Good catch. SQS gives at-least-once delivery, so documents might process multiple times.</p>
+<p><strong>Mitigation:</strong><br />
+- Generate a deterministic document_id from S3 key or upload metadata<br />
+- Workers check if document_id exists in DB before processing<br />
+- If exists and status = 'completed', skip and delete message<br />
+- If exists and status = 'failed', retry processing<br />
+- Use database transactions to ensure atomicity</p>
+<p><strong>Alternative I considered:</strong><br />
+SQS FIFO queues give exactly-once, but:<br />
+- Limited to 300 TPS (we need ~400 at peak)<br />
+- More expensive<br />
+- Harder to scale workers<br />
+- Not worth it since idempotency is straightforward here"</p>
+</blockquote>
+<hr />
+<h3 id="phase-5-scaling-questions"><strong>Phase 5: Scaling Questions</strong></h3>
+<p><strong>Interviewer:</strong></p>
+<blockquote>
+<p>"What happens when you hit 10x scale - 10M docs/month?"</p>
+</blockquote>
+<p><strong>You answer:</strong></p>
+<blockquote>
+<p>"At 10M/month, we'd be processing ~14K docs/hour peak. Here's what breaks and how I'd fix it:</p>
+<p><strong>1. Database becomes bottleneck:</strong><br />
+- Current: Single PostgreSQL instance<br />
+- Fix: Partition by upload_month, add read replicas<br />
+- Consider: Move extracted data to DynamoDB (faster writes, infinite scale)</p>
+<p><strong>2. Textract API limits:</strong><br />
+- Current: Textract has soft limits<br />
+- Fix: Request limit increase from AWS, add retry backoff<br />
+- Consider: Hybrid - Textract for complex docs, open-source OCR (Tesseract) for simple text</p>
+<p><strong>3. Cost becomes significant:</strong><br />
+- Current: ~$10K/month all-in<br />
+- At 10x: ~$60K/month (LLM costs dominate)<br />
+- Fix: This justifies self-hosted LLM investment, saves ~$35K/month</p>
+<p><strong>4. Worker scaling speed:</strong><br />
+- Current: Fargate cold starts take 60s<br />
+- Fix: Maintain warm pool of 10 workers, use Lambda for quick bursts</p>
+<p>I'd also add:<br />
+- Regional failover (multi-region S3 replication)<br />
+- Dedicated VPC endpoints to reduce NAT gateway costs<br />
+- Spot instances for workers (70% cost savings, we can handle interruptions)"</p>
+</blockquote>
+<hr />
+<h2 id="how-to-practice">How to Practice</h2>
+<h3 id="1-mock-interviews-use-mock-interview-command"><strong>1. Mock Interviews (Use /mock-interview command)</strong></h3>
+<p>Run realistic mock interviews with the system. It will:<br />
+- Give you vague problems (like real interviews)<br />
+- Force you to drive requirements gathering<br />
+- Probe your decisions with follow-up questions<br />
+- Provide feedback on your performance</p>
+<h3 id="2-study-these-real-systems"><strong>2. Study These Real Systems</strong></h3>
+<p>Design these from scratch using the REAADS framework:</p>
+<p><strong>Easy:</strong><br />
+- URL shortener (bit.ly)<br />
+- Pastebin<br />
+- Rate limiter</p>
+<p><strong>Medium:</strong><br />
+- Distributed cache (Redis)<br />
+- Task queue (Celery/SQS)<br />
+- Image storage service (Imgur)</p>
+<p><strong>Hard:</strong><br />
+- Notification service (Push/Email/SMS at scale)<br />
+- Real-time analytics pipeline<br />
+- ML model serving infrastructure<br />
+- Video streaming platform (Netflix/YouTube)</p>
+<p><strong>For Trajector specifically:</strong><br />
+- Medical document OCR pipeline (we just did this!)<br />
+- ML training orchestration system<br />
+- Real-time model inference API<br />
+- Data pipeline for compliance reporting</p>
+<h3 id="3-record-yourself"><strong>3. Record Yourself</strong></h3>
+<ul>
+<li>Pick a problem</li>
+<li>Record yourself designing it out loud</li>
+<li>Watch the recording - did you:</li>
+<li>Ask clarifying questions?</li>
+<li>Explain trade-offs?</li>
+<li>Think about failures?</li>
+<li>Mention monitoring/cost?</li>
+</ul>
+<h3 id="4-read-system-design-content"><strong>4. Read System Design Content</strong></h3>
+<p><strong>Books:</strong><br />
+- "System Design Interview" by Alex Xu<br />
+- "Designing Data-Intensive Applications" by Martin Kleppmann</p>
+<p><strong>Blogs:</strong><br />
+- High Scalability (highscalability.com)<br />
+- AWS Architecture Blog<br />
+- Netflix Tech Blog<br />
+- Uber Engineering Blog</p>
+<p><strong>YouTube:</strong><br />
+- Gaurav Sen (System Design)<br />
+- Success in Tech (System Design Interview)</p>
+<h3 id="5-aws-service-deep-dives"><strong>5. AWS Service Deep-Dives</strong></h3>
+<p>For AWS-heavy roles like Trajector, know these cold:</p>
+<p><strong>Compute:</strong><br />
+- EC2 vs ECS vs Lambda vs Fargate (when each?)<br />
+- Auto Scaling Groups configuration</p>
+<p><strong>Storage:</strong><br />
+- S3 (storage classes, lifecycle policies)<br />
+- EBS vs EFS (when each?)</p>
+<p><strong>Database:</strong><br />
+- RDS (Multi-AZ, read replicas)<br />
+- DynamoDB (partition keys, GSIs)<br />
+- Aurora (when vs RDS?)</p>
+<p><strong>Queue/Stream:</strong><br />
+- SQS (standard vs FIFO, visibility timeout)<br />
+- SNS (fan-out pattern)<br />
+- Kinesis (vs SQS, when?)</p>
+<p><strong>ML Services:</strong><br />
+- SageMaker (training, inference endpoints)<br />
+- Bedrock (vs SageMaker)<br />
+- Textract (OCR)</p>
+<p><strong>Monitoring:</strong><br />
+- CloudWatch (metrics, logs, alarms)<br />
+- X-Ray (distributed tracing)</p>
+<hr />
+<h2 id="interview-day-checklist">Interview Day Checklist</h2>
+<h3 id="30-minutes-before"><strong>30 Minutes Before</strong></h3>
+<ul class="checkbox-list">
+<li class="checkbox-item"><input type="checkbox"> Review the job description and company tech stack</li>
+<li class="checkbox-item"><input type="checkbox"> Have pen and paper ready (draw as you talk)</li>
+<li class="checkbox-item"><input type="checkbox"> Water nearby</li>
+<li class="checkbox-item"><input type="checkbox"> Close all other tabs/apps</li>
+<li class="checkbox-item"><input type="checkbox"> Take 5 deep breaths</li>
+</ul>
+<h3 id="first-5-minutes"><strong>First 5 Minutes</strong></h3>
+<ul class="checkbox-list">
+<li class="checkbox-item"><input type="checkbox"> Listen carefully to the problem</li>
+<li class="checkbox-item"><input type="checkbox"> Repeat it back to confirm understanding</li>
+<li class="checkbox-item"><input type="checkbox"> Ask if there's anything specific they want you to focus on</li>
+<li class="checkbox-item"><input type="checkbox"> Start with clarifying questions (don't jump to solution)</li>
+</ul>
+<h3 id="during-the-interview"><strong>During the Interview</strong></h3>
+<ul class="checkbox-list">
+<li class="checkbox-item"><input type="checkbox"> Think out loud - they want to hear your process</li>
+<li class="checkbox-item"><input type="checkbox"> Draw diagrams - visual helps both you and them</li>
+<li class="checkbox-item"><input type="checkbox"> Ask for feedback: "Does this make sense so far?"</li>
+<li class="checkbox-item"><input type="checkbox"> State assumptions: "I'm assuming X, let me know if wrong"</li>
+<li class="checkbox-item"><input type="checkbox"> Explain trade-offs for every major decision</li>
+<li class="checkbox-item"><input type="checkbox"> Check time periodically - don't spend 30 min on one thing</li>
+</ul>
+<h3 id="when-stuck"><strong>When Stuck</strong></h3>
+<ul class="checkbox-list">
+<li class="checkbox-item"><input type="checkbox"> Don't panic - think out loud about what you're considering</li>
+<li class="checkbox-item"><input type="checkbox"> Ask for a hint: "I'm thinking through X vs Y, any guidance?"</li>
+<li class="checkbox-item"><input type="checkbox"> Start simple, add complexity later</li>
+<li class="checkbox-item"><input type="checkbox"> Talk about what you'd research if you had time</li>
+</ul>
+<h3 id="last-5-minutes"><strong>Last 5 Minutes</strong></h3>
+<ul class="checkbox-list">
+<li class="checkbox-item"><input type="checkbox"> Summarize your design</li>
+<li class="checkbox-item"><input type="checkbox"> Mention what you'd improve with more time</li>
+<li class="checkbox-item"><input type="checkbox"> Ask about their system: "How do you actually handle this?"</li>
+<li class="checkbox-item"><input type="checkbox"> Thank them for their time</li>
+</ul>
+<hr />
+<h2 id="key-takeaways">Key Takeaways</h2>
+<h3 id="the-formula-for-staff-level-success"><strong>The Formula for Staff-Level Success</strong></h3>
+<ol>
+<li><strong>Drive the conversation</strong> - You're leading, not following</li>
+<li><strong>Ask smart questions</strong> - Show you understand the problem space</li>
+<li><strong>Think in trade-offs</strong> - Every decision has pros/cons</li>
+<li><strong>Be specific</strong> - "PostgreSQL with read replicas" not "a database"</li>
+<li><strong>Explain WHY</strong> - "I chose X because Y, considering Z"</li>
+<li><strong>Consider operations</strong> - Monitoring, alerting, cost, failures</li>
+<li><strong>Think beyond the tech</strong> - Team impact, timelines, ROI</li>
+</ol>
+<h3 id="what-staff-engineers-do-differently"><strong>What Staff Engineers Do Differently</strong></h3>
+<p><strong>Senior says:</strong> "This works"<br />
+<strong>Staff says:</strong> "This works NOW, scales to 10x, costs $X/month, and unblocks the analytics team"</p>
+<p><strong>Senior says:</strong> "I'll use PostgreSQL"<br />
+<strong>Staff says:</strong> "PostgreSQL for complex queries, DynamoDB for high-write workload, Redis for caching - here's why each"</p>
+<p><strong>Senior says:</strong> "We need monitoring"<br />
+<strong>Staff says:</strong> "CloudWatch dashboard tracking queue depth (alert &gt; 1000), error rate (alert &gt; 5%), cost per document, with runbooks for common failures"</p>
+<h3 id="remember"><strong>Remember</strong></h3>
+<p>You already know how to build systems. This interview is about demonstrating:<br />
+- <strong>Strategic thinking</strong>: Why this approach vs others?<br />
+- <strong>Production maturity</strong>: What could go wrong?<br />
+- <strong>Communication</strong>: Can you explain complex ideas clearly?<br />
+- <strong>Leadership</strong>: Can you drive technical decisions?</p>
+<p><strong>You've got this.</strong> Use the framework, think out loud, and show them how you reason about systems.</p>
+<hr />
+<h2 id="additional-resources">Additional Resources</h2>
+<p><strong>System Design Primers:</strong><br />
+- <a href="https://github.com/donnemartin/system-design-primer">System Design Primer on GitHub</a><br />
+- <a href="https://www.educative.io/courses/grokking-the-system-design-interview">Grokking the System Design Interview</a></p>
+<p><strong>AWS Resources:</strong><br />
+- <a href="https://aws.amazon.com/architecture/well-architected/">AWS Well-Architected Framework</a><br />
+- <a href="https://aws.amazon.com/architecture/">AWS Architecture Center</a></p>
+<p><strong>Practice Problems:</strong><br />
+- <a href="https://leetcode.com/discuss/interview-question/system-design">LeetCode System Design</a><br />
+- <a href="https://www.pramp.com/">Pramp (Free Mock Interviews)</a></p>
+<hr />
+<p><strong>Version:</strong> 1.0<br />
+<strong>Last Updated:</strong> February 2026<br />
+<strong>For:</strong> Staff Engineer Interview Preparation (Trajector &amp; similar roles)</p>
+    </div>
+</body>
+</html>

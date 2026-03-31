@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tell me about yourself</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            body {
+                padding: 0.5in;
+                margin: 0;
+                font-size: 11pt;
+            }
+
+            .question {
+                font-size: 14pt;
+                margin-bottom: 12pt;
+            }
+
+            .answer {
+                font-size: 11pt;
+                line-height: 1.4;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="question text-2xl font-bold text-blue-900 mb-4 border-b-2 border-blue-600 pb-2">1. Tell me about yourself (2
+            min)</h1>
+        <div class="answer text-gray-800 text-base leading-relaxed space-y-4">
+            <ol class="list-inside space-y-2 ml-4 list-decimal">
+                <li>I'm Branndon Coelho (rhymes with "mello"), a senior software engineer with over 15 years of experience, most
+                    recently at Headspace.</li>
+                <li>I specialize in Python, Django, and building scalable API systems on the backend. </li>
+                <li>I've worked with React, Next.js and various frontend technologies. </li>
+                <li>My work spans architecting production LLM
+                    applications with Langchain to leading Headspace's server-driven UI migration that cut feature release cycles
+                    from days to hours. </li>
+                <li>I'm passionate about AI, automation, performance, and building resilient systems.</li>
+
+            </ol>
+            <div class="bg-white p-3 rounded border-l-4 border-blue-400">
+                <h3 class="text-sm font-semibold text-gray-700 mb-2">Key points:</h3>
+                <ul class="space-y-1 ml-4 list-disc text-gray-700 text-sm">
+                    <li>Name pronunciation upfront</li>
+                    <li>15 years experience</li>
+                    <li>Current role: Headspace</li>
+                    <li>Core skills: Python, Django, APIs</li>
+                    <li>Two impressive achievements: LLM apps, SDUI migration</li>
+                    <li>What drives you: AI, automation, performance, resilient systems</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

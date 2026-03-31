@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 5 Most Likely Interview Topics - Quick Reference</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            .no-print {
+                display: none;
+            }
+
+            body {
+                padding: 0 !important;
+                margin: 0 !important;
+                font-size: 9pt;
+                background: white !important;
+            }
+
+            main {
+                padding: 0 !important;
+                margin: 0 !important;
+                max-width: 100% !important;
+            }
+
+            article {
+                padding: 0 !important;
+                margin: 0 !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                background: white !important;
+            }
+
+            * {
+                box-shadow: none !important;
+            }
+
+            .topic-box {
+                page-break-inside: avoid;
+                margin-bottom: 8px;
+            }
+
+            h2 {
+                font-size: 10pt;
+                margin-bottom: 3px;
+            }
+
+            h3 {
+                font-size: 9pt;
+                margin-bottom: 2px;
+            }
+
+            p {
+                font-size: 8.5pt;
+                line-height: 1.2;
+                margin-bottom: 2px;
+            }
+
+            code {
+                font-size: 7.5pt;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <main class="max-w-7xl mx-auto px-4 py-6">
+        <article class="bg-white shadow-lg rounded-lg p-6">
+            <h1 class="text-2xl font-bold text-gray-900 mb-2 border-b-2 border-blue-600 pb-2">Top 5 Most Likely Interview Topics
+            </h1>
+            <p class="text-sm text-gray-600 mb-4"><strong>For:</strong> Today's technical interviews | <strong>Focus:</strong>
+                Backend engineering roles (Python/Django/APIs)</p>
+
+            <div class="space-y-4">
+                <!-- Topic 1 -->
+                <div class="topic-box bg-blue-50 p-4 rounded border-l-4 border-blue-600">
+                    <h2 class="text-lg font-bold text-blue-900 mb-2">1. Tell me about yourself (2 min) - ALWAYS COMES UP</h2>
+                    <p class="text-gray-800 text-sm leading-snug mb-2">"I'm Branndon Coelho (rhymes with "mello"), a senior
+                        software engineer with over 15 years of experience, currently at Headspace. I specialize in Python,
+                        Django, and building scalable API systems. My work spans architecting production LLM applications with
+                        Langchain to leading Headspace's server-driven UI migration that cut feature release cycles from days to
+                        hours. I'm passionate about AI, automation, performance, and building resilient systems."</p>
+
+                    <div class="mt-2 bg-white p-2 rounded">
+                        <h3 class="text-xs font-semibold text-gray-700 mb-1">Key points:</h3>
+                        <ul class="space-y-0.5 ml-4 list-disc text-gray-700 text-xs">
+                            <li>Name pronunciation upfront</li>
+                            <li>15 years experience</li>
+                            <li>Current role: Headspace</li>
+                            <li>Core skills: Python, Django, APIs</li>
+                            <li>Two impressive achievements: LLM apps, SDUI migration</li>
+                            <li>What drives you: AI, automation, performance, resilient systems</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Topic 2 -->
+                <div class="topic-box bg-green-50 p-3 rounded border-l-4 border-green-600">
+                    <h2 class="text-base font-bold text-green-900 mb-2">2. System Design/Architecture - HIGHLY LIKELY</h2>
+
+                    <div class="bg-white p-2 rounded text-sm">
+                        <p class="text-gray-800 mb-2"><strong>Example: "Design a movie app"</strong></p>
+
+                        <p class="text-gray-700 mb-2">"OK, let me think through this and ask some clarifying questions first. When
+                            you say movie app, are we talking simple movie listings with search, or more advanced with user
+                            accounts, favorites, reviews, recommendations? What about ticket booking integration with theaters?
+                            And what's the scale we're targeting - small startup or established company with millions of users?"
+                        </p>
+
+                        <p class="text-gray-700 mb-2"><em>[Assume mid-level: user accounts, favorites, reviews, theater
+                                integration, moderate scale]</em></p>
+
+                        <p class="text-gray-700 mb-2">"For architecture, I'd go with Django REST Framework for the API layer. We
+                            need PostgreSQL for core relational data - users, movies, theaters, showtimes, bookings. Those have
+                            clear relationships. For search functionality across movie titles, actors, genres, I'd use
+                            Elasticsearch - that gives us fast full-text search. Redis for caching heavily-accessed data like
+                            popular movies, theater listings, user sessions."</p>
+
+                        <p class="text-gray-700 mb-2">"For data models, I'm thinking: Users table with auth info and preferences.
+                            Movies with title, description, release date, genre. Theaters with location data. Showtimes linking
+                            movies to theaters with available seats. Bookings connecting users to showtimes with seat numbers and
+                            payment status. Reviews linking users to movies."</p>
+
+                        <p class="text-gray-700 mb-2">"The interesting challenges: Booking concurrency - two users trying to book
+                            the same seat simultaneously. I'd handle that with database row-level locking on the seat updates, or
+                            implement a seat reservation system with a 5-minute timeout. For recommendations, start simple with
+                            collaborative filtering - 'users who liked X also liked Y' - pre-compute those nightly and cache them.
+                            For scale, this is read-heavy - people browsing way more than booking - so aggressive caching and read
+                            replicas for queries."</p>
+
+                        <p class="text-gray-700 mb-1">"For external integrations, we'd need theater APIs for real-time showtimes,
+                            payment processing like Stripe for bookings, and a CDN for movie posters and trailers."</p>
+                    </div>
+                </div>
+
+                <!-- Topic 3 -->
+                <div class="topic-box bg-purple-50 p-4 rounded border-l-4 border-purple-600">
+                    <h2 class="text-lg font-bold text-purple-900 mb-2">3. Complex Project - SDUI Story (STAR, 2-3 min)</h2>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Situation:</strong> At Headspace, every screen
+                        change for 70M users required separate iOS and Android app store releases. Even standard bug fixes took
+                        days to deploy through the app review process, and we had to coordinate releases across two platforms.</p>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Task:</strong> I was one of the first two engineers
+                        selected to lead our server-driven UI migration - a year-long initiative to move all mobile app display
+                        logic to server-side control. I led the onboarding flow team.</p>
+                    <p class="text-gray-700 text-sm leading-snug mb-1"><strong>Action:</strong> We researched Netflix and Airbnb's
+                        approaches and adopted Airbnb's sections-and-screens architecture. I transitioned from Python to
+                        TypeScript to enhance our existing Node.js API. I collaborated daily with cross-functional teams through
+                        both standard and async standups, worked closely with a principal engineer who knew Headspace's systems,
+                        and partnered with iOS/Android teams, product, and legal for GDPR compliance.</p>
+                    <p class="text-gray-700 text-sm leading-snug mb-2"><strong>Result:</strong> We released on time in June.
+                        Feature velocity increased dramatically - what took days to release now takes hours. We can
+                        hotfix bugs immediately, release UI changes without app store delays, and maintain iOS/Android consistency
+                        from a single source. The business impact: faster feature delivery, reduced coordination overhead, and
+                        ability
+                        to A/B test flows server-side.</p>
+
+                    <div class="bg-white p-2 rounded">
+                        <h3 class="text-xs font-semibold text-gray-700 mb-1">If they dig deeper:</h3>
+                        <ul class="space-y-0.5 ml-4 list-disc text-gray-700 text-xs">
+                            <li>Challenges: Deciding granularity, handling offline mode, GDPR compliance</li>
+                            <li>Team size: 2 leads (me + principal), expanded to ~8 engineers</li>
+                            <li>Timeline: 1 year project, delivered on time</li>
+                            <li>Tech stack: Node.js Hapi API, TypeScript, sections-and-screens architecture</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Topic 4 -->
+                <div class="topic-box bg-orange-50 p-4 rounded border-l-4 border-orange-600">
+                    <h2 class="text-lg font-bold text-orange-900 mb-2">4. Django/API Experience (2 min) - LIKELY FOR BACKEND ROLES
+                    </h2>
+                    <p class="text-gray-700 text-sm leading-snug mb-2">"I've built Django REST APIs for 3+ years at Headspace and
+                        SpecialNeeds.com. At Headspace, I work with DRF daily on backend APIs serving mobile apps - extending
+                        authentication with JWT/Auth0, building onboarding APIs with GDPR consent workflows, and creating therapy
+                        intake endpoints with multi-step validation. At SpecialNeeds.com, I built the entire Django backend from
+                        scratch - data models for a directory platform, RESTful endpoints for search/filtering/messaging, JWT auth
+                        with role-based permissions, and custom API endpoints for LLM-powered content generation. I focus on
+                        developer experience - clear error messages, consistent response formats, proper HTTP status codes, API
+                        versioning, and documentation. For partner-facing APIs, reliability and clarity are critical."</p>
+
+                    <div class="bg-white p-2 rounded">
+                        <h3 class="text-xs font-semibold text-gray-700 mb-1">Specific examples ready:</h3>
+                        <ul class="space-y-0.5 ml-4 list-disc text-gray-700 text-xs">
+                            <li>Authentication: JWT/Auth0 integration at Headspace</li>
+                            <li>Complex workflows: Multi-step onboarding with GDPR consent</li>
+                            <li>Greenfield: Entire Django backend for SpecialNeeds.com</li>
+                            <li>Performance: Database query optimization, N+1 query prevention</li>
+                            <li>API design: RESTful patterns, versioning, error handling</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Topic 5 -->
+                <div class="topic-box bg-pink-50 p-4 rounded border-l-4 border-pink-600">
+                    <h2 class="text-lg font-bold text-pink-900 mb-2">5. AI Experience & Future of Engineering (2 min) - VERY
+                        CURRENT TOPIC</h2>
+
+                    <div class="mb-2">
+                        <h3 class="text-sm font-semibold text-pink-800 mb-1">How I use AI:</h3>
+                        <p class="text-gray-700 text-sm leading-snug">"I use AI in two ways: building systems WITH AI and using AI
+                            to build faster. At SpecialNeeds.com, I architected a Langchain-based content generation system with
+                            70 virtual authors, multi-provider fallback (free tiers → paid models), and automated quality scoring.
+                            In my daily work, I use Claude Code as a thought partner for debugging Django queries, mapping
+                            unfamiliar codebases, and prototyping in languages I'm less familiar with - like when I built a native
+                            iOS app in 2.5 hours for a technical interview starting from zero iOS knowledge."</p>
+                    </div>
+
+                    <div class="mb-2">
+                        <h3 class="text-sm font-semibold text-pink-800 mb-1">Future of engineering (3-5 years):</h3>
+                        <p class="text-gray-700 text-sm leading-snug">"AI is shifting engineering from writing every line to
+                            architecting systems and directing AI assistants. Engineers who thrive will treat AI as a force
+                            multiplier. I'm preparing by using AI daily in production - building LLM systems taught me about
+                            prompt engineering, safety rails, and when to trust AI versus requiring human review. The role is
+                            evolving from 'code writer' to 'system architect who leverages AI,' and I'm already operating in that
+                            space."</p>
+                    </div>
+
+                    <div class="bg-white p-2 rounded">
+                        <h3 class="text-sm font-semibold text-gray-800 mb-1">Concrete example (STAR):</h3>
+                        <p class="text-gray-700 text-xs leading-snug mb-0.5"><strong>Situation:</strong> Needed consistent,
+                            high-quality content generation at SpecialNeeds.com</p>
+                        <p class="text-gray-700 text-xs leading-snug mb-0.5"><strong>Task:</strong> Build a system that produces
+                            publication-ready articles without manual oversight</p>
+                        <p class="text-gray-700 text-xs leading-snug mb-0.5"><strong>Action:</strong> Multi-step Langchain
+                            pipeline, 70 virtual authors, cost optimization (try cheap models first, escalate only if quality
+                            &lt;80%)</p>
+                        <p class="text-gray-700 text-xs leading-snug"><strong>Result:</strong> Hundreds of articles generated,
+                            near-zero cost (free tiers handle most), site ranks for thousands of keywords</p>
+                    </div>
+                </div>
+
+                <!-- Topic 6 - Product Interview -->
+                <div class="topic-box bg-indigo-50 p-3 rounded border-l-4 border-indigo-600">
+                    <h2 class="text-base font-bold text-indigo-900 mb-2">6. Product Interview Topics</h2>
+
+                    <div class="bg-white p-2 rounded text-sm space-y-2">
+                        <div>
+                            <p class="text-gray-800 font-semibold mb-1">Tell me about a product you built</p>
+                            <p class="text-gray-700 text-xs">SpecialNeeds.com directory platform. Problem: Families couldn't find
+                                vetted special needs resources. Built searchable directory with provider profiles, parent reviews,
+                                resource articles. Key decision: AI-generated content vs manual curation - chose hybrid approach
+                                with LLM generation + quality validation. Result: 500+ providers listed, ranking for thousands of
+                                special needs keywords.</p>
+                        </div>
+
+                        <div>
+                            <p class="text-gray-800 font-semibold mb-1">How do you prioritize features?</p>
+                            <p class="text-gray-700 text-xs">Impact vs effort matrix. High impact, low effort = do first.
+                                Consider: user pain points (how many affected? how severe?), business value (revenue? retention?
+                                growth?), technical dependencies (what's blocking other features?). Example: At Headspace, SDUI
+                                was high effort but unblocked all future mobile features - worth prioritizing.</p>
+                        </div>
+
+                        <div>
+                            <p class="text-gray-800 font-semibold mb-1">How do you work with product managers?</p>
+                            <p class="text-gray-700 text-xs">Partnership, not order-taking. PMs bring user needs and business
+                                goals. I bring technical feasibility and constraints. Best collaboration: shared understanding of
+                                the 'why', then brainstorm solutions together. Push back when needed - "this will take 3 months vs
+                                this simpler version takes 1 week with 80% of the value."</p>
+                        </div>
+
+                        <div>
+                            <p class="text-gray-800 font-semibold mb-1">Measure success of a feature?</p>
+                            <p class="text-gray-700 text-xs">Define metrics before building. User engagement (DAU/MAU, feature
+                                adoption rate), business metrics (conversion, retention, revenue), technical metrics (performance,
+                                error rates). Example: SDUI success = deployment frequency increased, time-to-release decreased,
+                                iOS/Android feature parity improved.</p>
+                        </div>
+
+                        <div>
+                            <p class="text-gray-800 font-semibold mb-1">Favorite product and why?</p>
+                            <p class="text-gray-700 text-xs">Claude Code - solves real engineering pain (context switching,
+                                unfamiliar codebases) with AI that understands intent. Simple interface but powerful. Shows
+                                evolution of dev tools - from autocomplete to thought partner. Demonstrates where software is
+                                heading.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backup Topics -->
+                <div class="topic-box bg-gray-100 p-3 rounded border-l-4 border-gray-600">
+                    <h2 class="text-base font-bold text-gray-900 mb-2">Backup Topics (If Time)</h2>
+
+                    <div class="mb-2">
+                        <h3 class="text-sm font-semibold text-gray-800 mb-1">Learning from a Mistake (Better than the HTTPS story)
+                        </h3>
+                        <p class="text-gray-700 text-xs leading-snug mb-0.5"><strong>Situation:</strong> Pushed a Django migration
+                            during business hours without considering production scale differences.</p>
+                        <p class="text-gray-700 text-xs leading-snug mb-0.5"><strong>Task:</strong> Add database index (worked
+                            fine in staging).</p>
+                        <p class="text-gray-700 text-xs leading-snug mb-0.5"><strong>Action:</strong> Production table was 100x
+                            larger - index creation locked table for 3 minutes during peak traffic.</p>
+                        <p class="text-gray-700 text-xs leading-snug"><strong>Result:</strong> Implemented migration checklist:
+                            check for locks, use CONCURRENTLY flag, run during off-hours, review execution plan. Built tool to
+                            analyze migrations and flag risky operations automatically.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-sm font-semibold text-gray-800 mb-1">Disagreement with Teammate</h3>
+                        <p class="text-gray-700 text-xs leading-snug mb-0.5"><strong>Situation:</strong> DevOps wanted Kubernetes
+                            for WordPress content site.</p>
+                        <p class="text-gray-700 text-xs leading-snug mb-0.5"><strong>Task:</strong> Evaluate if complexity was
+                            justified.</p>
+                        <p class="text-gray-700 text-xs leading-snug mb-0.5"><strong>Action:</strong> Asked "what problem does
+                            this solve?" - we had serverless DB, solid caching, no performance issues. Offered to help with POC
+                            but suggested documenting scaling concerns first.</p>
+                        <p class="text-gray-700 text-xs leading-snug"><strong>Result:</strong> Stayed with Docker (right call for
+                            our scale). Learned to start with the problem, not the technology.</p>
+                    </div>
+                </div>
+
+                <!-- Questions to Ask -->
+                <div class="topic-box bg-blue-50 p-3 rounded border-l-4 border-blue-600">
+                    <h2 class="text-base font-bold text-blue-900 mb-2">Questions to Ask Them (Pick 2-3)</h2>
+                    <ol class="space-y-1 ml-5 list-decimal text-gray-800 text-sm">
+                        <li><strong>Technical curiosity:</strong> "What's the most interesting technical challenge your team is
+                            tackling right now?"</li>
+                        <li><strong>Culture fit:</strong> "You've been at [Company] X years - what's kept you here? What do you
+                            love most about the team?"</li>
+                        <li><strong>Growth:</strong> "How does [Company] approach technical mentorship and growth for senior
+                            engineers?"</li>
+                        <li><strong>Role-specific:</strong> "For this role, what does the balance look like between building new
+                            features versus maintaining existing systems?"</li>
+                        <li><strong>AI focus:</strong> "How are engineering teams incorporating AI into their development
+                            workflows?"</li>
+                    </ol>
+                    <p class="text-xs text-gray-700 mt-2 italic"><strong>The rule:</strong> Ask about THEM and their work, not
+                        about passing interviews. Show peer-level curiosity.</p>
+                </div>
+
+                <!-- Pre-Interview Checklist -->
+                <div class="topic-box bg-yellow-50 p-3 rounded border-l-4 border-yellow-400">
+                    <h2 class="text-base font-bold text-yellow-900 mb-2">Pre-Interview Checklist</h2>
+                    <ul class="space-y-1 ml-5 list-none text-yellow-900 text-sm">
+                        <li>☐ Pause 2 seconds before answering</li>
+                        <li>☐ Use STAR format for stories</li>
+                        <li>☐ Include business impact in results</li>
+                        <li>☐ Cut filler: "you know," "kind of," "I think"</li>
+                        <li>☐ Keep answers 2-3 minutes max</li>
+                        <li>☐ Ask clarifying questions on system design</li>
+                        <li>☐ Show curiosity, not desperation</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tell me about handling a critical production problem</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            body { padding: 0.5in; margin: 0; font-size: 11pt; }
+            .question { font-size: 14pt; margin-bottom: 12pt; }
+            .answer { font-size: 11pt; line-height: 1.4; }
+        }
+    </style>
+</head>
+<body class="bg-white p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="question text-2xl font-bold text-teal-900 mb-4 border-b-2 border-teal-600 pb-2">5. Tell me about a critical production problem (STAR, 2 min)</h1>
+        <div class="answer text-gray-800 text-base leading-relaxed space-y-4">
+            <ol class="list-inside space-y-2 ml-4 list-decimal">
+                <li>During Mental Health Awareness Month at Headspace, our therapy matching system was taking 8+ seconds under 3x normal traffic, and 23% of users were abandoning the flow.</li>
+                <li>I led a small team to stabilize it quickly - we investigated and found complex unoptimized database queries and redundant calculations in the matching algorithm.</li>
+                <li>I tackled the database optimization myself, rewrote Django queries to eliminate N+1 issues, added indexes that dropped query time from 6 seconds to under 1 second, while another engineer added Redis caching for therapist availability.</li>
+                <li>The tricky part was working with product - the matching had 8+ factors adding computational complexity, so I presented data showing performance cost versus user value and we simplified to 5 core criteria with optional refinement.</li>
+                <li>Within two weeks we got matching time down to 1.2 seconds, abandonment dropped to 8%, and the system handled peak load without issues for the rest of the month.</li>
+            </ol>
+
+            <div class="bg-white p-3 rounded border-l-4 border-teal-400 mt-4">
+                <h3 class="text-sm font-semibold text-gray-700 mb-2">STAR breakdown:</h3>
+                <ul class="space-y-1 ml-4 list-disc text-gray-700 text-sm">
+                    <li><strong>Situation:</strong> Mental Health Awareness Month, 8+ second matching time, 23% abandonment rate</li>
+                    <li><strong>Task:</strong> Lead team to stabilize system quickly under 3x traffic load</li>
+                    <li><strong>Action:</strong> Optimized Django queries, added Redis caching, simplified matching criteria with product</li>
+                    <li><strong>Result:</strong> 1.2 second matching, 8% abandonment, system stable rest of month</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -98,12 +98,7 @@
           "Automated Content Research",
           "Image Generation",
           "Virtual Authors"
-        ],
-        "technology_levels": {
-          "core": ["Python", "Django", "Next.js", "LLMs", "Large Language Models", "Langchain", "OpenAI API", "Claude API", "Content Generation", "Data ETL", "Cloudflare Workers", "RESTful API", "Backend Development", "AI Content Systems", "Automated Content Research", "Virtual Authors"],
-          "frequent": ["Cloudflare R2", "Frontend Development", "Image Generation"],
-          "minor": []
-        }
+        ]
       },
       {
         "position": "Senior Software Engineer",
@@ -114,7 +109,7 @@
           "Lead development of Django-based applications and major platform initiatives including Server-Driven UI project, where I transitioned from Python to TypeScript to enhance existing Node.js Hapi API system with server-driven UI capabilities, converting all mobile app display logic to server-side control. Led the onboarding flow team while ensuring GDPR compliance throughout the project lifecycle.",
           "Supported Headspace-Ginger platform merger project integration combining Headspace meditation app with Ginger's coaching and clinical therapy services. Extended platform to allow teenagers access to coaching services with guardian consent mechanisms. Built guardian consent workflows and led SMS architecture migration using Braze API integration, eliminating dual-source synchronization issues.",
           "Contributed to therapy intake form redesign project, breaking apart large therapy and psychiatry intake forms into streamlined onboarding and comprehensive therapy intake components. Worked on Gatsby-based YAML forms with card-driven screen architecture guided by Figma designs, and developed Django backend systems for form processing, SMS consent subscriptions, policy agreements, and user profile database updates.",
-          "Lead technical decisions while mentoring engineers in Django best practices and system architecture. Design RESTful APIs for complex environments while promoting code quality and performance optimization across cross-functional teams. Implemented GDPR compliance workflows and data anonymization for DSAR requests while using AI development tools including Claude Code, ChatGPT, and Cursor in daily development work."
+          "Lead technical decisions while mentoring engineers in Django best practices and system architecture. Design RESTful APIs for complex environments while promoting code quality and performance optimization across cross-functional teams. Implemented GDPR compliance workflows and data anonymization for DSAR requests while integrating AI development tools (Claude Code, ChatGPT, Cursor) into team workflows and development processes."
         ],
         "achievements": [
           "Led team for onboarding flow conversion in company-wide Server-Driven UI initiative, enhancing Node.js Hapi API system with TypeScript SDUI capabilities while ensuring GDPR compliance",
@@ -154,12 +149,7 @@
           "Data Anonymization",
           "PostgreSQL",
           "Colima"
-        ],
-        "technology_levels": {
-          "core": ["Python", "Django", "Backend Development", "Software Architecture", "APIs", "RESTful API", "ORM", "TypeScript", "Node.js", "GDPR Compliance", "AI Development Tools", "Claude Code", "Cursor", "ChatGPT"],
-          "frequent": ["JWT", "Auth0", "Braze", "CI/CD", "Agile", "Data Anonymization", "PostgreSQL", "Docker", "Jira", "Confluence"],
-          "minor": ["Google Gemini", "Atlassian", "Asana", "Lucid Charts", "Figma", "Colima"]
-        }
+        ]
       },
       {
         "position": "Senior Software Engineer",
@@ -197,12 +187,7 @@
           "HLS Streaming",
           "Video Processing",
           "Distributed Systems"
-        ],
-        "technology_levels": {
-          "core": ["Python", "Flask", "TDD", "RESTful API", "AWS S3", "AWS Lambda", "AWS API Gateway", "Real-time Systems", "HLS Streaming", "Video Processing"],
-          "frequent": ["Selenium", "AWS EC2", "Python Decorators", "Context Managers", "Python Unittest", "Distributed Systems", "Git via Github"],
-          "minor": ["JavaScript", "CSS", "AWS Route53", "React"]
-        }
+        ]
       },
       {
         "position": "Application Architect / Lead Developer / Senior Developer",
@@ -284,12 +269,42 @@
           "Homepage Layout Management",
           "Message Queues",
           "Real-time Systems"
+        ]
+      },
+      {
+        "position": "Personal Projects",
+        "companyLink": "",
+        "companyName": "Independent Development",
+        "time": "",
+        "description": [
+          "Built personal RAG (Retrieval Augmented Generation) systems for document processing and information retrieval. Developed agentic AI workflows using CrewAI and Microsoft agent frameworks for automated task orchestration and multi-agent collaboration.",
+          "Experimented with cutting-edge AI technologies and frameworks, integrating multiple LLM providers for various automation and content processing tasks. Explored advanced AI development patterns and methodologies for personal learning and skill development."
         ],
-        "technology_levels": {
-          "core": ["Python", "WordPress", "JavaScript", "Node.js", "MySQL", "Redis", "AWS Lambda", "Amazon Redshift", "Amazon SQS", "Redis Pub/Sub", "Redis Caching", "Performance Optimization", "Single Page Applications", "WebSocket Development", "Message Queues", "Real-time Systems", "Multi-system Integration"],
-          "frequent": ["Machine Learning", "Elasticsearch", "PHP", "Docker", "AWS EC2", "AWS S3", "AWS RDS", "AWS API Gateway", "Cloudflare", "AWS CloudFront", "AWS Code Pipeline", "Automated Testing", "Protractor", "Selenium", "Serverless Architecture", "Data Pipeline Architecture", "Intelligent Caching", "Real-time Dashboards", "Analytics Visualization", "AJAX Processing", "Content Management Systems"],
-          "minor": ["Flask", "Nginx", "CSS", "PostgreSQL", "GraphQL", "MongoDB", "AWS Route53", "AWS Aurora", "Vue.js", "Socket.io", "jQuery UI", "Git via Github", "Microservices", "Drag-and-Drop Interfaces", "Visual Editors", "Homepage Layout Management"]
-        }
+        "achievements": [
+          "Developed comprehensive RAG systems for document processing and intelligent information retrieval",
+          "Built multi-agent workflows using CrewAI framework for automated task orchestration",
+          "Integrated multiple LLM providers including OpenAI and Claude APIs for various AI applications",
+          "Explored advanced agentic AI patterns and Microsoft agent frameworks"
+        ],
+        "technologies": [
+          "Python",
+          "FastAPI",
+          "SQLAlchemy",
+          "PostgreSQL",
+          "RAG",
+          "Retrieval Augmented Generation",
+          "CrewAI",
+          "Agentic AI",
+          "LLMs",
+          "Large Language Models",
+          "OpenAI API",
+          "Claude API",
+          "Microsoft Agent Frameworks",
+          "Multi-agent Systems",
+          "Document Processing",
+          "AI Automation",
+          "RESTful API"
+        ]
       }
     ]
   },

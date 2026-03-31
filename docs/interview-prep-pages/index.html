@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Prep - Study Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .nav-link {
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(59, 130, 246, 0.1);
+        }
+
+        .nav-link.active {
+            background-color: rgba(59, 130, 246, 0.2);
+            border-left: 4px solid #3b82f6;
+        }
+
+        iframe {
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        #notesEditor {
+            display: none;
+        }
+
+        .note-item {
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .note-item:hover {
+            background-color: rgba(59, 130, 246, 0.05);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <div class="flex h-full">
+        <!-- Sidebar Navigation -->
+        <nav class="w-80 bg-white shadow-lg overflow-y-auto">
+            <div class="p-6 bg-gradient-to-r from-blue-600 to-blue-700">
+                <h1 class="text-white text-xl font-bold">Interview Prep</h1>
+                <p class="text-blue-100 text-sm mt-1">Study Guide</p>
+            </div>
+
+            <div class="p-4">
+                <div class="space-y-2">
+                    <a onclick="loadPage('01-tell-me-about-yourself.html')" class="nav-link block p-3 rounded-lg text-sm"
+                        data-page="01-tell-me-about-yourself.html">
+                        <div class="font-semibold text-blue-900">1. Tell me about yourself</div>
+                        <div class="text-xs text-gray-600 mt-1">2 min intro</div>
+                    </a>
+
+                    <a onclick="loadPage('02-tell-me-about-a-time-you-led-a-big-project.html')"
+                        class="nav-link block p-3 rounded-lg text-sm"
+                        data-page="02-tell-me-about-a-time-you-led-a-big-project.html">
+                        <div class="font-semibold text-blue-900">2. Tell me about a big project</div>
+                        <div class="text-xs text-gray-600 mt-1">SDUI migration story</div>
+                    </a>
+
+                    <a onclick="loadPage('03-tell-me-about-a-time-you-pushed-back-to-pm.html')"
+                        class="nav-link block p-3 rounded-lg text-sm"
+                        data-page="03-tell-me-about-a-time-you-pushed-back-to-pm.html">
+                        <div class="font-semibold text-blue-900">3. Tell me about pushing back</div>
+                        <div class="text-xs text-gray-600 mt-1">Kubernetes vs Docker</div>
+                    </a>
+
+                    <a onclick="loadPage('04-tell-me-about-a-mistake-that-caused-production-downtime.html')"
+                        class="nav-link block p-3 rounded-lg text-sm"
+                        data-page="04-tell-me-about-a-mistake-that-caused-production-downtime.html">
+                        <div class="font-semibold text-blue-900">4. Tell me about a mistake</div>
+                        <div class="text-xs text-gray-600 mt-1">HTTPS migration issue</div>
+                    </a>
+
+                    <a onclick="loadPage('05-tell-me-about-handling-a-critical-production-problem.html')"
+                        class="nav-link block p-3 rounded-lg text-sm"
+                        data-page="05-tell-me-about-handling-a-critical-production-problem.html">
+                        <div class="font-semibold text-blue-900">5. Tell me about a critical production problem</div>
+                        <div class="text-xs text-gray-600 mt-1">Therapy matching during peak traffic</div>
+                    </a>
+
+                    <a onclick="loadPage('06-what-is-your-mentoring-philosophy.html')"
+                        class="nav-link block p-3 rounded-lg text-sm"
+                        data-page="06-what-is-your-mentoring-philosophy.html">
+                        <div class="font-semibold text-blue-900">6. What is your mentoring philosophy?</div>
+                        <div class="text-xs text-gray-600 mt-1">Show don't tell, PR reviews, build judgment</div>
+                    </a>
+
+                    <a onclick="loadNotesEditor()" class="nav-link block p-3 rounded-lg text-sm" data-page="notes">
+                        <div class="font-semibold text-blue-900">7. Interview Notes</div>
+                        <div class="text-xs text-gray-600 mt-1">Notes taken during an interview</div>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Content Frame -->
+        <main class="flex-1 overflow-hidden">
+            <iframe id="contentFrame" src="01-tell-me-about-yourself.html"></iframe>
+
+            <!-- Notes Editor -->
+            <div id="notesEditor" class="h-full overflow-auto p-8 bg-white">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-2xl font-bold text-blue-900 mb-4 border-b-2 border-blue-600 pb-2">Interview Notes</h1>
+
+                    <div class="mb-4 flex gap-2">
+                        <button id="newNoteBtn" onclick="newNote()" class="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700">
+                            New Note
+                        </button>
+                    </div>
+
+                    <div class="mb-2">
+                        <label for="noteTitle" class="block text-sm font-semibold text-gray-700 mb-1">Note Title</label>
+                        <input type="text" id="noteTitle"
+                            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder="Enter note title to save it in the list..." oninput="autoSaveNote()">
+                    </div>
+
+                    <div class="mb-2 text-sm text-gray-600" id="noteStatus">
+                        <span class="text-green-600">● Saved</span>
+                    </div>
+
+                    <textarea id="noteContent"
+                        class="w-full h-80 p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        placeholder="Type your interview notes here..." oninput="autoSaveNote()"></textarea>
+
+                    <div class="mt-6">
+                        <h2 class="text-lg font-semibold text-gray-800 mb-3">Saved Notes</h2>
+                        <div id="savedNotesList" class="space-y-2">
+                            <!-- Saved notes will appear here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Notes system
+        const STORAGE_KEY = 'interviewNotes';
+        let currentNoteId = null;
+        let saveTimeout = null;
+
+        function generateId() {
+            return 'note_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+        }
+
+        function getNotesData() {
+            const data = localStorage.getItem(STORAGE_KEY);
+            if (!data) return { notes: {} };
+
+            const parsed = JSON.parse(data);
+
+            // Migrate old format to new format
+            if (parsed.saved && !parsed.notes) {
+                const migrated = { notes: {} };
+
+                // Migrate saved notes
+                Object.entries(parsed.saved).forEach(([title, note]) => {
+                    const id = generateId();
+                    migrated.notes[id] = {
+                        id: id,
+                        title: title,
+                        content: note.content || '',
+                        created: note.created || Date.now(),
+                        lastModified: note.lastModified || Date.now()
+                    };
+                });
+
+                // Save migrated data
+                saveNotesData(migrated);
+                return migrated;
+            }
+
+            return parsed;
+        }
+
+        function saveNotesData(data) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        }
+
+        function showSaving() {
+            const statusEl = document.getElementById('noteStatus');
+            statusEl.style.visibility = 'visible';
+            statusEl.innerHTML = '<span class="text-orange-500">● Updating...</span>';
+        }
+
+        function showSaved() {
+            const statusEl = document.getElementById('noteStatus');
+
+            if (!currentNoteId) {
+                statusEl.style.visibility = 'hidden';
+                return;
+            }
+
+            statusEl.style.visibility = 'visible';
+
+            const data = getNotesData();
+            let timestamp = Date.now();
+            if (currentNoteId && data.notes[currentNoteId]) {
+                timestamp = data.notes[currentNoteId].lastModified;
+            }
+
+            const formattedTime = new Date(timestamp).toLocaleString();
+            statusEl.innerHTML = `<span class="text-green-600">● Saved</span> - ${formattedTime}`;
+        }
+
+        function updateNewNoteButtonVisibility() {
+            const title = document.getElementById('noteTitle').value.trim();
+            const content = document.getElementById('noteContent').value.trim();
+            const newNoteBtn = document.getElementById('newNoteBtn');
+
+            // Hide button if both title and content are empty (already on a new note)
+            if (!title && !content) {
+                newNoteBtn.style.visibility = 'hidden';
+            } else {
+                newNoteBtn.style.visibility = 'visible';
+            }
+        }
+
+        function formatAutoTitle() {
+            const now = new Date();
+            const options = {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            };
+            const formatted = now.toLocaleString('en-US', options);
+            return `Untitled - ${formatted}`;
+        }
+
+        function setNoteTitleInput(title) {
+            // Don't display auto-generated "Untitled -" titles in the input
+            if (title && title.startsWith('Untitled - ')) {
+                return; // Exit early, don't set the input
+            }
+            document.getElementById('noteTitle').value = title || '';
+        }
+
+        function autoSaveNote() {
+            showSaving();
+            updateNewNoteButtonVisibility();
+
+            // Debounce save
+            if (saveTimeout) clearTimeout(saveTimeout);
+
+            saveTimeout = setTimeout(() => {
+                let title = document.getElementById('noteTitle').value.trim();
+                const content = document.getElementById('noteContent').value;
+
+                const data = getNotesData();
+                const now = Date.now();
+
+                if (!content.trim() && !title) {
+                    if (currentNoteId && data.notes[currentNoteId]) {
+                        data.notes[currentNoteId].title = formatAutoTitle();
+                        data.notes[currentNoteId].content = content;
+                        data.notes[currentNoteId].lastModified = now;
+                        saveNotesData(data);
+                        renderSavedNotes();
+                    }
+                    document.getElementById('noteStatus').style.visibility = 'hidden';
+                    return;
+                }
+
+                if (!title) {
+                    title = formatAutoTitle();
+                }
+
+                // Create new note if needed
+                if (!currentNoteId) {
+                    currentNoteId = generateId();
+                }
+
+                // Update or create note
+                if (!data.notes[currentNoteId]) {
+                    data.notes[currentNoteId] = {
+                        id: currentNoteId,
+                        title: title,
+                        content: content,
+                        created: now,
+                        lastModified: now
+                    };
+                } else {
+                    data.notes[currentNoteId].title = title;
+                    data.notes[currentNoteId].content = content;
+                    data.notes[currentNoteId].lastModified = now;
+                }
+
+                saveNotesData(data);
+                showSaved();
+                renderSavedNotes();
+                updateNewNoteButtonVisibility();
+
+                // Update URL if titled
+                if (title) {
+                    const newUrl = new URL(window.location);
+                    newUrl.searchParams.set('page', 'notes');
+                    newUrl.searchParams.set('note_id', currentNoteId);
+                    window.history.replaceState({}, '', newUrl);
+                }
+            }, 150);
+        }
+
+        function newNote() {
+            setNoteTitleInput('');
+            document.getElementById('noteContent').value = '';
+            currentNoteId = null;
+
+            showSaved();
+            updateNewNoteButtonVisibility();
+
+            // Update URL to notes without note_id
+            const newUrl = new URL(window.location);
+            newUrl.searchParams.set('page', 'notes');
+            newUrl.searchParams.delete('note_id');
+            window.history.replaceState({}, '', newUrl);
+        }
+
+        function loadNote(noteId) {
+            const data = getNotesData();
+            const note = data.notes[noteId];
+
+            if (note) {
+                setNoteTitleInput(note.title);
+                document.getElementById('noteContent').value = note.content || '';
+                currentNoteId = noteId;
+                showSaved();
+                updateNewNoteButtonVisibility();
+
+                // Update URL
+                const newUrl = new URL(window.location);
+                newUrl.searchParams.set('page', 'notes');
+                newUrl.searchParams.set('note_id', noteId);
+                window.history.replaceState({}, '', newUrl);
+            }
+        }
+
+        function deleteNote(noteId) {
+            const data = getNotesData();
+            const noteTitle = data.notes[noteId]?.title || 'this note';
+
+            if (!confirm(`Delete "${noteTitle}"?`)) return;
+
+            delete data.notes[noteId];
+            saveNotesData(data);
+            renderSavedNotes();
+
+            // If we deleted the current note, start fresh
+            if (currentNoteId === noteId) {
+                newNote();
+            }
+        }
+
+        function renderSavedNotes() {
+            const data = getNotesData();
+            const container = document.getElementById('savedNotesList');
+
+            // Only show notes with titles
+            const titledNotes = Object.values(data.notes).filter(note => note.title && note.title.trim());
+
+            if (titledNotes.length === 0) {
+                container.innerHTML = '<p class="text-gray-500 text-sm">No saved notes yet. Add a title to your note to save it here.</p>';
+                return;
+            }
+
+            container.innerHTML = titledNotes
+                .sort((a, b) => b.lastModified - a.lastModified)
+                .map(note => {
+                    const date = new Date(note.lastModified).toLocaleString();
+                    return `
+                        <div class="note-item p-3 border border-gray-200 rounded-lg flex justify-between items-start">
+                            <div onclick="loadNote('${note.id}')">
+                                <div class="font-semibold text-blue-900">${escapeHtml(note.title)}</div>
+                                <div class="text-xs text-gray-600 mt-1">Last modified: ${date}</div>
+                                <div class="text-sm text-gray-700 mt-1 truncate">${escapeHtml((note.content || '').substring(0, 100))}...</div>
+                            </div>
+                            <button onclick="deleteNote('${note.id}')" class="text-red-600 hover:text-red-800 text-sm ml-2">
+                                Delete
+                            </button>
+                        </div>
+                    `;
+                }).join('');
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function loadNotesEditor() {
+            document.getElementById('contentFrame').style.display = 'none';
+            document.getElementById('notesEditor').style.display = 'block';
+
+            // Update active state
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            document.querySelector('[data-page="notes"]').classList.add('active');
+
+            // Check for note_id in URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const noteId = urlParams.get('note_id');
+
+            if (noteId) {
+                const data = getNotesData();
+                if (data.notes[noteId]) {
+                    loadNote(noteId);
+                } else {
+                    // Note doesn't exist, start blank
+                    newNote();
+                }
+            } else {
+                // No note_id, start blank
+                newNote();
+            }
+
+            renderSavedNotes();
+
+            // Update URL
+            if (!urlParams.has('page')) {
+                const newUrl = new URL(window.location);
+                newUrl.searchParams.set('page', 'notes');
+                if (!noteId) {
+                    newUrl.searchParams.delete('note_id');
+                }
+                window.history.replaceState({}, '', newUrl);
+            }
+        }
+
+        function loadPage(page) {
+            document.getElementById('contentFrame').style.display = 'block';
+            document.getElementById('notesEditor').style.display = 'none';
+            document.getElementById('contentFrame').src = page;
+
+            // Update active state
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            document.querySelector(`[data-page="${page}"]`).classList.add('active');
+
+            // Update URL
+            const newUrl = new URL(window.location);
+            newUrl.searchParams.set('page', page);
+            newUrl.searchParams.delete('note_id');
+            window.history.replaceState({}, '', newUrl);
+        }
+
+        // Set initial active state
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const page = urlParams.get('page');
+
+            if (page === 'notes' || urlParams.has('note_id')) {
+                loadNotesEditor();
+            } else if (page && page !== 'notes') {
+                loadPage(page);
+            } else {
+                // Default to first page
+                document.querySelector('[data-page="01-tell-me-about-yourself.html"]').classList.add('active');
+                const newUrl = new URL(window.location);
+                newUrl.searchParams.set('page', '01-tell-me-about-yourself.html');
+                window.history.replaceState({}, '', newUrl);
+            }
+        });
+    </script>
+</body>
+
+</html>

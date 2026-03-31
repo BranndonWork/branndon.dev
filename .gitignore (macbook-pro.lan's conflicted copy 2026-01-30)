@@ -19,11 +19,11 @@ dev.log
 # Temporary research reports
 data/research/
 
+# Voice memo responses (contains personal audio recordings)
+data/responses/
+
 # Python cache and bytecode
 __pycache__/
 *.pyc
 *.pyo
 
-remote_jobs_all.json
-data/responses/
-.venv/

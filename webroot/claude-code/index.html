@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Branndon Coelho: Applied Claude Code</title>
+    <meta name="description" content="How I use Claude Code in daily development and as deployed production infrastructure." />
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <link rel="stylesheet" href="/assets/css/claude-code.css" />
+</head>
+<body>
+
+<!-- Header -->
+<header class="header" role="banner">
+    <div class="container header-inner">
+        <a href="/" class="brand">Branndon Coelho</a>
+        <a href="/" class="back-link">&#8592; branndon.dev</a>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container">
+        <div class="pre">Applied Claude Code</div>
+        <h1>Built with it.<br><em>Deployed as it.</em></h1>
+        <p class="lede">
+            I use Claude Code to run my job search pipeline, build production AI systems, and have deployed it as a live Docker microservice. Here is what that actually looks like.
+        </p>
+
+        <div class="terminal">
+            <div class="terminal-bar">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+                <span class="terminal-title">branndon.dev / claude code</span>
+            </div>
+            <pre class="terminal-body"><span class="prompt">$</span> <span class="cmd">/linkedin-apply</span> https://linkedin.com/jobs/view/...
+  Company:  Acme Engineering
+  Title:    Senior Backend Engineer
+  <span class="ok">Keywords: 9 matched</span>
+    APIs, CI/CD, Docker, Node.js, PostgreSQL, Python, React, TypeScript
+
+  PDF: job-search/Acme-Engineering-Senior-Backend-Engineer/resume-branndon-coelho-acme-ats.pdf
+  <span class="dim">Elapsed: 5.5s</span>
+
+<span class="prompt">$</span> <span class="cmd">/expert:hunter</span> "evaluate this role"
+  <span class="dim">[Hunter] strong stack overlap, IC scope confirmed</span>
+  <span class="dim">Next action: /interview-prep</span>
+
+<span class="prompt">$</span> <span class="cmd">/applied</span> job-search/Acme-Engineering-Senior-Backend-Engineer/
+  <span class="ok">status: applied, job-application.yaml written</span></pre>
+        </div>
+    </div>
+</section>
+
+<!-- Claude Code as Microservice -->
+<section class="section-alt" id="microservice">
+    <div class="container">
+        <div class="split">
+            <div class="split-text">
+                <div class="pre">Production Infrastructure</div>
+                <h2>Claude Code as a Service, deployed via Docker and Coolify.</h2>
+                <p>
+                    I needed a production API that could generate social media copy for new content automatically, without API costs and without a human in the loop. Instead of calling the Anthropic API directly, I built a FastAPI + Celery service that runs the Claude Code CLI via subprocess inside Docker containers, deployed via Coolify.
+                </p>
+                <p>
+                    Claude writes output to a temp file as structured JSON. FastAPI reads it, validates against a Pydantic schema, and retries automatically on schema failure. It is launched anytime content goes live.
+                </p>
+            </div>
+
+            <div>
+                <div class="code-block">
+                    <div class="code-block-bar">
+                        <span class="code-block-label">services/claude_worker.py</span>
+                    </div>
+                    <pre><span class="cm"># app.py — FastAPI wrapping Claude Code CLI</span>
+MAX_RETRIES = <span class="nm">3</span>
+
+<span class="kw">def</span> <span class="fn">call_claude_to_file</span>(prompt, schema, model=<span class="nm">None</span>):
+    output_path = <span class="st">f"/tmp/claude_</span><span class="fn">{uuid.uuid4().hex}</span><span class="st">.json"</span>
+    full_prompt = <span class="st">f"</span>{prompt}<span class="st">\n\nWrite JSON to: </span>{output_path}<span class="st">\nFields: </span>{schema}<span class="st">"</span>
+    result = subprocess.<span class="fn">run</span>(
+        [<span class="st">"claude"</span>, <span class="st">"-p"</span>, full_prompt, <span class="st">"--dangerously-skip-permissions"</span>],
+        env={**os.environ, <span class="st">"CLAUDE_CODE_OAUTH_TOKEN"</span>: token},
+        capture_output=<span class="nm">True</span>, text=<span class="nm">True</span>, timeout=<span class="nm">60</span>,
+    )
+    <span class="kw">if</span> result.returncode != <span class="nm">0</span>:
+        <span class="kw">raise</span> <span class="fn">HTTPException</span>(status_code=<span class="nm">502</span>, detail=result.stderr)
+    <span class="kw">return</span> json.<span class="fn">loads</span>(Path(output_path).<span class="fn">read_text</span>())
+
+
+<span class="dec">@app</span>.<span class="fn">post</span>(<span class="st">"/social/copy"</span>, response_model=SocialCopyResponse)
+<span class="kw">def</span> <span class="fn">social_copy</span>(req: SocialCopyRequest,
+                api_key: str = Security(verify_api_key)):
+    last_err = <span class="fn">HTTPException</span>(status_code=<span class="nm">502</span>, detail=<span class="st">"All retries failed"</span>)
+    <span class="kw">for</span> attempt <span class="kw">in</span> <span class="fn">range</span>(<span class="nm">1</span>, MAX_RETRIES + <span class="nm">1</span>):
+        <span class="kw">try</span>:
+            data = <span class="fn">call_claude_to_file</span>(req.prompt, SCHEMA)
+            <span class="kw">return</span> <span class="fn">SocialCopyResponse</span>(**data)  <span class="cm"># 200</span>
+        <span class="kw">except</span> ValidationError <span class="kw">as</span> e:
+            last_err = <span class="fn">HTTPException</span>(<span class="nm">422</span>, str(e))
+        <span class="kw">except</span> HTTPException <span class="kw">as</span> e:
+            last_err = e
+    <span class="kw">raise</span> last_err  <span class="cm"># 502 after 3 attempts</span></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Content Pipeline -->
+<section id="pipeline">
+    <div class="container">
+        <div class="section-label">Content Pipeline</div>
+        <h2>Autonomous content generation pipeline.</h2>
+        <p class="section-sub">
+            70+ virtual author profiles publish 6+ pieces of content daily with zero human intervention. Here is every stage.
+        </p>
+
+        <div class="pipeline-steps">
+
+            <div class="pipeline-step">
+                <div>
+                    <div class="step-num">1</div>
+                    <div class="step-line"></div>
+                </div>
+                <div class="step-body">
+                    <div class="step-name">Content Planning</div>
+                    <div class="step-desc">Category-matched author profile is selected from 70+ profiles. Each profile has a defined voice, vocabulary range, sentence length targets, and topic affinity scores.</div>
+                </div>
+            </div>
+
+            <div class="pipeline-step">
+                <div>
+                    <div class="step-num">2</div>
+                    <div class="step-line"></div>
+                </div>
+                <div class="step-body">
+                    <div class="step-name">Generation</div>
+                    <div class="step-desc">Claude generates the draft using a write-time prompt protocol that embeds the author's voice rubric directly into the system prompt. Per-author structural patterns are enforced before generation starts.</div>
+                </div>
+            </div>
+
+            <div class="pipeline-step">
+                <div>
+                    <div class="step-num">3</div>
+                    <div class="step-line"></div>
+                </div>
+                <div class="step-body">
+                    <div class="step-name">Anti-LLM Validation (18 checks)</div>
+                    <div class="step-desc">Output runs through 18 validators before it is allowed to proceed. Catches patterns that make content sound generated rather than written.</div>
+                    <div class="validator-list">
+                        <span class="validator">em-dashes</span>
+                        <span class="validator">banned phrases (50+)</span>
+                        <span class="validator">staccato patterns</span>
+                        <span class="validator">orphaned micro-sentences</span>
+                        <span class="validator">passive overuse</span>
+                        <span class="validator">missing contractions</span>
+                        <span class="validator">transition word stacking</span>
+                        <span class="validator">hedging language</span>
+                        <span class="validator">listicle structure</span>
+                        <span class="validator">uniform sentence length</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pipeline-step">
+                <div>
+                    <div class="step-num">4</div>
+                    <div class="step-line"></div>
+                </div>
+                <div class="step-body">
+                    <div class="step-name">Voice Scoring</div>
+                    <div class="step-desc">Content is scored across <strong>10 dimensions</strong> against the author's profile: warmth, formality, vocabulary complexity, sentence rhythm, personal anecdote density, and more. Pieces below the threshold are regenerated.</div>
+                </div>
+            </div>
+
+            <div class="pipeline-step">
+                <div>
+                    <div class="step-num">5</div>
+                    <div class="step-line"></div>
+                </div>
+                <div class="step-body">
+                    <div class="step-name">Approval Gate</div>
+                    <div class="step-desc">Validator pass + voice score above threshold = approved. Failed pieces loop back to generation with failure context added to the prompt. No human reviews individual pieces.</div>
+                </div>
+            </div>
+
+            <div class="pipeline-step">
+                <div>
+                    <div class="step-num">6</div>
+                    <div class="step-line"></div>
+                </div>
+                <div class="step-body">
+                    <div class="step-name">Publish</div>
+                    <div class="step-desc">Approved content is written to the Django backend via internal API. Metadata, author attribution, category tags, and publication timestamp are set programmatically.</div>
+                </div>
+            </div>
+
+            <div class="pipeline-step">
+                <div>
+                    <div class="step-num">7</div>
+                    <div class="step-line"></div>
+                </div>
+                <div class="step-body">
+                    <div class="step-name">ISR Revalidation</div>
+                    <div class="step-desc">Cloudflare cache and Next.js ISR are invalidated for the new content path, making the piece live on the Next.js frontend without a full rebuild.</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ETL Pipeline -->
+<section class="section-alt" id="etl">
+    <div class="container">
+        <div class="section-label">LLM-Powered ETL</div>
+        <h2>100,000+ records regenerated with a local model.</h2>
+        <p class="section-sub">A resource directory needed every listing rewritten to surface structured information: IEP support, therapy programs, staff training, and enrollment requirements.</p>
+
+        <div class="etl-grid">
+            <div>
+                <div class="big-stat">100k+</div>
+                <div class="big-stat-label">records processed with two-phase validation and idempotent skip logic</div>
+            </div>
+            <div>
+                <p style="color: var(--muted); font-size: 15px; line-height: 1.7; margin: 0 0 16px;">
+                    A local <strong style="color: var(--text)">Qwen/Ollama</strong> model handles regeneration, no API cost at scale. Two-phase validation runs structural screening before the LLM call and a full schema + content hash check after. The <code>--batch</code> flag and per-record skip logic make the pipeline safe to interrupt and resume.
+                </p>
+                <p style="color: var(--muted); font-size: 15px; line-height: 1.7; margin: 0 0 20px;">
+                    20+ Poetry CLI scripts handle orchestration, reporting, and partial reruns across the full dataset.
+                </p>
+                <div class="etl-stages">
+                    <span class="etl-stage">Scan</span>
+                    <span class="etl-arrow">&#8594;</span>
+                    <span class="etl-stage">Parse</span>
+                    <span class="etl-arrow">&#8594;</span>
+                    <span class="etl-stage">LLM Regen</span>
+                    <span class="etl-arrow">&#8594;</span>
+                    <span class="etl-stage">Validate</span>
+                    <span class="etl-arrow">&#8594;</span>
+                    <span class="etl-stage">Publish</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Configuration -->
+<section id="config">
+    <div class="container">
+        <div class="section-label">Environment</div>
+        <h2>How my Claude Code setup is configured.</h2>
+        <p class="section-sub">Built up over nearly two years of daily use across multiple projects.</p>
+
+        <div class="config-grid">
+
+            <div class="config-block">
+                <h3>53+ Custom Slash Commands</h3>
+
+                <div class="command-group">
+                    <div class="command-group-label">Job search</div>
+                    <div class="command-pills">
+                        <span class="command-pill">/linkedin-apply</span>
+                        <span class="command-pill">/applied</span>
+                        <span class="command-pill">/skip-job</span>
+                        <span class="command-pill">/setup-job</span>
+                        <span class="command-pill">/interview-prep</span>
+                        <span class="command-pill">/first-interview</span>
+                        <span class="command-pill">/mock-interview</span>
+                        <span class="command-pill">/expert:hunter</span>
+                        <span class="command-pill">/expert:resume</span>
+                    </div>
+                </div>
+
+                <div class="command-group">
+                    <div class="command-group-label">Deployment</div>
+                    <div class="command-pills">
+                        <span class="command-pill">/deploy</span>
+                        <span class="command-pill">/coolify</span>
+                        <span class="command-pill">/cloudflare</span>
+                        <span class="command-pill">/git:commit-push</span>
+                    </div>
+                </div>
+
+                <div class="command-group">
+                    <div class="command-group-label">AI delegation</div>
+                    <div class="command-pills">
+                        <span class="command-pill">/qwen</span>
+                        <span class="command-pill">/haiku</span>
+                        <span class="command-pill">/expert:python</span>
+                        <span class="command-pill">/expert:lead-developer</span>
+                        <span class="command-pill">/expert:scaling</span>
+                    </div>
+                </div>
+
+                <div class="command-group">
+                    <div class="command-group-label">Apple ecosystem</div>
+                    <div class="command-pills">
+                        <span class="command-pill">/calendar</span>
+                        <span class="command-pill">/reminders</span>
+                        <span class="command-pill">/lists</span>
+                        <span class="command-pill">/notes</span>
+                        <span class="command-pill">/notify</span>
+                    </div>
+                </div>
+
+                <div class="command-group">
+                    <div class="command-group-label">Code quality</div>
+                    <div class="command-pills">
+                        <span class="command-pill">/code:audit</span>
+                        <span class="command-pill">/code:linter</span>
+                        <span class="command-pill">/refactor-bot</span>
+                        <span class="command-pill">/simplify</span>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="config-block" style="margin-bottom: 36px;">
+                    <h3>4 PreToolUse Safety Hooks</h3>
+                    <div class="hook-list">
+                        <div class="hook-item">
+                            <span class="hook-name">rm_guard</span>
+                            <span class="hook-desc">Intercepts destructive deletions before they execute</span>
+                        </div>
+                        <div class="hook-item">
+                            <span class="hook-name">sed_guard</span>
+                            <span class="hook-desc">Prevents sed from corrupting data structures by running pattern substitutions that can't detect existing prefixes (e.g. doubling a prefix already applied)</span>
+                        </div>
+                        <div class="hook-item">
+                            <span class="hook-name">config_guard</span>
+                            <span class="hook-desc">Blocks any reads of .env files and writes to package scripts; enforces proper dependency management via <code>poetry add</code> or <code>npm install</code></span>
+                        </div>
+                        <div class="hook-item">
+                            <span class="hook-name">package_manager_guard</span>
+                            <span class="hook-desc">Intercepts any direct write of a pinned version string (<code>package==1.3.4</code>) into a file; Claude habitually writes pinned versions straight into manifests, bypassing dependency resolution and lock file management entirely</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="config-block" style="margin-bottom: 36px;">
+                    <h3>5 MCP Integrations</h3>
+                    <div class="mcp-list">
+                        <div class="mcp-item">
+                            <span class="mcp-name">claude-peers</span>
+                            <span class="mcp-desc">Send messages between Claude Code instances on the same machine</span>
+                        </div>
+                        <div class="mcp-item">
+                            <span class="mcp-name">gmail</span>
+                            <span class="mcp-desc">Read and send email directly from Claude Code</span>
+                        </div>
+                        <div class="mcp-item">
+                            <span class="mcp-name">ollama-claude</span>
+                            <span class="mcp-desc">Delegate tasks to local Qwen model, no API cost</span>
+                        </div>
+                        <div class="mcp-item">
+                            <span class="mcp-name">context7</span>
+                            <span class="mcp-desc">Live library documentation pulled into context on demand</span>
+                        </div>
+                        <div class="mcp-item">
+                            <span class="mcp-name">voicemode</span>
+                            <span class="mcp-desc">Voice interaction with Claude Code</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="config-block">
+                    <h3>6-Role Executive AI Team</h3>
+                    <p style="color: var(--muted); font-size: 14px; line-height: 1.6; margin: 0;">
+                        CEO, CTO, CMO, CFO, Product, and Project Manager as expert personas with distinct system prompts and domain constraints. Daily standup rotates through each role and syncs to a Trello board via the <code>/pm</code> command.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container footer-inner">
+        <span style="color: var(--muted);">&copy; 2025 Branndon Coelho</span>
+        <div class="footer-links">
+            <a href="/">branndon.dev</a>
+            <a href="https://branndon.dev/linkedin">LinkedIn</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

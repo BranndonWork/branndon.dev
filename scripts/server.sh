@@ -4,116 +4,137 @@
 # Manages Python HTTP server for resume PDF generation
 
 PROJECT_DIR="/Volumes/Storage/Dropbox/workspace/projects/branndon.dev/webroot"
-PID_FILE="$PROJECT_DIR/../.dev.pid"
-SERVER_PORT=8000
-SERVER_URL="http://localhost:$SERVER_PORT"
+PID_FILE="/tmp/branndon-dev-server.pid"
+PORT_FILE="/tmp/branndon-dev-server.port"
 
-# Function to check if server is running and responsive
-check_server() {
-    if curl -s "$SERVER_URL" | grep -q "resume-wrapper"; then
-        return 0  # Server is running and responsive
-    else
-        return 1  # Server not running or not responsive
+# Find a random free port in range 8100-9000
+find_free_port() {
+    while true; do
+        local port=$(( RANDOM % 900 + 8100 ))
+        if ! lsof -i :$port > /dev/null 2>&1; then
+            echo $port
+            return 0
+        fi
+    done
+}
+
+# Get the recorded port (or empty if none saved)
+get_saved_port() {
+    if [ -f "$PORT_FILE" ]; then
+        cat "$PORT_FILE"
     fi
 }
 
-# Function to gracefully stop our dev server
+# Get current server URL from saved port
+get_server_url() {
+    local port=$(get_saved_port)
+    if [ -n "$port" ]; then
+        echo "http://localhost:$port"
+    fi
+}
+
+# Check if OUR server is running and responsive (by saved PID + port)
+check_server() {
+    local saved_pid=$([ -f "$PID_FILE" ] && cat "$PID_FILE")
+    local saved_port=$(get_saved_port)
+
+    if [ -z "$saved_pid" ] || [ -z "$saved_port" ]; then
+        return 1
+    fi
+
+    # Verify the saved PID is still our process
+    if ! ps -p "$saved_pid" > /dev/null 2>&1; then
+        return 1
+    fi
+
+    # Verify it responds correctly
+    if curl -s "http://localhost:$saved_port" | grep -q "resume-wrapper"; then
+        return 0
+    fi
+
+    return 1
+}
+
+# Stop only OUR server (by saved PID — never touches other processes)
 stop_dev() {
     echo "Stopping branndon.dev server..."
-    
-    # Check if we have a saved PID
     if [ -f "$PID_FILE" ]; then
         local saved_pid=$(cat "$PID_FILE")
-        if ps -p $saved_pid > /dev/null 2>&1; then
-            echo "Gracefully stopping PID $saved_pid"
-            kill -TERM $saved_pid
-            sleep 2
-            # If still running, force kill
-            if ps -p $saved_pid > /dev/null 2>&1; then
-                kill -KILL $saved_pid
-            fi
+        if ps -p "$saved_pid" > /dev/null 2>&1; then
+            echo "Stopping PID $saved_pid"
+            kill -TERM "$saved_pid"
+            sleep 1
         fi
         rm -f "$PID_FILE"
     fi
-    
-    # Find Python HTTP server processes on our port
-    local server_pids=$(lsof -ti:$SERVER_PORT 2>/dev/null)
-    if [ ! -z "$server_pids" ]; then
-        for pid in $server_pids; do
-            if ps -p $pid > /dev/null 2>&1; then
-                echo "Stopping server process PID $pid on port $SERVER_PORT"
-                kill -TERM $pid
-            fi
-        done
-        sleep 1
-    fi
+    rm -f "$PORT_FILE"
+    echo "Server stopped"
 }
 
-# Function to start dev server
-start_dev() {
-    echo "Starting branndon.dev HTTP server on port $SERVER_PORT..."
-    cd "$PROJECT_DIR" && python3 -m http.server $SERVER_PORT
-}
-
-# Function to start dev server in background
+# Start server in background on a free port
 start_dev_bg() {
-    stop_dev
-    echo "Starting branndon.dev server in background on port $SERVER_PORT..."
-    cd "$PROJECT_DIR" && python3 -m http.server $SERVER_PORT > ../dev.log 2>&1 &
+    local port=$(find_free_port)
+    echo "Starting branndon.dev server on port $port..."
+    cd "$PROJECT_DIR" && poetry run python -m http.server "$port" > /tmp/branndon-dev-server.log 2>&1 &
     local new_pid=$!
-    echo $new_pid > "$PID_FILE"
-    echo "Server started with PID $new_pid"
-    echo "Server URL: $SERVER_URL"
-    
-    # Wait a moment and verify server is responsive
+    echo "$new_pid" > "$PID_FILE"
+    echo "$port" > "$PORT_FILE"
     sleep 2
-    if check_server; then
-        echo "Server is running and responsive"
+    if curl -s "http://localhost:$port" | grep -q "resume-wrapper"; then
+        echo "Server running: http://localhost:$port (PID $new_pid)"
     else
-        echo "Warning: Server may not be fully ready yet"
+        echo "Warning: Server started (PID $new_pid, port $port) but not yet responsive"
     fi
 }
 
-# Function to get server status and URL
-status() {
-    if check_server; then
-        echo "Server is running and responsive at $SERVER_URL"
-        if [ -f "$PID_FILE" ]; then
-            local saved_pid=$(cat "$PID_FILE")
-            echo "PID: $saved_pid"
-        fi
-        return 0
+# Print saved server URL (for use by other scripts)
+get_url() {
+    local url=$(get_server_url)
+    if [ -n "$url" ]; then
+        echo "$url"
     else
-        echo "Server is not running or not responsive"
+        echo "No server running" >&2
         return 1
     fi
 }
 
-# Function to ensure server is running (main use case)
-ensure_running() {
+# Status check
+status() {
     if check_server; then
-        echo "Server already running at $SERVER_URL"
+        local port=$(get_saved_port)
+        local pid=$(cat "$PID_FILE")
+        echo "Server running at http://localhost:$port (PID $pid)"
         return 0
     else
-        echo "Starting server..."
+        echo "Server not running"
+        return 1
+    fi
+}
+
+# Ensure server is running — starts one if not, never kills anything else
+ensure_running() {
+    if check_server; then
+        local port=$(get_saved_port)
+        echo "Server already running at http://localhost:$port"
+        return 0
+    else
         start_dev_bg
-        return $?
     fi
 }
 
 # Main script logic
 case "$1" in
-    "start")
-        start_dev
-        ;;
-    "stop"|"kill")
-        stop_dev
-        ;;
-    "bg"|"background")
+    "start"|"bg"|"background")
         start_dev_bg
+        ;;
+    "stop")
+        stop_dev
         ;;
     "status")
         status
+        ;;
+    "url")
+        get_url
         ;;
     "ensure"|"")
         ensure_running
@@ -124,12 +145,12 @@ case "$1" in
         start_dev_bg
         ;;
     *)
-        echo "Usage: $0 {start|stop|bg|status|ensure|restart}"
-        echo "  start     - Start server in foreground"
-        echo "  stop      - Stop server"
-        echo "  bg        - Start server in background"
-        echo "  status    - Check server status"
-        echo "  ensure    - Ensure server is running (default)"
-        echo "  restart   - Restart server"
+        echo "Usage: $0 {start|stop|status|url|ensure|restart}"
+        echo "  start   - Start server in background on a free port"
+        echo "  stop    - Stop OUR server (never touches other processes)"
+        echo "  status  - Check if our server is running"
+        echo "  url     - Print the current server URL"
+        echo "  ensure  - Start server if not already running (default)"
+        echo "  restart - Stop and restart"
         ;;
 esac

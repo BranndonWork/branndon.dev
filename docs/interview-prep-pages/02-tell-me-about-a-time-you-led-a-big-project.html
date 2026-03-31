@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tell me about a time you led a big project, and how did it go?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            body {
+                padding: 0.5in;
+                margin: 0;
+                font-size: 11pt;
+            }
+
+            .question {
+                font-size: 14pt;
+                margin-bottom: 12pt;
+            }
+
+            .answer {
+                font-size: 11pt;
+                line-height: 1.4;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="question text-2xl font-bold text-purple-900 mb-4 border-b-2 border-purple-600 pb-2">2. Tell me about a time you
+            led a big project (STAR, 2 min)</h1>
+        <div class="answer text-gray-800 text-base leading-relaxed space-y-4">
+            <ol class="list-inside space-y-2 ml-4 list-decimal">
+                <li>At Headspace, every screen change for our 70M users required separate iOS and Android app store releases, and
+                    even bug fixes took days through the app store review process.</li>
+                <li>I was one of the first two engineers selected to lead our server-driven UI migration, a year-long initiative
+                    to move all mobile app display logic to server-side control.</li>
+                <li>We researched Netflix, Airbnb, and other approaches, eventually landing on Airbnb's sections-and-screens
+                    architecture.</li>
+                <li>For the project I transitioned from Python to TypeScript to integrate the server-side changes into the Node.js
+                    API.</li>
+                <li>We released on time, and feature velocity increased dramatically - what took days to release now takes minutes
+                    to
+                    hours.</li>
+                <li>We can hotfix bugs immediately, release UI changes without app store delays, and maintain iOS/Android
+                    consistency on a level that wasn't possible before.</li>
+            </ol>
+
+            <div class="bg-white p-3 rounded border-l-4 border-purple-400 mt-4">
+                <h3 class="text-sm font-semibold text-gray-700 mb-2">STAR breakdown:</h3>
+                <ul class="space-y-1 ml-4 list-disc text-gray-700 text-sm">
+                    <li><strong>Situation:</strong> Every screen change required iOS/Android app store releases, bug fixes took
+                        days</li>
+                    <li><strong>Task:</strong> Lead server-driven UI migration, year-long initiative for 70M users</li>
+                    <li><strong>Action:</strong> Researched approaches, adopted Airbnb architecture, learned TypeScript, ensured
+                        GDPR compliance</li>
+                    <li><strong>Result:</strong> Released on time, feature velocity from days to hours, immediate hotfixes</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

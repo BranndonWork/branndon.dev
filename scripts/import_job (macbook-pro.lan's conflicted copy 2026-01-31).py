@@ -8,10 +8,15 @@ import os
 import shutil
 import argparse
 import re
+import sys
 from pathlib import Path
 from datetime import datetime
 import json
 
+job_search_path = Path("/Volumes/Storage/Dropbox/documents/job-search-2025")
+sys.path.append(str(job_search_path))
+
+from job_scraper.sqlite_wrapper import SQLiteProvider
 from job_tracker_db import JobTrackerDB, JobOperationsDB, JobStorageDB
 from setup_job_directory import JobDirectorySetup
 
@@ -32,53 +37,48 @@ class JobTracker:
 
 
 class JobImporter:
-    def __init__(self, source_dir: str, target_dir: str = None, tracking_file: str = None):
+    def __init__(self, source_dir: str = None, target_dir: str = None, tracking_file: str = None):
         """Initialize job importer."""
-        self.source_dir = Path(source_dir)
         self.target_dir = Path(target_dir) if target_dir else Path.cwd() / "job-search"
         self.tracker = JobTracker(tracking_file)
         self.setup = JobDirectorySetup(str(self.target_dir))
 
-        if not self.source_dir.exists():
-            raise FileNotFoundError(f"Source directory not found: {source_dir}")
+        os.environ["SQLITE_DB_PATH"] = str(job_search_path / "jobs_database.db")
+        self.db = SQLiteProvider()
     
-    def extract_job_details(self, job_file: Path) -> dict:
-        """Extract job details from markdown file."""
+    def get_job_from_db(self, job_id: str) -> dict:
+        """Get job details from database."""
         try:
-            with open(job_file, 'r', encoding='utf-8') as f:
-                content = f.read()
-            
-            # Extract key information
-            job_id_match = re.search(r'\*\*Job ID\*\*:\s*`([^`]+)`', content)
-            job_id = job_id_match.group(1) if job_id_match else job_file.stem
-            
-            title_match = re.search(r'---\n\n# (.+?)\n', content)
-            title = title_match.group(1) if title_match else "Unknown Title"
-            
-            company_match = re.search(r'\*\*Company\*\*:\s*(.+)', content)
-            company = company_match.group(1) if company_match else "Unknown"
-            
-            location_match = re.search(r'\*\*Location\*\*:\s*(.+)', content)
-            location = location_match.group(1) if location_match else "Unknown"
-            
-            level_match = re.search(r'\*\*Level\*\*:\s*(.+)', content)
-            level = level_match.group(1) if level_match else ""
-            
-            score_match = re.search(r'\*\*Resume Score\*\*:\s*(\d+)', content)
-            score = int(score_match.group(1)) if score_match else 0
-            
+            conn = self.db._get_connection()
+            cursor = conn.cursor()
+
+            cursor.execute("""
+                SELECT job_id, company, job_title, resume_score,
+                       description, location, level
+                FROM jobs
+                WHERE job_id = ?
+            """, (job_id,))
+
+            result = cursor.fetchone()
+            conn.close()
+
+            if not result:
+                return {}
+
+            job_id, company, title, score, description, location, level = result
+
             return {
-                "job_id": job_id,
-                "title": title,
-                "company": company,
-                "location": location,
-                "level": level,
-                "score": score,
-                "content": content
+                "job_id": str(job_id),
+                "title": title or "Unknown Title",
+                "company": company or "Unknown",
+                "location": location or "Unknown",
+                "level": level or "",
+                "score": score or 0,
+                "content": description or ""
             }
-        
+
         except Exception as e:
-            print(f"Error extracting job details from {job_file}: {e}")
+            print(f"Error getting job {job_id} from database: {e}")
             return {}
     
     def create_directory_name(self, company: str, title: str) -> str:
@@ -86,29 +86,27 @@ class JobImporter:
         # Clean company name
         company_clean = re.sub(r'[^a-zA-Z0-9\\s-]', '', company)
         company_clean = re.sub(r'\\s+', '-', company_clean.strip())
-        
+
         # Clean title - extract key role info
         title_clean = re.sub(r'[^a-zA-Z0-9\\s-]', '', title)
         title_clean = re.sub(r'\\s+', '-', title_clean.strip())
-        
+
         # Combine and limit length
         dir_name = f"{company_clean}-{title_clean}"
+
+        # Replace multiple consecutive hyphens with single hyphen
+        dir_name = re.sub(r'-+', '-', dir_name)
+
         if len(dir_name) > 80:  # Limit directory name length
             dir_name = dir_name[:80].rstrip('-')
-        
+
         return dir_name
     
     def import_job(self, job_id: str, force: bool = False) -> str:
         """Import a specific job to local directory."""
-        # Find the job file
-        job_file = self.source_dir / f"{job_id}.md"
-        if not job_file.exists():
-            raise FileNotFoundError(f"Job file not found: {job_file}")
-        
-        # Extract job details
-        job_details = self.extract_job_details(job_file)
+        job_details = self.get_job_from_db(job_id)
         if not job_details:
-            raise ValueError(f"Could not extract job details from {job_file}")
+            raise ValueError(f"Could not find job {job_id} in database")
         
         # Check if already imported
         current_status = self.tracker.get_job_status(job_id)
@@ -117,29 +115,47 @@ class JobImporter:
             if existing_dir:
                 print(f"Job {job_id} already imported to: {existing_dir}")
                 return str(existing_dir)
-        
+
+        # Check if directory was created by scraper (has job-posting.md but no templates)
+        dir_name = self.create_directory_name(job_details["company"], job_details["title"])
+        potential_scraped_dir = self.target_dir / dir_name
+        is_scraped_dir = (
+            potential_scraped_dir.exists() and
+            (potential_scraped_dir / "job-posting.md").exists() and
+            not (potential_scraped_dir / "job-tracking.yaml").exists()
+        )
+
+        # If it's a scraped directory, reuse it with force=True to add templates
+        use_force = force or is_scraped_dir
+
         # Set up job directory using standardized setup
         job_dir_str = self.setup.setup_job_directory(
             job_details["company"],
             job_details["title"],
-            force
+            use_force
         )
         job_dir = Path(job_dir_str)
 
         # (Directory already created by setup_job_directory)
-        
-        # Save job posting
+
+        # Save job posting (skip if already exists from scraper)
         job_posting_file = job_dir / "job-posting.md"
-        with open(job_posting_file, 'w', encoding='utf-8') as f:
-            f.write(job_details["content"])
-        print(f"  ✓ Saved job posting: job-posting.md")
-        
-        # Generate and save LinkedIn URL
+        if not job_posting_file.exists():
+            with open(job_posting_file, 'w', encoding='utf-8') as f:
+                f.write(job_details["content"])
+            print(f"  ✓ Saved job posting: job-posting.md")
+        else:
+            print(f"  ↪ Skipped job-posting.md (already exists from scraper)")
+
+        # Generate and save LinkedIn URL (skip if already exists from scraper)
         linkedin_url = f"https://www.linkedin.com/jobs/view/{job_id}"
         linkedin_url_file = job_dir / "linkedin-url.txt"
-        with open(linkedin_url_file, 'w', encoding='utf-8') as f:
-            f.write(linkedin_url)
-        print(f"  ✓ Saved LinkedIn URL: linkedin-url.txt")
+        if not linkedin_url_file.exists():
+            with open(linkedin_url_file, 'w', encoding='utf-8') as f:
+                f.write(linkedin_url)
+            print(f"  ✓ Saved LinkedIn URL: linkedin-url.txt")
+        else:
+            print(f"  ↪ Skipped linkedin-url.txt (already exists from scraper)")
         
         # Update tracking
         self.tracker.update_job_status(
@@ -174,67 +190,71 @@ class JobImporter:
     
     def list_importable_jobs(self, limit: int = 20) -> list:
         """List jobs that can be imported (high scores, not yet imported)."""
-        from find_top_jobs import find_top_jobs
-        
-        # Get top unprocessed jobs
-        jobs = find_top_jobs(
-            str(self.source_dir),
-            top_n=limit * 2,  # Get more to filter
-            exclude_processed=False,  # We'll filter manually
-            status_filter=None
-        )
-        
-        importable = []
-        for job_id, score, title in jobs:
-            status = self.tracker.get_job_status(job_id)
-            if status in ["new", "reviewed", "researching"]:
-                importable.append((job_id, score, title, status))
-        
-        return importable[:limit]
+        try:
+            conn = self.db._get_connection()
+            cursor = conn.cursor()
+
+            cursor.execute("""
+                SELECT jobs.job_id, jobs.resume_score, jobs.job_title,
+                       COALESCE(job_tracking.status, 'new') as status
+                FROM jobs
+                LEFT JOIN job_tracking ON jobs.job_id = job_tracking.job_id
+                LEFT JOIN company_ignore ON jobs.company = company_ignore.company
+                WHERE jobs.created_at > date('now', '-7 days')
+                  AND jobs.resume_score IS NOT NULL
+                  AND (job_tracking.status IS NULL OR job_tracking.status IN ('new', 'reviewed', 'researching'))
+                  AND company_ignore.company IS NULL
+                ORDER BY jobs.resume_score DESC, jobs.created_at DESC
+                LIMIT ?
+            """, (limit,))
+
+            results = cursor.fetchall()
+            conn.close()
+
+            return [(str(job_id), score, title, status) for job_id, score, title, status in results]
+
+        except Exception as e:
+            print(f"Error listing importable jobs: {e}")
+            return []
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Import jobs from scraped data to local directory")
+    parser = argparse.ArgumentParser(description="Import jobs from database to local directory")
     parser.add_argument(
-        "job_id", 
+        "job_id",
         nargs="?",
         help="Job ID to import (or use --list to see available jobs)"
     )
     parser.add_argument(
-        "--source-dir", 
-        default="/Volumes/Storage/Dropbox/documents/job-search-2025/data/jobs",
-        help="Source directory with scraped jobs"
-    )
-    parser.add_argument(
-        "--target-dir", 
+        "--target-dir",
         default="./job-search",
         help="Target directory for imported jobs"
     )
     parser.add_argument(
-        "--tracking-file", 
+        "--tracking-file",
         help="Path to job tracking file"
     )
     parser.add_argument(
-        "--list", 
+        "--list",
         action="store_true",
         help="List importable jobs"
     )
     parser.add_argument(
-        "--limit", 
-        type=int, 
+        "--limit",
+        type=int,
         default=20,
         help="Limit number of jobs to show when listing"
     )
     parser.add_argument(
-        "--force", 
+        "--force",
         action="store_true",
         help="Force import even if already imported"
     )
-    
+
     args = parser.parse_args()
-    
+
     try:
-        importer = JobImporter(args.source_dir, args.target_dir, args.tracking_file)
+        importer = JobImporter(target_dir=args.target_dir, tracking_file=args.tracking_file)
         
         if args.list or not args.job_id:
             print(f"\\n📋 Top importable jobs:")

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tell me about a time you made a mistake at work that caused production downtime, what happened and how did you fix it?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            body { padding: 0.5in; margin: 0; font-size: 11pt; }
+            .question { font-size: 14pt; margin-bottom: 12pt; }
+            .answer { font-size: 11pt; line-height: 1.4; }
+        }
+    </style>
+</head>
+<body class="bg-white p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="question text-2xl font-bold text-red-900 mb-4 border-b-2 border-red-600 pb-2">4. Tell me about a production mistake (STAR, 2 min)</h1>
+        <div class="answer text-gray-800 text-base leading-relaxed space-y-4">
+            <ol class="list-inside space-y-2 ml-4 list-decimal">
+                <li>At The Penny Hoarder, I was leading the HTTP to HTTPS conversion when pages started loading without CSS intermittently - they'd render but look completely broken.</li>
+                <li>I traced it to a CloudFront caching issue where certain iOS versions would cache pages with http:// stylesheet links, and whichever device hit first determined the cache for everyone.</li>
+                <li>I fixed it by correcting the server-level cache before it reached CloudFront, ensuring all devices got proper HTTPS references, then invalidated CloudFront to clear the bad cache.</li>
+                <li>Now I always test cross-device caching behavior before any protocol or CDN changes.</li>
+            </ol>
+
+            <div class="bg-white p-3 rounded border-l-4 border-red-400 mt-4">
+                <h3 class="text-sm font-semibold text-gray-700 mb-2">STAR breakdown:</h3>
+                <ul class="space-y-1 ml-4 list-disc text-gray-700 text-sm">
+                    <li><strong>Situation:</strong> Leading HTTP to HTTPS conversion, pages loading without CSS intermittently</li>
+                    <li><strong>Task:</strong> Figure out why some pages broken for everyone, others fine</li>
+                    <li><strong>Action:</strong> Traced to CloudFront caching issue, fixed server-level cache, invalidated CDN</li>
+                    <li><strong>Result:</strong> Issue resolved, now always test cross-device caching before protocol changes</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
