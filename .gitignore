@@ -27,3 +27,4 @@ __pycache__/
 remote_jobs_all.json
 data/responses/
 .venv/
+scrapers/HiringCafe-upstream
