@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Prep - Print All</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white; padding: 0; }
+            .section { padding: 0.4in 0.5in; }
+        }
+        @media screen {
+            .section { border-bottom: 2px dashed #e5e7eb; padding: 2rem; }
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <div class="no-print sticky top-0 bg-gray-800 text-white px-6 py-3 flex items-center justify-between z-10">
+        <span class="text-sm font-semibold">Interview Prep — All Questions</span>
+        <div class="flex gap-4">
+            <a href="index.html" class="text-sm text-gray-300 hover:text-white">← Back to Study Guide</a>
+            <button onclick="window.print()" class="text-sm bg-blue-600 hover:bg-blue-700 px-4 py-1 rounded">Print</button>
+        </div>
+    </div>
+
+    <!-- 1 -->
+    <div class="section">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-2xl font-bold text-blue-900 mb-4 border-b-2 border-blue-600 pb-2">1. Tell me about yourself (2 min)</h1>
+            <div class="text-gray-800 text-base leading-relaxed space-y-4">
+                <ol class="list-inside space-y-2 ml-4 list-decimal">
+                    <li>I'm Branndon Coelho (rhymes with "mello"), a senior software engineer with over 15 years of experience, most recently at Headspace.</li>
+                    <li>I specialize in Python, Django, and building scalable API systems on the backend.</li>
+                    <li>I've worked with React, Next.js and various frontend technologies.</li>
+                    <li>My work spans architecting production LLM applications with Langchain to leading Headspace's server-driven UI migration that cut feature release cycles from days to hours.</li>
+                    <li>I'm passionate about AI, automation, performance, and building resilient systems.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="section">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-2xl font-bold text-purple-900 mb-4 border-b-2 border-purple-600 pb-2">2. Tell me about a time you led a big project (STAR, 2 min)</h1>
+            <div class="text-gray-800 text-base leading-relaxed space-y-4">
+                <ol class="list-inside space-y-2 ml-4 list-decimal">
+                    <li>At Headspace, every screen change for our 70M users required separate iOS and Android app store releases, and even bug fixes took days through the app store review process.</li>
+                    <li>I was one of the first two engineers selected to lead our server-driven UI migration, a year-long initiative to move all mobile app display logic to server-side control.</li>
+                    <li>We researched Netflix, Airbnb, and other approaches, eventually landing on Airbnb's sections-and-screens architecture.</li>
+                    <li>For the project I transitioned from Python to TypeScript to integrate the server-side changes into the Node.js API.</li>
+                    <li>We released on time, and feature velocity increased dramatically - what took days to release now takes minutes to hours.</li>
+                    <li>We can hotfix bugs immediately, release UI changes without app store delays, and maintain iOS/Android consistency on a level that wasn't possible before.</li>
+                </ol>
+                <div class="bg-white p-3 rounded border-l-4 border-purple-400 mt-4">
+                    <h3 class="text-sm font-semibold text-gray-700 mb-2">STAR breakdown:</h3>
+                    <ul class="space-y-1 ml-4 list-disc text-gray-700 text-sm">
+                        <li><strong>Situation:</strong> Every screen change required iOS/Android app store releases, bug fixes took days</li>
+                        <li><strong>Task:</strong> Lead server-driven UI migration, year-long initiative for 70M users</li>
+                        <li><strong>Action:</strong> Researched approaches, adopted Airbnb architecture, learned TypeScript, ensured GDPR compliance</li>
+                        <li><strong>Result:</strong> Released on time, feature velocity from days to hours, immediate hotfixes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="section">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-2xl font-bold text-indigo-900 mb-4 border-b-2 border-indigo-600 pb-2">3. Tell me about a time you pushed back (STAR, 2 min)</h1>
+            <div class="text-gray-800 text-base leading-relaxed space-y-4">
+                <ol class="list-inside space-y-2 ml-4 list-decimal">
+                    <li>At The Penny Hoarder, our DevOps engineer wanted to migrate our WordPress site from pure Docker to Kubernetes with full orchestration.</li>
+                    <li>I pushed back respectfully by asking what problem this solved - we were a content site with a serverless database on RDS, not a high-transaction app needing Kubernetes complexity.</li>
+                    <li>I explained my concerns about adding unnecessary complexity when we didn't need orchestration at our scale, but suggested my manager give him space for a proof of concept.</li>
+                    <li>In the end, the implementation and deployment complexity became a blocker, and we stayed with Docker.</li>
+                </ol>
+                <div class="bg-white p-3 rounded border-l-4 border-indigo-400 mt-4">
+                    <h3 class="text-sm font-semibold text-gray-700 mb-2">STAR breakdown:</h3>
+                    <ul class="space-y-1 ml-4 list-disc text-gray-700 text-sm">
+                        <li><strong>Situation:</strong> DevOps engineer wanted to migrate WordPress from Docker to Kubernetes</li>
+                        <li><strong>Task:</strong> Evaluate if complexity justified for content site needs</li>
+                        <li><strong>Action:</strong> Asked what problem it solved, explained unnecessary complexity, suggested POC</li>
+                        <li><strong>Result:</strong> Implementation complexity became blocker, stayed with Docker</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="section">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-2xl font-bold text-red-900 mb-4 border-b-2 border-red-600 pb-2">4. Tell me about a production mistake (STAR, 2 min)</h1>
+            <div class="text-gray-800 text-base leading-relaxed space-y-4">
+                <ol class="list-inside space-y-2 ml-4 list-decimal">
+                    <li>At The Penny Hoarder, I was leading the HTTP to HTTPS conversion when pages started loading without CSS intermittently - they'd render but look completely broken.</li>
+                    <li>I traced it to a CloudFront caching issue where certain iOS versions would cache pages with http:// stylesheet links, and whichever device hit first determined the cache for everyone.</li>
+                    <li>I fixed it by correcting the server-level cache before it reached CloudFront, ensuring all devices got proper HTTPS references, then invalidated CloudFront to clear the bad cache.</li>
+                    <li>Now I always test cross-device caching behavior before any protocol or CDN changes.</li>
+                </ol>
+                <div class="bg-white p-3 rounded border-l-4 border-red-400 mt-4">
+                    <h3 class="text-sm font-semibold text-gray-700 mb-2">STAR breakdown:</h3>
+                    <ul class="space-y-1 ml-4 list-disc text-gray-700 text-sm">
+                        <li><strong>Situation:</strong> Leading HTTP to HTTPS conversion, pages loading without CSS intermittently</li>
+                        <li><strong>Task:</strong> Figure out why some pages broken for everyone, others fine</li>
+                        <li><strong>Action:</strong> Traced to CloudFront caching issue, fixed server-level cache, invalidated CDN</li>
+                        <li><strong>Result:</strong> Issue resolved, now always test cross-device caching before protocol changes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="section">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-2xl font-bold text-teal-900 mb-4 border-b-2 border-teal-600 pb-2">5. Tell me about a critical production problem (STAR, 2 min)</h1>
+            <div class="text-gray-800 text-base leading-relaxed space-y-4">
+                <ol class="list-inside space-y-2 ml-4 list-decimal">
+                    <li>During Mental Health Awareness Month at Headspace, our therapy matching system was taking 8+ seconds under 3x normal traffic, and 23% of users were abandoning the flow.</li>
+                    <li>I led a small team to stabilize it quickly - we investigated and found complex unoptimized database queries and redundant calculations in the matching algorithm.</li>
+                    <li>I tackled the database optimization myself, rewrote Django queries to eliminate N+1 issues, added indexes that dropped query time from 6 seconds to under 1 second, while another engineer added Redis caching for therapist availability.</li>
+                    <li>The tricky part was working with product - the matching had 8+ factors adding computational complexity, so I presented data showing performance cost versus user value and we simplified to 5 core criteria with optional refinement.</li>
+                    <li>Within two weeks we got matching time down to 1.2 seconds, abandonment dropped to 8%, and the system handled peak load without issues for the rest of the month.</li>
+                </ol>
+                <div class="bg-white p-3 rounded border-l-4 border-teal-400 mt-4">
+                    <h3 class="text-sm font-semibold text-gray-700 mb-2">STAR breakdown:</h3>
+                    <ul class="space-y-1 ml-4 list-disc text-gray-700 text-sm">
+                        <li><strong>Situation:</strong> Mental Health Awareness Month, 8+ second matching time, 23% abandonment rate</li>
+                        <li><strong>Task:</strong> Lead team to stabilize system quickly under 3x traffic load</li>
+                        <li><strong>Action:</strong> Optimized Django queries, added Redis caching, simplified matching criteria with product</li>
+                        <li><strong>Result:</strong> 1.2 second matching, 8% abandonment, system stable rest of month</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="section">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-2xl font-bold text-purple-900 mb-4 border-b-2 border-purple-600 pb-2">6. What is your philosophy on mentoring? (2 min)</h1>
+            <div class="text-gray-800 text-base leading-relaxed space-y-4">
+                <ol class="list-inside space-y-2 ml-4 list-decimal">
+                    <li>A good mentor spots a problem, says "I've seen this before, here's how we solved it" — and shows you what to do going forward instead of just pointing out that something is wrong.</li>
+                    <li>The best mentoring I've received came through PR reviews — not nitpicks, but someone pointing out a function that already did what I was reinventing, or a way to collapse three database reads into one. That kind of feedback made me genuinely better.</li>
+                    <li>At Headspace with 500 engineers, nobody knows a 10-year-old system end to end. You can't learn about those things unless someone is willing to take a moment and show you.</li>
+                    <li>I mentor the same way: I look for patterns, not one-off mistakes. If someone's variable naming is vague or they're duplicating something that already exists, I share the standard or the existing solution — not just a correction.</li>
+                    <li>At The Penny Hoarder I ran weekly code reviews and grew alongside developers from a 10-person team to 100+. At Headspace I mentored junior engineers and promoted best practices across the team.</li>
+                    <li>I want the person I'm mentoring to walk away knowing <em>why</em>, not just <em>what</em> — so they can make the right call on their own next time.</li>
+                </ol>
+                <div class="bg-white p-3 rounded border-l-4 border-purple-400 mt-4">
+                    <h3 class="text-sm font-semibold text-gray-700 mb-2">Key themes to hit:</h3>
+                    <ul class="space-y-1 ml-4 list-disc text-gray-700 text-sm">
+                        <li><strong>Show, don't just tell:</strong> Point to the existing solution, don't only flag the problem</li>
+                        <li><strong>Context matters:</strong> Large systems mean nobody knows everything — mentors fill that gap</li>
+                        <li><strong>PR reviews as mentoring:</strong> Real-world example from Headspace</li>
+                        <li><strong>Track record:</strong> Penny Hoarder weekly reviews, Headspace junior engineers</li>
+                        <li><strong>Goal:</strong> Build judgment, not just compliance</li>
+                    </ul>
+                </div>
+                <div class="bg-purple-50 p-3 rounded border border-purple-200 mt-2">
+                    <p class="text-sm text-purple-800 italic">"That's what I think a good mentor is — saying 'I see a problem where this could be better, I've seen this before, here's how we solved for it, and this is probably what you should do going forward instead of recreating it.'"</p>
+                    <p class="text-xs text-purple-600 mt-1">Memorize this as your natural close.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="section">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-2xl font-bold text-orange-900 mb-4 border-b-2 border-orange-600 pb-2">7. Why are you looking? / Why did you leave Headspace? (30 sec)</h1>
+            <div class="text-gray-800 text-base leading-relaxed space-y-4">
+                <ol class="list-inside space-y-2 ml-4 list-decimal">
+                    <li>I was laid off in October 2025 as part of a company restructuring.</li>
+                    <li>I've been intentional about the search since then. I'm looking for a senior role where I can own meaningful backend systems and stay close to the work, not just coordinate it.</li>
+                    <li>What draws me to opportunities like this one is the chance to build things that have a real impact — not just internal tooling or growth features, but systems that matter to users.</li>
+                </ol>
+                <div class="bg-white p-3 rounded border-l-4 border-orange-400 mt-4">
+                    <h3 class="text-sm font-semibold text-gray-700 mb-2">Key points:</h3>
+                    <ul class="space-y-1 ml-4 list-disc text-gray-700 text-sm">
+                        <li>Lead with the fact: laid off, restructuring, not performance</li>
+                        <li>Don't dwell on it — one sentence and move on</li>
+                        <li>Pivot to what you're looking for, not what you're running from</li>
+                        <li>Close on something genuine about why this role/company interests you</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="section">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-2xl font-bold text-green-900 mb-4 border-b-2 border-green-600 pb-2">8. Conflicting priorities (STAR, 2 min)</h1>
+            <div class="text-gray-800 text-base leading-relaxed space-y-4">
+                <ol class="list-inside space-y-2 ml-4 list-decimal">
+                    <li>While I was leading the SDUI onboarding flow migration at Headspace — a year-long initiative — a GDPR compliance requirement came in with a hard regulatory deadline that couldn't move.</li>
+                    <li>I was the person who knew both the onboarding systems and the GDPR data flows, so I couldn't hand it off cleanly. The SDUI work had its own timeline with downstream mobile teams depending on it.</li>
+                    <li>I sat down with both PMs to map out the actual hard blockers versus the flexible milestones. The SDUI work had a two-week window where mobile was in a code freeze anyway, so I used that to focus entirely on the GDPR implementation — data anonymization workflows and DSAR request handling — without losing real time on SDUI.</li>
+                    <li>Both shipped on time. The key was being upfront early about the conflict rather than trying to silently carry both, and finding the natural slack in one timeline to absorb the pressure from the other.</li>
+                </ol>
+                <div class="bg-white p-3 rounded border-l-4 border-green-400 mt-4">
+                    <h3 class="text-sm font-semibold text-gray-700 mb-2">STAR breakdown:</h3>
+                    <ul class="space-y-1 ml-4 list-disc text-gray-700 text-sm">
+                        <li><strong>Situation:</strong> Leading SDUI migration when a hard-deadline GDPR compliance requirement landed</li>
+                        <li><strong>Task:</strong> Deliver both without slipping either timeline</li>
+                        <li><strong>Action:</strong> Mapped hard blockers vs flexible milestones with both PMs, used mobile code freeze window to absorb GDPR work</li>
+                        <li><strong>Result:</strong> Both shipped on time; learned to surface conflicts early and find natural timeline slack</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

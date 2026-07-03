@@ -225,12 +225,12 @@ def main():
     # Step 4: Optional PDF generation
     if args.pdf:
         print("\nGenerating PDF...")
-        pdf_filename = f"resume-branndon-coelho-{company_slug}-ats.pdf"
+        pdf_filename = f"resume-branndon-coelho-{company_slug}.pdf"
         pdf_path = OUTPUT_DIR / pdf_filename
         if generate_pdf(json_path, pdf_path):
             job_pdf_dest = job_dir / pdf_filename
-            shutil.copy2(pdf_path, job_pdf_dest)
-            print(f"  Copied: {job_pdf_dest.relative_to(PROJECT_ROOT)}")
+            shutil.move(pdf_path, job_pdf_dest)
+            print(f"  Moved: {job_pdf_dest.relative_to(PROJECT_ROOT)}")
 
     # Always copy JSON to job dir for reference
     shutil.copy2(json_path, job_dir / json_filename)

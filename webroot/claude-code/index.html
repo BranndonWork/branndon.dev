@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Branndon Coelho: Applied Claude Code</title>
-    <meta name="description" content="How I use Claude Code in daily development and as deployed production infrastructure." />
+    <meta name="description" content="How I use Claude Code as production infrastructure and a full engineering team: autonomous content, scraping and ETL fleets, self-monitoring operations, and multi-agent audits." />
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
     <link rel="stylesheet" href="/assets/css/claude-code.css" />
 </head>
@@ -24,7 +24,7 @@
         <div class="pre">Applied Claude Code</div>
         <h1>Built with it.<br><em>Deployed as it.</em></h1>
         <p class="lede">
-            I use Claude Code to run my job search pipeline, build production AI systems, and have deployed it as a live Docker microservice. Here is what that actually looks like.
+            I run a production directory platform end to end with Claude Code as the team: it writes the content, collects and enriches the data, deploys the services, watches its own health, and audits its own strategy. Here is what that actually looks like.
         </p>
 
         <div class="terminal">
@@ -34,18 +34,16 @@
                 <span class="dot dot-green"></span>
                 <span class="terminal-title">branndon.dev / claude code</span>
             </div>
-            <pre class="terminal-body"><span class="user-input">&#8250; /fa https://linkedin.com/jobs/view/4392126589</span>
+            <pre class="terminal-body"><span class="user-input">&#8250; deep audit: categorize all 24 repos, verify the revenue path, build the H2 plan</span>
 
-<span class="tool-dot">&#9679;</span> <span class="tool-name">Bash</span><span class="dim">(poetry run python scripts/linkedin_scraper.py --job-id 4392126589)</span>
-  <span class="tool-result">&#9492; Acme Engineering &#8212; Senior Backend Engineer</span>
+<span class="tool-dot">&#9679;</span> <span class="tool-name">Agent</span><span class="dim">(audit-live-stack &#183; audit-pipelines &#183; audit-legacy &#183; growth-timeline &#183; +7 more)</span>
+  <span class="tool-result">&#9492; 11 agents in parallel &#183; every repo: purpose, git state, deploy evidence, verdict</span>
 
-<span class="tool-dot">&#9679;</span> <span class="tool-name">Bash</span><span class="dim">(poetry run python scripts/resume/generate.py job-search/Acme-Senior-Backend-Engineer/ --pdf)</span>
-  <span class="tool-result">&#9492; <span class="ok">94/100 keywords matched</span>  &#183;  PDF ready  &#183;  <span class="dim">5.5s</span></span>
+<span class="tool-dot">&#9679;</span> <span class="tool-name">Agent</span><span class="dim">(payment-bridge-state)</span>
+  <span class="tool-result">&#9492; checkout endpoint <span class="ok">BUILT</span> &#183; 10 gaps to first transaction &#183; file-path evidence</span>
 
-<span class="user-input">&#8250; /applied job-search/Acme-Senior-Backend-Engineer/</span>
-
-<span class="tool-dot">&#9679;</span> <span class="tool-name">Write</span><span class="dim">(job-search/Acme-Senior-Backend-Engineer/job-application.yaml)</span>
-  <span class="tool-result">&#9492; <span class="ok">status: applied ✓</span></span></pre>
+<span class="tool-dot">&#9679;</span> <span class="tool-name">Write</span><span class="dim">(docs/reports/2026-07-03-fable-strategy-report/)</span>
+  <span class="tool-result">&#9492; <span class="ok">8-file strategy report ✓</span>  &#183;  repo audit &#183; market research &#183; H2 waterfall</span></pre>
         </div>
     </div>
 </section>
@@ -111,7 +109,7 @@ MAX_RETRIES = <span class="nm">3</span>
         <div class="section-label">Content Pipeline</div>
         <h2>Autonomous content generation pipeline.</h2>
         <p class="section-sub">
-            70+ virtual author profiles publish 6+ pieces of content daily with zero human intervention. Here is every stage.
+            Publishes 6+ articles a day across 15 categories with zero human intervention. 1,000+ published and compounding. Here is every stage.
         </p>
 
         <div class="pipeline-steps">
@@ -123,7 +121,7 @@ MAX_RETRIES = <span class="nm">3</span>
                 </div>
                 <div class="step-body">
                     <div class="step-name">Content Planning</div>
-                    <div class="step-desc">Category-matched author profile is selected from 70+ profiles. Each profile has a defined voice, vocabulary range, sentence length targets, and topic affinity scores.</div>
+                    <div class="step-desc">A quota engine fires every two hours, compares the publish log against the cadence target, and writes only the deficit. Missed fires catch up; nothing double-publishes. Seasonal and holiday calendars feed topic selection; a category-matched author profile sets the voice.</div>
                 </div>
             </div>
 
@@ -179,7 +177,7 @@ MAX_RETRIES = <span class="nm">3</span>
                 </div>
                 <div class="step-body">
                     <div class="step-name">Approval Gate</div>
-                    <div class="step-desc">Validator pass + voice score above threshold = approved. Failed pieces loop back to generation with failure context added to the prompt. No human reviews individual pieces.</div>
+                    <div class="step-desc">Validator pass + voice score above a hard threshold = approved. Failed pieces get up to two rewrite passes with failure context added to the prompt, then are parked with an alert. Below-bar content never ships, and no human reviews individual pieces.</div>
                 </div>
             </div>
 
@@ -200,8 +198,8 @@ MAX_RETRIES = <span class="nm">3</span>
                     <div class="step-line"></div>
                 </div>
                 <div class="step-body">
-                    <div class="step-name">ISR Revalidation</div>
-                    <div class="step-desc">Cloudflare cache and Next.js ISR are invalidated for the new content path, making the piece live on the Next.js frontend without a full rebuild.</div>
+                    <div class="step-name">ISR Revalidation + Verify</div>
+                    <div class="step-desc">Cloudflare cache and Next.js ISR are invalidated for the new content path, making the piece live without a full rebuild. A post-publish check then confirms the article is in the search index and its canonical URL returns 200; failures quarantine loudly instead of vanishing.</div>
                 </div>
             </div>
 
@@ -214,7 +212,7 @@ MAX_RETRIES = <span class="nm">3</span>
     <div class="container">
         <div class="section-label">LLM-Powered ETL</div>
         <h2>100,000+ records regenerated with a local model.</h2>
-        <p class="section-sub">A resource directory needed every listing rewritten to surface structured information: IEP support, therapy programs, staff training, and enrollment requirements.</p>
+        <p class="section-sub">A national resource directory, built by machine: a VPN-rotated scraper fleet collects the raw data, an ETL pipeline parses and rewrites every listing to surface structured information (IEP support, therapy programs, enrollment requirements), and 17,000+ listings are live because of it.</p>
 
         <div class="etl-grid">
             <div>
@@ -226,7 +224,7 @@ MAX_RETRIES = <span class="nm">3</span>
                     A local <strong style="color: var(--text)">Qwen/Ollama</strong> model handles regeneration, no API cost at scale. Two-phase validation runs structural screening before the LLM call and a full schema + content hash check after. The <code>--batch</code> flag and per-record skip logic make the pipeline safe to interrupt and resume.
                 </p>
                 <p style="color: var(--muted); font-size: 15px; line-height: 1.7; margin: 0 0 20px;">
-                    20+ Poetry CLI scripts handle orchestration, reporting, and partial reruns across the full dataset.
+                    Onboarding a new data source is a scaffold command on each side of the seam (<code>scraper-new</code> &#8594; <code>parser-new</code>): dispatch and retry sweeps derive from a category registry, so there are no hand-maintained wiring lists to forget. Anti-bot retries are bounded per source, and 20+ Poetry CLI scripts handle orchestration, reporting, and partial reruns.
                 </p>
                 <div class="etl-stages">
                     <span class="etl-stage">Scan</span>
@@ -244,30 +242,63 @@ MAX_RETRIES = <span class="nm">3</span>
     </div>
 </section>
 
+<!-- Autonomous Operations -->
+<section id="operations">
+    <div class="container">
+        <div class="split">
+            <div class="split-text">
+                <div class="pre">Autonomous Operations</div>
+                <h2>The platform runs itself and pages me when it can't.</h2>
+                <p>
+                    Every unattended system reports a heartbeat: launchd jobs check the scraper fleet, the ETL pipeline, and the article scheduler every 15 minutes and push a phone notification the moment a failure streak or stall appears. Alerts deduplicate on state transitions, remind daily while broken, and send a recovery note when healthy again. Silence means healthy, and silence is verified.
+                </p>
+                <p>
+                    Big changes run as forged one-shot briefs: baseline git tags and a verified backup first, parallel recon agents next, then implementation against explicit acceptance criteria, closing with work reports committed beside the code. Multi-agent fan-outs handle the wide work, like auditing two dozen repos in parallel, while deterministic scripts handle the loops.
+                </p>
+            </div>
+
+            <div>
+                <div class="code-block">
+                    <div class="code-block-bar">
+                        <span class="code-block-label">launchd &#183; every 15 minutes</span>
+                    </div>
+                    <pre><span class="cm"># com.specialneeds.scrapers-health</span>
+<span class="fn">worker-health</span> --notify
+  <span class="cm"># fleet: 15/15 containers healthy &#183; queues nominal</span>
+
+<span class="cm"># com.specialneeds.pipeline-health</span>
+<span class="fn">pipeline-health</span> --notify
+  <span class="cm"># parse &#8594; enrich &#8594; publish: exit 0</span>
+
+<span class="cm"># when it breaks, my phone knows before I do:</span>
+<span class="st">ntfy &#8250; "scraper-general: failure streak 3,
+        stall watchdog fired, VPN slot reassigned"</span></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Configuration -->
-<section id="config">
+<section class="section-alt" id="config">
     <div class="container">
         <div class="section-label">Environment</div>
         <h2>How my Claude Code setup is configured.</h2>
-        <p class="section-sub">Built up over nearly two years of daily use across multiple projects.</p>
+        <p class="section-sub">Built up over two-plus years of daily use, version-controlled in a portable extensions repo that symlinks into every machine I work on.</p>
 
         <div class="config-grid">
 
             <div class="config-block">
-                <h3>53+ Custom Slash Commands</h3>
+                <h3>55+ Custom Skills</h3>
 
                 <div class="command-group">
-                    <div class="command-group-label">Job search</div>
+                    <div class="command-group-label">Business operations</div>
                     <div class="command-pills">
-                        <span class="command-pill">/linkedin-apply</span>
-                        <span class="command-pill">/applied</span>
-                        <span class="command-pill">/skip-job</span>
-                        <span class="command-pill">/setup-job</span>
-                        <span class="command-pill">/interview-prep</span>
-                        <span class="command-pill">/first-interview</span>
-                        <span class="command-pill">/mock-interview</span>
-                        <span class="command-pill">/expert:hunter</span>
-                        <span class="command-pill">/expert:resume</span>
+                        <span class="command-pill">/pm</span>
+                        <span class="command-pill">/autodev</span>
+                        <span class="command-pill">/scheduled-tasks</span>
+                        <span class="command-pill">/work-report</span>
+                        <span class="command-pill">/incident-report</span>
                     </div>
                 </div>
 
@@ -275,39 +306,41 @@ MAX_RETRIES = <span class="nm">3</span>
                     <div class="command-group-label">Deployment</div>
                     <div class="command-pills">
                         <span class="command-pill">/deploy</span>
-                        <span class="command-pill">/coolify</span>
-                        <span class="command-pill">/cloudflare</span>
-                        <span class="command-pill">/git:commit-push</span>
+                        <span class="command-pill">/git-commit-push</span>
+                        <span class="command-pill">/system-api</span>
+                        <span class="command-pill">/ssh</span>
                     </div>
                 </div>
 
                 <div class="command-group">
-                    <div class="command-group-label">AI delegation</div>
+                    <div class="command-group-label">AI delegation &amp; orchestration</div>
                     <div class="command-pills">
-                        <span class="command-pill">/qwen</span>
+                        <span class="command-pill">/fable</span>
+                        <span class="command-pill">/opus</span>
                         <span class="command-pill">/haiku</span>
+                        <span class="command-pill">/three-amigos</span>
+                        <span class="command-pill">/wf</span>
                         <span class="command-pill">/expert:python</span>
-                        <span class="command-pill">/expert:lead-developer</span>
                         <span class="command-pill">/expert:scaling</span>
                     </div>
                 </div>
 
                 <div class="command-group">
-                    <div class="command-group-label">Apple ecosystem</div>
+                    <div class="command-group-label">Docs &amp; knowledge</div>
                     <div class="command-pills">
-                        <span class="command-pill">/calendar</span>
-                        <span class="command-pill">/reminders</span>
-                        <span class="command-pill">/lists</span>
-                        <span class="command-pill">/notes</span>
-                        <span class="command-pill">/notify</span>
+                        <span class="command-pill">/docs</span>
+                        <span class="command-pill">/journal</span>
+                        <span class="command-pill">/project-notes</span>
+                        <span class="command-pill">/tldr</span>
                     </div>
                 </div>
 
                 <div class="command-group">
                     <div class="command-group-label">Code quality</div>
                     <div class="command-pills">
-                        <span class="command-pill">/code:audit</span>
-                        <span class="command-pill">/code:linter</span>
+                        <span class="command-pill">/code-clean</span>
+                        <span class="command-pill">/triage</span>
+                        <span class="command-pill">/verify</span>
                         <span class="command-pill">/refactor-bot</span>
                         <span class="command-pill">/simplify</span>
                     </div>
@@ -316,7 +349,7 @@ MAX_RETRIES = <span class="nm">3</span>
 
             <div>
                 <div class="config-block" style="margin-bottom: 36px;">
-                    <h3>4 PreToolUse Safety Hooks</h3>
+                    <h3>15 Safety &amp; Quality Hooks</h3>
                     <div class="hook-list">
                         <div class="hook-item">
                             <span class="hook-name">rm_guard</span>
@@ -335,10 +368,21 @@ MAX_RETRIES = <span class="nm">3</span>
                             <span class="hook-desc">Intercepts any direct write of a pinned version string (<code>package==1.3.4</code>) into a file; Claude habitually writes pinned versions straight into manifests, bypassing dependency resolution and lock file management entirely</span>
                         </div>
                     </div>
+                    <div class="command-pills" style="margin-top: 14px;">
+                        <span class="command-pill">git_guard</span>
+                        <span class="command-pill">pkill_guard</span>
+                        <span class="command-pill">kill_port_guard</span>
+                        <span class="command-pill">protect_secrets</span>
+                        <span class="command-pill">secret_string_guard</span>
+                        <span class="command-pill">test_failure_guard</span>
+                        <span class="command-pill">question_audit</span>
+                        <span class="command-pill">scrub-ai-slop</span>
+                        <span class="command-pill">+3 more</span>
+                    </div>
                 </div>
 
                 <div class="config-block" style="margin-bottom: 36px;">
-                    <h3>5 MCP Integrations</h3>
+                    <h3>6 MCP Integrations</h3>
                     <div class="mcp-list">
                         <div class="mcp-item">
                             <span class="mcp-name">claude-peers</span>
@@ -360,13 +404,17 @@ MAX_RETRIES = <span class="nm">3</span>
                             <span class="mcp-name">voicemode</span>
                             <span class="mcp-desc">Voice interaction with Claude Code</span>
                         </div>
+                        <div class="mcp-item">
+                            <span class="mcp-name">stripe</span>
+                            <span class="mcp-desc">Payments integration guidance and account tooling</span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="config-block">
                     <h3>6-Role Executive AI Team</h3>
                     <p style="color: var(--muted); font-size: 14px; line-height: 1.6; margin: 0;">
-                        CEO, CTO, CMO, CFO, Product, and Project Manager as expert personas with distinct system prompts and domain constraints. Daily standup rotates through each role and syncs to a Trello board via the <code>/pm</code> command.
+                        CEO, CTO, CMO, CFO, Product, and Project Manager as expert personas with distinct system prompts, owned strategy docs, and their own Trello boards. A standup skill rotates through the roles and syncs to the boards via <code>/pm</code>.
                     </p>
                 </div>
             </div>
@@ -378,7 +426,7 @@ MAX_RETRIES = <span class="nm">3</span>
 <!-- Footer -->
 <footer>
     <div class="container footer-inner">
-        <span style="color: var(--muted);">&copy; 2025 Branndon Coelho</span>
+        <span style="color: var(--muted);">&copy; 2026 Branndon Coelho</span>
         <div class="footer-links">
             <a href="/">branndon.dev</a>
             <a href="https://branndon.dev/linkedin">LinkedIn</a>
